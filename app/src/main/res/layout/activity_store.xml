@@ -1,0 +1,168 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f4f4f4"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+    <include layout="@layout/titlebar" />
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_above="@+id/ll_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/id_stickynavlayout_topview"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:gravity="center_vertical"
+            android:background="@color/white">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="5dp">
+
+                <ImageView
+                    android:id="@+id/iv_store_icon"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@mipmap/tx"
+                    android:scaleType="centerCrop"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="5dp"
+                    android:gravity="center|left"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_storename"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="常州宝祥典当行"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/tv_store_commentlevel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="评价等级：高"
+                        android:textColor="@color/transparent1"
+                        android:textSize="13sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:visibility="gone"
+                android:id="@+id/tv_store_follow"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginRight="10dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="15dp"
+                android:background="@color/white"
+                android:gravity="center"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:text="关注:128"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="15sp" />
+        </RelativeLayout>
+
+
+        <!--<com.glavesoft.view.SimpleViewPagerIndicator-->
+            <!--android:id="@+id/id_stickynavlayout_indicator"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="43dp"-->
+            <!--android:background="#ffffffff"></com.glavesoft.view.SimpleViewPagerIndicator>-->
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/home_viewpager_tab"
+            app:tabGravity="fill"
+            app:tabMode="fixed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+            app:tabIndicatorColor="@color/bottom_color_press"
+            app:tabSelectedTextColor="@color/bottom_color_press"
+            app:tabTextAppearance="@style/TabStyle"
+            app:tabTextColor="@color/bottom_color_normal"
+            android:visibility="gone"
+            />
+
+        <com.glavesoft.view.TriangleScrollingTabs
+            android:id="@+id/store_goods"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white" >
+        </com.glavesoft.view.TriangleScrollingTabs>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/bg_default"/>
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/id_stickynavlayout_viewpager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#f0f0f0"></androidx.viewpager.widget.ViewPager>
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/ll_bottom"
+        android:background="@color/white"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="55dp">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:layout_weight="11"
+        >
+
+        <ImageView
+            android:id="@+id/iv_storedetail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_gravity="center"
+            android:src="@mipmap/dpjj"/>
+
+    </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_weight="7"
+            android:background="@color/green_bg1">
+
+            <ImageView
+                android:id="@+id/iv_storecomment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:src="@mipmap/pingjia"
+               />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+</RelativeLayout>
+</LinearLayout>

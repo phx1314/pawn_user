@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/bg_default">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:padding="10dp"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:id="@+id/tv_name_pawn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text=""
+            android:textSize="15sp"
+            android:textColor="@color/black1"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="鉴定价："
+                android:textSize="13sp"
+                android:textColor="@color/black1"/>
+
+
+            <TextView
+                android:id="@+id/tv_jdprice_pawn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text=""
+                android:textSize="16sp"
+                android:textColor="@color/red_k"/>
+
+            <TextView
+                android:id="@+id/tv_no_pawn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="当号："
+                android:textSize="13sp"
+                android:textColor="@color/black1"/>
+
+        </LinearLayout>
+
+        <com.glavesoft.view.GridViewForNoScroll
+            android:id="@+id/gv_pics_pawn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:cacheColorHint="#00000000"
+            android:columnWidth="150dp"
+            android:gravity="center"
+            android:listSelector="#00000000"
+            android:numColumns="3"
+            android:scrollbars="none"
+            android:stretchMode="columnWidth"
+            android:verticalSpacing="15dp"
+            android:background="@color/white"/>
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white">
+
+    <ImageView
+        android:id="@+id/iv_pic_order"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:layout_marginBottom="2dp"
+        android:scaleType="centerCrop"
+        />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <View style="@style/line"/>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:paddingBottom="8dp"
+            android:paddingTop="3dp"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/tv_no_order"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="订单号：123421421"
+                    android:textSize="14sp"
+                    android:textColor="@color/black1"/>
+
+                <TextView
+                    android:id="@+id/tv_state_order"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="待收货"
+                    android:textSize="13sp"
+                    android:textColor="@color/red_k"/>
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/tv_name_order"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="和田玉"
+                android:textSize="16sp"
+                android:textColor="@color/black1"/>
+
+            <TextView
+                android:id="@+id/tv_price_order"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="售价：￥5万"
+                android:textSize="14sp"
+                android:textColor="@color/red_k"/>
+
+            <LinearLayout
+                android:id="@+id/ll_wl_order"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:layout_marginTop="2dp"
+                android:visibility="invisible"
+                >
+
+                <TextView
+                    android:id="@+id/tv_refundtype_order"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="退款申请中"
+                    android:textSize="13sp"
+                    android:textColor="@color/red_k"
+                    android:visibility="gone"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_wl_order"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="揽件中"
+                    android:textSize="13sp"
+                    android:textColor="@color/red_k"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_ckwl_order"
+                    style="@style/myappraisal"
+                    android:background="@drawable/shape_green_kuang"
+                    android:textColor="@color/bg_title"
+                    android:text="查看物流"
+                    android:layout_marginTop="0dp"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:layout_marginTop="5dp"
+                >
+
+                <TextView
+                    android:id="@+id/tv_reasons_order"
+                    style="@style/myappraisal"
+                    android:text="拒绝原因"
+                    android:background="@drawable/shape_green4"
+                    android:layout_marginLeft="10dp"
+                    android:visibility="gone"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_number_order"
+                    style="@style/myappraisal"
+                    android:background="@drawable/shape_green4"
+                    android:text="填写单号"
+                    android:layout_marginLeft="10dp"
+                    android:visibility="gone"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_refund_order"
+                    style="@style/myappraisal"
+                    android:background="@drawable/shape_green4"
+                    android:text="退款"
+                    android:layout_marginLeft="10dp"
+                    android:visibility="gone"
+                    />
+                <TextView
+                    android:id="@+id/tv_comment_order"
+                    style="@style/myappraisal"
+                    android:background="@drawable/shape_green4"
+                    android:text="评价"
+                    android:layout_marginLeft="10dp"
+                    android:visibility="gone"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_kf_order"
+                    style="@style/myappraisal"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/shape_green_kuang"
+                    android:textColor="@color/bg_title"
+                    android:text="联系客服"
+                    android:visibility="gone"
+                    />
+
+
+                <TextView
+                    android:id="@+id/tv_fk_order"
+                    style="@style/myappraisal"
+                    android:background="@drawable/shape_green4"
+                    android:text="去付款"
+                    android:layout_marginLeft="10dp"
+                    android:visibility="gone"
+                    />
+
+
+                <TextView
+                    android:id="@+id/tv_qrqs_order"
+                    style="@style/myappraisal"
+                    android:background="@drawable/shape_green4"
+                    android:text="确认签收"
+                    android:layout_marginLeft="10dp"
+                    android:visibility="gone"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_delete_order"
+                    style="@style/myappraisal"
+                    android:background="@drawable/shape_green4"
+                    android:text="删除订单"
+                    android:layout_marginLeft="10dp"
+                    android:visibility="gone"
+                    />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

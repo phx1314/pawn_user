@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:fitsSystemWindows="true">
+
+    <include layout="@layout/titlebar"/>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <com.glavesoft.view.TriangleScrollingTabs
+                android:id="@+id/stv_goods"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white" >
+            </com.glavesoft.view.TriangleScrollingTabs>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/tv_search"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_marginBottom="5dp"
+                    android:paddingTop="3dp"
+                    android:paddingBottom="3dp"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="5dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:background="@drawable/shape_kuang"
+                    android:drawableLeft="@drawable/search2"
+                    android:drawablePadding="5dp"
+                    android:gravity="center_vertical"
+                    android:hint="搜索"
+                    android:textSize="15sp"
+                    android:imeOptions="actionSearch"
+                    android:singleLine="true"/>
+            </LinearLayout>
+
+            <!--<ImageView-->
+                <!--android:id="@+id/iv_search"-->
+                <!--android:background="@color/white"-->
+                <!--android:padding="10dp"-->
+                <!--android:scaleType="fitXY"-->
+                <!--android:src="@drawable/static_search"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content" />-->
+
+
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/vp_goods"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:overScrollMode="never" >
+            </androidx.viewpager.widget.ViewPager>
+        </LinearLayout>
+
+
+        <FrameLayout
+            android:id="@+id/fl_evaluation_kf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="150dp"
+            android:layout_gravity="right|bottom"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/iv_evaluation_kf"
+                android:layout_width="90dp"
+                android:layout_height="60dp"
+                android:src="@drawable/kf1"
+                />
+
+            <TextView
+                android:id="@+id/tv_evaluation_kf"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="5dp"
+                android:gravity="center"
+                android:layout_gravity="right"
+                android:background="@drawable/dian_2"
+                android:text=""
+                android:textColor="@color/white"
+                android:textSize="10sp"/>
+
+        </FrameLayout>
+
+    </FrameLayout>
+
+</LinearLayout>

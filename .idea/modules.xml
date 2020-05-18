@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/FaceppIDCardUI/FaceppIDCardUI.iml" filepath="$PROJECT_DIR$/FaceppIDCardUI/FaceppIDCardUI.iml" group="pawn_user/FaceppIDCardUI" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="pawn_user/app" />
+      <module fileurl="file://$PROJECT_DIR$/faceppdemoui/faceppdemoui.iml" filepath="$PROJECT_DIR$/faceppdemoui/faceppdemoui.iml" group="pawn_user/faceppdemoui" />
+      <module fileurl="file://$PROJECT_DIR$/jcvideoplayer-lib/jcvideoplayer-lib.iml" filepath="$PROJECT_DIR$/jcvideoplayer-lib/jcvideoplayer-lib.iml" group="pawn_user/jcvideoplayer-lib" />
+      <module fileurl="file://$PROJECT_DIR$/library/library.iml" filepath="$PROJECT_DIR$/library/library.iml" group="pawn_user/library" />
+      <module fileurl="file://$PROJECT_DIR$/mediapicker/mediapicker.iml" filepath="$PROJECT_DIR$/mediapicker/mediapicker.iml" group="pawn_user/mediapicker" />
+      <module fileurl="file://$PROJECT_DIR$/pawn_user.iml" filepath="$PROJECT_DIR$/pawn_user.iml" group="pawn_user" />
+      <module fileurl="file://$PROJECT_DIR$/permissionUtil/permissionUtil.iml" filepath="$PROJECT_DIR$/permissionUtil/permissionUtil.iml" group="pawn_user/permissionUtil" />
+      <module fileurl="file://$PROJECT_DIR$/photopicker/photopicker.iml" filepath="$PROJECT_DIR$/photopicker/photopicker.iml" group="pawn_user/photopicker" />
+      <module fileurl="file://$PROJECT_DIR$/sdk/sdk.iml" filepath="$PROJECT_DIR$/sdk/sdk.iml" group="pawn_user/sdk" />
+      <module fileurl="file://$PROJECT_DIR$/sobotsdk/sobotsdk.iml" filepath="$PROJECT_DIR$/sobotsdk/sobotsdk.iml" group="pawn_user/sobotsdk" />
+    </modules>
+  </component>
+</project>

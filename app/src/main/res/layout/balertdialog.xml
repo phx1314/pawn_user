@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="260dip"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:background="@drawable/shape_stroke_grey"
+    android:orientation="vertical" >
+
+    <!-- 提示框——标题 -->
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:minHeight="50dp"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:gravity="center"
+            android:text="版本更新"
+            android:textColor="@color/blue"
+            android:textSize="16sp" />
+
+        <TextView
+            style="@style/divider_grey"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp" />
+
+        <!-- 提示框内容 -->
+
+        <TextView
+            android:id="@+id/message"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:gravity="center_vertical"
+            android:lineSpacingMultiplier="1.2"
+            android:minHeight="40dip"
+            android:textColor="@color/black1"
+            android:textSize="17sp"
+            android:visibility="gone" />
+
+        <!--<RatingBar
+            android:id="@+id/ratingbar"
+            style="@style/MyRatingBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="30dp"
+            android:numStars="5"
+            android:rating="0"
+            android:stepSize="1"
+            android:visibility="gone" /> -->
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_d1"
+        style="@style/divider_grey"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/ok"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:background="@null"
+            android:text="dd"
+            android:textColor="@color/black1"
+            android:textSize="15sp"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tv_d"
+            android:layout_width="1dp"
+            android:layout_height="30dp"
+            android:background="@color/xian"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/no"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:background="@null"
+            android:text="aa"
+            android:textColor="@color/black1"
+            android:textSize="15sp"
+            android:visibility="gone" />
+    </LinearLayout>
+
+</LinearLayout>

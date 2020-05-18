@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:pv="http://schemas.android.com/apk/res/com.glavesoft.pawnuser"
+    android:id="@+id/title_home"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/bg_title"
+    android:fitsSystemWindows="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:gravity="center_vertical">
+
+
+        <com.glavesoft.view.RoundImageView
+            android:id="@+id/iv_home_tx"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginLeft="10dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/tx"
+            pv:border_thickness="1dp"
+            android:visibility="gone"
+            pv:border_inside_color="#fffff1" />
+
+        <ImageView
+            android:id="@+id/iv_home_sys"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/sys"
+            android:layout_marginLeft="10dp"
+            android:scaleType="fitXY"
+            android:visibility="gone"
+            />
+
+        <TextView
+            android:id="@+id/titlebar_home_search"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginRight="10dp"
+            android:paddingLeft="8dp"
+            android:paddingTop="6dp"
+            android:paddingBottom="6dp"
+            android:gravity="center_vertical"
+            android:textSize="14sp"
+            android:drawablePadding="5dp"
+            android:textColor="@color/black1"
+            android:drawableLeft="@drawable/search1"
+            android:background="@drawable/shape_home_search"
+            android:layout_marginLeft="15dp" />
+
+
+        <ImageView
+            android:id="@+id/tv_home_news"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/news"/>
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#80000000"
+    android:gravity="center"
+    android:orientation="vertical"
+    >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dip"
+        android:background="@drawable/coner_text_bg1"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/coner_text_bg2">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:padding="10dip"
+                android:text="选择项目阶段"
+                android:textColor="@color/black1"
+                android:textSize="16sp"
+                />
+
+            <ImageView
+                android:id="@+id/iv_close_stages"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:layout_marginRight="10dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/sc"/>
+
+        </RelativeLayout>
+
+        <ListView
+            android:id="@+id/lv_select_stages"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:divider="@color/bg_line"
+            android:dividerHeight="1dp"
+            android:listSelector="@android:color/transparent"
+            android:scrollbars="none" />
+
+        <Button
+            android:id="@+id/bt_stages"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:text="确认"
+            android:textColor="@android:color/white"
+            android:background="@drawable/shape_coner_blue2"
+            android:textSize="16sp"
+            android:visibility="gone"
+            />
+    </LinearLayout>
+
+</LinearLayout>

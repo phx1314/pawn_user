@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="10dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/ll_comment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="5dp">
+
+            <ImageView
+                android:id="@+id/iv_user_icon"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@mipmap/tx"
+                android:scaleType="centerCrop"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="10dp">
+
+                <TextView
+                    android:id="@+id/tv_user_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:text="常州宝祥专业客户"
+                    android:textColor="@color/black"
+                    android:textSize="15sp" />
+
+                <View
+                   style="@style/line"/>
+
+                <TextView
+                    android:id="@+id/tv_content"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="3dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="价格能否便宜"
+                    android:textSize="13sp"
+                    android:textColor="@color/black"/>
+
+                <TextView
+                    android:id="@+id/tv_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="7天前发布于常州"
+                    android:textSize="10sp"
+                    android:textColor="@color/black"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!--<View-->
+        <!--android:layout_margin="5dp"-->
+        <!--android:layout_marginBottom="5dp"-->
+        <!--android:background="@color/gray"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="1dp"/>-->
+        <com.glavesoft.view.MyListView
+            android:id="@+id/lv_comment_replay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+            android:divider="@null"></com.glavesoft.view.MyListView>
+    </LinearLayout>
+</LinearLayout>

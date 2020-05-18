@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp"
+    android:id="@+id/ll_news"
+    android:descendantFocusability="blocksDescendants">
+    <CheckBox
+        android:id="@+id/item_news_delete"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:checked="false"
+        android:gravity="center"
+        android:paddingRight="20dp"
+        android:button="@drawable/select_checkbox4"
+        android:visibility="gone"
+        />
+    <LinearLayout
+        android:id="@+id/item_news_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+            <TextView
+                android:id="@+id/tv_title_news"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="17sp"
+                android:textColor="@color/black1"
+                android:text="非官方的古典风格三国杀的故事大概多少如题如题"/>
+
+
+            <com.glavesoft.view.GridViewForNoScroll
+                android:id="@+id/gv_pic_news"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:cacheColorHint="#00000000"
+                android:columnWidth="150dp"
+                android:layout_marginTop="5dp"
+                android:listSelector="#00000000"
+                android:numColumns="3"
+                android:scrollbars="none"
+                android:stretchMode="columnWidth"
+                android:verticalSpacing="15dp"
+                />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                >
+
+                <TextView
+                    android:id="@+id/tv_source_news"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="13sp"
+                    android:textColor="@color/text_gray"
+                    android:text="新华社"/>
+
+                <TextView
+                    android:id="@+id/tv_comment_news"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:textSize="13sp"
+                    android:textColor="@color/text_gray"
+                    android:text="5645评论"/>
+
+                <TextView
+                    android:id="@+id/tv_time_news"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:textSize="13sp"
+                    android:textColor="@color/text_gray"
+                    android:text="2小时前"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/iv_pic_news"
+            android:layout_width="95dp"
+            android:layout_height="65dp"
+            android:layout_marginLeft="5dp"
+            android:background="@drawable/bg_livecountdown"
+            android:scaleType="centerCrop"
+            android:visibility="gone"
+            />
+
+    </LinearLayout>
+
+
+
+
+</LinearLayout>

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:layout_marginTop="5dp"
+    android:layout_marginBottom="5dp"
+    android:layout_marginLeft="5dp"
+    android:layout_marginRight="5dp"
+    android:id="@+id/ll_item_staggered">
+
+    <ImageView
+        android:id="@+id/iv_item_staggered_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:scaleType="centerCrop"
+        />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_coner_white2">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical">
+            <ImageView
+                android:visibility="gone"
+                android:id="@+id/iv_type"
+                android:layout_gravity="center"
+                android:layout_marginRight="5dp"
+                android:src="@drawable/icon_jdp"
+                android:layout_width="55dp"
+                android:layout_height="16dp" />
+
+            <TextView
+                android:id="@+id/tv_type"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_orange"
+                android:gravity="center"
+                android:text="自营"
+                android:textColor="@color/white"
+                android:textSize="10sp" />
+            <TextView
+                android:id="@+id/tv_item_staggered_desc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="我是描述文本"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:singleLine="true"/>
+        </LinearLayout>
+
+
+
+        <TextView
+            android:id="@+id/tv_item_count"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:singleLine="true"
+            android:drawableLeft="@mipmap/paimai"
+            android:drawablePadding="2dp"
+            android:text="10次"
+            android:textColor="@color/black1"
+            android:textSize="13sp"
+            android:visibility="gone"/>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/tv_price_staggered"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="5dp"
+                android:text="￥2万"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tv_submit"
+                android:layout_width="60dp"
+                android:layout_height="20dp"
+                android:layout_marginRight="5dp"
+                android:gravity="center"
+                android:text="购买"
+                android:textColor="@android:color/white"
+                android:background="@drawable/shape_green4"
+                android:textSize="12sp"
+                />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

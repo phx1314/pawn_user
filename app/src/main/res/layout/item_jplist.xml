@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white">
+
+    <ImageView
+        android:id="@+id/iv_pic_jp"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:scaleType="centerCrop"
+       />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <View style="@style/line"/>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:paddingBottom="8dp"
+            android:paddingTop="3dp"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_name_jp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="金狮"
+                    android:textSize="16sp"
+                    android:textColor="@color/black1"/>
+
+                <TextView
+                    android:id="@+id/tv_status_jp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textSize="14sp"
+                    android:textColor="@color/red_k"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_jdprice_jp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="鉴定价："
+                    android:textSize="14sp"
+                    android:textColor="@color/black1"/>
+
+                <TextView
+                    android:id="@+id/tv_jdprice_jp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="￥5万"
+                    android:textSize="14sp"
+                    android:textColor="@color/red_k"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp">
+
+                <TextView
+                    android:id="@+id/tv_qprice1_jp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="起价："
+                    android:textSize="14sp"
+                    android:textColor="@color/black1"/>
+
+                <TextView
+                    android:id="@+id/tv_qprice_jp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="￥3万"
+                    android:textSize="14sp"
+                    android:textColor="@color/red_k"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_newprice_jp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="当前价："
+                    android:textSize="14sp"
+                    android:textColor="@color/black1"/>
+
+                <TextView
+                    android:id="@+id/tv_newprice_jp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="￥5万"
+                    android:textSize="14sp"
+                    android:textColor="@color/red_k"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_myprice_jp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="我的出价："
+                    android:textSize="14sp"
+                    android:textColor="@color/black1"/>
+
+                <TextView
+                    android:id="@+id/tv_myprice_jp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="￥5万"
+                    android:textSize="14sp"
+                    android:textColor="@color/red_k"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp">
+
+                <TextView
+                    android:id="@+id/tv_countTime_jp"
+                    android:layout_width="140dp"
+                    android:layout_height="23dp"
+                    android:gravity="center"
+                    android:background="@drawable/shape_coner_gray"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:text="10：20：20后结束"
+                    android:textColor="@color/black1"
+                    android:textSize="13sp"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_buy_jp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:layout_marginLeft="15dp"
+                    android:text="再次出价"
+                    android:background="@drawable/shape_red"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    />
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white">
+
+    <ImageView
+        android:id="@+id/iv_pic_monitor"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:layout_marginBottom="2dp"
+        android:scaleType="centerCrop"
+        />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <View style="@style/line" android:id="@+id/xian_monitor"/>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:paddingTop="3dp"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/tv_state_monitor"
+                    android:layout_width="36dp"
+                    android:layout_height="15dp"
+                    android:layout_marginRight="5dp"
+                    android:gravity="center"
+                    android:textSize="10sp"
+                    android:textColor="@color/white"
+                    android:text="典当中"
+                    android:background="@drawable/shape_red"
+                    android:visibility="gone"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_name_monitor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="金狮"
+                    android:textSize="15sp"
+                    android:textColor="@color/black1"/>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="鉴定价："
+                    android:textSize="14sp"
+                    android:textColor="@color/text_gray"/>
+
+                <TextView
+                    android:id="@+id/tv_jdprice_monitor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="￥5万"
+                    android:textSize="14sp"
+                    android:textColor="@color/red_k"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_no_monitor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="当号：12424325432"
+                android:textSize="13sp"
+                android:textColor="@color/text_gray"
+                />
+
+            <TextView
+                android:id="@+id/tv_orag_monitor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="机构：宝相典当有限公司"
+                android:textSize="13sp"
+                android:textColor="@color/text_gray"
+                />
+
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+
+        <ImageView
+            android:id="@+id/iv_home_grid"
+            android:layout_width="match_parent"
+            android:layout_height="139dp"
+            android:scaleType="fitCenter"
+            />
+
+        <TextView
+            android:id="@+id/tv_title_homegrid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="大师傅大师傅大师傅"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            android:singleLine="true"/>
+
+
+        <TextView
+            android:id="@+id/tv_time_homegrid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:text=""
+            android:textColor="@color/text_gray"
+            android:textSize="11sp"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/tv_price_homegrid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:padding="4dp"
+            android:background="#907B59"
+            android:text="¥ 5000.00"
+            android:textColor="@color/white"
+            android:textSize="10sp"/>
+
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

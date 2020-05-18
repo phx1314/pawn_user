@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="bg_default2">#F7F7F7</color>
+    <color name="bg_default">#F0F0F0</color>
+    <color name="bg_default3">#EFEFEF</color>
+    <color name="bg_default4">#CFCECE</color>
+    <color name="bg_title">#12595B</color>
+    <color name="bg_line">#E4E4E4</color>
+	<color name="huiword">#CECECE</color>
+    <color name="text_gray">#646464</color>
+    <color name="gray">#AAAAAA</color>
+    <color name="bg_gray">#F0F0F0</color>
+    <color name="bg">#BABCBF</color>
+    <color name="blue">#2CACF8</color>
+    <color name="blue2">#2CACF8</color>
+    <color name="green">#56D176</color>
+    <color name="white">#ffffffff</color>
+    <color name="black1">#000000</color>
+    <color name="black">#000000</color>
+    <color name="red">#9A181C</color>
+    <color name="red_del">#FF3B2F</color>
+    <color name="red_k">#D11B1A</color>
+    <color name="xian">#E6E6E6</color>
+    <color name="divider">#E3E3E3</color>
+    <color name="yellow">#E1A857</color>
+    <color name="yellow1">#FFC159</color>
+    <color name="transparent">#00000000</color>
+    <color name="transparent1">#80000000</color>
+    <!-- 二维码 -->
+    <color name="result_view">#b0000000</color>
+    <color name="viewfinder_mask">#60000000</color>
+    <color name="possible_result_points">#c0ffff00</color>
+    <color name="province_line_border">#C7C7C7</color>
+    <color name="ewm_blue">#56ABE4</color>
+
+    <color name="bottom_color_normal">#616161</color>
+    <color name="bottom_color_press">#D32F2F</color>
+
+    <color name="blue_dark">#436EEE</color>
+
+    <color name="green_bg">#29B0B4</color>
+    <color name="green_bg1">#02999D</color>
+    <color name="orange">#EE921B</color>
+</resources>

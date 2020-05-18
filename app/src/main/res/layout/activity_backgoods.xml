@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <include layout="@layout/titlebar"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@color/bg_default">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <include layout="@layout/layout_pawn"/>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:layout_marginTop="10dp"
+                android:padding="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/tv_money_backgoods"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="已发放当金："
+                        android:textSize="12sp"
+                        android:textColor="@color/black1"/>
+
+                    <TextView
+                        android:id="@+id/tv_term_backgoods"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="上期典当期限："
+                        android:textSize="12sp"
+                        android:textColor="@color/black1"/>
+                    
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp">
+
+                    <TextView
+                        android:id="@+id/tv_rate_backgoods"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="月费率："
+                        android:textSize="12sp"
+                        android:textColor="@color/black1"/>
+
+                    <TextView
+                        android:id="@+id/tv_monetRate_backgoods"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="月利率："
+                        android:textSize="12sp"
+                        android:textColor="@color/black1"/>
+
+                    <TextView
+                        android:id="@+id/tv_redeemRate_backgoods"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="逾期滞纳费率："
+                        android:textSize="12sp"
+                        android:textColor="@color/black1"
+                        android:visibility="gone"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:layout_marginTop="1dp"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/tv_beginDate_backgoods"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="贷款日期："
+                    android:textSize="12sp"
+                    android:textColor="@color/black1"/>
+
+                <TextView
+                    android:id="@+id/tv_endDate_backgoods"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="应还款日期："
+                    android:textSize="12sp"
+                    android:textColor="@color/black1"/>
+
+                <TextView
+                    android:id="@+id/tv_outTime_backgoods"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="逾期天数："
+                    android:textSize="12sp"
+                    android:textColor="@color/black1"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="应还款额："
+                        android:textSize="12sp"
+                        android:textColor="@color/black1"/>
+
+                    <TextView
+                        android:id="@+id/tv_totalBackMoney_backgoods"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textSize="12sp"
+                        android:textColor="@color/red_k"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:layout_marginTop="1dp"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="还款明细："
+                    android:textSize="12sp"
+                    android:textColor="@color/black1"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp">
+
+                    <TextView
+                        android:id="@+id/tv_beginMoney_backgoods"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="本金："
+                        android:textSize="12sp"
+                        android:textColor="@color/black1"/>
+
+                    <TextView
+                        android:id="@+id/tv_totalMoney_backgoods"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="利息："
+                        android:textSize="12sp"
+                        android:textColor="@color/black1"
+                        android:visibility="gone"/>
+
+                    <TextView
+                        android:id="@+id/tv_redeemOverdue_backgoods"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="逾期滞纳金："
+                        android:textSize="12sp"
+                        android:textColor="@color/black1"
+                        android:visibility="gone"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="合计："
+                        android:textSize="12sp"
+                        android:textColor="@color/black1"/>
+
+                    <TextView
+                        android:id="@+id/tv_allMoney_backgoods"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textSize="12sp"
+                        android:textColor="@color/red_k"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:layout_marginTop="1dp"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="收款账户："
+                    android:textSize="12sp"
+                    android:textColor="@color/black1"/>
+
+
+                <TextView
+                    android:id="@+id/tv_bankcardname_backgoods"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginTop="5dp"
+                    android:text="户名："
+                    android:textSize="12sp"
+                    android:textColor="@color/black1"/>
+
+
+                <TextView
+                    android:id="@+id/tv_bankcard_backgoods"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="帐号："
+                    android:textSize="12sp"
+                    android:textColor="@color/black1"/>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:padding="10dp"
+                android:background="@color/white"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="上传打款凭证"
+                    android:textColor="@color/black1"
+                    android:textSize="12sp"/>
+
+                <ImageView
+                    android:id="@+id/iv_dkpz_backgoods"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/jtp"
+                    android:scaleType="centerCrop"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="赎当成功后,您可以在未典当列表中查看！"
+                    android:textColor="@color/red_k"
+                    android:textSize="11sp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_reg_agree"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:gravity="center_vertical"
+                android:padding="10dp"
+                android:background="@color/white"
+                android:visibility="gone"
+                >
+
+                <CheckBox
+                    android:id="@+id/cb_pawn_agree"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:button="@drawable/select_checkbox1"
+                    android:checked="false"
+                    android:text=" 同意"
+                    android:textColor="@color/text_gray"
+                    android:textSize="12sp"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_pawn_agreement"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dip"
+                    android:text="典当条款"
+                    android:textColor="@color/red_k"
+                    android:textSize="13sp"/>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_submit_back"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:gravity="center"
+                android:text="提交赎当"
+                android:textColor="@android:color/white"
+                android:background="@drawable/shape_red"
+                android:textSize="16sp"
+                />
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>

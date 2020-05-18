@@ -1,0 +1,52 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="appname" tools:ignore="MissingTranslation">蚌蚌拍当</string>
+    <!-- 下拉刷新和上拉加载更多的文本 -->
+    <string name="http_request_fail" tools:ignore="MissingTranslation">网络请求失败，请重试</string>
+    <string name="msg_nodata" tools:ignore="MissingTranslation">无数据</string>
+    <string name="msg_error" tools:ignore="MissingTranslation">网络请求失败，请重试</string>
+    <string name="msg_nomoredata" tools:ignore="MissingTranslation">已加载全部了</string>
+    <string name="no_result" tools:ignore="MissingTranslation">对不起，没有搜索到相关数据！</string>
+
+    <string name="pull_to_refresh" tools:ignore="MissingTranslation">下拉可以刷新</string>
+    <string name="updated_at" tools:ignore="MissingTranslation">上次更新于%1$s前</string>
+    <string name="pushmsg_center_no_more_msg" tools:ignore="MissingTranslation">已经到底啦</string>
+    <string name="pushmsg_center_pull_up_text" tools:ignore="MissingTranslation">松开加载更多</string>
+    <string name="pushmsg_center_pull_down_text" tools:ignore="MissingTranslation">下拉可以刷新</string>
+    <string name="pushmsg_center_pull_release_text" tools:ignore="MissingTranslation">松开获取更多</string>
+    <string name="pushmsg_center_pull_down_update_time" tools:ignore="MissingTranslation">最后更新时间 : </string>
+    <string name="pushmsg_center_load_more_ongoing_text" tools:ignore="MissingTranslation">正在加载中</string>
+    <string name="xsearch_loading" tools:ignore="MissingTranslation">正在加载中…</string>
+    <string name="pull_to_refresh_header_hint_normal" tools:ignore="MissingTranslation">@string/pushmsg_center_pull_down_text</string>
+    <string name="pull_to_refresh_header_hint_normal2" tools:ignore="MissingTranslation">上拉可以刷新</string>
+    <string name="pull_to_refresh_header_hint_ready" tools:ignore="MissingTranslation">松开后刷新</string>
+    <string name="pull_to_refresh_header_hint_loading" tools:ignore="MissingTranslation">@string/pushmsg_center_load_more_ongoing_text</string>
+    <string name="pull_to_refresh_header_last_time" tools:ignore="MissingTranslation">@string/pushmsg_center_pull_down_update_time</string>
+    <string name="pull_to_refresh_footer_hint_ready" tools:ignore="MissingTranslation">松开载入更多</string>
+    <string name="pull_to_refresh_no_more_data" tools:ignore="MissingTranslation">@string/pushmsg_center_no_more_msg</string>
+    <string name="pull_to_refresh_network_error" tools:ignore="MissingTranslation">网络不给力，请检查网络</string>
+    <string name="scan_text" tools:ignore="MissingTranslation">将二维码放入框内, 即可自动扫描</string>
+    <string name="loading" tools:ignore="MissingTranslation">正在加载...</string>
+
+    <string name="Picture_processing" tools:ignore="MissingTranslation">图片处理中</string>
+    <string name="maxSize" tools:ignore="MissingTranslation">最大可上传300M视频</string>
+
+    <string name="toast_login" tools:ignore="MissingTranslation">登录失效，请重新登录</string>
+    <string name="toast_appraisal" tools:ignore="MissingTranslation">请到“我的鉴定”版块里等候回复，或者联系客服</string>
+
+    <string name="ReadCamera_toast" tools:ignore="MissingTranslation">我们需要摄像头权限和储存权限才能正常使用该功能！</string>
+    <string name="Read_toast" tools:ignore="MissingTranslation">我们需要储存权限才能正常使用该功能！</string>
+    <string name="Camera_toast" tools:ignore="MissingTranslation">我们需要摄像头权限和录音权限才能正常使用该功能！</string>
+    <string name="Location_toast" tools:ignore="MissingTranslation">我们需要定位权限才能正常使用该功能！</string>
+
+    <string name="shop_title" tools:ignore="MissingTranslation">购物车(%s)</string>
+    <string name="count_money" tools:ignore="MissingTranslation">合计：￥%s</string>
+    <string name="count_goods" tools:ignore="MissingTranslation">结算（%s）</string>
+
+    <string name="wx_toast_login" tools:ignore="MissingTranslation">用户信息已存在，正在跳转登录操作…</string>
+    <string name="wx_toast_loginthird" tools:ignore="MissingTranslation">使用第三方帐号登录中…</string>
+    <string name="wx_toast_thirdcancel" tools:ignore="MissingTranslation">授权操作已取消</string>
+    <string name="wx_toast_wxinstall" tools:ignore="MissingTranslation">目前您的微信版本过低或未安装微信，需要安装微信才能使用</string>
+    <string name="wx_toast_wxupdate" tools:ignore="MissingTranslation">QQ 版本过低或者没有安装，需要升级或安装QQ才能使用！</string>
+    <string name="wx_toast_authorization" tools:ignore="MissingTranslation">授权操作遇到错误</string>
+    <string name="wx_toast_authorizationok" tools:ignore="MissingTranslation">授权成功，正在跳转登录操作…</string>
+</resources>

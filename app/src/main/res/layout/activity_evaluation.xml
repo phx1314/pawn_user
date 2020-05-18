@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_default"
+    android:fitsSystemWindows="true">
+
+    <include layout="@layout/titlebar"/>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <com.glavesoft.view.TriangleScrollingTabs
+                android:id="@+id/stv_goods"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white" >
+            </com.glavesoft.view.TriangleScrollingTabs>
+
+            <View style="@style/line" />
+
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/vp_goods"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:overScrollMode="never" >
+            </androidx.viewpager.widget.ViewPager>
+        </LinearLayout>
+
+
+        <FrameLayout
+            android:id="@+id/fl_evaluation_kf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="150dp"
+            android:layout_gravity="right|bottom"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/iv_evaluation_kf"
+                android:layout_width="90dp"
+                android:layout_height="60dp"
+                android:src="@drawable/kf1"
+                />
+
+            <TextView
+                android:id="@+id/tv_evaluation_kf"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="5dp"
+                android:gravity="center"
+                android:layout_gravity="right"
+                android:background="@drawable/dian_2"
+                android:text=""
+                android:textColor="@color/white"
+                android:textSize="10sp"/>
+
+        </FrameLayout>
+
+    </FrameLayout>
+
+</LinearLayout>

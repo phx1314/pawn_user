@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/bg_default"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true">
+
+    <include layout="@layout/titlebar"/>
+
+
+    <com.glavesoft.view.TriangleScrollingTabs
+        android:id="@+id/stv_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white" >
+    </com.glavesoft.view.TriangleScrollingTabs>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/id_stickynavlayout_viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#f0f0f0"></androidx.viewpager.widget.ViewPager>
+
+
+
+</LinearLayout>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:id="@+id/titlebar_ll_main"
+              android:layout_width="fill_parent"
+              android:layout_height="45dp"
+              android:background="@color/bg_title"
+              android:gravity="center"
+              android:orientation="horizontal">
+    <EditText
+        android:id="@+id/titlebar_et_keywords"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="8dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:layout_weight="1"
+        android:background="@drawable/shape_coner_white1"
+        android:drawableLeft="@drawable/search2"
+        android:drawablePadding="5dp"
+        android:gravity="center_vertical"
+        android:hint="搜索"
+        android:textSize="14sp"
+        android:imeOptions="actionSearch"
+        android:singleLine="true"/>
+    <TextView
+        android:id="@+id/titlebar_cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+       android:text="取消"/>
+</LinearLayout>

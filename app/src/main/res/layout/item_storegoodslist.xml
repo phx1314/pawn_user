@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white">
+
+    <ImageView
+        android:id="@+id/iv_pic_storegoodslist"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:layout_marginBottom="2dp"
+        android:scaleType="centerCrop"
+        />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <View style="@style/line"/>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:paddingTop="3dp"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/tv_state_storegoodslist"
+                    android:layout_width="50dp"
+                    android:layout_height="15dp"
+                    android:layout_marginRight="5dp"
+                    android:gravity="center"
+                    android:textSize="10sp"
+                    android:textColor="@color/white"
+                    android:text="认证商城"
+                    android:background="@drawable/shape_yellow"
+                    android:visibility="gone"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_name_storegoodslist"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="翡翠手镯"
+                    android:textSize="14sp"
+                    android:textColor="@color/black1"/>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/ll_jdprice_storegoodslist"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="鉴定价："
+                    android:textSize="13sp"
+                    android:textColor="@color/text_gray"/>
+
+                <TextView
+                    android:id="@+id/tv_jdprice_storegoodslist"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="￥5万"
+                    android:textSize="13sp"
+                    android:textColor="@color/text_gray"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp">
+
+                <TextView
+                    android:id="@+id/tv_price_storegoodslist1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="售价："
+                    android:textSize="13sp"
+                    android:textColor="@color/red_k"/>
+
+                <TextView
+                    android:id="@+id/tv_price_storegoodslist"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="￥5万"
+                    android:textSize="15sp"
+                    android:textColor="@color/red_k"/>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="bottom"
+                >
+
+                <TextView
+                    android:id="@+id/tv_time_storegoodslist"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="入录时间：2017-05-14"
+                    android:textSize="12sp"
+                    android:textColor="@color/text_gray"
+                    />
+
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
