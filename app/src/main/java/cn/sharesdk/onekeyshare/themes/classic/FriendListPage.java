@@ -186,7 +186,7 @@ public abstract class FriendListPage extends OnekeySharePage implements OnClickL
 
 	private void updateConfirmView() {
 		int resId = ResHelper.getStringRes(activity, "ssdk_oks_confirm");
-		String confirm = "Confirm";
+		String confirm = "confirm";
 		if(resId > 0) {
 			confirm = getContext().getResources().getString(resId);
 		}
