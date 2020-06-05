@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center_horizontal" android:orientation="vertical" android:padding="@dimen/j18dp">
+     <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+          <TextView android:id="@+id/mTextView_name" style="@style/text_style_15_black" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="王元" />
+          <TextView android:id="@+id/mTextView_phone" style="@style/text_style_15_black" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/j30dp" android:text="123132465465465" />
+     </LinearLayout>
+     <TextView android:id="@+id/mTextView_adress" style="@style/text_style_15_black" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j12dp" android:text="江苏省常州市钟楼区北港街道运河路278号" />
+     <ImageView android:layout_width="match_parent" android:layout_height="@dimen/j2dp" android:layout_marginTop="@dimen/j12dp" android:background="@drawable/shape_dash_line" />
+     <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j12dp" android:orientation="horizontal">
+          <CheckBox style="@style/text_style_13_black" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1" android:background="#00000000" android:button="@drawable/checkbox_selector" android:checked="true" android:gravity="center_vertical" android:paddingLeft="@dimen/j10dp" android:text="默认地址" />
+          <Button android:id="@+id/mButton_delete" android:layout_width="@dimen/j65dp" android:layout_height="@dimen/j18dp" android:background="@drawable/shape_green_kuang1" android:text="刪除" android:textColor="#12595B" android:textSize="12sp" />
+          <Button android:id="@+id/mButton_edit" android:layout_width="@dimen/j65dp" android:layout_height="@dimen/j18dp" android:layout_marginLeft="@dimen/j8dp" android:background="@drawable/shape_green4" android:text="编辑" android:textColor="#fff" android:textSize="12sp" />
+     </LinearLayout>
+</LinearLayout>
+

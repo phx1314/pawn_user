@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent" android:layout_height="match_parent" android:background="#00000000" android:gravity="center">
+     <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="@dimen/j60dp" android:background="@drawable/shape_white_rz2" android:gravity="center_horizontal" android:orientation="vertical">
+          <TextView android:id="@+id/mTextView_title" style="@style/text_style_17_black" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j20dp" android:text="请选择收货地址" android:textSize="16sp" />
+          <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/j17dp" android:layout_marginTop="@dimen/j20dp" android:layout_marginRight="@dimen/j17dp" android:background="@drawable/shape_gray" android:orientation="vertical" android:paddingLeft="@dimen/j9dp" android:paddingTop="@dimen/j12dp" android:paddingRight="@dimen/j9dp" android:paddingBottom="@dimen/j12dp">
+               <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                    <TextView android:id="@+id/mTextView_name" style="@style/text_style_15_black" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="王元" />
+                    <TextView android:id="@+id/mTextView_phone" style="@style/text_style_15_black" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/j13dp" android:layout_weight="1" android:text="123132465465465" />
+                    <TextView android:id="@+id/mTextView_mr" android:layout_width="@dimen/j55dp" android:layout_height="@dimen/j18dp" android:background="@drawable/shape_white" android:gravity="center" android:text="默认地址" android:textColor="#555555" android:textSize="11sp" />
+               </LinearLayout>
+               <TextView android:id="@+id/mTextView_adress" style="@style/text_style_15_black" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j12dp" android:text="江苏省常州市钟楼区北港街道运河路278号" />
+          </LinearLayout>
+          <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j10dp" android:text="选择其他地址" android:textColor="#0A9A9E" android:textSize="13sp" />
+          <TextView android:id="@+id/mTextView_sure" style="@style/text_style_17_white" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j12dp" android:background="@drawable/shape_green_dialog" android:gravity="center" android:padding="@dimen/j13dp" android:text="提交" android:textSize="16sp" />
+     </LinearLayout>
+</LinearLayout>
+

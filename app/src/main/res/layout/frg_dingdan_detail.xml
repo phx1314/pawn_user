@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent" android:layout_height="match_parent" android:background="#F0F0F0" android:gravity="center_horizontal" android:orientation="vertical" android:padding="@dimen/j14dp">
+     <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@drawable/shape_white_rz" android:orientation="vertical" android:padding="@dimen/j15dp">
+          <TextView style="@style/text_style_15_black" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="收货地址信息" android:textStyle="bold" />
+          <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j12dp" android:orientation="horizontal">
+               <TextView android:id="@+id/mTextView_name" style="@style/text_style_15_black" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="王元" />
+               <TextView android:id="@+id/mTextView_phone" style="@style/text_style_15_black" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/j30dp" android:text="123132465465465" />
+          </LinearLayout>
+          <TextView android:id="@+id/mTextView_adress" style="@style/text_style_15_black" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j12dp" android:text="江苏省常州市钟楼区北港街道运河路278号" />
+     </LinearLayout>
+     <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j15dp" android:background="@drawable/shape_white_rz" android:orientation="horizontal" android:padding="@dimen/j13dp">
+          <ImageView android:id="@+id/mImageView" android:layout_width="@dimen/j72dp" android:layout_height="@dimen/j72dp" />
+          <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginLeft="@dimen/j10dp" android:orientation="vertical">
+               <TextView android:id="@+id/mTextView_pname" style="@style/text_style_15_black" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1" android:ellipsize="end" android:maxLines="2" android:text="欧米茄(OMEGA)瑞士手表 海马系列男表" />
+               <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j18dp">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:gravity="right" android:text="￥" android:textColor="#B42929" android:textSize="14sp" />
+                    <TextView android:id="@+id/mTextView_price" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="10097.00" android:textColor="#B42929" android:textSize="18sp" android:textStyle="bold" />
+               </LinearLayout>
+          </LinearLayout>
+     </LinearLayout>
+     <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j15dp" android:background="@drawable/shape_white_rz" android:orientation="vertical" android:padding="@dimen/j15dp">
+          <TextView style="@style/text_style_15_black" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="物流信息" android:textStyle="bold" />
+          <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j12dp" android:orientation="horizontal">
+               <TextView style="@style/text_style_15_black" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="物流单号:" android:textColor="#555555" />
+               <TextView android:id="@+id/mTextView_wldh" style="@style/text_style_15_black" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/j30dp" android:text="123132465465465" />
+          </LinearLayout>
+          <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j12dp" android:orientation="horizontal">
+               <TextView style="@style/text_style_15_black" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="物流公司:" android:textColor="#555555" />
+               <TextView android:id="@+id/mTextView_wlgs" style="@style/text_style_15_black" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/j30dp" android:text="123132465465465" />
+          </LinearLayout>
+     </LinearLayout>
+     <LinearLayout android:id="@+id/mLinearLayout_bottom" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j20dp" android:gravity="center_horizontal" android:orientation="horizontal">
+          <Button android:id="@+id/mButton_ty" style="@style/text_style_15_white" android:layout_width="@dimen/j130dp" android:layout_height="@dimen/j40dp" android:background="#0A9A9E" android:gravity="center" android:text="同意" android:visibility="gone" />
+          <Button android:id="@+id/mButton_bh" style="@style/text_style_15_white" android:layout_width="@dimen/j130dp" android:layout_height="@dimen/j40dp" android:layout_marginLeft="@dimen/j22dp" android:background="#B42929" android:gravity="center" android:text="驳回" android:visibility="gone" />
+          <ImageButton android:id="@+id/mImageButton_sub" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="#00000000" android:src="@drawable/sub" />
+     </LinearLayout>
+</LinearLayout>
+

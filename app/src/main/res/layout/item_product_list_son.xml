@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="horizontal">
+     <LinearLayout android:id="@+id/mLinearLayout_1" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:orientation="vertical">
+          <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingTop="@dimen/j22dp">
+               <ImageView android:id="@+id/mImageView" android:layout_width="@dimen/j137dp" android:layout_height="@dimen/j137dp" android:layout_centerHorizontal="true" android:layout_marginLeft="@dimen/j24dp" android:layout_marginRight="@dimen/j24dp" />
+               <TextView android:id="@+id/mTextView_info" style="@style/text_style_11_white" android:layout_width="match_parent" android:layout_height="@dimen/j35dp" android:layout_alignBottom="@+id/mImageView" android:background="#6612595B" android:gravity="center" android:paddingLeft="@dimen/j22dp" android:paddingRight="@dimen/j22dp" android:singleLine="true" android:text="平台下架：不符合产品性质性质性质性质" />
+               <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignRight="@+id/mImageView" android:layout_alignParentTop="@+id/mImageView" android:layout_margin="@dimen/j4dp" android:gravity="center_vertical" android:orientation="horizontal">
+                    <ImageButton android:id="@+id/mImageButton_edit" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="#00000000" android:src="@drawable/edit" />
+                    <ImageButton android:id="@+id/mImageButton_del" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="#00000000" android:src="@drawable/del" />
+               </LinearLayout>
+          </RelativeLayout>
+          <TextView android:id="@+id/mTextView_name" style="@style/text_style_15_black" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/j24dp" android:layout_marginTop="@dimen/j18dp" android:layout_marginRight="@dimen/j24dp" android:layout_weight="1" android:ellipsize="end" android:maxLines="2" android:text="欧米茄(OMEGA)瑞士 手表海马系列" />
+          <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/j24dp" android:layout_marginTop="@dimen/j10dp" android:layout_marginRight="@dimen/j24dp" android:layout_marginBottom="@dimen/j16dp" android:orientation="horizontal">
+               <TextView android:id="@+id/mTextView_price" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1" android:text="￥1000.00" android:textColor="#B22A2A" android:textSize="15sp" />
+               <TextView android:id="@+id/mTextView_state" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="上架" android:textColor="#29B0B4" android:textSize="13sp" />
+          </LinearLayout>
+     </LinearLayout>
+     <ImageView android:layout_width="1px" android:layout_height="match_parent" android:background="#E5000000" />
+     <LinearLayout android:id="@+id/mLinearLayout_2" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:orientation="vertical">
+          <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingTop="@dimen/j22dp">
+               <ImageView android:id="@+id/mImageView2" android:layout_width="@dimen/j137dp" android:layout_height="@dimen/j137dp" android:layout_centerHorizontal="true" android:layout_marginLeft="@dimen/j24dp" android:layout_marginRight="@dimen/j24dp" />
+               <TextView android:id="@+id/mTextView_info2" style="@style/text_style_11_white" android:layout_width="match_parent" android:layout_height="@dimen/j35dp" android:layout_alignBottom="@+id/mImageView2" android:background="#6612595B" android:gravity="center" android:paddingLeft="@dimen/j22dp" android:paddingRight="@dimen/j22dp" android:singleLine="true" android:text="平台下架：不符合产品性质性质性质性质" />
+               <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignRight="@+id/mImageView2" android:layout_alignParentTop="@+id/mImageView2" android:layout_margin="@dimen/j4dp" android:gravity="center_vertical" android:orientation="horizontal">
+                    <ImageButton android:id="@+id/mImageButton_edit2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="#00000000" android:src="@drawable/edit" />
+                    <ImageButton android:id="@+id/mImageButton_del2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="#00000000" android:src="@drawable/del" />
+               </LinearLayout>
+          </RelativeLayout>
+          <TextView android:id="@+id/mTextView_name2" style="@style/text_style_15_black" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/j24dp" android:layout_marginTop="@dimen/j18dp" android:layout_marginRight="@dimen/j24dp" android:layout_weight="1" android:ellipsize="end" android:maxLines="2" android:text="欧米茄(OMEGA)瑞士 手表海马系列" />
+          <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/j24dp" android:layout_marginTop="@dimen/j10dp" android:layout_marginRight="@dimen/j24dp" android:layout_marginBottom="@dimen/j16dp" android:orientation="horizontal">
+               <TextView android:id="@+id/mTextView_price2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1" android:text="￥1000.00" android:textColor="#B22A2A" android:textSize="15sp" />
+               <TextView android:id="@+id/mTextView_state2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="上架" android:textColor="#29B0B4" android:textSize="13sp" />
+          </LinearLayout>
+     </LinearLayout>
+</LinearLayout>
+

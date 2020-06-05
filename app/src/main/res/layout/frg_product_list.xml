@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent" android:layout_height="match_parent" android:background="#F0F0F0" android:gravity="center_horizontal" android:orientation="vertical">
+     <com.androidkun.xtablayout.XTabLayout android:id="@+id/mTabLayout" android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingLeft="@dimen/j12dp" android:paddingRight="@dimen/j12dp" app:xTabDividerGravity="center" app:xTabDividerWidthWidthText="true" app:xTabIndicatorColor="#000000" app:xTabMode="scrollable" app:xTabSelectedTextColor="#000000" app:xTabSelectedTextSize="15sp" app:xTabTextColor="#000000" app:xTabTextSelectedBold="true" app:xTabTextSize="15sp" />
+     <com.mdx.framework.newMenu.DfMViewPager android:id="@+id/mViewPager" android:layout_width="match_parent" android:layout_height="match_parent" android:background="#fff" />
+</LinearLayout>
+

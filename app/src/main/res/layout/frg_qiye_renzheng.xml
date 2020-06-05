@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center_horizontal" android:orientation="vertical">
+     <ScrollView android:layout_width="match_parent" android:layout_height="match_parent" android:fillViewport="true">
+          <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center_horizontal" android:orientation="vertical">
+               <TextView style="@style/text_style_15_black" android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@drawable/shape_white_rz" android:gravity="center" android:padding="@dimen/j5dp" android:text="*请上传真实的企业信息，认证通过后将无法修改" android:textColor="#F57783" />
+               <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j13dp" android:background="@drawable/shape_white_rz" android:orientation="vertical" android:padding="@dimen/j10dp">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:orientation="horizontal">
+                         <TextView style="@style/text_style_15_black" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="企业名称" />
+                         <EditText android:id="@+id/mEditText_qyname" style="@style/text_style_15_black" android:layout_width="match_parent" android:layout_height="wrap_content" android:background="#00000000" android:hint="请输入" android:padding="@dimen/j16dp" android:singleLine="true" />
+                    </LinearLayout>
+                    <ImageView android:layout_width="match_parent" android:layout_height="1px" />
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:orientation="horizontal">
+                         <TextView style="@style/text_style_15_black" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="店铺名称" />
+                         <EditText android:id="@+id/mEditText_username2" style="@style/text_style_15_black" android:layout_width="match_parent" android:layout_height="wrap_content" android:background="#00000000" android:hint="请输入" android:padding="@dimen/j16dp" android:singleLine="true" />
+                    </LinearLayout>
+                    <ImageView android:layout_width="match_parent" android:layout_height="1px" android:background="#E2E2E2" />
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:orientation="horizontal">
+                         <TextView style="@style/text_style_15_black" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="法人姓名" />
+                         <EditText android:id="@+id/mEditText_username" style="@style/text_style_15_black" android:layout_width="match_parent" android:layout_height="wrap_content" android:background="#00000000" android:hint="请输入" android:padding="@dimen/j16dp" android:singleLine="true" />
+                    </LinearLayout>
+                    <ImageView android:layout_width="match_parent" android:layout_height="1px" android:background="#E2E2E2" />
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:orientation="horizontal">
+                         <TextView style="@style/text_style_15_black" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="身份证号码" />
+                         <EditText android:id="@+id/mEditText_sfz" style="@style/text_style_15_black" android:layout_width="match_parent" android:layout_height="wrap_content" android:background="#00000000" android:hint="请输入" android:padding="@dimen/j16dp" android:singleLine="true" />
+                    </LinearLayout>
+               </LinearLayout>
+               <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j18dp" android:background="@drawable/shape_white_rz" android:orientation="vertical" android:padding="@dimen/j10dp">
+                    <TextView style="@style/text_style_15_black" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j16dp" android:text="营业执照副本照片：" />
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j24dp" android:orientation="horizontal">
+                         <RelativeLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1">
+                              <ImageView android:id="@+id/mImageView_yyz" android:layout_width="match_parent" android:layout_height="@dimen/j96dp" android:src="@drawable/yyz" />
+                              <ImageView android:id="@+id/mImageView_zmjia" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true" android:src="@drawable/jiajia" />
+                         </RelativeLayout>
+                         <RelativeLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" />
+                    </LinearLayout>
+                    <ImageView android:layout_width="match_parent" android:layout_height="1px" android:layout_marginTop="@dimen/j32dp" android:background="#E2E2E2" />
+                    <TextView style="@style/text_style_15_black" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j16dp" android:text="法人身份证正面/反面照：" />
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j20dp" android:orientation="horizontal">
+                         <RelativeLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1">
+                              <ImageView android:id="@+id/mImageView_zm" android:layout_width="match_parent" android:layout_height="@dimen/j96dp" android:src="@drawable/zm" />
+                              <ImageView android:id="@+id/mImageView_zmjia" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true" android:src="@drawable/jiajia" />
+                         </RelativeLayout>
+                         <RelativeLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1">
+                              <ImageView android:id="@+id/mImageView_fm" android:layout_width="match_parent" android:layout_height="@dimen/j96dp" android:src="@drawable/fm" />
+                              <ImageView android:id="@+id/mImageView_fmjia" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true" android:src="@drawable/jiajia" />
+                         </RelativeLayout>
+                    </LinearLayout>
+               </LinearLayout>
+               <ImageButton android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j23dp" android:background="#00000000" android:src="@drawable/submit_information" />
+          </LinearLayout>
+     </ScrollView>
+</LinearLayout>
+

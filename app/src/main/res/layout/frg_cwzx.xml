@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent" android:layout_height="match_parent" android:background="#F0F0F0" android:gravity="center_horizontal" android:orientation="vertical" android:padding="@dimen/j14dp">
+     <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@drawable/shape_white_rz" android:orientation="horizontal" android:paddingLeft="@dimen/j32dp" android:paddingTop="@dimen/j15dp" android:paddingRight="@dimen/j32dp" android:paddingBottom="@dimen/j25dp">
+          <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center_horizontal" android:orientation="vertical">
+               <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:drawableTop="@drawable/money2" android:drawablePadding="@dimen/j5dp" android:gravity="center" android:text="钱包" android:textColor="#000" android:textSize="12sp" />
+               <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j17dp" android:text="￥116.00" android:textColor="#000" android:textSize="30sp" />
+          </LinearLayout>
+          <LinearLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:gravity="center_vertical|right" android:orientation="vertical">
+               <Button android:id="@+id/mButton_tx" android:layout_width="@dimen/j60dp" android:layout_height="@dimen/j25dp" android:background="@drawable/shape_green4" android:text="提现" android:textColor="#fff" android:textSize="12sp" />
+               <Button android:id="@+id/mButton_mx" android:layout_width="@dimen/j60dp" android:layout_height="@dimen/j25dp" android:layout_marginTop="@dimen/j18dp" android:background="@drawable/shape_gray2" android:text="明细" android:textColor="#12595B" android:textSize="12sp" />
+          </LinearLayout>
+     </LinearLayout>
+     <TextView android:id="@+id/mTextView_hk" style="@style/text_style_15_black" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j10dp" android:background="@drawable/shape_white_rz" android:drawableLeft="@drawable/huok" android:drawableRight="@drawable/gt" android:drawablePadding="@dimen/j12dp" android:gravity="center_vertical" android:paddingLeft="@dimen/j29dp" android:paddingTop="@dimen/j19dp" android:paddingRight="@dimen/j12dp" android:paddingBottom="@dimen/j19dp" android:text="货款" />
+</LinearLayout>
+
