@@ -1,69 +1,13 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical">
-
-    <View
-        android:id="@+id/v_video"
-        android:layout_width="match_parent"
-        android:layout_height="10dp"/>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:orientation="vertical">
-
-        <fm.jiecao.jcvideoplayer_lib.JCVideoPlayerStandard
-            android:id="@+id/videoplayer"
-            android:layout_width="match_parent"
-            android:layout_height="200dp" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:layout_gravity="bottom"
-            android:background="@color/white">
-
-
-            <TextView
-                android:id="@+id/item_video_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_toRightOf="@+id/item_video_img"
-                android:singleLine="true"
-                android:text="功夫怪咖记"
-                android:textColor="@color/black1"
-                android:textSize="14sp" />
-
-            <TextView
-                android:id="@+id/item_video_member"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_centerVertical="true"
-                android:layout_marginRight="15dp"
-                android:layout_toLeftOf="@+id/item_video_share"
-                android:drawableLeft="@drawable/bf_video_pinglun"
-                android:drawablePadding="5dp"
-                android:gravity="center"
-                android:textColor="@color/black1"
-                android:text="9999"
-                android:textSize="14sp" />
-
-            <ImageView
-                android:id="@+id/item_video_share"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:src="@drawable/bf_video_share" />
-        </LinearLayout>
-    </LinearLayout>
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
+     <View android:id="@+id/v_video" android:layout_width="match_parent" android:layout_height="@dimen/j10dp" />
+     <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/j10dp" android:layout_marginLeft="@dimen/j10dp" android:layout_marginRight="@dimen/j10dp" android:orientation="vertical">
+          <fm.jiecao.jcvideoplayer_lib.JCVideoPlayerStandard android:id="@+id/videoplayer" android:layout_width="match_parent" android:layout_height="@dimen/j200dp" />
+          <LinearLayout android:layout_width="match_parent" android:layout_height="@dimen/j40dp" android:paddingLeft="@dimen/j10dp" android:paddingRight="@dimen/j10dp" android:layout_gravity="bottom" android:background="@color/white">
+               <TextView android:id="@+id/item_video_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1" android:layout_toRightOf="@+id/item_video_img" android:singleLine="true" android:text="功夫怪咖记" android:textColor="@color/black1" android:textSize="14sp" />
+               <TextView android:id="@+id/item_video_member" android:layout_width="wrap_content" android:layout_height="match_parent" android:layout_centerVertical="true" android:layout_marginRight="@dimen/j15dp" android:layout_toLeftOf="@+id/item_video_share" android:drawableLeft="@drawable/bf_video_pinglun" android:drawablePadding="@dimen/j5dp" android:gravity="center" android:textColor="@color/black1" android:text="9999" android:textSize="14sp" />
+               <ImageView android:id="@+id/item_video_share" android:layout_width="wrap_content" android:layout_height="match_parent" android:layout_alignParentEnd="true" android:layout_alignParentRight="true" android:layout_centerVertical="true" android:src="@drawable/bf_video_share" />
+          </LinearLayout>
+     </LinearLayout>
 </LinearLayout>
+

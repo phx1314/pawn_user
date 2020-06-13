@@ -1,25 +1,16 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@color/bg_default"
-    android:fitsSystemWindows="true">
-    <include layout="@layout/titlebar"/>
-    <!--<ScrollView-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent">-->
-            <!--<ImageView-->
-                <!--android:id="@+id/iv_about"-->
-                <!--android:scaleType="fitXY"-->
-                <!--android:adjustViewBounds="true"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="match_parent" />-->
-    <!--</ScrollView>-->
-    <WebView
-        android:id="@+id/wv_about"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scrollbars="none"/>
-
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:background="@color/bg_default" android:fitsSystemWindows="true">
+     <include layout="@layout/titlebar" />
+     <!--<ScrollView-->
+     <!--android:layout_width="match_parent"-->
+     <!--android:layout_height="match_parent">-->
+     <!--<ImageView-->
+     <!--android:id="@+id/iv_about"-->
+     <!--android:scaleType="fitXY"-->
+     <!--android:adjustViewBounds="true"-->
+     <!--android:layout_width="match_parent"-->
+     <!--android:layout_height="match_parent" />-->
+     <!--</ScrollView>-->
+     <WebView android:id="@+id/wv_about" android:layout_width="match_parent" android:layout_height="match_parent" android:scrollbars="none" />
 </LinearLayout>
+

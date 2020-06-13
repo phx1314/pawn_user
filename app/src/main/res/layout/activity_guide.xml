@@ -1,22 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent">
-
-    <com.glavesoft.view.MyGallery1
-        android:id="@+id/gallery_img"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:fadingEdge="none"
-        android:spacing="5px"/>
-
-    <com.glavesoft.view.PageIndicatorView
-        android:id="@+id/view_page"
-        android:layout_width="100dp"
-        android:layout_height="40dp"
-        android:layout_gravity="bottom|center_horizontal"
-        android:background="@android:color/transparent"
-        android:gravity="center"
-        android:visibility="gone"/>
-
+<?xml version="1.0" encoding="UTF-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent">
+     <com.glavesoft.view.MyGallery1 android:id="@+id/gallery_img" android:layout_width="fill_parent" android:layout_height="fill_parent" android:fadingEdge="none" android:spacing="5px" />
+     <com.glavesoft.view.PageIndicatorView android:id="@+id/view_page" android:layout_width="@dimen/j100dp" android:layout_height="@dimen/j40dp" android:layout_gravity="bottom|center_horizontal" android:background="@android:color/transparent" android:gravity="center" android:visibility="gone" />
 </FrameLayout>
+

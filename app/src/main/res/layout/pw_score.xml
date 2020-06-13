@@ -1,83 +1,14 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:gravity="center"
-    android:background="#80000000"
-    android:orientation="vertical">
-
-    <LinearLayout
-        android:layout_width="255dp"
-        android:layout_height="266dp"
-        android:layout_centerInParent="true"
-        android:background="@mipmap/pf_bg"
-        android:gravity="center_horizontal"
-        android:orientation="vertical">
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
-            android:src="@mipmap/pfgl"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:text="评分鼓励"
-            android:textColor="@color/black"
-            android:textSize="15sp"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:text="喜欢我们的产品吗，给个好评鼓励下吧！"
-            android:textColor="@color/black"
-            android:textSize="10sp"/>
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:gravity="center_horizontal"
-            android:layout_marginTop="25dp">
-
-            <TextView
-                android:id="@+id/tv_good_score"
-                android:layout_width="199dp"
-                android:layout_height="36dp"
-                android:gravity="center"
-                android:text="鼓励一下"
-                android:textColor="@android:color/white"
-                android:background="@drawable/shape_login"
-                android:textSize="14sp"
-                />
-
-            <TextView
-                android:id="@+id/tv_bad_score"
-                android:layout_width="199dp"
-                android:layout_height="36dp"
-                android:layout_marginTop="12dp"
-                android:gravity="center"
-                android:text="我要吐槽"
-                android:textColor="@color/green_bg"
-                android:background="@drawable/shape_green_kuang"
-                android:textSize="14sp"
-                />
-
-            <TextView
-                android:id="@+id/tv_close_score"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:padding="5dp"
-                android:text="下次再说"
-                android:textColor="@color/black"
-                android:textSize="10sp"/>
-
-        </LinearLayout>
-    </LinearLayout>
-
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center" android:background="#80000000" android:orientation="vertical">
+     <LinearLayout android:layout_width="@dimen/j255dp" android:layout_height="@dimen/j266dp" android:layout_centerInParent="true" android:background="@mipmap/pf_bg" android:gravity="center_horizontal" android:orientation="vertical">
+          <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j25dp" android:src="@mipmap/pfgl" />
+          <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j10dp" android:text="评分鼓励" android:textColor="@color/black" android:textSize="15sp" />
+          <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j10dp" android:text="喜欢我们的产品吗，给个好评鼓励下吧！" android:textColor="@color/black" android:textSize="10sp" />
+          <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:gravity="center_horizontal" android:layout_marginTop="@dimen/j25dp">
+               <TextView android:id="@+id/tv_good_score" android:layout_width="@dimen/j199dp" android:layout_height="@dimen/j36dp" android:gravity="center" android:text="鼓励一下" android:textColor="@android:color/white" android:background="@drawable/shape_login" android:textSize="14sp" />
+               <TextView android:id="@+id/tv_bad_score" android:layout_width="@dimen/j199dp" android:layout_height="@dimen/j36dp" android:layout_marginTop="@dimen/j12dp" android:gravity="center" android:text="我要吐槽" android:textColor="@color/green_bg" android:background="@drawable/shape_green_kuang" android:textSize="14sp" />
+               <TextView android:id="@+id/tv_close_score" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j10dp" android:padding="@dimen/j5dp" android:text="下次再说" android:textColor="@color/black" android:textSize="10sp" />
+          </LinearLayout>
+     </LinearLayout>
 </LinearLayout>
+

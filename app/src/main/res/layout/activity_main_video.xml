@@ -1,65 +1,14 @@
-<?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <TextView
-        android:id="@+id/main_tv_tip"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|center_horizontal"
-        android:layout_marginBottom="150dp"
-        android:elevation="1dp"
-        android:text="双击放大"
-        android:textColor="#FFFFFF"/>
-
-
-        <SurfaceView
-            android:id="@+id/main_surface_view"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            />
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="15dp"
-            android:layout_gravity="bottom"
-            android:gravity="center"
-            android:background="#50000000"
-            android:orientation="vertical"
-            android:id="@+id/ll_press_control">
-            <RelativeLayout
-                android:id="@+id/main_press_control"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:visibility="gone">
-                <com.weichatsamplevideo.BothWayProgressBar
-                    android:id="@+id/main_progress_bar"
-                    android:layout_width="match_parent"
-                    android:layout_height="2dp"
-                    android:background="#000"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:text="按住拍"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                    android:textColor="#00ff00"/>
-            </RelativeLayout>
-
-            <!--android_custom:style="FILL"-->
-
-            <com.weichatsamplevideo.RoundProgressBar
-                xmlns:android_custom="http://schemas.android.com/apk/res/com.glavesoft.pawnuser"
-                android:id="@+id/roundProgressBar"
-                android:layout_width="100dip"
-                android:layout_height="100dip"
-                android_custom:roundColor="@color/white"
-                android_custom:roundWidth="3dip"
-                android_custom:roundProgressColor="@color/blue"
-                android_custom:textSize="18sp"
-                />
-
-        </LinearLayout>
-
+<?xml version="1.0" encoding="UTF-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent">
+     <TextView android:id="@+id/main_tv_tip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="bottom|center_horizontal" android:layout_marginBottom="@dimen/j150dp" android:elevation="@dimen/j1dp" android:text="双击放大" android:textColor="#FFFFFF" />
+     <SurfaceView android:id="@+id/main_surface_view" android:layout_width="match_parent" android:layout_height="match_parent" />
+     <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="@dimen/j15dp" android:layout_gravity="bottom" android:gravity="center" android:background="#50000000" android:orientation="vertical" android:id="@+id/ll_press_control">
+          <RelativeLayout android:id="@+id/main_press_control" android:layout_width="match_parent" android:layout_height="match_parent" android:visibility="gone">
+               <com.weichatsamplevideo.BothWayProgressBar android:id="@+id/main_progress_bar" android:layout_width="match_parent" android:layout_height="@dimen/j2dp" android:background="#000" />
+               <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true" android:text="按住拍" android:textAppearance="@style/TextAppearance.AppCompat.Large" android:textColor="#00ff00" />
+          </RelativeLayout>
+          <!--android_custom:style="FILL"-->
+          <com.weichatsamplevideo.RoundProgressBar xmlns:android_custom="http://schemas.android.com/apk/res/com.glavesoft.pawnuser" android:id="@+id/roundProgressBar" android:layout_width="100dip" android:layout_height="100dip" android_custom:roundColor="@color/white" android_custom:roundWidth="3dip" android_custom:roundProgressColor="@color/blue" android_custom:textSize="18sp" />
+     </LinearLayout>
 </FrameLayout>
+

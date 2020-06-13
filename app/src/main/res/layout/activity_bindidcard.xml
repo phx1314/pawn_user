@@ -1,248 +1,36 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/bg_default"
-    android:fitsSystemWindows="true">
-
-    <include layout="@layout/titlebar"/>
-
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/bg_default">
-
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/white"
-                android:padding="10dp"
-                >
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:text="步骤一：上传身份证(身份证正面照)"
-                    android:textColor="@color/black1"
-                    android:textSize="15sp"/>
-
-                <ImageView
-                    android:id="@+id/iv_zm_addpic"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/jtp"
-                    android:scaleType="centerCrop"
-                    />
-
-                <ImageView
-                    android:id="@+id/iv_zm_showpic"
-                    android:layout_width="270dp"
-                    android:layout_height="140dp"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/jtp"
-                    android:scaleType="centerCrop"
-                    android:visibility="gone"
-                    />
-
-                <LinearLayout
-                    android:id="@+id/ll_idcard"
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:visibility="gone"
-                   >
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:gravity="center_vertical">
-                        
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="15dp"
-                            android:text="姓名："
-                            android:textColor="@color/black1"
-                            android:textSize="14sp" />
-
-                        <TextView
-                            android:id="@+id/tv_name_idcard"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text=""
-                            android:textColor="@color/black1"
-                            android:textSize="14sp"/>
-
-                        <TextView
-                            android:id="@+id/tv_update_bd"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:paddingLeft="10dp"
-                            android:paddingRight="10dp"
-                            android:paddingBottom="3dp"
-                            android:paddingTop="3dp"
-                            android:layout_marginRight="15dp"
-                            android:gravity="center"
-                            android:text="修改"
-                            android:textColor="@android:color/white"
-                            android:background="@drawable/shape_red"
-                            android:textSize="12sp"
-                            />
-                        
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent" android:background="@color/bg_default" android:fitsSystemWindows="true">
+     <include layout="@layout/titlebar" />
+     <ScrollView android:layout_width="match_parent" android:layout_height="match_parent">
+          <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@color/bg_default">
+               <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@color/white" android:padding="@dimen/j10dp">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j10dp" android:text="步骤一：上传身份证(身份证正面照)" android:textColor="@color/black1" android:textSize="15sp" />
+                    <ImageView android:id="@+id/iv_zm_addpic" android:layout_width="@dimen/j80dp" android:layout_height="@dimen/j80dp" android:layout_marginLeft="@dimen/j15dp" android:layout_marginTop="@dimen/j10dp" android:background="@drawable/jtp" android:scaleType="centerCrop" />
+                    <ImageView android:id="@+id/iv_zm_showpic" android:layout_width="@dimen/j270dp" android:layout_height="@dimen/j140dp" android:layout_marginLeft="@dimen/j15dp" android:layout_marginTop="@dimen/j10dp" android:background="@drawable/jtp" android:scaleType="centerCrop" android:visibility="gone" />
+                    <LinearLayout android:id="@+id/ll_idcard" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content" android:visibility="gone">
+                         <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j10dp" android:gravity="center_vertical">
+                              <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/j15dp" android:text="姓名：" android:textColor="@color/black1" android:textSize="14sp" />
+                              <TextView android:id="@+id/tv_name_idcard" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1" android:text="" android:textColor="@color/black1" android:textSize="14sp" />
+                              <TextView android:id="@+id/tv_update_bd" android:layout_width="wrap_content" android:layout_height="wrap_content" android:paddingLeft="@dimen/j10dp" android:paddingRight="@dimen/j10dp" android:paddingBottom="@dimen/j3dp" android:paddingTop="@dimen/j3dp" android:layout_marginRight="@dimen/j15dp" android:gravity="center" android:text="修改" android:textColor="@android:color/white" android:background="@drawable/shape_red" android:textSize="12sp" />
+                         </LinearLayout>
+                         <TextView android:id="@+id/tv_number_idcard" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j5dp" android:layout_marginLeft="@dimen/j15dp" android:text="身份证号：" android:textColor="@color/black1" android:textSize="14sp" />
+                         <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j5dp" android:gravity="center_vertical">
+                              <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/j15dp" android:text="地址：" android:textColor="@color/black1" android:textSize="14sp" />
+                              <TextView android:id="@+id/tv_address_idcard" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginLeft="@dimen/j15dp" android:textColor="@color/black1" android:textSize="14sp" />
+                              <TextView android:id="@+id/tv_updateaddress_bd" android:layout_width="wrap_content" android:layout_height="wrap_content" android:paddingLeft="@dimen/j10dp" android:paddingRight="@dimen/j10dp" android:paddingBottom="@dimen/j3dp" android:paddingTop="@dimen/j3dp" android:layout_marginRight="@dimen/j15dp" android:gravity="center" android:text="修改" android:textColor="@android:color/white" android:background="@drawable/shape_red" android:textSize="12sp" />
+                         </LinearLayout>
                     </LinearLayout>
-
-                    <TextView
-                        android:id="@+id/tv_number_idcard"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginLeft="15dp"
-                        android:text="身份证号："
-                        android:textColor="@color/black1"
-                        android:textSize="14sp"/>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
-                        android:gravity="center_vertical">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="15dp"
-                            android:text="地址："
-                            android:textColor="@color/black1"
-                            android:textSize="14sp" />
-
-                        <TextView
-                            android:id="@+id/tv_address_idcard"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:layout_marginLeft="15dp"
-                            android:textColor="@color/black1"
-                            android:textSize="14sp"/>
-
-                        <TextView
-                            android:id="@+id/tv_updateaddress_bd"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:paddingLeft="10dp"
-                            android:paddingRight="10dp"
-                            android:paddingBottom="3dp"
-                            android:paddingTop="3dp"
-                            android:layout_marginRight="15dp"
-                            android:gravity="center"
-                            android:text="修改"
-                            android:textColor="@android:color/white"
-                            android:background="@drawable/shape_red"
-                            android:textSize="12sp"
-                            />
-
+                    <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@color/white">
+                         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j10dp" android:text="步骤二：上传身份证(身份证反面照)" android:textColor="@color/black1" android:textSize="15sp" />
+                         <ImageView android:id="@+id/iv_fm_addpic" android:layout_width="@dimen/j80dp" android:layout_height="@dimen/j80dp" android:layout_marginLeft="@dimen/j15dp" android:layout_marginTop="@dimen/j10dp" android:background="@drawable/jtp" android:scaleType="centerCrop" />
+                         <ImageView android:id="@+id/iv_fm_showpic" android:layout_width="@dimen/j270dp" android:layout_height="@dimen/j140dp" android:layout_marginLeft="@dimen/j15dp" android:layout_marginTop="@dimen/j10dp" android:background="@drawable/jtp" android:scaleType="centerCrop" android:visibility="gone" />
                     </LinearLayout>
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@color/white"
-                    >
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:text="步骤二：上传身份证(身份证反面照)"
-                        android:textColor="@color/black1"
-                        android:textSize="15sp"/>
-
-                    <ImageView
-                        android:id="@+id/iv_fm_addpic"
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:layout_marginLeft="15dp"
-                        android:layout_marginTop="10dp"
-                        android:background="@drawable/jtp"
-                        android:scaleType="centerCrop"
-                        />
-
-                    <ImageView
-                        android:id="@+id/iv_fm_showpic"
-                        android:layout_width="270dp"
-                        android:layout_height="140dp"
-                        android:layout_marginLeft="15dp"
-                        android:layout_marginTop="10dp"
-                        android:background="@drawable/jtp"
-                        android:scaleType="centerCrop"
-                        android:visibility="gone"
-                        />
-
-              </LinearLayout>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:text="步骤三：人脸识别绑定"
-                    android:textColor="@color/black1"
-                    android:textSize="15sp"/>
-
-                <ImageView
-                    android:id="@+id/iv_face_addpic"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/jtp"
-                    android:scaleType="centerCrop"
-                    />
-
-                <ImageView
-                    android:id="@+id/iv_face_showpic"
-                    android:layout_width="120dp"
-                    android:layout_height="150dp"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/jtp"
-                    android:scaleType="centerCrop"
-                    android:visibility="gone"
-                    />
-
-
-            </LinearLayout>
-
-            <TextView
-                android:id="@+id/tv_submit_bd"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_marginLeft="25dp"
-                android:layout_marginRight="25dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="20dp"
-                android:gravity="center"
-                android:text="确认绑定"
-                android:textColor="@android:color/white"
-                android:background="@drawable/shape_red"
-                android:textSize="16sp"
-                />
-
-        </LinearLayout>
-
-    </ScrollView>
-
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j10dp" android:text="步骤三：人脸识别绑定" android:textColor="@color/black1" android:textSize="15sp" />
+                    <ImageView android:id="@+id/iv_face_addpic" android:layout_width="@dimen/j80dp" android:layout_height="@dimen/j80dp" android:layout_marginLeft="@dimen/j15dp" android:layout_marginTop="@dimen/j10dp" android:background="@drawable/jtp" android:scaleType="centerCrop" />
+                    <ImageView android:id="@+id/iv_face_showpic" android:layout_width="@dimen/j120dp" android:layout_height="@dimen/j150dp" android:layout_marginLeft="@dimen/j15dp" android:layout_marginTop="@dimen/j10dp" android:background="@drawable/jtp" android:scaleType="centerCrop" android:visibility="gone" />
+               </LinearLayout>
+               <TextView android:id="@+id/tv_submit_bd" android:layout_width="match_parent" android:layout_height="@dimen/j40dp" android:layout_marginLeft="@dimen/j25dp" android:layout_marginRight="@dimen/j25dp" android:layout_marginTop="@dimen/j20dp" android:layout_marginBottom="@dimen/j20dp" android:gravity="center" android:text="确认绑定" android:textColor="@android:color/white" android:background="@drawable/shape_red" android:textSize="16sp" />
+          </LinearLayout>
+     </ScrollView>
 </LinearLayout>
+

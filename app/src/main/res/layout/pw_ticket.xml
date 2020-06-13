@@ -1,84 +1,14 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:gravity="center"
-    android:background="#80000000"
-    android:orientation="vertical">
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:padding="15dp"
-        android:layout_marginLeft="50dp"
-        android:layout_marginRight="50dp"
-        android:background="@drawable/coner_text_bg1"
-        android:gravity="center"
-        android:orientation="vertical">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="重要提示"
-            android:textColor="@color/red_k"
-            android:textSize="16sp"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:text="您已典当成功！"
-            android:textColor="@color/black1"
-            android:textSize="14sp"/>
-
-        <TextView
-            android:id="@+id/tv_no_tiket"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:text="当号：1243214234"
-            android:textColor="@color/black1"
-            android:textSize="14sp"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:text="当款将在两小时内打入您的银行账户"
-            android:textColor="@color/red_k"
-            android:textSize="12sp"/>
-
-        <View style="@style/line"  android:layout_marginTop="10dp"/>
-
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:text="电子当票"
-            android:textColor="@color/text_gray"
-            android:textSize="14sp"/>
-
-        <ImageView
-            android:id="@+id/iv_pic_tiket"
-            android:layout_width="match_parent"
-            android:layout_height="120dp"
-            android:layout_marginTop="5dp"
-            android:scaleType="fitCenter"/>
-
-        <TextView
-            android:id="@+id/tv_ok"
-            android:layout_width="120dp"
-            android:layout_height="30dp"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/shape_red"
-            android:gravity="center"
-            android:text="知道了"
-            android:textColor="@color/white"
-            android:textSize="14sp"/>
-
-
-    </LinearLayout>
-
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center" android:background="#80000000" android:orientation="vertical">
+     <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_centerInParent="true" android:padding="@dimen/j15dp" android:layout_marginLeft="@dimen/j50dp" android:layout_marginRight="@dimen/j50dp" android:background="@drawable/coner_text_bg1" android:gravity="center" android:orientation="vertical">
+          <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="重要提示" android:textColor="@color/red_k" android:textSize="16sp" />
+          <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j10dp" android:text="您已典当成功！" android:textColor="@color/black1" android:textSize="14sp" />
+          <TextView android:id="@+id/tv_no_tiket" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j5dp" android:text="当号：1243214234" android:textColor="@color/black1" android:textSize="14sp" />
+          <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j5dp" android:text="当款将在两小时内打入您的银行账户" android:textColor="@color/red_k" android:textSize="12sp" />
+          <View style="@style/line" android:layout_marginTop="@dimen/j10dp" />
+          <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j5dp" android:text="电子当票" android:textColor="@color/text_gray" android:textSize="14sp" />
+          <ImageView android:id="@+id/iv_pic_tiket" android:layout_width="match_parent" android:layout_height="@dimen/j120dp" android:layout_marginTop="@dimen/j5dp" android:scaleType="fitCenter" />
+          <TextView android:id="@+id/tv_ok" android:layout_width="@dimen/j120dp" android:layout_height="@dimen/j30dp" android:layout_marginTop="@dimen/j10dp" android:background="@drawable/shape_red" android:gravity="center" android:text="知道了" android:textColor="@color/white" android:textSize="14sp" />
+     </LinearLayout>
 </LinearLayout>
+

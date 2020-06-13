@@ -1,199 +1,40 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
-    android:orientation="vertical"
-    android:background="@color/bg_gray"
-    >
-    <include layout="@layout/titlebar" />
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:background="@color/white"
-        android:paddingLeft="5dp"
-        android:paddingBottom="10dp"
-        android:orientation="vertical">
-
-        <LinearLayout
-            android:paddingTop="10dp"
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <TextView
-                android:layout_width="0dp"
-                android:layout_weight="3"
-                android:layout_height="wrap_content"
-                android:text="订单号："
-                android:textColor="@color/transparent1"
-                android:textSize="15dp" />
-            <TextView
-                android:id="@+id/tv_order_code"
-                android:layout_width="0dp"
-                android:layout_weight="7"
-                android:layout_height="wrap_content"
-                android:text="123456"
-                android:textColor="@color/transparent1"
-                android:textSize="15dp" />
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:paddingTop="10dp"
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <TextView
-                android:layout_width="0dp"
-                android:layout_weight="3"
-                android:layout_height="wrap_content"
-                android:text="物流单号："
-                android:textColor="@color/transparent1"
-                android:textSize="15dp" />
-            <TextView
-                android:id="@+id/tv_express_code"
-                android:layout_width="0dp"
-                android:layout_weight="7"
-                android:layout_height="wrap_content"
-                android:text="暂无物流信息"
-                android:textColor="@color/transparent1"
-                android:textSize="15dp" />
-        </LinearLayout>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:background="@color/white"
-        android:paddingLeft="5dp"
-        android:paddingBottom="10dp"
-        android:orientation="vertical">
-
-        <LinearLayout
-            android:paddingTop="10dp"
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <TextView
-                android:layout_width="0dp"
-                android:layout_weight="3"
-                android:layout_height="wrap_content"
-                android:text="物流状态："
-                android:textColor="@color/transparent1"
-                android:textSize="15dp" />
-            <TextView
-                android:id="@+id/tv_express_state"
-                android:layout_width="0dp"
-                android:layout_weight="7"
-                android:layout_height="wrap_content"
-                android:text="待揽收"
-                android:textSize="15dp" />
-        </LinearLayout>
-
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:background="@color/white"
-        android:paddingLeft="5dp"
-        android:paddingBottom="10dp"
-        android:orientation="vertical">
-
-        <LinearLayout
-            android:paddingTop="10dp"
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <TextView
-                android:layout_width="0dp"
-                android:layout_weight="3"
-                android:layout_height="wrap_content"
-                android:text="交易金额："
-                android:textColor="@color/transparent1"
-                android:textSize="15dp" />
-            <TextView
-                android:id="@+id/tv_price"
-                android:layout_width="0dp"
-                android:layout_weight="7"
-                android:layout_height="wrap_content"
-                android:text="￥99"
-                android:textSize="15dp" />
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:paddingTop="10dp"
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <TextView
-                android:layout_width="0dp"
-                android:layout_weight="3"
-                android:layout_height="wrap_content"
-                android:text="交易时间："
-                android:textColor="@color/transparent1"
-                android:textSize="15dp" />
-            <TextView
-                android:id="@+id/tv_time"
-                android:layout_width="0dp"
-                android:layout_weight="7"
-                android:layout_height="wrap_content"
-                android:text="2018-7-6 11：12：00"
-                android:textColor="@color/red_del"
-                android:textSize="15dp" />
-        </LinearLayout>
-        <LinearLayout
-            android:paddingTop="10dp"
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <TextView
-                android:layout_width="0dp"
-                android:layout_weight="3"
-                android:layout_height="wrap_content"
-                android:text="贷款状态："
-                android:textColor="@color/transparent1"
-                android:textSize="15dp" />
-            <TextView
-                android:id="@+id/tv_daikuan_state"
-                android:layout_width="0dp"
-                android:layout_weight="7"
-                android:layout_height="wrap_content"
-                android:text="待结算"
-                android:textSize="15dp" />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_marginTop="10dp"
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <TextView
-                android:layout_width="0dp"
-                android:layout_weight="3"
-                android:layout_height="wrap_content"
-                android:text="结算货款："
-                android:textColor="@color/transparent1"
-                android:textSize="15dp" />
-            <TextView
-                android:id="@+id/tv_daikuan_price"
-                android:layout_width="0dp"
-                android:layout_weight="6"
-                android:layout_height="wrap_content"
-                android:text="￥99"
-                android:textSize="15dp" />
-            <ImageView
-                android:id="@+id/iv_info"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:layout_gravity="center_vertical"
-                android:layout_marginRight="10dp"
-                android:src="@drawable/sendcall_info"/>
-        </LinearLayout>
-    </LinearLayout>
-
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent" android:layout_height="match_parent" android:fitsSystemWindows="true" android:orientation="vertical" android:background="@color/bg_gray">
+     <include layout="@layout/titlebar" />
+     <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j20dp" android:background="@color/white" android:paddingLeft="@dimen/j5dp" android:paddingBottom="@dimen/j10dp" android:orientation="vertical">
+          <LinearLayout android:paddingTop="@dimen/j10dp" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content">
+               <TextView android:layout_width="0dp" android:layout_weight="3" android:layout_height="wrap_content" android:text="订单号：" android:textColor="@color/transparent1" android:textSize="@dimen/j15dp" />
+               <TextView android:id="@+id/tv_order_code" android:layout_width="0dp" android:layout_weight="7" android:layout_height="wrap_content" android:text="123456" android:textColor="@color/transparent1" android:textSize="@dimen/j15dp" />
+          </LinearLayout>
+          <LinearLayout android:paddingTop="@dimen/j10dp" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content">
+               <TextView android:layout_width="0dp" android:layout_weight="3" android:layout_height="wrap_content" android:text="物流单号：" android:textColor="@color/transparent1" android:textSize="@dimen/j15dp" />
+               <TextView android:id="@+id/tv_express_code" android:layout_width="0dp" android:layout_weight="7" android:layout_height="wrap_content" android:text="暂无物流信息" android:textColor="@color/transparent1" android:textSize="@dimen/j15dp" />
+          </LinearLayout>
+     </LinearLayout>
+     <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j20dp" android:background="@color/white" android:paddingLeft="@dimen/j5dp" android:paddingBottom="@dimen/j10dp" android:orientation="vertical">
+          <LinearLayout android:paddingTop="@dimen/j10dp" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content">
+               <TextView android:layout_width="0dp" android:layout_weight="3" android:layout_height="wrap_content" android:text="物流状态：" android:textColor="@color/transparent1" android:textSize="@dimen/j15dp" />
+               <TextView android:id="@+id/tv_express_state" android:layout_width="0dp" android:layout_weight="7" android:layout_height="wrap_content" android:text="待揽收" android:textSize="@dimen/j15dp" />
+          </LinearLayout>
+     </LinearLayout>
+     <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j20dp" android:background="@color/white" android:paddingLeft="@dimen/j5dp" android:paddingBottom="@dimen/j10dp" android:orientation="vertical">
+          <LinearLayout android:paddingTop="@dimen/j10dp" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content">
+               <TextView android:layout_width="0dp" android:layout_weight="3" android:layout_height="wrap_content" android:text="交易金额：" android:textColor="@color/transparent1" android:textSize="@dimen/j15dp" />
+               <TextView android:id="@+id/tv_price" android:layout_width="0dp" android:layout_weight="7" android:layout_height="wrap_content" android:text="￥99" android:textSize="@dimen/j15dp" />
+          </LinearLayout>
+          <LinearLayout android:paddingTop="@dimen/j10dp" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content">
+               <TextView android:layout_width="0dp" android:layout_weight="3" android:layout_height="wrap_content" android:text="交易时间：" android:textColor="@color/transparent1" android:textSize="@dimen/j15dp" />
+               <TextView android:id="@+id/tv_time" android:layout_width="0dp" android:layout_weight="7" android:layout_height="wrap_content" android:text="2018-7-6 11：12：00" android:textColor="@color/red_del" android:textSize="@dimen/j15dp" />
+          </LinearLayout>
+          <LinearLayout android:paddingTop="@dimen/j10dp" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content">
+               <TextView android:layout_width="0dp" android:layout_weight="3" android:layout_height="wrap_content" android:text="贷款状态：" android:textColor="@color/transparent1" android:textSize="@dimen/j15dp" />
+               <TextView android:id="@+id/tv_daikuan_state" android:layout_width="0dp" android:layout_weight="7" android:layout_height="wrap_content" android:text="待结算" android:textSize="@dimen/j15dp" />
+          </LinearLayout>
+          <LinearLayout android:layout_marginTop="@dimen/j10dp" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content">
+               <TextView android:layout_width="0dp" android:layout_weight="3" android:layout_height="wrap_content" android:text="结算货款：" android:textColor="@color/transparent1" android:textSize="@dimen/j15dp" />
+               <TextView android:id="@+id/tv_daikuan_price" android:layout_width="0dp" android:layout_weight="6" android:layout_height="wrap_content" android:text="￥99" android:textSize="@dimen/j15dp" />
+               <ImageView android:id="@+id/iv_info" android:layout_width="@dimen/j25dp" android:layout_height="@dimen/j25dp" android:layout_gravity="center_vertical" android:layout_marginRight="@dimen/j10dp" android:src="@drawable/sendcall_info" />
+          </LinearLayout>
+     </LinearLayout>
 </LinearLayout>
+

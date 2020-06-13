@@ -45,5 +45,9 @@ class Head(context: Context?) : LinearLayout(context) {
         mTextView_en.text = s_en
     }
 
+    fun setRightRes(res: Int) {
+        mImageButton_right.visibility = View.VISIBLE
+        mImageButton_right.setImageResource(res)
+    }
 
 }

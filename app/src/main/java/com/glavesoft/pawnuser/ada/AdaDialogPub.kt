@@ -28,7 +28,7 @@ class AdaDialogPub (context: Context, list: List<String>) : MAdapter<String>(con
             convertView = DialogPub(context)
         }
         try {
-            (convertView as DialogPub).set(item)
+//            (convertView as DialogPub).set(item)
         } catch (e: Exception) {
             e.printStackTrace()
         }

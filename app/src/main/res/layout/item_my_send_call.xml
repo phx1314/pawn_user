@@ -1,119 +1,24 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="125dp"
-    android:gravity="center_vertical"
-    android:background="@color/white">
-
-    <ImageView
-        android:padding="4dp"
-        android:id="@+id/iv_pic_jb"
-        android:layout_width="110dp"
-        android:layout_height="110dp"
-        android:layout_marginBottom="2dp"
-        android:scaleType="centerCrop"
-        android:src="@drawable/bg_livecountdown"/>
-
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1">
-
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:paddingLeft="8dp"
-                android:paddingRight="8dp"
-                android:paddingBottom="8dp"
-                android:paddingTop="3dp"
-                >
-
-                <TextView
-                    android:id="@+id/tv_sc_name"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="翡翠手镯"
-                    android:textSize="16sp"
-                    android:textColor="@color/black"/>
-                <TextView
-                    android:id="@+id/tv_state"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:text="状态：未上架"
-                    android:textSize="12sp"
-                    android:textColor="@color/black"/>
-                <LinearLayout
-                    android:id="@+id/ll_date"
-                    android:orientation="vertical"
-                    android:gravity="center_vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <TextView
-                        android:id="@+id/tv_sc_sjdate"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="上架日期：null"
-                        android:textSize="12sp"
-                        android:textColor="@color/black"/>
-
-                    <TextView
-                        android:id="@+id/tv_sc_dqdate"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
-                        android:text="到期日期：null"
-                        android:textSize="12sp"
-                        android:textColor="@color/black"/>
-                </LinearLayout>
-
-
-
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                >
-                <TextView
-                    android:id="@+id/tv_ys_state"
-                    style="@style/myappraisal_sc"
-                    android:text="未售"
-                    />
-                <TextView
-                    android:id="@+id/tv_sj"
-                    style="@style/myappraisal_sc"
-                    android:text="上架"
-                    />
-                <TextView
-                    android:id="@+id/tv_xj"
-                    style="@style/myappraisal_sc"
-                    android:text="下架"
-                    />
-                <TextView
-                    android:id="@+id/tv_bj"
-                    style="@style/myappraisal_sc"
-                    android:text="编辑"
-                    />
-
-            </LinearLayout>
-
-        </LinearLayout>
-
-        <View style="@style/line"/>
-
-    </LinearLayout>
-
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="@dimen/j125dp" android:gravity="center_vertical" android:background="@color/white">
+     <ImageView android:padding="@dimen/j4dp" android:id="@+id/iv_pic_jb" android:layout_width="@dimen/j110dp" android:layout_height="@dimen/j110dp" android:layout_marginBottom="@dimen/j2dp" android:scaleType="centerCrop" android:src="@drawable/bg_livecountdown" />
+     <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent">
+          <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1">
+               <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1" android:paddingLeft="@dimen/j8dp" android:paddingRight="@dimen/j8dp" android:paddingBottom="@dimen/j8dp" android:paddingTop="@dimen/j3dp">
+                    <TextView android:id="@+id/tv_sc_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="翡翠手镯" android:textSize="16sp" android:textColor="@color/black" />
+                    <TextView android:id="@+id/tv_state" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j5dp" android:text="状态：未上架" android:textSize="12sp" android:textColor="@color/black" />
+                    <LinearLayout android:id="@+id/ll_date" android:orientation="vertical" android:gravity="center_vertical" android:layout_width="match_parent" android:layout_height="match_parent">
+                         <TextView android:id="@+id/tv_sc_sjdate" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="上架日期：null" android:textSize="12sp" android:textColor="@color/black" />
+                         <TextView android:id="@+id/tv_sc_dqdate" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j5dp" android:text="到期日期：null" android:textSize="12sp" android:textColor="@color/black" />
+                    </LinearLayout>
+               </LinearLayout>
+               <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="match_parent" android:gravity="center">
+                    <TextView android:id="@+id/tv_ys_state" style="@style/myappraisal_sc" android:text="未售" />
+                    <TextView android:id="@+id/tv_sj" style="@style/myappraisal_sc" android:text="上架" />
+                    <TextView android:id="@+id/tv_xj" style="@style/myappraisal_sc" android:text="下架" />
+                    <TextView android:id="@+id/tv_bj" style="@style/myappraisal_sc" android:text="编辑" />
+               </LinearLayout>
+          </LinearLayout>
+          <View style="@style/line" />
+     </LinearLayout>
 </LinearLayout>
+

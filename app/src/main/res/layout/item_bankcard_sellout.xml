@@ -1,38 +1,7 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:padding="10dp"
-    android:background="@color/white"
-    android:gravity="center_vertical">
-
-    <TextView
-        android:id="@+id/tv_bankname_sellout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="14sp"
-        android:textColor="@color/black1"
-        android:text="(中国工商银行)"/>
-
-
-    <TextView
-        android:id="@+id/tv_banknum_sellout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:layout_marginLeft="10dp"
-        android:textSize="14sp"
-        android:textColor="@color/black1"
-        android:text="88888888888888888888"/>
-
-    <ImageView
-        android:id="@+id/iv_bank_select"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@null"
-        android:padding="5dp"
-        android:src="@drawable/yuan"
-        />
-
-
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="@dimen/j10dp" android:background="@color/white" android:gravity="center_vertical">
+     <TextView android:id="@+id/tv_bankname_sellout" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="14sp" android:textColor="@color/black1" android:text="(中国工商银行)" />
+     <TextView android:id="@+id/tv_banknum_sellout" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginLeft="@dimen/j10dp" android:textSize="14sp" android:textColor="@color/black1" android:text="88888888888888888888" />
+     <ImageView android:id="@+id/iv_bank_select" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@null" android:padding="@dimen/j5dp" android:src="@drawable/yuan" />
 </LinearLayout>
+

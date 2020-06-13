@@ -1,482 +1,81 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/bg_default"
-    android:fitsSystemWindows="true"
-    android:focusable="true"
-    android:focusableInTouchMode="true">
-
-    <include layout="@layout/titlebar"/>
-
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:scrollbars="none">
-
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            >
-
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/white"
-                android:padding="10dp">
-
-                <TextView
-                    android:id="@+id/tv_name_selectpawnshop"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/black1"
-                    android:textSize="16sp"
-                    />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="鉴定价："
-                        android:textColor="@color/text_gray"
-                        android:textSize="14sp"
-                        />
-
-                    <TextView
-                        android:id="@+id/tv_jdprice_selectpawnshop"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:textColor="@color/red_k"
-                        android:textSize="14sp"
-                        />
-
-                </LinearLayout>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="1dp"
-                android:background="@color/white"
-                android:padding="10dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    >
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        >
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="期望当金："
-                            android:textColor="@color/text_gray"
-                            android:textSize="14sp"
-                            />
-
-                        <TextView
-                            android:id="@+id/tv_qwdj_selectpawnshop"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:textColor="@color/red_k"
-                            android:textSize="14sp"
-                            />
-
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent" android:background="@color/bg_default" android:fitsSystemWindows="true" android:focusable="true" android:focusableInTouchMode="true">
+     <include layout="@layout/titlebar" />
+     <ScrollView android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1" android:scrollbars="none">
+          <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent">
+               <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@color/white" android:padding="@dimen/j10dp">
+                    <TextView android:id="@+id/tv_name_selectpawnshop" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="@color/black1" android:textSize="16sp" />
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j5dp">
+                         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="鉴定价：" android:textColor="@color/text_gray" android:textSize="14sp" />
+                         <TextView android:id="@+id/tv_jdprice_selectpawnshop" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1" android:textColor="@color/red_k" android:textSize="14sp" />
                     </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:visibility="gone"
-                        >
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="期望费率："
-                            android:textColor="@color/text_gray"
-                            android:textSize="14sp"
-                            />
-
-                        <TextView
-                            android:id="@+id/tv_qwll_selectpawnshop"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:textColor="@color/red_k"
-                            android:textSize="14sp"
-                            />
-
+               </LinearLayout>
+               <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j1dp" android:background="@color/white" android:padding="@dimen/j10dp">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+                         <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1">
+                              <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="期望当金：" android:textColor="@color/text_gray" android:textSize="14sp" />
+                              <TextView android:id="@+id/tv_qwdj_selectpawnshop" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1" android:textColor="@color/red_k" android:textSize="14sp" />
+                         </LinearLayout>
+                         <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1" android:visibility="gone">
+                              <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="期望费率：" android:textColor="@color/text_gray" android:textSize="14sp" />
+                              <TextView android:id="@+id/tv_qwll_selectpawnshop" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1" android:textColor="@color/red_k" android:textSize="14sp" />
+                         </LinearLayout>
                     </LinearLayout>
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    >
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="贷款时间："
-                        android:textColor="@color/text_gray"
-                        android:textSize="14sp"
-                        />
-
-                    <TextView
-                        android:id="@+id/tv_time_selectpawnshop"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:textColor="@color/red_k"
-                        android:textSize="14sp"
-                        />
-
-                </LinearLayout>
-
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:id="@+id/ll_select_pawnshop"
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/white"
-                android:gravity="center_horizontal"
-                android:layout_marginTop="10dp"
-                >
-
-                <com.glavesoft.view.MyListView
-                    android:id="@+id/mlv_pawnshop"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="1dp"
-                    android:divider="@color/bg_default"
-                    android:dividerHeight="1dp"
-                    android:listSelector="@android:color/transparent"/>
-
-                <View style="@style/line"/>
-
-                <TextView
-                    android:id="@+id/tv_select_pawnshop"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="10dp"
-                    android:text="您还未选择典当行"
-                    android:textSize="15sp"
-                    android:textColor="@color/red_k"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/ll_pt_pawnshop"
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/white"
-                android:layout_marginTop="10dp"
-                android:padding="10dp"
-                android:visibility="gone"
-                >
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    >
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="公司名称："
-                        android:textColor="@color/text_gray"
-                        android:textSize="14sp"
-                        />
-
-                    <TextView
-                        android:id="@+id/tv_companyname_selectpawnshop"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:textColor="@color/red_k"
-                        android:textSize="14sp"
-                        />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    >
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="地址："
-                        android:textColor="@color/text_gray"
-                        android:textSize="14sp"
-                        />
-
-                    <TextView
-                        android:id="@+id/tv_address_selectpawnshop"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:textColor="@color/red_k"
-                        android:textSize="14sp"
-                        />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    >
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="注册资金："
-                        android:textColor="@color/text_gray"
-                        android:textSize="14sp"
-                        />
-
-                    <TextView
-                        android:id="@+id/tv_zczj_selectpawnshop"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:textColor="@color/red_k"
-                        android:textSize="14sp"
-                        />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    >
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="法人代表："
-                        android:textColor="@color/text_gray"
-                        android:textSize="14sp"
-                        />
-
-                    <TextView
-                        android:id="@+id/tv_frdb_selectpawnshop"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:textColor="@color/red_k"
-                        android:textSize="14sp"
-                        />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    >
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="联系电话："
-                        android:textColor="@color/text_gray"
-                        android:textSize="14sp"
-                        />
-
-                    <TextView
-                        android:id="@+id/tv_phone_selectpawnshop"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:textColor="@color/red_k"
-                        android:textSize="14sp"
-                        />
-
-                </LinearLayout>
-
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    >
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="平台提供当金："
-                        android:textColor="@color/text_gray"
-                        android:textSize="14sp"
-                        />
-
-                    <TextView
-                        android:id="@+id/tv_ptdj_selectpawnshop"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:textColor="@color/red_k"
-                        android:textSize="14sp"
-                        />
-
-                </LinearLayout>
-
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    >
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="月费率："
-                        android:textColor="@color/text_gray"
-                        android:textSize="14sp"
-                        />
-
-                    <TextView
-                        android:id="@+id/tv_zhll_selectpawnshop"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:textColor="@color/red_k"
-                        android:textSize="14sp"
-                        />
-
-                </LinearLayout>
-
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    >
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="月利率："
-                        android:textColor="@color/text_gray"
-                        android:textSize="14sp"
-                        />
-
-                    <TextView
-                        android:id="@+id/tv_lxlv_selectpawnshop"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:textColor="@color/red_k"
-                        android:textSize="14sp"
-                        />
-
-                </LinearLayout>
-
-            </LinearLayout>
-
-            <TextView
-                android:id="@+id/tv_zs_selectpawnshop"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingTop="10dp"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
-                android:text="注：平台提供当金≤藏品鉴定价格"
-                android:textColor="@color/red_k"
-                android:textSize="11sp"
-                android:visibility="gone"/>
-
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:background="@color/white">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:padding="10dp"
-                        android:text="选择入账银行卡"
-                        android:textColor="@color/black1"
-                        android:textSize="15sp"/>
-
-                    <TextView
-                        android:id="@+id/tv_add_bankcard"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/shape_red"
-                        android:paddingTop="3dp"
-                        android:paddingBottom="3dp"
-                        android:paddingLeft="10dp"
-                        android:paddingRight="10dp"
-                        android:layout_marginRight="10dp"
-                        android:text="添加"
-                        android:textColor="@color/white"
-                        android:textSize="13sp"
-                        />
-                </LinearLayout>
-
-
-
-                <View style="@style/line"/>
-
-                <com.glavesoft.view.MyListView
-                    android:id="@+id/mlv_bankcard"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:divider="@color/bg_default"
-                    android:dividerHeight="1dp"
-                    android:listSelector="@android:color/transparent"/>
-
-            </LinearLayout>
-
-            <TextView
-                android:id="@+id/tv_submit_selectpawn"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_marginLeft="25dp"
-                android:layout_marginRight="25dp"
-                android:layout_marginTop="30dp"
-                android:layout_marginBottom="20dp"
-                android:gravity="center"
-                android:text="下一步身份验证"
-                android:textColor="@android:color/white"
-                android:background="@drawable/shape_red"
-                android:textSize="16sp"
-                />
-
-        </LinearLayout>
-
-    </ScrollView>
-
+                    <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j10dp">
+                         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="贷款时间：" android:textColor="@color/text_gray" android:textSize="14sp" />
+                         <TextView android:id="@+id/tv_time_selectpawnshop" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1" android:textColor="@color/red_k" android:textSize="14sp" />
+                    </LinearLayout>
+               </LinearLayout>
+               <LinearLayout android:id="@+id/ll_select_pawnshop" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@color/white" android:gravity="center_horizontal" android:layout_marginTop="@dimen/j10dp">
+                    <com.glavesoft.view.MyListView android:id="@+id/mlv_pawnshop" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j1dp" android:divider="@color/bg_default" android:dividerHeight="@dimen/j1dp" android:listSelector="@android:color/transparent" />
+                    <View style="@style/line" />
+                    <TextView android:id="@+id/tv_select_pawnshop" android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="@dimen/j10dp" android:text="您还未选择典当行" android:textSize="15sp" android:textColor="@color/red_k" />
+               </LinearLayout>
+               <LinearLayout android:id="@+id/ll_pt_pawnshop" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@color/white" android:layout_marginTop="@dimen/j10dp" android:padding="@dimen/j10dp" android:visibility="gone">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+                         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="公司名称：" android:textColor="@color/text_gray" android:textSize="14sp" />
+                         <TextView android:id="@+id/tv_companyname_selectpawnshop" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1" android:textColor="@color/red_k" android:textSize="14sp" />
+                    </LinearLayout>
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j10dp">
+                         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="地址：" android:textColor="@color/text_gray" android:textSize="14sp" />
+                         <TextView android:id="@+id/tv_address_selectpawnshop" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1" android:textColor="@color/red_k" android:textSize="14sp" />
+                    </LinearLayout>
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j10dp">
+                         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="注册资金：" android:textColor="@color/text_gray" android:textSize="14sp" />
+                         <TextView android:id="@+id/tv_zczj_selectpawnshop" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1" android:textColor="@color/red_k" android:textSize="14sp" />
+                    </LinearLayout>
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j10dp">
+                         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="法人代表：" android:textColor="@color/text_gray" android:textSize="14sp" />
+                         <TextView android:id="@+id/tv_frdb_selectpawnshop" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1" android:textColor="@color/red_k" android:textSize="14sp" />
+                    </LinearLayout>
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j10dp">
+                         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="联系电话：" android:textColor="@color/text_gray" android:textSize="14sp" />
+                         <TextView android:id="@+id/tv_phone_selectpawnshop" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1" android:textColor="@color/red_k" android:textSize="14sp" />
+                    </LinearLayout>
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j10dp">
+                         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="平台提供当金：" android:textColor="@color/text_gray" android:textSize="14sp" />
+                         <TextView android:id="@+id/tv_ptdj_selectpawnshop" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1" android:textColor="@color/red_k" android:textSize="14sp" />
+                    </LinearLayout>
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j10dp">
+                         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="月费率：" android:textColor="@color/text_gray" android:textSize="14sp" />
+                         <TextView android:id="@+id/tv_zhll_selectpawnshop" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1" android:textColor="@color/red_k" android:textSize="14sp" />
+                    </LinearLayout>
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j10dp">
+                         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="月利率：" android:textColor="@color/text_gray" android:textSize="14sp" />
+                         <TextView android:id="@+id/tv_lxlv_selectpawnshop" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1" android:textColor="@color/red_k" android:textSize="14sp" />
+                    </LinearLayout>
+               </LinearLayout>
+               <TextView android:id="@+id/tv_zs_selectpawnshop" android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingTop="@dimen/j10dp" android:paddingLeft="@dimen/j10dp" android:paddingRight="@dimen/j10dp" android:text="注：平台提供当金≤藏品鉴定价格" android:textColor="@color/red_k" android:textSize="11sp" android:visibility="gone" />
+               <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j10dp" android:background="@color/white">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+                         <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:padding="@dimen/j10dp" android:text="选择入账银行卡" android:textColor="@color/black1" android:textSize="15sp" />
+                         <TextView android:id="@+id/tv_add_bankcard" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/shape_red" android:paddingTop="@dimen/j3dp" android:paddingBottom="@dimen/j3dp" android:paddingLeft="@dimen/j10dp" android:paddingRight="@dimen/j10dp" android:layout_marginRight="@dimen/j10dp" android:text="添加" android:textColor="@color/white" android:textSize="13sp" />
+                    </LinearLayout>
+                    <View style="@style/line" />
+                    <com.glavesoft.view.MyListView android:id="@+id/mlv_bankcard" android:layout_width="match_parent" android:layout_height="wrap_content" android:divider="@color/bg_default" android:dividerHeight="@dimen/j1dp" android:listSelector="@android:color/transparent" />
+               </LinearLayout>
+               <TextView android:id="@+id/tv_submit_selectpawn" android:layout_width="match_parent" android:layout_height="@dimen/j40dp" android:layout_marginLeft="@dimen/j25dp" android:layout_marginRight="@dimen/j25dp" android:layout_marginTop="@dimen/j30dp" android:layout_marginBottom="@dimen/j20dp" android:gravity="center" android:text="下一步身份验证" android:textColor="@android:color/white" android:background="@drawable/shape_red" android:textSize="16sp" />
+          </LinearLayout>
+     </ScrollView>
 </LinearLayout>
+

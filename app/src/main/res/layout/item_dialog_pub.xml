@@ -1,9 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent" android:layout_height="match_parent" android:background="#00000000" android:gravity="center">
-     <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="@dimen/j60dp" android:background="@drawable/shape_white_rz2" android:gravity="center_horizontal" android:orientation="vertical">
-          <TextView android:id="@+id/mTextView_title" style="@style/text_style_17_black" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j20dp" android:text="驳回原因" android:textSize="16sp" />
-          <EditText android:id="@+id/mEditText" style="@style/text_style_15_black" android:layout_width="match_parent" android:layout_height="@dimen/j33dp" android:layout_marginLeft="@dimen/j17dp" android:layout_marginTop="@dimen/j20dp" android:layout_marginRight="@dimen/j17dp" android:background="@drawable/shape_gray" android:hint="请输入原因" android:padding="@dimen/j5dp" android:singleLine="true" />
-          <TextView android:id="@+id/mTextView_sure" style="@style/text_style_17_white" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j20dp" android:background="@drawable/shape_green_dialog" android:gravity="center" android:padding="@dimen/j13dp" android:text="提交" android:textSize="16sp" />
-     </LinearLayout>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#00000000"
+    android:gravity="center">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/j60dp"
+        android:background="@drawable/shape_white_rz2"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/mTextView_title"
+            style="@style/text_style_17_black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/j20dp"
+            android:text="驳回原因"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/mEditText"
+            style="@style/text_style_15_black"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/j33dp"
+            android:layout_marginLeft="@dimen/j17dp"
+            android:layout_marginTop="@dimen/j20dp"
+            android:layout_marginRight="@dimen/j17dp"
+            android:background="@drawable/shape_gray"
+            android:hint="请输入原因"
+            android:padding="@dimen/j5dp"
+            android:singleLine="true" />
+
+        <TextView
+            android:id="@+id/mTextView_sure"
+            style="@style/text_style_17_white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/j20dp"
+            android:background="@drawable/shape_green_dialog"
+            android:gravity="center"
+            android:padding="@dimen/j13dp"
+            android:text="提交"
+            android:textSize="16sp" />
+    </LinearLayout>
 </LinearLayout>
 

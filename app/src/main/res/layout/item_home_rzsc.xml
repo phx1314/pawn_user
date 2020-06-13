@@ -1,69 +1,15 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="160dp">
-
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <ImageView
-            android:id="@+id/iv_home_rzsc"
-            android:layout_width="match_parent"
-            android:layout_height="160dp"
-            android:scaleType="centerCrop"
-            />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="8dp"
-            android:layout_gravity="bottom"
-            android:orientation="vertical"
-            android:background="#50000000">
-
-            <TextView
-                android:id="@+id/tv_home_rzsc_name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="精品商品"
-                android:textColor="@color/white"
-                android:textSize="14sp"/>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:visibility="gone">
-
-                <TextView
-                    android:id="@+id/tv_rzsc_type"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="首单优惠"
-                    android:textColor="@color/red"
-                    android:textSize="12sp"/>
-
-                <View
-                    android:layout_width="0.5dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp"
-                    android:background="#999999"/>
-
-                <TextView
-                    android:id="@+id/tv_rzsc_typename"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="首单立减100元"
-                    android:textColor="@color/white"
-                    android:textSize="12sp"/>
-
-
-            </LinearLayout>
-
-        </LinearLayout>
-
-    </FrameLayout>
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="@dimen/j160dp">
+     <FrameLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+          <ImageView android:id="@+id/iv_home_rzsc" android:layout_width="match_parent" android:layout_height="@dimen/j160dp" android:scaleType="centerCrop" />
+          <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="@dimen/j8dp" android:layout_gravity="bottom" android:orientation="vertical" android:background="#50000000">
+               <TextView android:id="@+id/tv_home_rzsc_name" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="精品商品" android:textColor="@color/white" android:textSize="14sp" />
+               <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j5dp" android:visibility="gone">
+                    <TextView android:id="@+id/tv_rzsc_type" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="首单优惠" android:textColor="@color/red" android:textSize="12sp" />
+                    <View android:layout_width="@dimen/j0_5dp" android:layout_height="match_parent" android:layout_marginLeft="@dimen/j5dp" android:layout_marginRight="@dimen/j5dp" android:background="#999999" />
+                    <TextView android:id="@+id/tv_rzsc_typename" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="首单立减100元" android:textColor="@color/white" android:textSize="12sp" />
+               </LinearLayout>
+          </LinearLayout>
+     </FrameLayout>
 </LinearLayout>
+

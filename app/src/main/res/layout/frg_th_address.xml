@@ -1,6 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center_horizontal" android:orientation="vertical">
-     <com.glavesoft.util.PListView android:id="@+id/mAbPullListView" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_below="@+id/mTextView_yd" android:layout_weight="1" android:cacheColorHint="#00000000" android:divider="@null" android:footerDividersEnabled="true" android:headerDividersEnabled="false" android:listSelector="#00000000" />
-     <ImageView android:id="@+id/mImageView_add" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j53dp" android:layout_marginBottom="@dimen/j30dp" android:src="@drawable/btn_xz" />
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <ListView
+        android:id="@+id/mAbPullListView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/mTextView_yd"
+        android:layout_weight="1"
+        android:cacheColorHint="#00000000"
+        android:divider="@null"
+        android:footerDividersEnabled="true"
+        android:headerDividersEnabled="false"
+        android:listSelector="#00000000" />
+
+    <ImageView
+        android:id="@+id/mImageView_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/j53dp"
+        android:layout_marginBottom="@dimen/j30dp"
+        android:src="@drawable/btn_xz" />
 </LinearLayout>
 

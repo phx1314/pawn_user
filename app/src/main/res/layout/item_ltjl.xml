@@ -1,28 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@color/white"
-    android:padding="10dp">
-
-    <TextView
-        android:id="@+id/tv_title_ltjl"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="入录宝祥典当系统"
-        android:textColor="@color/black1"
-        android:textSize="14sp"
-        />
-
-    <TextView
-        android:id="@+id/tv_time_ltjl"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="right"
-        android:text="2017-05-18"
-        android:textColor="@color/text_gray"
-        android:textSize="14sp"
-        />
-
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@color/white" android:padding="@dimen/j10dp">
+     <TextView android:id="@+id/tv_title_ltjl" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="入录宝祥典当系统" android:textColor="@color/black1" android:textSize="14sp" />
+     <TextView android:id="@+id/tv_time_ltjl" android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="right" android:text="2017-05-18" android:textColor="@color/text_gray" android:textSize="14sp" />
 </LinearLayout>
+

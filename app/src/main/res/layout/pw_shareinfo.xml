@@ -1,62 +1,12 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:gravity="center"
-    android:background="#80000000"
-    android:orientation="vertical">
-
-    <FrameLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-
-        <LinearLayout
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:background="@color/white"
-            android:orientation="vertical"
-            android:padding="5dp">
-
-            <ImageView
-                android:id="@+id/iv_good_image"
-                android:layout_width="match_parent"
-                android:layout_height="150dp"
-                android:src="@drawable/sy_bj"
-                android:scaleType="centerCrop"/>
-
-            <TextView
-                android:id="@+id/tv_goodname"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text=""
-                android:textColor="@color/black"
-                android:textSize="14sp"
-                android:padding="10dp"
-                />
-
-            <TextView
-                android:id="@+id/tv_open"
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:background="@drawable/shape_green3"
-                android:gravity="center"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginBottom="20dp"
-                android:textSize="14sp"
-                android:textColor="@color/white"
-                android:text="打开"/>
-
-        </LinearLayout>
-
-        <ImageView
-            android:id="@+id/iv_close"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_gravity="right"
-            android:src="@drawable/jqb_xh"/>
-
-    </FrameLayout>
-
-
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center" android:background="#80000000" android:orientation="vertical">
+     <FrameLayout android:layout_width="wrap_content" android:layout_height="wrap_content">
+          <LinearLayout android:layout_width="@dimen/j250dp" android:layout_height="wrap_content" android:background="@color/white" android:orientation="vertical" android:padding="@dimen/j5dp">
+               <ImageView android:id="@+id/iv_good_image" android:layout_width="match_parent" android:layout_height="@dimen/j150dp" android:src="@drawable/sy_bj" android:scaleType="centerCrop" />
+               <TextView android:id="@+id/tv_goodname" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="" android:textColor="@color/black" android:textSize="14sp" android:padding="@dimen/j10dp" />
+               <TextView android:id="@+id/tv_open" android:layout_width="match_parent" android:layout_height="@dimen/j30dp" android:background="@drawable/shape_green3" android:gravity="center" android:layout_marginLeft="@dimen/j10dp" android:layout_marginRight="@dimen/j10dp" android:layout_marginBottom="@dimen/j20dp" android:textSize="14sp" android:textColor="@color/white" android:text="打开" />
+          </LinearLayout>
+          <ImageView android:id="@+id/iv_close" android:layout_width="@dimen/j25dp" android:layout_height="@dimen/j25dp" android:layout_gravity="right" android:src="@drawable/jqb_xh" />
+     </FrameLayout>
 </LinearLayout>
+

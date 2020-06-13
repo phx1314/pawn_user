@@ -1,64 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@color/white">
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingBottom="5dp"
-        android:paddingTop="5dp"
-        >
-
-        <TextView
-            android:id="@+id/tv_name_cjjl"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="AA"
-            android:textColor="@color/black1"
-            android:textSize="11sp"
-            android:singleLine="true"/>
-
-        <TextView
-            android:id="@+id/tv_tgdj_cjjl"
-            android:layout_width="70dp"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:text="1%"
-            android:textColor="@color/black1"
-            android:textSize="11sp"/>
-
-
-        <TextView
-            android:id="@+id/tv_zhll_cjjl"
-            android:layout_width="70dp"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:text="1%"
-            android:textColor="@color/black1"
-            android:textSize="11sp"/>
-
-        <TextView
-            android:id="@+id/tv_lxll_cjjl"
-            android:layout_width="70dp"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:text="1%"
-            android:textColor="@color/black1"
-            android:textSize="11sp"/>
-
-        <TextView
-            android:id="@+id/tv_time_cjjl"
-            android:layout_width="70dp"
-            android:layout_height="wrap_content"
-            android:text=""
-            android:gravity="center_horizontal"
-            android:textColor="@color/black1"
-            android:textSize="11sp"/>
-
-    </LinearLayout>
-
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@color/white">
+     <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingBottom="@dimen/j5dp" android:paddingTop="@dimen/j5dp">
+          <TextView android:id="@+id/tv_name_cjjl" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1" android:text="AA" android:textColor="@color/black1" android:textSize="11sp" android:singleLine="true" />
+          <TextView android:id="@+id/tv_tgdj_cjjl" android:layout_width="@dimen/j70dp" android:layout_height="wrap_content" android:gravity="center_horizontal" android:text="1%" android:textColor="@color/black1" android:textSize="11sp" />
+          <TextView android:id="@+id/tv_zhll_cjjl" android:layout_width="@dimen/j70dp" android:layout_height="wrap_content" android:gravity="center_horizontal" android:text="1%" android:textColor="@color/black1" android:textSize="11sp" />
+          <TextView android:id="@+id/tv_lxll_cjjl" android:layout_width="@dimen/j70dp" android:layout_height="wrap_content" android:gravity="center_horizontal" android:text="1%" android:textColor="@color/black1" android:textSize="11sp" />
+          <TextView android:id="@+id/tv_time_cjjl" android:layout_width="@dimen/j70dp" android:layout_height="wrap_content" android:text="" android:gravity="center_horizontal" android:textColor="@color/black1" android:textSize="11sp" />
+     </LinearLayout>
 </LinearLayout>
+

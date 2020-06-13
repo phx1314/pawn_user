@@ -1,83 +1,16 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:gravity="center"
-    android:background="#80000000"
-    android:orientation="vertical">
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_centerInParent="true"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginBottom="50dp"
-        android:background="@drawable/coner_text_bg1"
-        android:gravity="center"
-        android:orientation="vertical">
-
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1">
-
-            <WebView
-                android:id="@+id/wv_pawn"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="20dp"/>
-
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:gravity="center"
-                android:background="@drawable/shape_coner_white3">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="典当须知"
-                    android:textColor="@color/black"
-                    android:textSize="20sp"
-                    />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="INSTRUCTIONS FOR PAWN"
-                    android:textColor="@color/black"
-                    android:textSize="7sp"
-                    />
-
-            </LinearLayout>
-
-
-        </FrameLayout>
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="horizontal"
-            >
-
-            <Button
-                android:id="@+id/btn_ok_pawn"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:background="@drawable/shape_green5"
-                android:gravity="center"
-                android:text="同意并下一步"
-                android:textColor="@color/white"
-                android:textSize="15sp"/>
-
-        </LinearLayout>
-    </LinearLayout>
-
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center" android:background="#80000000" android:orientation="vertical">
+     <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:layout_centerInParent="true" android:layout_marginLeft="@dimen/j20dp" android:layout_marginRight="@dimen/j20dp" android:layout_marginTop="@dimen/j50dp" android:layout_marginBottom="@dimen/j50dp" android:background="@drawable/coner_text_bg1" android:gravity="center" android:orientation="vertical">
+          <FrameLayout android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1">
+               <WebView android:id="@+id/wv_pawn" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginTop="@dimen/j20dp" />
+               <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="@dimen/j40dp" android:gravity="center" android:background="@drawable/shape_coner_white3">
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center" android:text="典当须知" android:textColor="@color/black" android:textSize="20sp" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center" android:text="INSTRUCTIONS FOR PAWN" android:textColor="@color/black" android:textSize="7sp" />
+               </LinearLayout>
+          </FrameLayout>
+          <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center" android:orientation="horizontal">
+               <Button android:id="@+id/btn_ok_pawn" android:layout_width="match_parent" android:layout_height="@dimen/j40dp" android:background="@drawable/shape_green5" android:gravity="center" android:text="同意并下一步" android:textColor="@color/white" android:textSize="15sp" />
+          </LinearLayout>
+     </LinearLayout>
 </LinearLayout>
+

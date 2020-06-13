@@ -3,26 +3,208 @@ package com.glavesoft.pawnuser.service
 import cn.jpush.android.api.JPushInterface
 import com.blankj.utilcode.util.DeviceUtils
 import com.glavesoft.pawnuser.mod.DataResult
-import com.glavesoft.pawnuser.model.PwHttpResult
+import com.glavesoft.pawnuser.mod.LocalData
 import com.mdx.framework.Frame
-import com.mdx.framework.service.subscriber.HttpResult
 import io.reactivex.Observable
-import retrofit2.http.Field
-import retrofit2.http.FormUrlEncoded
-import retrofit2.http.POST
+import okhttp3.MultipartBody
+import okhttp3.RequestBody
+import retrofit2.http.*
 
 
 interface ApiService {
 
-    @POST("account/loginByPwd")
+
+    //刪除退货地址
+    @POST("auth/delete/returnAddress")
     @FormUrlEncoded
-    fun loginByPwd(
-        @Field("phone") phone: String,
+    fun deleteReturnAddress(
+        @Field("addressId") addressId: String,
+        @Field("token") token: String = LocalData.getInstance().getUserInfo().getToken()
+    ): Observable<DataResult<Any>>
+
+    //查看个人资金记录
+    @POST("auth/finance/details")
+    @FormUrlEncoded
+    fun financeetails(
+        @Field("token") token: String = LocalData.getInstance().getUserInfo().getToken()
+    ): Observable<DataResult<Any>>
+
+    //查看个人财务情况
+    @POST("auth/finance/info")
+    @FormUrlEncoded
+    fun financeinfo(
+        @Field("token") token: String = LocalData.getInstance().getUserInfo().getToken()
+    ): Observable<DataResult<Any>>
+
+    //转账到支付宝
+    @POST("auth/finance/pay")
+    @FormUrlEncoded
+    fun financepay(
+        @Field("token") token: String = LocalData.getInstance().getUserInfo().getToken()
+    ): Observable<DataResult<Any>>
+
+    //获取个人信息
+    @GET("auth/get/userInfo")
+    fun userInfo(
+        @Query("token") token: String = LocalData.getInstance().getUserInfo().getToken()
+    ): Observable<DataResult<Any>>
+
+    //商家端商品下架
+    @POST("auth/goods/dismount")
+    @FormUrlEncoded
+    fun dismount(
+        @Field("goodsId") goodsId: String,
+        @Field("reasonOfDismounting") reasonOfDismounting: String,
+        @Field("token") token: String = LocalData.getInstance().getUserInfo().getToken()
+    ): Observable<DataResult<Any>>
+
+    //根据(状态)获取发布商品
+    @GET("auth/goods/getGoods")
+    fun getGoods(
+        @Query("state") state: String,
+        @Query("goodsName") goodsName: String,
+        @Field("token") token: String = LocalData.getInstance().getUserInfo().getToken(),
+        @Query("page") page: String,
+        @Query("rows") rows: String
+    ): Observable<DataResult<Any>>
+
+    //查看提交的认证信息
+    @GET("auth/view/authInfo")
+    fun authInfo(
+        @Query("type") type: String,
+        @Field("token") token: String = LocalData.getInstance().getUserInfo().getToken()
+    ): Observable<DataResult<Any>>
+
+    //根据(状态)获取订单列表
+    @GET("auth/order/orderList")
+    fun orderList(
+        @Query("state") state: String,
+        @Query("ref_state") ref_state: String,
+        @Query("goodsName") goodsName: String,
+        @Field("token") token: String = LocalData.getInstance().getUserInfo().getToken(),
+        @Query("page") page: String,
+        @Query("rows") rows: String
+    ): Observable<DataResult<Any>>
+
+    //商家端商品上架
+    @POST("auth/goods/online")
+    @FormUrlEncoded
+    fun online(
+        @Field("goodsId") goodsId: String,
+        @Field("token") token: String = LocalData.getInstance().getUserInfo().getToken()
+    ): Observable<DataResult<Any>>
+
+    //填写物流信息
+    @POST("auth/order/experter")
+    @FormUrlEncoded
+    fun experter(
+        @Field("shipFirm") shipFirm: String,
+        @Field("shipCode") shipCode: String,
+        @Field("orderCode") orderCode: String,
+        @Field("token") token: String = LocalData.getInstance().getUserInfo().getToken()
+    ): Observable<DataResult<Any>>
+
+    //订单详情
+    @POST("auth/order/info")
+    @FormUrlEncoded
+    fun info(
+        @Field("orderCode") orderCode: String,
+        @Field("token") token: String = LocalData.getInstance().getUserInfo().getToken()
+    ): Observable<DataResult<Any>>
+
+    //同意/不同意退货
+    @POST("auth/order/return")
+    @FormUrlEncoded
+    fun orderReturn(
+        @Field("refState") refState: String,
+        @Field("refundNotVerifyReason") refundNotVerifyReason: String,
+        @Field("orderCode") orderCode: String,
+        @Field("token") token: String = LocalData.getInstance().getUserInfo().getToken()
+    ): Observable<DataResult<Any>>
+
+    //支付密码验证
+    @POST("pay/password/verification")
+    @FormUrlEncoded
+    fun verification(
         @Field("password") password: String,
-        @Field("deviceType") deviceType: String = "1",
-        @Field("deviceid") deviceid: String = DeviceUtils.getAndroidID(),
-        @Field("cid") cid: String = JPushInterface.getRegistrationID(Frame.CONTEXT)
-    ): Observable<PwHttpResult<Any>>
+        @Field("token") token: String = LocalData.getInstance().getUserInfo().getToken()
+    ): Observable<DataResult<Any>>
+
+    //重置支付密码
+    @POST("pay/reset/password")
+    @FormUrlEncoded
+    fun password(
+        @Field("password") password: String,
+        @Field("newPassword") newPassword: String,
+        @Field("reNewPassword") reNewPassword: String,
+        @Field("token") token: String = LocalData.getInstance().getUserInfo().getToken()
+    ): Observable<DataResult<Any>>
+
+    //设置支付密码
+    @POST("auth/pay/set/password")
+    @FormUrlEncoded
+    fun setPassword(
+        @Field("password") password: String,
+        @Field("token") token: String = LocalData.getInstance().getUserInfo().getToken()
+    ): Observable<DataResult<Any>>
+
+    //设置默认地址
+    @POST("auth/set/default")
+    @FormUrlEncoded
+    fun default(
+        @Field("addressId") addressId: String,
+        @Field("token") token: String = LocalData.getInstance().getUserInfo().getToken()
+    ): Observable<DataResult<Any>>
+
+    //保存退货地址
+    @POST("auth/saveOrUpdate/returnAddress")
+    @FormUrlEncoded
+    fun saveReturnAddress(
+        @Field("id") id: String,
+        @Field("userId") userId: String,
+        @Field("userName") userName: String,
+        @Field("area") area: String,
+        @Field("address") address: String,
+        @Field("isDefault") isDefault: String,
+        @Field("phone") phone: String,
+        @Field("createTime") createTime: String,
+        @Field("modifyTime") modifyTime: String,
+        @Field("token") token: String = LocalData.getInstance().getUserInfo().getToken()
+    ): Observable<DataResult<Any>>
+
+    //商家端商品发布
+    @POST("auth/goods/save")
+    @FormUrlEncoded
+    fun save(
+        @FieldMap map: Map<String, String>
+    ): Observable<DataResult<Any>>
+
+    //提交企业认证
+    @POST("auth/save/enterprise")
+    @FormUrlEncoded
+    fun enterprise(
+        @FieldMap map: Map<String, String?>
+    ): Observable<DataResult<Any>>
+
+    //提交个人认证
+    @POST("auth/save/personal")
+    @FormUrlEncoded
+    fun personal(
+        @FieldMap map: Map<String, String?>
+    ): Observable<DataResult<Any>>
+
+    //查询是否通过验证
+    @GET("auth/passOrNot")
+    fun passOrNot(
+        @QueryMap map: Map<String, String?>
+    ): Observable<DataResult<Any>>
+
+    //上传文件
+    @Multipart
+    @POST("common/upload")
+    fun upload(
+        @Part file: MultipartBody.Part
+    ): Observable<DataResult<Any>>
 
 
 }

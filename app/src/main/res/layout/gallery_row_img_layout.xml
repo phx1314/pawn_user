@@ -1,29 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!-- 新书引导的View -->
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:gravity="center_horizontal"
-                android:orientation="vertical">
-
-    <ImageView
-        android:id="@+id/item_img"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:background="@drawable/yindao3"
-        android:scaleType="fitXY"/>
-
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:orientation="vertical"
-        android:gravity="center"
-        android:paddingBottom="100dp">
-
-        <ImageView
-            android:id="@+id/start_btn"
-            android:layout_width="match_parent"
-            android:layout_height="100dp" />
-    </LinearLayout>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="fill_parent" android:layout_height="fill_parent" android:gravity="center_horizontal" android:orientation="vertical">
+     <ImageView android:id="@+id/item_img" android:layout_width="fill_parent" android:layout_height="fill_parent" android:background="@drawable/yindao3" android:scaleType="fitXY" />
+     <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true" android:orientation="vertical" android:gravity="center" android:paddingBottom="@dimen/j100dp">
+          <ImageView android:id="@+id/start_btn" android:layout_width="match_parent" android:layout_height="@dimen/j100dp" />
+     </LinearLayout>
 </RelativeLayout>
+

@@ -17,8 +17,9 @@ import android.view.ViewGroup;
 import android.view.View;
 
 import com.glavesoft.pawnuser.item.Zjmx;
+import com.glavesoft.pawnuser.model.ModelZjmx
 
-class AdaZjmx (context: Context, list: List<String>) : MAdapter<String>(context, list) {
+class AdaZjmx (context: Context, list: List<ModelZjmx>) : MAdapter<ModelZjmx>(context, list) {
 
 
     override fun getview(position: Int, convertView: View?, parent: ViewGroup): View? {

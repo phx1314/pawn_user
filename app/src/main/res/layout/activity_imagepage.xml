@@ -1,41 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#000000"
-    android:fitsSystemWindows="true">
-
-    <!--<com.glavesoft.bfheadlines.activity.main.MyViewPager
+<?xml version="1.0" encoding="UTF-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent" android:layout_height="match_parent" android:background="#000000" android:fitsSystemWindows="true">
+     <!--<com.glavesoft.bfheadlines.activity.main.MyViewPager
         android:id="@+id/view_pager"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />-->
-
-    <com.foamtrace.photopicker.widget.ViewPagerFixed
-        android:id="@+id/view_pager"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
-
-    <RadioGroup
-        android:id="@+id/rg_picdh"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="4dip"
-        android:layout_gravity="bottom"
-        android:gravity="center"
-        android:orientation="horizontal"/>
-
-    <Button
-        android:id="@+id/btn_download"
-        android:layout_width="140dip"
-        android:layout_height="50dip"
-        android:gravity="center"
-        android:background="@drawable/selector_dlbtn"
-        android:layout_gravity="center"
-        android:textColor="@android:color/white"
-        android:textSize="14sp"
-        android:visibility="gone"
-        android:text="点击保存图片到本地"
-        android:onClick="onClickPic" />
-
+     <com.foamtrace.photopicker.widget.ViewPagerFixed android:id="@+id/view_pager" android:layout_width="match_parent" android:layout_height="match_parent" />
+     <RadioGroup android:id="@+id/rg_picdh" android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="4dip" android:layout_gravity="bottom" android:gravity="center" android:orientation="horizontal" />
+     <Button android:id="@+id/btn_download" android:layout_width="140dip" android:layout_height="50dip" android:gravity="center" android:background="@drawable/selector_dlbtn" android:layout_gravity="center" android:textColor="@android:color/white" android:textSize="14sp" android:visibility="gone" android:text="点击保存图片到本地" android:onClick="onClickPic" />
 </FrameLayout>
+

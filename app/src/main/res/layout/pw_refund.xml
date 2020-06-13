@@ -1,96 +1,15 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:gravity="center"
-    android:background="#80000000"
-    android:orientation="vertical">
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
-        android:background="@drawable/coner_text_bg1"
-        android:gravity="center"
-        android:orientation="vertical">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_vertical">
-
-
-            <TextView
-                android:id="@+id/tv_title_refund"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_margin="10dp"
-                android:text="退款原因："
-                android:textColor="@color/black1"
-                android:textSize="14sp"/>
-
-            <ImageView
-                android:id="@+id/iv_close_refund"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="6dp"
-                android:layout_marginRight="5dp"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:src="@mipmap/guanbi"/>
-
-        </LinearLayout>
-
-
-        <EditText
-            android:id="@+id/et_reason_refund"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingTop="6dp"
-            android:paddingBottom="6dp"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:background="@drawable/shape_refund_kuang"
-            android:textColorHint="@color/text_gray"
-            android:hint="请输入退款原因"
-            android:textColor="@color/black1"
-            android:textSize="14sp"/>
-
-        <TextView
-            android:id="@+id/tv_ts_refund"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginTop="10dp"
-            android:text="提示：提交退款后则不可取消退款！"
-            android:textColor="@color/red_k"
-            android:textSize="12sp"/>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="horizontal"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="10dp">
-
-            <Button
-                android:id="@+id/btn_ok"
-                android:layout_width="220dp"
-                android:layout_height="30dp"
-                android:background="@drawable/shape_red"
-                android:gravity="center"
-                android:text="提交"
-                android:textColor="@color/white"
-                android:textSize="14sp"/>
-
-        </LinearLayout>
-    </LinearLayout>
-
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center" android:background="#80000000" android:orientation="vertical">
+     <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_centerInParent="true" android:layout_marginLeft="@dimen/j30dp" android:layout_marginRight="@dimen/j30dp" android:background="@drawable/coner_text_bg1" android:gravity="center" android:orientation="vertical">
+          <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical">
+               <TextView android:id="@+id/tv_title_refund" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1" android:layout_margin="@dimen/j10dp" android:text="退款原因：" android:textColor="@color/black1" android:textSize="14sp" />
+               <ImageView android:id="@+id/iv_close_refund" android:layout_width="wrap_content" android:layout_height="wrap_content" android:padding="@dimen/j6dp" android:layout_marginRight="@dimen/j5dp" android:layout_alignParentRight="true" android:layout_centerVertical="true" android:src="@mipmap/guanbi" />
+          </LinearLayout>
+          <EditText android:id="@+id/et_reason_refund" android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingTop="@dimen/j6dp" android:paddingBottom="@dimen/j6dp" android:paddingLeft="@dimen/j10dp" android:paddingRight="@dimen/j10dp" android:layout_marginLeft="@dimen/j10dp" android:layout_marginRight="@dimen/j10dp" android:background="@drawable/shape_refund_kuang" android:textColorHint="@color/text_gray" android:hint="请输入退款原因" android:textColor="@color/black1" android:textSize="14sp" />
+          <TextView android:id="@+id/tv_ts_refund" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/j10dp" android:layout_marginRight="@dimen/j10dp" android:layout_marginTop="@dimen/j10dp" android:text="提示：提交退款后则不可取消退款！" android:textColor="@color/red_k" android:textSize="12sp" />
+          <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center" android:orientation="horizontal" android:layout_marginTop="@dimen/j20dp" android:layout_marginBottom="@dimen/j10dp">
+               <Button android:id="@+id/btn_ok" android:layout_width="@dimen/j220dp" android:layout_height="@dimen/j30dp" android:background="@drawable/shape_red" android:gravity="center" android:text="提交" android:textColor="@color/white" android:textSize="14sp" />
+          </LinearLayout>
+     </LinearLayout>
 </LinearLayout>
+

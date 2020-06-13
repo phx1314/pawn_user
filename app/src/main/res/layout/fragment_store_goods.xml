@@ -1,50 +1,10 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/sw"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:scrollbars="none">
-
-    <cn.bingoogolapple.refreshlayout.BGARefreshLayout
-        android:id="@+id/rl_recyclerview_refresh"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
-
-        <GridView
-            android:paddingLeft="8dp"
-            android:paddingRight="8dp"
-            android:paddingTop="8dp"
-            android:id="@+id/grid_all"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:horizontalSpacing="8dp"
-            android:numColumns="2"
-            android:verticalSpacing="8dp"
-            android:background="@color/white">
-
-        </GridView>
-
-    </cn.bingoogolapple.refreshlayout.BGARefreshLayout>
-
-    <LinearLayout
-        android:id="@+id/ll_nodata"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:visibility="gone">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:gravity="center"
-            android:text="该店铺暂无商品上架，快去别家看看吧~"
-            android:textColor="@color/bg_title"
-            android:textSize="13sp"/>
-
-    </LinearLayout>
-
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools" android:id="@+id/sw" android:layout_width="match_parent" android:layout_height="match_parent" android:scrollbars="none">
+     <cn.bingoogolapple.refreshlayout.BGARefreshLayout android:id="@+id/rl_recyclerview_refresh" android:layout_width="match_parent" android:layout_height="match_parent">
+          <GridView android:paddingLeft="@dimen/j8dp" android:paddingRight="@dimen/j8dp" android:paddingTop="@dimen/j8dp" android:id="@+id/grid_all" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:horizontalSpacing="@dimen/j8dp" android:numColumns="2" android:verticalSpacing="@dimen/j8dp" android:background="@color/white" />
+     </cn.bingoogolapple.refreshlayout.BGARefreshLayout>
+     <LinearLayout android:id="@+id/ll_nodata" android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center" android:orientation="vertical" android:visibility="gone">
+          <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j10dp" android:gravity="center" android:text="该店铺暂无商品上架，快去别家看看吧~" android:textColor="@color/bg_title" android:textSize="13sp" />
+     </LinearLayout>
 </LinearLayout>
+

@@ -6,8 +6,8 @@
 
 
 /**
-   
-*/
+
+ */
 
 package com.glavesoft.pawnuser.ada;
 
@@ -17,8 +17,11 @@ import android.view.ViewGroup;
 import android.view.View;
 
 import com.glavesoft.pawnuser.item.ThAddress;
+import com.glavesoft.pawnuser.model.ModelGrzl
+import com.mdx.framework.Frame
 
-class AdaThAddress (context: Context, list: List<String>) : MAdapter<String>(context, list) {
+class AdaThAddress(context: Context, list: List<ModelGrzl.ReturnAddressBean>) :
+    MAdapter<ModelGrzl.ReturnAddressBean>(context, list) {
 
 
     override fun getview(position: Int, convertView: View?, parent: ViewGroup): View? {
@@ -28,11 +31,14 @@ class AdaThAddress (context: Context, list: List<String>) : MAdapter<String>(con
             convertView = ThAddress(context)
         }
         try {
-            (convertView as ThAddress).set(item)
+            (convertView as ThAddress).set(item, this)
         } catch (e: Exception) {
             e.printStackTrace()
         }
-
+        convertView.setOnLongClickListener(View.OnLongClickListener {
+           Frame.HANDLES.sentAll("FrgThAddress",1,item.id.toString())
+            true
+        })
         return convertView
     }
 }

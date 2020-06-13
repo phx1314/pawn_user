@@ -1,85 +1,15 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/bg_default"
-    android:focusable="true"
-    android:focusableInTouchMode="true"
-    android:fitsSystemWindows="true">
-
-    <include layout="@layout/titlebar"/>
-
-    <com.glavesoft.pullrefresh.PullToRefreshListView
-        android:id="@+id/mylv_comment_newsdetail"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        />
-
-    <View style="@style/line"/>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_vertical"
-        android:background="@color/white"
-        android:padding="7dp"
-        >
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center_vertical"
-            android:paddingTop="8dp"
-            android:paddingBottom="8dp"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:background="@drawable/shape_coner_hui_kuang">
-
-
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/pinglun"/>
-
-            <EditText
-                android:id="@+id/et_comment_newsdetail"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:paddingLeft="5dp"
-                android:paddingRight="5dp"
-                android:background="@color/transparent"
-                android:text=""
-                android:textSize="14sp"
-                android:textColor="@color/black1"
-                android:singleLine="true"
-                android:inputType="text"
-                android:imeOptions="actionSend"
-                android:hint="写评论..."/>
-
-            <ImageView
-                android:id="@+id/iv_sendcomment_newsdetail"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/send_off"/>
-
-        </LinearLayout>
-
-        <ImageView
-            android:id="@+id/iv_collection_newsdetail"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="5dp"
-            android:padding="5dp"
-            android:src="@drawable/love_off"
-            />
-
-
-    </LinearLayout>
-
-
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent" android:background="@color/bg_default" android:focusable="true" android:focusableInTouchMode="true" android:fitsSystemWindows="true">
+     <include layout="@layout/titlebar" />
+     <com.glavesoft.pullrefresh.PullToRefreshListView android:id="@+id/mylv_comment_newsdetail" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1" />
+     <View style="@style/line" />
+     <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:background="@color/white" android:padding="@dimen/j7dp">
+          <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center_vertical" android:paddingTop="@dimen/j8dp" android:paddingBottom="@dimen/j8dp" android:paddingLeft="@dimen/j10dp" android:paddingRight="@dimen/j10dp" android:background="@drawable/shape_coner_hui_kuang">
+               <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/pinglun" />
+               <EditText android:id="@+id/et_comment_newsdetail" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:paddingLeft="@dimen/j5dp" android:paddingRight="@dimen/j5dp" android:background="@color/transparent" android:text="" android:textSize="14sp" android:textColor="@color/black1" android:singleLine="true" android:inputType="text" android:imeOptions="actionSend" android:hint="写评论..." />
+               <ImageView android:id="@+id/iv_sendcomment_newsdetail" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/send_off" />
+          </LinearLayout>
+          <ImageView android:id="@+id/iv_collection_newsdetail" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/j10dp" android:layout_marginRight="@dimen/j5dp" android:padding="@dimen/j5dp" android:src="@drawable/love_off" />
+     </LinearLayout>
 </LinearLayout>
+

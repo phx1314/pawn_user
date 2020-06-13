@@ -1,12 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent" android:layout_height="match_parent" android:background="#F0F0F0" android:gravity="center_horizontal" android:orientation="vertical" android:padding="@dimen/j14dp">
-     <LinearLayout android:id="@+id/mLinearLayout_1" android:layout_width="match_parent" android:layout_height="@dimen/j121dp" android:background="@drawable/shape_white_rz" android:orientation="horizontal">
-          <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="bottom" android:src="@drawable/sp_list" />
-          <TextView style="@style/text_style_17_black" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/j31dp" android:layout_marginTop="@dimen/j37dp" android:drawableLeft="@drawable/sp" android:drawablePadding="@dimen/j18dp" android:gravity="center" android:text="商品列表" />
-     </LinearLayout>
-     <LinearLayout android:id="@+id/mLinearLayout_2" android:layout_width="match_parent" android:layout_height="@dimen/j121dp" android:layout_marginTop="@dimen/j20dp" android:background="@drawable/shape_white_rz" android:orientation="horizontal">
-          <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="bottom" android:src="@drawable/xz_2" />
-          <TextView style="@style/text_style_17_black" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/j17dp" android:layout_marginTop="@dimen/j37dp" android:drawableLeft="@drawable/sp" android:drawablePadding="@dimen/j18dp" android:gravity="center" android:text="新增商品" />
-     </LinearLayout>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F0F0F0"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="@dimen/j14dp">
+
+    <LinearLayout
+        android:id="@+id/mLinearLayout_1"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/j121dp"
+        android:background="@drawable/shape_white_rz"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:src="@drawable/sp_list" />
+
+        <TextView
+            style="@style/text_style_17_black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/j31dp"
+            android:layout_marginTop="@dimen/j37dp"
+            android:drawableLeft="@drawable/sp"
+            android:drawablePadding="@dimen/j18dp"
+            android:gravity="center"
+            android:text="商品列表" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/mLinearLayout_2"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/j121dp"
+        android:layout_marginTop="@dimen/j20dp"
+        android:background="@drawable/shape_white_rz"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:src="@drawable/xz_2" />
+
+        <TextView
+            style="@style/text_style_17_black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/j17dp"
+            android:layout_marginTop="@dimen/j37dp"
+            android:drawableLeft="@drawable/sp"
+            android:drawablePadding="@dimen/j18dp"
+            android:gravity="center"
+            android:text="新增商品" />
+    </LinearLayout>
 </LinearLayout>
 

@@ -1,259 +1,43 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/white">
-
-    <RelativeLayout
-        android:id="@+id/titlebar_ll"
-        android:layout_width="fill_parent"
-        android:layout_height="45dp"
-        android:background="@color/blue"
-        android:gravity="center_vertical"
-        android:orientation="horizontal">
-
-        <TextView
-            android:id="@+id/titlebar_left"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:gravity="center_vertical"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:textColor="@android:color/white"
-            android:textSize="14sp"
-            android:text="取消"
-            />
-
-        <TextView
-            android:id="@+id/titlebar_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:ellipsize="end"
-            android:gravity="center"
-            android:paddingBottom="10dp"
-            android:paddingTop="10dp"
-            android:drawableRight="@drawable/xx"
-            android:drawablePadding="5dp"
-            android:singleLine="true"
-            android:textColor="@android:color/white"
-            android:textSize="18sp"
-            android:text="推荐"/>
-
-
-        <TextView
-            android:id="@+id/titlebar_right"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:gravity="center_vertical"
-            android:layout_alignParentRight="true"
-            android:textColor="@android:color/white"
-            android:textSize="14sp"
-            android:text="发布"
-          />
-
-    </RelativeLayout>
-
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="10dp"
-                android:background="@color/bg_default"/>
-
-            <EditText
-                android:id="@+id/et_title_sendnews"
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:gravity="center_vertical"
-                android:paddingRight="10dp"
-                android:paddingLeft="10dp"
-                android:hint="请输入标题"
-                android:background="@null"
-                android:textSize="15sp"
-                android:textColor="@color/black1"
-                />
-
-            <View style="@style/line"/>
-
-            <EditText
-                android:id="@+id/et_soure_sendnews"
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:gravity="center_vertical"
-                android:paddingRight="10dp"
-                android:paddingLeft="10dp"
-                android:hint="请输入新闻来源"
-                android:background="@null"
-                android:textSize="15sp"
-                android:textColor="@color/black1"
-                />
-
-            <View style="@style/line"/>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center|left"
-                android:orientation="horizontal">
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:orientation="vertical">
-                    <ImageView
-                        android:id="@+id/videos"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:minWidth="100dp"
-                        android:minHeight="100dp"
-                        android:maxWidth="250dp"
-                        android:maxHeight="250dp"
-                        android:background="@drawable/jtp"
-                        android:padding="30dp"
-                        android:layout_margin="20dp"
-                        android:visibility="gone"
-                        />
-                    <TextView
-                        android:id="@+id/videost"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/black1"
-                        android:textSize="14sp"
-                        android:visibility="gone"
-                        android:text="添加视频"/>
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:orientation="vertical">
-                <ImageView
-                    android:id="@+id/add_videospic"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:minWidth="100dp"
-                    android:minHeight="100dp"
-                    android:maxWidth="250dp"
-                    android:maxHeight="250dp"
-                    android:background="@drawable/jtp"
-                    android:padding="30dp"
-                    android:layout_margin="20dp"
-                    android:visibility="gone"
-                    />
-                    <TextView
-                        android:id="@+id/add_videospict"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/black1"
-                        android:textSize="14sp"
-                        android:visibility="gone"
-                        android:text="添加视频封面"/>
-                     </LinearLayout>
-            </LinearLayout>
-
-            <com.glavesoft.view.MyListView
-                android:id="@+id/mylv_content_sendnews"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/white"
-                android:divider="@color/bg_line"
-                android:dividerHeight="1dp"
-                android:listSelector="@android:color/transparent" />
-
-        </LinearLayout>
-
-    </ScrollView>
-
-    <LinearLayout
-        android:id="@+id/send_imglayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_vertical"
-        android:background="#F0F0F0"
-        >
-
-        <LinearLayout
-            android:id="@+id/ll_add_sendnews"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:padding="10dp">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/tianjia"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:textColor="@color/text_gray"
-                android:textSize="15sp"
-                android:text="添加图文"/>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/ll_pics_send"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center_vertical">
-
-            <ImageView
-                android:id="@+id/iv_pics_send"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/select_off"/>
-
-            <TextView
-                android:id="@+id/tv_pics_send"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:textSize="16sp"
-                android:textColor="@color/text_gray"
-                android:text="图片集"/>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/ll_tw_send"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="10dp"
-            android:layout_marginLeft="10dp"
-            android:gravity="center_vertical">
-
-            <ImageView
-                android:id="@+id/iv_tw_send"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/select_on"/>
-
-            <TextView
-                android:id="@+id/tv_tw_send"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:textSize="16sp"
-                android:textColor="@color/blue"
-                android:text="图文"/>
-
-        </LinearLayout>
-
-    </LinearLayout>
-
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent" android:background="@color/white">
+     <RelativeLayout android:id="@+id/titlebar_ll" android:layout_width="fill_parent" android:layout_height="@dimen/j45dp" android:background="@color/blue" android:gravity="center_vertical" android:orientation="horizontal">
+          <TextView android:id="@+id/titlebar_left" android:layout_width="wrap_content" android:layout_height="match_parent" android:gravity="center_vertical" android:paddingLeft="@dimen/j10dp" android:paddingRight="@dimen/j10dp" android:textColor="@android:color/white" android:textSize="14sp" android:text="取消" />
+          <TextView android:id="@+id/titlebar_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true" android:ellipsize="end" android:gravity="center" android:paddingBottom="@dimen/j10dp" android:paddingTop="@dimen/j10dp" android:drawableRight="@drawable/xx" android:drawablePadding="@dimen/j5dp" android:singleLine="true" android:textColor="@android:color/white" android:textSize="18sp" android:text="推荐" />
+          <TextView android:id="@+id/titlebar_right" android:layout_width="wrap_content" android:layout_height="match_parent" android:paddingLeft="@dimen/j10dp" android:paddingRight="@dimen/j10dp" android:gravity="center_vertical" android:layout_alignParentRight="true" android:textColor="@android:color/white" android:textSize="14sp" android:text="发布" />
+     </RelativeLayout>
+     <ScrollView android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1">
+          <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical">
+               <View android:layout_width="match_parent" android:layout_height="@dimen/j10dp" android:background="@color/bg_default" />
+               <EditText android:id="@+id/et_title_sendnews" android:layout_width="match_parent" android:layout_height="@dimen/j45dp" android:gravity="center_vertical" android:paddingRight="@dimen/j10dp" android:paddingLeft="@dimen/j10dp" android:hint="请输入标题" android:background="@null" android:textSize="15sp" android:textColor="@color/black1" />
+               <View style="@style/line" />
+               <EditText android:id="@+id/et_soure_sendnews" android:layout_width="match_parent" android:layout_height="@dimen/j45dp" android:gravity="center_vertical" android:paddingRight="@dimen/j10dp" android:paddingLeft="@dimen/j10dp" android:hint="请输入新闻来源" android:background="@null" android:textSize="15sp" android:textColor="@color/black1" />
+               <View style="@style/line" />
+               <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center|left" android:orientation="horizontal">
+                    <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:gravity="center" android:orientation="vertical">
+                         <ImageView android:id="@+id/videos" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minWidth="@dimen/j100dp" android:minHeight="@dimen/j100dp" android:maxWidth="@dimen/j250dp" android:maxHeight="@dimen/j250dp" android:background="@drawable/jtp" android:padding="@dimen/j30dp" android:layout_margin="@dimen/j20dp" android:visibility="gone" />
+                         <TextView android:id="@+id/videost" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="@color/black1" android:textSize="14sp" android:visibility="gone" android:text="添加视频" />
+                    </LinearLayout>
+                    <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:gravity="center" android:orientation="vertical">
+                         <ImageView android:id="@+id/add_videospic" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minWidth="@dimen/j100dp" android:minHeight="@dimen/j100dp" android:maxWidth="@dimen/j250dp" android:maxHeight="@dimen/j250dp" android:background="@drawable/jtp" android:padding="@dimen/j30dp" android:layout_margin="@dimen/j20dp" android:visibility="gone" />
+                         <TextView android:id="@+id/add_videospict" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="@color/black1" android:textSize="14sp" android:visibility="gone" android:text="添加视频封面" />
+                    </LinearLayout>
+               </LinearLayout>
+               <com.glavesoft.view.MyListView android:id="@+id/mylv_content_sendnews" android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@color/white" android:divider="@color/bg_line" android:dividerHeight="@dimen/j1dp" android:listSelector="@android:color/transparent" />
+          </LinearLayout>
+     </ScrollView>
+     <LinearLayout android:id="@+id/send_imglayout" android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:background="#F0F0F0">
+          <LinearLayout android:id="@+id/ll_add_sendnews" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:padding="@dimen/j10dp">
+               <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/tianjia" />
+               <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/j5dp" android:textColor="@color/text_gray" android:textSize="15sp" android:text="添加图文" />
+          </LinearLayout>
+          <LinearLayout android:id="@+id/ll_pics_send" android:layout_width="wrap_content" android:layout_height="wrap_content" android:gravity="center_vertical">
+               <ImageView android:id="@+id/iv_pics_send" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/select_off" />
+               <TextView android:id="@+id/tv_pics_send" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/j5dp" android:textSize="16sp" android:textColor="@color/text_gray" android:text="图片集" />
+          </LinearLayout>
+          <LinearLayout android:id="@+id/ll_tw_send" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/j10dp" android:layout_marginLeft="@dimen/j10dp" android:gravity="center_vertical">
+               <ImageView android:id="@+id/iv_tw_send" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/select_on" />
+               <TextView android:id="@+id/tv_tw_send" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/j5dp" android:textSize="16sp" android:textColor="@color/blue" android:text="图文" />
+          </LinearLayout>
+     </LinearLayout>
 </LinearLayout>
+

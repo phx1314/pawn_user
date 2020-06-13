@@ -1,108 +1,22 @@
-<?xml version="1.0" encoding="utf-8"?>
-<HorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:scrollbars="none"
-    android:background="@color/white"
-    >
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="horizontal">
-
-        <LinearLayout
-            android:id="@+id/item_body"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            >
-                <FrameLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="10dp">
-                    <RelativeLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
-                        <ImageView
-                            android:id="@+id/mynews_titleimg"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/xu"
-                            android:scaleType="center"
-                            android:layout_centerVertical="true"
-                            android:layout_centerHorizontal="true" />
-                        <ImageView
-                            android:id="@+id/mynews_titlepoint"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/bf_news_hd"
-                            android:layout_alignParentTop="true"
-                            android:layout_alignParentRight="true"
-                            android:visibility="gone"
-                            android:layout_alignParentEnd="true" />
+<?xml version="1.0" encoding="UTF-8"?>
+<HorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="wrap_content" android:scrollbars="none" android:background="@color/white">
+     <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:gravity="center" android:orientation="horizontal">
+          <LinearLayout android:id="@+id/item_body" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+               <FrameLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/j10dp" android:layout_marginTop="@dimen/j10dp">
+                    <RelativeLayout android:layout_width="wrap_content" android:layout_height="wrap_content">
+                         <ImageView android:id="@+id/mynews_titleimg" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/xu" android:scaleType="center" android:layout_centerVertical="true" android:layout_centerHorizontal="true" />
+                         <ImageView android:id="@+id/mynews_titlepoint" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/bf_news_hd" android:layout_alignParentTop="true" android:layout_alignParentRight="true" android:visibility="gone" android:layout_alignParentEnd="true" />
                     </RelativeLayout>
-                </FrameLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@color/white"
-                    android:padding="8dp"
-                    android:orientation="vertical"
-                    >
-                    <TextView
-                        android:id="@+id/mynews_title"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="15sp"
-                        android:textColor="@color/black1"
-                        android:text="续当到期提醒"
-                        />
-
-                    <TextView
-                        android:id="@+id/mynews_content"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="3dp"
-                        android:textSize="13sp"
-                        android:textColor="@color/text_gray"
-                        android:text="续当到期提醒"
-                        />
-                    <TextView
-                        android:id="@+id/mynews_time"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="3dp"
-                        android:textColor="@color/text_gray"
-                        android:textSize="12sp"
-                        android:text="2017-03-15"
-                        />
-                </LinearLayout>
-
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:id="@+id/ll_del_new"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:gravity="center_vertical"
-            >
-            <TextView
-                android:id="@+id/item_delete_new"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_gravity="right"
-                android:background="@color/red_del"
-                android:gravity="center"
-                android:paddingLeft="15dip"
-                android:paddingRight="15dip"
-                android:textSize="14sp"
-                android:text="删除"
-                android:textColor="@color/white" />
-        </LinearLayout>
-    </LinearLayout>
-
+               </FrameLayout>
+               <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@color/white" android:padding="@dimen/j8dp" android:orientation="vertical">
+                    <TextView android:id="@+id/mynews_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="15sp" android:textColor="@color/black1" android:text="续当到期提醒" />
+                    <TextView android:id="@+id/mynews_content" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j3dp" android:textSize="13sp" android:textColor="@color/text_gray" android:text="续当到期提醒" />
+                    <TextView android:id="@+id/mynews_time" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j3dp" android:textColor="@color/text_gray" android:textSize="12sp" android:text="2017-03-15" />
+               </LinearLayout>
+          </LinearLayout>
+          <LinearLayout android:id="@+id/ll_del_new" android:layout_width="wrap_content" android:layout_height="match_parent" android:gravity="center_vertical">
+               <TextView android:id="@+id/item_delete_new" android:layout_width="wrap_content" android:layout_height="match_parent" android:layout_gravity="right" android:background="@color/red_del" android:gravity="center" android:paddingLeft="15dip" android:paddingRight="15dip" android:textSize="14sp" android:text="删除" android:textColor="@color/white" />
+          </LinearLayout>
+     </LinearLayout>
 </HorizontalScrollView>
+

@@ -1,39 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:paddingTop="10dp"
-    android:paddingBottom="10dp"
-    android:background="@color/white">
-
-    <EditText
-        android:id="@+id/et_content_sendnews"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="top"
-        android:paddingRight="10dp"
-        android:paddingLeft="10dp"
-        android:hint="请输入内容"
-        android:minLines="4"
-        android:background="@null"
-        android:textSize="15sp"
-        android:textColor="@color/black1"
-        />
-
-    <com.glavesoft.view.GridViewForNoScroll
-        android:id="@+id/gv_pic_sendnews"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:cacheColorHint="#00000000"
-        android:columnWidth="150dp"
-        android:gravity="center"
-        android:listSelector="#00000000"
-        android:numColumns="3"
-        android:scrollbars="none"
-        android:stretchMode="columnWidth"
-        android:verticalSpacing="15dp"
-        android:background="@color/white"/>
-
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingTop="@dimen/j10dp" android:paddingBottom="@dimen/j10dp" android:background="@color/white">
+     <EditText android:id="@+id/et_content_sendnews" android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="top" android:paddingRight="@dimen/j10dp" android:paddingLeft="@dimen/j10dp" android:hint="请输入内容" android:minLines="4" android:background="@null" android:textSize="15sp" android:textColor="@color/black1" />
+     <com.glavesoft.view.GridViewForNoScroll android:id="@+id/gv_pic_sendnews" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j10dp" android:cacheColorHint="#00000000" android:columnWidth="@dimen/j150dp" android:gravity="center" android:listSelector="#00000000" android:numColumns="3" android:scrollbars="none" android:stretchMode="columnWidth" android:verticalSpacing="@dimen/j15dp" android:background="@color/white" />
 </LinearLayout>
+

@@ -1,270 +1,47 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:fitsSystemWindows="true">
-
-    <include layout="@layout/titlebar"/>
-
-
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/bg_default">
-
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-
-            <include layout="@layout/layout_pics" android:visibility="gone"/>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/white"
-                android:layout_marginTop="1dp"
-                android:padding="10dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="*"
-                    android:textSize="14sp"
-                    android:textColor="@color/red_k"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="金属种类"
-                    android:textSize="15sp"
-                    android:textColor="@color/black"/>
-
-
-                <RadioGroup
-                    android:id="@+id/rg_metaltype"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-                    <RadioButton
-                        android:id="@+id/rb_hj"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:button="@drawable/select_sex"
-                        android:checked="true"
-                        android:textSize="15sp"
-                        android:textColor="@color/black"
-                        android:text=" 黄金"/>
-                    <RadioButton
-                        android:id="@+id/rb_bj"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:button="@drawable/select_sex"
-                        android:textSize="15sp"
-                        android:textColor="@color/black"
-                        android:text=" 铂金"/>
-                </RadioGroup>
-
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
-                android:paddingTop="5dp"
-                android:paddingBottom="5dp">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="黄金：足金、K金(K黄金、K白金、玫瑰金)"
-                    android:textSize="12sp"
-                    android:textColor="@color/text_gray"/>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="铂金：PT990、PT950、PT900"
-                    android:textSize="12sp"
-                    android:textColor="@color/text_gray"/>
-
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/white"
-                android:layout_marginTop="1dp"
-                android:padding="10dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="*"
-                    android:textSize="14sp"
-                    android:textColor="@color/red_k"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="克重"
-                    android:textSize="15sp"
-                    android:textColor="@color/black"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="(克 g)"
-                    android:textSize="12sp"
-                    android:textColor="@color/text_gray"/>
-
-                <EditText
-                    android:id="@+id/et_weight_noblemetal"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@null"
-                    android:gravity="center_vertical|right"
-                    android:paddingLeft="10dp"
-                    android:hint="请输入克重"
-                    android:inputType="numberDecimal"
-                    android:textColorHint="@color/text_gray"
-                    android:textColor="@color/black"
-                    android:textSize="15sp"
-                    />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
-                android:paddingTop="5dp"
-                android:paddingBottom="5dp">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="克重不含配件，如挂绳等，数字精确到小数点后一位，如12.5克"
-                    android:textSize="12sp"
-                    android:textColor="@color/text_gray"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/white"
-                android:layout_marginTop="1dp"
-                android:padding="10dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="*"
-                    android:textSize="14sp"
-                    android:textColor="@color/red_k"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="纯度"
-                    android:textSize="15sp"
-                    android:textColor="@color/black1"/>
-
-                <TextView
-                    android:id="@+id/tv_cd_noblemetal"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="right"
-                    android:paddingLeft="10dp"
-                    android:textSize="15sp"
-                    android:textColor="@color/black"/>
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/xzz1"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
-                android:paddingTop="5dp"
-                android:paddingBottom="5dp">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="根据宝贝纯度选择，如果忘记，纯度可以从贵金属表面印记得知"
-                    android:textSize="12sp"
-                    android:textColor="@color/text_gray"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/ll_gj"
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/white"
-                android:padding="10dp"
-                android:visibility="gone">
-
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="该物品的估价为："
-                    android:textColor="@color/red_k"
-                    android:textSize="14sp"/>
-
-
-                <TextView
-                    android:id="@+id/tv_gj"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:layout_marginTop="5dp"
-                    android:textColor="@color/red_k"
-                    android:textSize="25sp"/>
-
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:id="@+id/ll_submit_noblemetal"
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:layout_margin="25dp"
-                android:gravity="center"
-                android:background="@mipmap/button">
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@mipmap/button_send"/>
-
-            </LinearLayout>
-
-        </LinearLayout>
-
-    </ScrollView>
-
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent" android:fitsSystemWindows="true">
+     <include layout="@layout/titlebar" />
+     <ScrollView android:layout_width="match_parent" android:layout_height="match_parent" android:background="@color/bg_default">
+          <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent">
+               <include layout="@layout/layout_pics" android:visibility="gone" />
+               <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@color/white" android:layout_marginTop="@dimen/j1dp" android:padding="@dimen/j10dp">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="*" android:textSize="14sp" android:textColor="@color/red_k" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1" android:text="金属种类" android:textSize="15sp" android:textColor="@color/black" />
+                    <RadioGroup android:id="@+id/rg_metaltype" android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal">
+                         <RadioButton android:id="@+id/rb_hj" android:layout_width="wrap_content" android:layout_height="wrap_content" android:button="@drawable/select_sex" android:checked="true" android:textSize="15sp" android:textColor="@color/black" android:text=" 黄金" />
+                         <RadioButton android:id="@+id/rb_bj" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/j10dp" android:button="@drawable/select_sex" android:textSize="15sp" android:textColor="@color/black" android:text=" 铂金" />
+                    </RadioGroup>
+               </LinearLayout>
+               <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingLeft="@dimen/j10dp" android:paddingRight="@dimen/j10dp" android:paddingTop="@dimen/j5dp" android:paddingBottom="@dimen/j5dp">
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="黄金：足金、K金(K黄金、K白金、玫瑰金)" android:textSize="12sp" android:textColor="@color/text_gray" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="铂金：PT990、PT950、PT900" android:textSize="12sp" android:textColor="@color/text_gray" />
+               </LinearLayout>
+               <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@color/white" android:layout_marginTop="@dimen/j1dp" android:padding="@dimen/j10dp">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="*" android:textSize="14sp" android:textColor="@color/red_k" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="克重" android:textSize="15sp" android:textColor="@color/black" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="(克 g)" android:textSize="12sp" android:textColor="@color/text_gray" />
+                    <EditText android:id="@+id/et_weight_noblemetal" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:background="@null" android:gravity="center_vertical|right" android:paddingLeft="@dimen/j10dp" android:hint="请输入克重" android:inputType="numberDecimal" android:textColorHint="@color/text_gray" android:textColor="@color/black" android:textSize="15sp" />
+               </LinearLayout>
+               <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingLeft="@dimen/j10dp" android:paddingRight="@dimen/j10dp" android:paddingTop="@dimen/j5dp" android:paddingBottom="@dimen/j5dp">
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="克重不含配件，如挂绳等，数字精确到小数点后一位，如12.5克" android:textSize="12sp" android:textColor="@color/text_gray" />
+               </LinearLayout>
+               <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@color/white" android:layout_marginTop="@dimen/j1dp" android:padding="@dimen/j10dp">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="*" android:textSize="14sp" android:textColor="@color/red_k" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="纯度" android:textSize="15sp" android:textColor="@color/black1" />
+                    <TextView android:id="@+id/tv_cd_noblemetal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="right" android:paddingLeft="@dimen/j10dp" android:textSize="15sp" android:textColor="@color/black" />
+                    <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/xzz1" />
+               </LinearLayout>
+               <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingLeft="@dimen/j10dp" android:paddingRight="@dimen/j10dp" android:paddingTop="@dimen/j5dp" android:paddingBottom="@dimen/j5dp">
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="根据宝贝纯度选择，如果忘记，纯度可以从贵金属表面印记得知" android:textSize="12sp" android:textColor="@color/text_gray" />
+               </LinearLayout>
+               <LinearLayout android:id="@+id/ll_gj" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@color/white" android:padding="@dimen/j10dp" android:visibility="gone">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="该物品的估价为：" android:textColor="@color/red_k" android:textSize="14sp" />
+                    <TextView android:id="@+id/tv_gj" android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center" android:layout_marginTop="@dimen/j5dp" android:textColor="@color/red_k" android:textSize="25sp" />
+               </LinearLayout>
+               <LinearLayout android:id="@+id/ll_submit_noblemetal" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="@dimen/j45dp" android:layout_margin="@dimen/j25dp" android:gravity="center" android:background="@mipmap/button">
+                    <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@mipmap/button_send" />
+               </LinearLayout>
+          </LinearLayout>
+     </ScrollView>
 </LinearLayout>
+

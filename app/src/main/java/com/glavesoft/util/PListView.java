@@ -165,7 +165,6 @@ public class PListView extends ListView implements AbsListView.OnScrollListener,
      * 上一次的数量
      */
     private int count = 0;
-    private String type = "POST";
     private String method = "";
     private Object[] mparams;
     public int PageSize = 10;
@@ -173,7 +172,7 @@ public class PListView extends ListView implements AbsListView.OnScrollListener,
     public int PageIndex = 1;
     public int pageIndex = 1;
     public String PageIndex_key = "page";
-    public String PageSize_key = "size";
+    public String PageSize_key = "rows";
     public Handler mHandler = new Handler();
     public Runnable runnable;
     public BaseFrg mBaseFrg;
@@ -518,48 +517,27 @@ public class PListView extends ListView implements AbsListView.OnScrollListener,
 
     @Override
     public void onSuccess(String content, String methodName) {
-        try {
-                JSONObject mJSONObject = new JSONObject(content);
-                MAdapter mMAdapter = null;
-                AbLogUtil.d(content);
-                mMAdapter = mListViewListener.onSuccess(methodName, content);
-                if (mMAdapter != null) {
-                    try {
-                        if (mJSONObject.optInt("pageSize") <= 0) {
-                            if ((gridCount != -1 ? gridCount * mMAdapter.getCount() : mMAdapter.getCount()) < PageSize) {
-                                setPullLoadEnable(false);
-                            }
-                        } else {
-
-                            if(methodName!="queryTaskReports"){
-                                if (mJSONObject.optInt("pageNum") >= mJSONObject.optInt("pages") || (gridCount != -1 ? gridCount * mMAdapter.getCount() : mMAdapter.getCount()) < PageSize) {
-                                    setPullLoadEnable(false);
-                                }
-                            }else {
-                                if (mJSONObject.optInt("pageIndex") >= mJSONObject.optInt("totalPage") || (gridCount != -1 ? gridCount * mMAdapter.getCount() : mMAdapter.getCount()) < PageSize) {
-                                    setPullLoadEnable(false);
-                                }
-                            }
-                        }
-                        if (mAdapter == null || isRefreash) {
-                            mAdapter = mMAdapter;
-                            setAdapter(mAdapter);
-                        } else {
-                            mAdapter.AddAll(mMAdapter);
-                        }
-                    } catch (Exception e) {
-                        if ((gridCount != -1 ? gridCount * mMAdapter.getCount() : mMAdapter.getCount()) < PageSize) {
-                            setPullLoadEnable(false);
-                        }
-                    }
-
+        AbLogUtil.d(content);
+        MAdapter mMAdapter = mListViewListener.onSuccess(methodName, content);
+        if (mMAdapter != null) {
+            try {
+                if (mMAdapter.getCount() < PageSize) {
+                    setPullLoadEnable(false);
                 }
-
-            PageIndex++;
-            stopAll();
-        } catch (JSONException e) {
-            e.printStackTrace();
+                if (mAdapter == null || isRefreash) {
+                    mAdapter = mMAdapter;
+                    setAdapter(mAdapter);
+                } else {
+                    mAdapter.AddAll(mMAdapter);
+                }
+            } catch (Exception e) {
+                if ((gridCount != -1 ? gridCount * mMAdapter.getCount() : mMAdapter.getCount()) < PageSize) {
+                    setPullLoadEnable(false);
+                }
+            }
         }
+        PageIndex++;
+        stopAll();
     }
 
 
@@ -569,7 +547,7 @@ public class PListView extends ListView implements AbsListView.OnScrollListener,
     }
 
 
-    public void setApiLoadParams(BaseFrg mBaseFrg, String method, String type, Object... mparams) {
+    public void setApiLoadParams(BaseFrg mBaseFrg, String method, Object... mparams) {
         setAdapter(new BaseAdapter() {
             @Override
             public int getCount() {
@@ -593,7 +571,6 @@ public class PListView extends ListView implements AbsListView.OnScrollListener,
         });
         this.mBaseFrg = mBaseFrg;
         this.method = method;
-        this.type = type;
         this.mparams = mparams;
         if (mEnablePullRefresh) {
             pullLoad();

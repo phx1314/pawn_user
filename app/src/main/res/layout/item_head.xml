@@ -1,14 +1,78 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools" android:id="@+id/mRelativeLayout" android:layout_width="match_parent" android:layout_height="@dimen/j45dp" android:background="@color/bg_title">
-     <ImageButton android:id="@+id/mImageButton_back" android:layout_width="wrap_content" android:layout_height="wrap_content" android:paddingLeft="@dimen/j10dp" android:paddingRight="@dimen/j20dp" android:src="@drawable/top_fh" android:visibility="gone" />
-     <LinearLayout android:layout_width="wrap_content" android:layout_height="match_parent" android:layout_centerInParent="true" android:gravity="center" android:orientation="vertical">
-          <TextView android:id="@+id/mTextView_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:ellipsize="end" android:gravity="center" android:singleLine="true" android:textColor="@android:color/white" android:textSize="18sp" />
-          <LinearLayout android:id="@+id/mLinearLayout_bottom" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j4dp" android:gravity="center_vertical" android:visibility="gone">
-               <View android:layout_width="@dimen/j45dp" android:layout_height="@dimen/j0_5dp" android:background="@color/white" />
-               <TextView android:id="@+id/mTextView_en" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/j15dp" android:layout_marginRight="@dimen/j15dp" android:text="O R D E R   M A N A G E M E N T" android:textColor="#fff" android:textSize="6sp" />
-               <View android:layout_width="@dimen/j45dp" android:layout_height="@dimen/j0_5dp" android:background="@color/white" />
-          </LinearLayout>
-     </LinearLayout>
-     <ImageButton android:id="@+id/mImageButton_right" android:layout_width="wrap_content" android:layout_height="match_parent" android:layout_alignParentRight="true" android:layout_centerVertical="true" android:background="#00000000" android:paddingLeft="@dimen/j10dp" android:paddingRight="@dimen/j10dp" android:src="@drawable/kefu2" android:visibility="gone" />
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mRelativeLayout"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/j45dp"
+    android:background="@color/bg_title">
+
+    <ImageButton
+        android:id="@+id/mImageButton_back"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:background="#00000000"
+        android:paddingLeft="@dimen/j10dp"
+        android:paddingRight="@dimen/j20dp"
+        android:src="@drawable/top_fh"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/mTextView_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:singleLine="true"
+            android:textColor="@android:color/white"
+            android:textSize="18sp" />
+
+        <LinearLayout
+            android:id="@+id/mLinearLayout_bottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/j4dp"
+            android:gravity="center_vertical"
+            android:visibility="gone">
+
+            <View
+                android:layout_width="@dimen/j45dp"
+                android:layout_height="@dimen/j0_5dp"
+                android:background="@color/white" />
+
+            <TextView
+                android:id="@+id/mTextView_en"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/j15dp"
+                android:layout_marginRight="@dimen/j15dp"
+                android:text="O R D E R   M A N A G E M E N T"
+                android:textColor="#fff"
+                android:textSize="6sp" />
+
+            <View
+                android:layout_width="@dimen/j45dp"
+                android:layout_height="@dimen/j0_5dp"
+                android:background="@color/white" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/mImageButton_right"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:background="#00000000"
+        android:paddingLeft="@dimen/j10dp"
+        android:paddingRight="@dimen/j10dp"
+        android:src="@drawable/kefu2"
+        android:visibility="gone" />
 </RelativeLayout>
 

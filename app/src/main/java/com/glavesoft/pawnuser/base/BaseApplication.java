@@ -19,9 +19,11 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.PopupWindow;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.facebook.drawee.backends.pipeline.Fresco;
 import com.glavesoft.pawnuser.R;
 import com.glavesoft.pawnuser.constant.BaseConstant;
@@ -30,6 +32,8 @@ import com.glavesoft.pawnuser.mod.LocalData;
 import com.glavesoft.pawnuser.shoppingcar.DBHelper;
 import com.glavesoft.volley.net.VolleyUtil;
 import com.google.gson.Gson;
+import com.guoxiaoxing.phoenix.core.PhoenixConfig;
+import com.guoxiaoxing.phoenix.picker.Phoenix;
 import com.mdx.framework.Frame;
 import com.nostra13.universalimageloader.cache.disc.impl.UnlimitedDiskCache;
 import com.nostra13.universalimageloader.cache.disc.naming.HashCodeFileNameGenerator;
@@ -59,6 +63,16 @@ public class BaseApplication extends Application {
     public void onCreate() {
         super.onCreate();
         Frame.init(getApplicationContext());
+        Phoenix.config()
+                .imageLoader(new com.guoxiaoxing.phoenix.core.listener.ImageLoader() {
+                    @Override
+                    public void loadImage(Context context, ImageView imageView, String imagePath, int type) {
+                        Glide.with(context)
+                                .load(imagePath)
+                                .into(imageView);
+                    }
+                });
+
         if (instance == null) {
             instance = this;
         }

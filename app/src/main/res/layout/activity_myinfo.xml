@@ -1,207 +1,31 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:background="@color/bg_default2"
-              android:orientation="vertical"
-              android:fitsSystemWindows="true"
-              >
-
-    <include
-        android:id="@+id/include"
-        layout="@layout/titlebar"
-        />
-
-    <LinearLayout
-        android:id="@+id/myinfo_tx"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@android:color/white"
-        android:orientation="horizontal"
-        android:layout_marginTop="10dp"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
-        android:paddingTop="10dp"
-        android:paddingBottom="10dp"
-        android:gravity="center_vertical"
-        >
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center_vertical"
-            android:text="头像："
-            android:textSize="16sp"
-            android:textColor="@color/black1"
-            />
-
-        <com.glavesoft.view.RoundImageView
-            android:id="@+id/myinfo_tx_image"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:gravity="center_vertical"
-            android:scaleType="fitXY"
-            android:src="@mipmap/mryi"/>
-
-    </LinearLayout>
-
-
-    <View style="@style/line" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@android:color/white"
-        android:orientation="horizontal"
-        android:padding="20dp"
-        android:gravity="center_vertical"
-        >
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center_vertical"
-            android:text="昵称："
-            android:textSize="16sp"
-            android:textColor="@color/black1"
-            />
-
-        <EditText
-            android:id="@+id/myinfo_username"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center_vertical|right"
-            android:maxLength="8"
-            android:textSize="16sp"
-            android:layout_weight="1"
-            android:textColor="@color/text_gray"
-            android:background="@null"
-            />
-    </LinearLayout>
-
-    <View style="@style/line" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@android:color/white"
-        android:orientation="horizontal"
-        android:padding="20dp"
-        android:gravity="center_vertical"
-        >
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center_vertical"
-            android:text="账号/手机号："
-            android:textSize="16sp"
-            android:textColor="@color/black1"
-            />
-
-        <TextView
-            android:id="@+id/myinfo_phone"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center_vertical|right"
-            android:textSize="16sp"
-            android:textColor="@color/text_gray"
-            />
-    </LinearLayout>
-
-    <View style="@style/line" />
-
-    <LinearLayout
-        android:id="@+id/ll_myinfo_address"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@android:color/white"
-        android:orientation="horizontal"
-        android:padding="10dp"
-        android:gravity="center_vertical"
-        >
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center_vertical"
-            android:layout_margin="10dp"
-            android:text="我的地址"
-            android:textSize="16sp"
-            android:textColor="@color/black1"
-            />
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:src="@drawable/xzz"
-            />
-    </LinearLayout>
-
-    <View style="@style/line" />
-
-    <LinearLayout
-        android:id="@+id/ll_myinfo_idcard"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@android:color/white"
-        android:orientation="horizontal"
-        android:padding="10dp"
-        android:gravity="center_vertical"
-        >
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center_vertical"
-            android:layout_margin="10dp"
-            android:text="身份证"
-            android:textSize="16sp"
-            android:textColor="@color/black1"
-            />
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:src="@drawable/xzz"
-            />
-
-        <TextView
-            android:id="@+id/tv_myinfo_bd"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/shape_red"
-            android:paddingTop="5dp"
-            android:paddingBottom="5dp"
-            android:paddingLeft="13dp"
-            android:paddingRight="13dp"
-            android:text="去绑定"
-            android:textSize="12sp"
-            android:textColor="@color/white"
-            android:visibility="gone"/>
-
-
-
-        <TextView
-            android:id="@+id/tv_myinfo_ybd"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/shape_yellow"
-            android:paddingTop="5dp"
-            android:paddingBottom="5dp"
-            android:paddingLeft="13dp"
-            android:paddingRight="13dp"
-            android:text="已绑定"
-            android:textSize="12sp"
-            android:textColor="@color/white"
-            android:visibility="gone"/>
-
-    </LinearLayout>
-
-
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:background="@color/bg_default2" android:orientation="vertical" android:fitsSystemWindows="true">
+     <include android:id="@+id/include" layout="@layout/titlebar" />
+     <LinearLayout android:id="@+id/myinfo_tx" android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@android:color/white" android:orientation="horizontal" android:layout_marginTop="@dimen/j10dp" android:paddingLeft="@dimen/j20dp" android:paddingRight="@dimen/j20dp" android:paddingTop="@dimen/j10dp" android:paddingBottom="@dimen/j10dp" android:gravity="center_vertical">
+          <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center_vertical" android:text="头像：" android:textSize="16sp" android:textColor="@color/black1" />
+          <com.glavesoft.view.RoundImageView android:id="@+id/myinfo_tx_image" android:layout_width="@dimen/j50dp" android:layout_height="@dimen/j50dp" android:gravity="center_vertical" android:scaleType="fitXY" android:src="@mipmap/mryi" />
+     </LinearLayout>
+     <View style="@style/line" />
+     <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@android:color/white" android:orientation="horizontal" android:padding="@dimen/j20dp" android:gravity="center_vertical">
+          <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:gravity="center_vertical" android:text="昵称：" android:textSize="16sp" android:textColor="@color/black1" />
+          <EditText android:id="@+id/myinfo_username" android:layout_width="wrap_content" android:layout_height="wrap_content" android:gravity="center_vertical|right" android:maxLength="8" android:textSize="16sp" android:layout_weight="1" android:textColor="@color/text_gray" android:background="@null" />
+     </LinearLayout>
+     <View style="@style/line" />
+     <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@android:color/white" android:orientation="horizontal" android:padding="@dimen/j20dp" android:gravity="center_vertical">
+          <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center_vertical" android:text="账号/手机号：" android:textSize="16sp" android:textColor="@color/black1" />
+          <TextView android:id="@+id/myinfo_phone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:gravity="center_vertical|right" android:textSize="16sp" android:textColor="@color/text_gray" />
+     </LinearLayout>
+     <View style="@style/line" />
+     <LinearLayout android:id="@+id/ll_myinfo_address" android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@android:color/white" android:orientation="horizontal" android:padding="@dimen/j10dp" android:gravity="center_vertical">
+          <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center_vertical" android:layout_margin="@dimen/j10dp" android:text="我的地址" android:textSize="16sp" android:textColor="@color/black1" />
+          <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center_vertical" android:src="@drawable/xzz" />
+     </LinearLayout>
+     <View style="@style/line" />
+     <LinearLayout android:id="@+id/ll_myinfo_idcard" android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@android:color/white" android:orientation="horizontal" android:padding="@dimen/j10dp" android:gravity="center_vertical">
+          <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center_vertical" android:layout_margin="@dimen/j10dp" android:text="身份证" android:textSize="16sp" android:textColor="@color/black1" />
+          <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center_vertical" android:src="@drawable/xzz" />
+          <TextView android:id="@+id/tv_myinfo_bd" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/shape_red" android:paddingTop="@dimen/j5dp" android:paddingBottom="@dimen/j5dp" android:paddingLeft="@dimen/j13dp" android:paddingRight="@dimen/j13dp" android:text="去绑定" android:textSize="12sp" android:textColor="@color/white" android:visibility="gone" />
+          <TextView android:id="@+id/tv_myinfo_ybd" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/shape_yellow" android:paddingTop="@dimen/j5dp" android:paddingBottom="@dimen/j5dp" android:paddingLeft="@dimen/j13dp" android:paddingRight="@dimen/j13dp" android:text="已绑定" android:textSize="12sp" android:textColor="@color/white" android:visibility="gone" />
+     </LinearLayout>
 </LinearLayout>
+

@@ -14,10 +14,10 @@ import android.app.ProgressDialog
 import android.os.Bundle
 import android.view.View
 import android.widget.LinearLayout
+import com.glavesoft.F.toast
 import com.glavesoft.pawnuser.item.Head
 import com.glavesoft.pawnuser.mod.DataResult
 import com.glavesoft.pawnuser.mod.DataResult.RESULT_OK_ZERO
-import com.glavesoft.pawnuser.model.PwHttpResult
 import com.google.gson.GsonBuilder
 import com.mdx.framework.Frame
 import com.mdx.framework.activity.MFragment
@@ -64,8 +64,7 @@ open class BaseFrg : MFragment(), View.OnClickListener, HttpResultSubscriberList
             if (mHttpResult.errorCode == RESULT_OK_ZERO) {
                 onSuccess(GsonBuilder().serializeNulls().create().toJson(mHttpResult.data), method)
             } else {
-                Helper.toast(mHttpResult.errorMsg)
-
+                toast(mHttpResult.errorMsg)
                 onError(
                     mHttpResult.errorCode.toString(),
                     mHttpResult.errorMsg,
@@ -80,7 +79,7 @@ open class BaseFrg : MFragment(), View.OnClickListener, HttpResultSubscriberList
     }
 
     fun <T> load(
-        o: Observable<PwHttpResult<T>>,
+        o: Observable<DataResult<T>>,
         m: String,
         isShow: Boolean = true,
         showMessage: String = "加载中"
@@ -99,6 +98,11 @@ open class BaseFrg : MFragment(), View.OnClickListener, HttpResultSubscriberList
     override fun setActionBar(actionBar: LinearLayout?) {
         mHead = Head(context)
         mHead.canGoBack(true)
+        actionBar?.addView(
+            mHead,
+            LinearLayout.LayoutParams.MATCH_PARENT,
+            LinearLayout.LayoutParams.WRAP_CONTENT
+        )
     }
 
     override fun onDestroy() {

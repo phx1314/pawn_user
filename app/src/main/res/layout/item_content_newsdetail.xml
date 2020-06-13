@@ -1,25 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    >
-
-    <TextView
-        android:id="@+id/tv_content_newsdetail"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:textSize="16sp"
-        android:textColor="@color/black1"
-        android:text="非官方的古典风格三国杀的故事大概多少如题如题"/>
-
-    <ImageView
-        android:id="@+id/iv_content_newsdetail"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_marginTop="10dp"
-        android:scaleType="fitCenter"
-        />
-
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent">
+     <TextView android:id="@+id/tv_content_newsdetail" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j10dp" android:textSize="16sp" android:textColor="@color/black1" android:text="非官方的古典风格三国杀的故事大概多少如题如题" />
+     <ImageView android:id="@+id/iv_content_newsdetail" android:layout_width="match_parent" android:layout_height="@dimen/j200dp" android:layout_marginTop="@dimen/j10dp" android:scaleType="fitCenter" />
 </LinearLayout>
+

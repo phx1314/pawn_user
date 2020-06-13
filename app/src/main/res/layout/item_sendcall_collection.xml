@@ -1,158 +1,25 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@color/white"
-    android:orientation="vertical">
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:padding="8dp">
-
-        <com.glavesoft.view.RoundImageView
-            android:id="@+id/iv_head"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_alignParentLeft="true"
-            android:layout_centerVertical="true"
-            android:paddingBottom="5dp"
-            android:src="@drawable/default_head" />
-
-
-        <TextView
-            android:id="@+id/tv_user_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="10dp"
-            android:layout_toRightOf="@+id/iv_head"
-            android:text="商家名称"
-            android:textColor="@color/black"
-            android:textSize="14sp" />
-
-        <ImageView
-            android:id="@+id/ivShopArrow"
-            android:layout_width="10dp"
-            android:layout_height="15dp"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="10dp"
-            android:layout_toRightOf="@+id/tv_user_name"
-            android:background="@drawable/ic_arrow"
-            android:visibility="gone"/>
-
-    </RelativeLayout>
-
-
-    <RelativeLayout
-        android:id="@+id/rl_all"
-        android:background="@color/bg_default"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingRight="10dp">
-
-        <RelativeLayout
-            android:id="@+id/rl_item_shopcar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-           >
-
-            <ImageView
-                android:id="@+id/ivGoods"
-                android:layout_width="120dp"
-                android:layout_height="70dp"
-                android:layout_centerVertical="true"
-                android:layout_marginBottom="5dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="5dp"
-                android:scaleType="centerCrop" />
-
-            <LinearLayout
-                android:id="@+id/llGoodInfo"
-                android:layout_width="wrap_content"
-                android:layout_height="80dp"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="10dp"
-                android:paddingTop="10dp"
-                android:layout_toRightOf="@+id/ivGoods"
-                android:orientation="vertical"
-                android:visibility="visible"
-                >
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <TextView
-                        android:id="@+id/tv_goodsname"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:layout_gravity="top"
-                        android:layout_marginRight="70dp"
-                        android:layout_marginTop="2dp"
-                        android:text="商品名称"
-                        android:textColor="@color/black"
-                        android:textSize="12sp" />
-
-                    <TextView
-                        android:id="@+id/tv_price"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentRight="true"
-                        android:gravity="center"
-                        android:text="￥199"
-                        android:textColor="@color/black"
-                        android:textSize="14dp" />
-                </LinearLayout>
-
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="bottom"
-                    android:paddingBottom="10dp"
-                    >
-
-                    <TextView
-                        android:id="@+id/tv_type"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="分类：机械"
-                        android:textColor="@color/black"
-                        android:textSize="12sp"
-                       />
-
-                    <ImageView
-                        android:id="@+id/iv_del"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:padding="5dp"
-                        android:src="@mipmap/del"
-                        android:visibility="gone"/>
-
-                </LinearLayout>
-
-            </LinearLayout>
-
-
-            <TextView
-                android:id="@+id/tv_issell"
-                android:layout_width="70dp"
-                android:layout_height="80dp"
-                android:layout_alignParentRight="true"
-                android:background="#88AAAAAA"
-                android:gravity="center"
-                android:text="已售"
-                android:textColor="@color/black"
-                android:textSize="18dp"
-                android:visibility="gone" />
-
-
-        </RelativeLayout>
-    </RelativeLayout>
-
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@color/white" android:orientation="vertical">
+     <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j5dp" android:padding="@dimen/j8dp">
+          <com.glavesoft.view.RoundImageView android:id="@+id/iv_head" android:layout_width="@dimen/j30dp" android:layout_height="@dimen/j30dp" android:layout_alignParentLeft="true" android:layout_centerVertical="true" android:paddingBottom="@dimen/j5dp" android:src="@drawable/default_head" />
+          <TextView android:id="@+id/tv_user_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true" android:layout_marginLeft="@dimen/j10dp" android:layout_toRightOf="@+id/iv_head" android:text="商家名称" android:textColor="@color/black" android:textSize="14sp" />
+          <ImageView android:id="@+id/ivShopArrow" android:layout_width="@dimen/j10dp" android:layout_height="@dimen/j15dp" android:layout_centerVertical="true" android:layout_marginLeft="@dimen/j10dp" android:layout_toRightOf="@+id/tv_user_name" android:background="@drawable/ic_arrow" android:visibility="gone" />
+     </RelativeLayout>
+     <RelativeLayout android:id="@+id/rl_all" android:background="@color/bg_default" android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingRight="@dimen/j10dp">
+          <RelativeLayout android:id="@+id/rl_item_shopcar" android:layout_width="match_parent" android:layout_height="wrap_content">
+               <ImageView android:id="@+id/ivGoods" android:layout_width="@dimen/j120dp" android:layout_height="@dimen/j70dp" android:layout_centerVertical="true" android:layout_marginBottom="@dimen/j5dp" android:layout_marginLeft="@dimen/j10dp" android:layout_marginTop="@dimen/j5dp" android:scaleType="centerCrop" />
+               <LinearLayout android:id="@+id/llGoodInfo" android:layout_width="wrap_content" android:layout_height="@dimen/j80dp" android:layout_alignParentRight="true" android:layout_centerVertical="true" android:layout_marginLeft="@dimen/j10dp" android:paddingTop="@dimen/j10dp" android:layout_toRightOf="@+id/ivGoods" android:orientation="vertical" android:visibility="visible">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+                         <TextView android:id="@+id/tv_goodsname" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:layout_gravity="top" android:layout_marginRight="@dimen/j70dp" android:layout_marginTop="@dimen/j2dp" android:text="商品名称" android:textColor="@color/black" android:textSize="12sp" />
+                         <TextView android:id="@+id/tv_price" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentRight="true" android:gravity="center" android:text="￥199" android:textColor="@color/black" android:textSize="@dimen/j14dp" />
+                    </LinearLayout>
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="bottom" android:paddingBottom="@dimen/j10dp">
+                         <TextView android:id="@+id/tv_type" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1" android:text="分类：机械" android:textColor="@color/black" android:textSize="12sp" />
+                         <ImageView android:id="@+id/iv_del" android:layout_width="wrap_content" android:layout_height="wrap_content" android:padding="@dimen/j5dp" android:src="@mipmap/del" android:visibility="gone" />
+                    </LinearLayout>
+               </LinearLayout>
+               <TextView android:id="@+id/tv_issell" android:layout_width="@dimen/j70dp" android:layout_height="@dimen/j80dp" android:layout_alignParentRight="true" android:background="#88AAAAAA" android:gravity="center" android:text="已售" android:textColor="@color/black" android:textSize="@dimen/j18dp" android:visibility="gone" />
+          </RelativeLayout>
+     </RelativeLayout>
 </LinearLayout>
+

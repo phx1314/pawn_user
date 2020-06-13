@@ -1,214 +1,34 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@color/white">
-
-    <ImageView
-        android:id="@+id/iv_pic_pawn"
-        android:layout_width="110dp"
-        android:layout_height="110dp"
-        android:layout_marginBottom="2dp"
-        android:scaleType="centerCrop"
-        android:src="@drawable/bg_livecountdown"/>
-
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <View style="@style/line"/>
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:paddingLeft="8dp"
-                android:paddingRight="5dp"
-                android:paddingBottom="8dp"
-                android:paddingTop="3dp"
-                >
-
-                <TextView
-                    android:id="@+id/tv_name_pawn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:singleLine="true"
-                    android:text="翡翠手镯"
-                    android:textSize="16sp"
-                    android:textColor="@color/black1"/>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="鉴定价："
-                        android:textSize="13sp"
-                        android:textColor="@color/text_gray"/>
-
-                    <TextView
-                        android:id="@+id/tv_jdprice_pawn"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:singleLine="true"
-                        android:text="￥5万"
-                        android:textSize="13sp"
-                        android:textColor="@color/red_k"/>
-
-                </LinearLayout>
-
-
-
-                <TextView
-                    android:id="@+id/tv_isyj_pawn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:text="已邮寄"
-                    android:textSize="13sp"
-                    android:textColor="@color/text_gray"
-                    android:visibility="gone"/>
-
-                <TextView
-                    android:id="@+id/tv_ysh_pawn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:text="已赎回"
-                    android:textSize="13sp"
-                    android:textColor="@color/red_k"
-                    android:visibility="gone"/>
-
-                <TextView
-                    android:id="@+id/tv_num_pawn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:singleLine="true"
-                    android:text="13次出价"
-                    android:textSize="13sp"
-                    android:textColor="@color/text_gray"
-                    />
-
-                <TextView
-                    android:id="@+id/tv_yffdj_pawn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:singleLine="true"
-                    android:text="已发放当金"
-                    android:textSize="13sp"
-                    android:textColor="@color/text_gray"
-                    android:visibility="gone"/>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <TextView
-                        android:id="@+id/tv_countTime_pawn"
-                        android:layout_width="140dp"
-                        android:layout_height="23dp"
-                        android:gravity="center"
-                        android:layout_gravity="bottom"
-                        android:background="@drawable/shape_green_kuang"
-                        android:text="10：20：20后结束"
-                        android:textColor="@color/green_bg"
-                        android:textSize="13sp"
-                        android:visibility="gone"
-                        />
-
-                    <TextView
-                        android:id="@+id/tv_endTime_pawn"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:layout_gravity="bottom"
-                        android:text="到期时间：10天"
-                        android:textColor="@color/text_gray"
-                        android:textSize="13sp"
-                        />
-
-                </LinearLayout>
-
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:gravity="bottom"
-                android:paddingBottom="5dp">
-
-                <TextView
-                    android:id="@+id/tv_dkpz_pawn"
-                    style="@style/myappraisal"
-                    android:background="@drawable/shape_green2"
-                    android:textColor="@color/white"
-                    android:text="打款凭证"
-                    />
-
-                <TextView
-                    android:id="@+id/tv_ckdp_pawn"
-                    style="@style/myappraisal"
-                    android:background="@drawable/shape_green2"
-                    android:textColor="@color/white"
-                    android:text="典当凭证"
-                    />
-
-                <TextView
-                    android:id="@+id/tv_xd_pawn"
-                    style="@style/myappraisal"
-                    android:background="@drawable/shape_green2"
-                    android:text="续当"
-                    />
-
-                <TextView
-                    android:id="@+id/tv_sd_pawn"
-                    style="@style/myappraisal"
-                    android:text="赎当"
-                    android:background="@drawable/shape_green2"
-                    />
-
-                <TextView
-                    android:id="@+id/tv_td_pawn"
-                    style="@style/myappraisal"
-                    android:text="平台托底"
-                    android:background="@drawable/shape_green2"
-                    android:visibility="gone"
-                    />
-
-                <TextView
-                    android:id="@+id/tv_qh_pawn"
-                    style="@style/myappraisal"
-                    android:text="取回"
-                    android:background="@drawable/shape_green2"
-                    android:visibility="gone"
-                    />
-
-                <TextView
-                    android:id="@+id/tv_qdd_pawn"
-                    style="@style/myappraisal"
-                    android:text="去典当"
-                    android:background="@drawable/shape_green2"
-                    android:visibility="gone"
-                    />
-
-            </LinearLayout>
-
-        </LinearLayout>
-
-    </LinearLayout>
-
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@color/white">
+     <ImageView android:id="@+id/iv_pic_pawn" android:layout_width="@dimen/j110dp" android:layout_height="@dimen/j110dp" android:layout_marginBottom="@dimen/j2dp" android:scaleType="centerCrop" android:src="@drawable/bg_livecountdown" />
+     <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent">
+          <View style="@style/line" />
+          <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent">
+               <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1" android:paddingLeft="@dimen/j8dp" android:paddingRight="@dimen/j5dp" android:paddingBottom="@dimen/j8dp" android:paddingTop="@dimen/j3dp">
+                    <TextView android:id="@+id/tv_name_pawn" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" android:text="翡翠手镯" android:textSize="16sp" android:textColor="@color/black1" />
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j5dp">
+                         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="鉴定价：" android:textSize="13sp" android:textColor="@color/text_gray" />
+                         <TextView android:id="@+id/tv_jdprice_pawn" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" android:text="￥5万" android:textSize="13sp" android:textColor="@color/red_k" />
+                    </LinearLayout>
+                    <TextView android:id="@+id/tv_isyj_pawn" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j5dp" android:text="已邮寄" android:textSize="13sp" android:textColor="@color/text_gray" android:visibility="gone" />
+                    <TextView android:id="@+id/tv_ysh_pawn" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j5dp" android:text="已赎回" android:textSize="13sp" android:textColor="@color/red_k" android:visibility="gone" />
+                    <TextView android:id="@+id/tv_num_pawn" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j5dp" android:singleLine="true" android:text="13次出价" android:textSize="13sp" android:textColor="@color/text_gray" />
+                    <TextView android:id="@+id/tv_yffdj_pawn" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j5dp" android:singleLine="true" android:text="已发放当金" android:textSize="13sp" android:textColor="@color/text_gray" android:visibility="gone" />
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent">
+                         <TextView android:id="@+id/tv_countTime_pawn" android:layout_width="@dimen/j140dp" android:layout_height="@dimen/j23dp" android:gravity="center" android:layout_gravity="bottom" android:background="@drawable/shape_green_kuang" android:text="10：20：20后结束" android:textColor="@color/green_bg" android:textSize="13sp" android:visibility="gone" />
+                         <TextView android:id="@+id/tv_endTime_pawn" android:layout_width="wrap_content" android:layout_height="wrap_content" android:gravity="center" android:layout_gravity="bottom" android:text="到期时间：10天" android:textColor="@color/text_gray" android:textSize="13sp" />
+                    </LinearLayout>
+               </LinearLayout>
+               <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="match_parent" android:gravity="bottom" android:paddingBottom="@dimen/j5dp">
+                    <TextView android:id="@+id/tv_dkpz_pawn" style="@style/myappraisal" android:background="@drawable/shape_green2" android:textColor="@color/white" android:text="打款凭证" />
+                    <TextView android:id="@+id/tv_ckdp_pawn" style="@style/myappraisal" android:background="@drawable/shape_green2" android:textColor="@color/white" android:text="典当凭证" />
+                    <TextView android:id="@+id/tv_xd_pawn" style="@style/myappraisal" android:background="@drawable/shape_green2" android:text="续当" />
+                    <TextView android:id="@+id/tv_sd_pawn" style="@style/myappraisal" android:text="赎当" android:background="@drawable/shape_green2" />
+                    <TextView android:id="@+id/tv_td_pawn" style="@style/myappraisal" android:text="平台托底" android:background="@drawable/shape_green2" android:visibility="gone" />
+                    <TextView android:id="@+id/tv_qh_pawn" style="@style/myappraisal" android:text="取回" android:background="@drawable/shape_green2" android:visibility="gone" />
+                    <TextView android:id="@+id/tv_qdd_pawn" style="@style/myappraisal" android:text="去典当" android:background="@drawable/shape_green2" android:visibility="gone" />
+               </LinearLayout>
+          </LinearLayout>
+     </LinearLayout>
 </LinearLayout>
+

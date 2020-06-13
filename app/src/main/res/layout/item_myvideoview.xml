@@ -1,100 +1,18 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@color/white"
-    android:orientation="horizontal">
-    <CheckBox
-        android:id="@+id/item_news_delete"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:checked="false"
-        android:gravity="center"
-        android:paddingRight="20dp"
-        android:button="@drawable/select_checkbox4"
-        android:visibility="gone"
-        />
-    <LinearLayout
-        android:id="@+id/item_news_ll"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/white"
-        android:layout_marginTop="5dp"
-        android:orientation="vertical">
-
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/black">
-        <ImageView
-            android:id="@+id/videoplayer"
-            android:layout_width="match_parent"
-            android:layout_gravity="center"
-            android:layout_height="250dp" />
-            <TextView
-                android:id="@+id/item_video_title"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@color/white"
-                android:gravity="center|left"
-                android:padding="10dp"
-                android:textSize="18sp"/>
-            <ImageView
-                android:id="@+id/item_video_play"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:src="@drawable/bf_video_play"/>
-        </FrameLayout>
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:paddingBottom="10dp"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp"
-            android:paddingTop="10dp">
-
-            <com.glavesoft.view.RoundImageView
-                android:id="@+id/item_video_img"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_centerVertical="true"
-                android:background="@drawable/tx" />
-
-            <TextView
-                android:id="@+id/item_video_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:paddingLeft="10dp"
-                android:layout_toRightOf="@+id/item_video_img"
-                android:text="功夫怪咖记"
-                android:textColor="@color/black1"
-                android:textSize="14sp" />
-
-            <TextView
-                android:id="@+id/item_video_member"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_centerVertical="true"
-                android:layout_marginRight="15dp"
-                android:layout_toLeftOf="@+id/item_video_share"
-                android:drawableLeft="@drawable/bf_video_pinglun"
-                android:drawablePadding="5dp"
-                android:gravity="center"
-                android:text="9999"
-                android:textSize="14sp" />
-
-            <ImageView
-                android:id="@+id/item_video_share"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:src="@drawable/bf_video_share" />
-        </RelativeLayout>
-    </LinearLayout>
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@color/white" android:orientation="horizontal">
+     <CheckBox android:id="@+id/item_news_delete" android:layout_width="wrap_content" android:layout_height="match_parent" android:checked="false" android:gravity="center" android:paddingRight="@dimen/j20dp" android:button="@drawable/select_checkbox4" android:visibility="gone" />
+     <LinearLayout android:id="@+id/item_news_ll" android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@color/white" android:layout_marginTop="@dimen/j5dp" android:orientation="vertical">
+          <FrameLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@color/black">
+               <ImageView android:id="@+id/videoplayer" android:layout_width="match_parent" android:layout_gravity="center" android:layout_height="@dimen/j250dp" />
+               <TextView android:id="@+id/item_video_title" android:layout_width="match_parent" android:layout_height="wrap_content" android:textColor="@color/white" android:gravity="center|left" android:padding="@dimen/j10dp" android:textSize="18sp" />
+               <ImageView android:id="@+id/item_video_play" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center" android:src="@drawable/bf_video_play" />
+          </FrameLayout>
+          <RelativeLayout android:layout_width="match_parent" android:layout_height="@dimen/j50dp" android:paddingBottom="@dimen/j10dp" android:paddingLeft="@dimen/j20dp" android:paddingRight="@dimen/j20dp" android:paddingTop="@dimen/j10dp">
+               <com.glavesoft.view.RoundImageView android:id="@+id/item_video_img" android:layout_width="@dimen/j30dp" android:layout_height="@dimen/j30dp" android:layout_alignParentLeft="true" android:layout_alignParentStart="true" android:layout_centerVertical="true" android:background="@drawable/tx" />
+               <TextView android:id="@+id/item_video_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true" android:paddingLeft="@dimen/j10dp" android:layout_toRightOf="@+id/item_video_img" android:text="功夫怪咖记" android:textColor="@color/black1" android:textSize="14sp" />
+               <TextView android:id="@+id/item_video_member" android:layout_width="wrap_content" android:layout_height="match_parent" android:layout_centerVertical="true" android:layout_marginRight="@dimen/j15dp" android:layout_toLeftOf="@+id/item_video_share" android:drawableLeft="@drawable/bf_video_pinglun" android:drawablePadding="@dimen/j5dp" android:gravity="center" android:text="9999" android:textSize="14sp" />
+               <ImageView android:id="@+id/item_video_share" android:layout_width="wrap_content" android:layout_height="match_parent" android:layout_alignParentEnd="true" android:layout_alignParentRight="true" android:layout_centerVertical="true" android:src="@drawable/bf_video_share" />
+          </RelativeLayout>
+     </LinearLayout>
 </LinearLayout>
+

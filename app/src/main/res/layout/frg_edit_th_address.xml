@@ -1,25 +1,141 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center_horizontal" android:orientation="vertical" android:paddingLeft="@dimen/j18dp" android:paddingRight="@dimen/j18dp">
-     <LinearLayout android:layout_width="match_parent" android:layout_height="@dimen/j70dp" android:orientation="horizontal">
-          <TextView style="@style/text_style_15_black" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="收件人" />
-          <EditText android:id="@+id/mTextView_name" style="@style/text_style_15_black" android:layout_width="wrap_content" android:layout_height="match_parent" android:layout_weight="1" android:background="#00000000" android:gravity="right|center_vertical" android:singleLine="true" android:text="收件人" />
-     </LinearLayout>
-     <ImageView android:layout_width="match_parent" android:layout_height="@dimen/j2dp" android:background="@drawable/shape_dash_line" />
-     <LinearLayout android:layout_width="match_parent" android:layout_height="@dimen/j70dp" android:orientation="horizontal">
-          <TextView style="@style/text_style_15_black" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="联系电话" />
-          <EditText android:id="@+id/mTextView_phone" style="@style/text_style_15_black" android:layout_width="wrap_content" android:layout_height="match_parent" android:layout_weight="1" android:background="#00000000" android:gravity="right|center_vertical" android:singleLine="true" android:text="13915079457" />
-     </LinearLayout>
-     <ImageView android:layout_width="match_parent" android:layout_height="@dimen/j2dp" android:background="@drawable/shape_dash_line" />
-     <LinearLayout android:layout_width="match_parent" android:layout_height="@dimen/j70dp" android:orientation="horizontal">
-          <TextView style="@style/text_style_15_black" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="省、市、区" />
-          <EditText android:id="@+id/mTextView_arera" style="@style/text_style_15_black" android:layout_width="wrap_content" android:layout_height="match_parent" android:layout_weight="1" android:background="#00000000" android:drawableRight="@drawable/gt" android:gravity="right|center_vertical" android:singleLine="true" android:text="13915079457" />
-     </LinearLayout>
-     <ImageView android:layout_width="match_parent" android:layout_height="@dimen/j2dp" android:background="@drawable/shape_dash_line" />
-     <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:minHeight="@dimen/j70dp" android:orientation="horizontal" android:paddingTop="@dimen/j10dp" android:paddingBottom="@dimen/j10dp">
-          <TextView style="@style/text_style_15_black" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="详细地址" />
-          <EditText android:id="@+id/mTextView_address" style="@style/text_style_15_black" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/j20dp" android:layout_weight="1" android:background="#00000000" android:gravity="right" android:text="adsadsadsadddd" />
-     </LinearLayout>
-     <ImageView android:layout_width="match_parent" android:layout_height="@dimen/j2dp" android:background="@drawable/shape_dash_line" />
-     <ImageView android:id="@+id/mImageView_add" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j56dp" android:src="@drawable/preservation" />
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/j18dp"
+    android:paddingRight="@dimen/j18dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/j70dp"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/text_style_15_black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="收件人" />
+
+        <EditText
+            android:id="@+id/mTextView_name"
+            style="@style/text_style_15_black"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#00000000"
+            android:gravity="right|center_vertical"
+            android:hint="请输入"
+            android:singleLine="true"
+            android:text="" />
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/j2dp"
+        android:background="@drawable/shape_dash_line" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/j70dp"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/text_style_15_black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="联系电话" />
+
+        <EditText
+            android:id="@+id/mTextView_phone"
+            style="@style/text_style_15_black"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#00000000"
+            android:gravity="right|center_vertical"
+            android:hint="请输入"
+            android:inputType="phone"
+            android:singleLine="true"
+            android:text="" />
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/j2dp"
+        android:background="@drawable/shape_dash_line" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/j70dp"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/text_style_15_black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="省、市、区" />
+
+        <TextView
+            android:id="@+id/mTextView_arera"
+            style="@style/text_style_15_black"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#00000000"
+            android:drawableRight="@drawable/gt"
+            android:gravity="right|center_vertical"
+            android:hint="请选择省市区"
+            android:singleLine="true"
+            android:text="" />
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/j2dp"
+        android:background="@drawable/shape_dash_line" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:minHeight="@dimen/j70dp"
+        android:orientation="horizontal"
+        android:paddingTop="@dimen/j10dp"
+        android:paddingBottom="@dimen/j10dp">
+
+        <TextView
+            style="@style/text_style_15_black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="详细地址" />
+
+        <EditText
+            android:id="@+id/mTextView_address"
+            style="@style/text_style_15_black"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/j20dp"
+            android:layout_weight="1"
+            android:background="#00000000"
+            android:gravity="right"
+            android:hint="请输入"
+            android:text="" />
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/j2dp"
+        android:background="@drawable/shape_dash_line" />
+
+    <ImageView
+        android:id="@+id/mImageView_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/j56dp"
+        android:src="@drawable/preservation" />
 </LinearLayout>
 

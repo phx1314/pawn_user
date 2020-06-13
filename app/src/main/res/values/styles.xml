@@ -1,4 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <resources>
+
+    <style name="AppTheme_pub" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:statusBarColor">@color/bg_title</item>
+        <item name="android:colorPrimaryDark">@color/bg_title</item>
+        <item name="android:windowBackground">@color/black</item>
+        <item name="android:windowAnimationStyle">@style/AnimFade</item>
+        <!--        <item name="android:windowDrawsSystemBarBackgrounds">true</item>-->
+        <!--        <item name="android:windowTranslucentNavigation">true</item>-->
+        <item name="android:navigationBarColor">@android:color/black</item>
+    </style>
 
     <style name="TransDialog" parent="@android:style/Theme.Dialog">
         <item name="android:backgroundDimEnabled">false</item>
@@ -14,9 +25,8 @@
         <item name="android:windowAnimationStyle">@style/AnimFade</item>
         <item name="windowNoTitle">true</item>
         <!-- <item name="android:windowTranslucentStatus">true</item>
-        <item name="android:fitsSystemWindows">false</item>
-         -->
-
+      <item name="android:fitsSystemWindows">false</item>
+       -->
     </style>
 
     <style name="AnimFade" parent="@android:style/Animation.Activity">
@@ -30,10 +40,9 @@
         <item name="android:button">@drawable/select_checkbox</item>
     </style>
 
-    <style name="ThemeHorizontalSlide.AppBarOverlay"
-           parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
+    <style name="ThemeHorizontalSlide.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
-    <style name="ThemeHorizontalSlide.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
+    <style name="ThemeHorizontalSlide.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
     <style name="divider_grey">
         <item name="android:layout_width">fill_parent</item>
@@ -101,8 +110,6 @@
         <item name="android:textColor">@color/white</item>
         <item name="android:textSize">12sp</item>
     </style>
-
-
     <!--默认样式 注意* 样式只可修改，不能删除任何一项 否则报错-->
     <style name="picture.default.style" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
@@ -186,6 +193,7 @@
         <item name="android:textColor">@color/black</item>
         <item name="android:textSize">13sp</item>
     </style>
+
     <style name="addsendcall">
         <item name="android:layout_width">80dp</item>
         <item name="android:layout_height">30dp</item>
@@ -194,7 +202,6 @@
         <item name="android:textColor">@color/black</item>
         <item name="android:textSize">13sp</item>
     </style>
-
     <!-- 仿IOS的dialog -->
     <style name="UIAlertViewStyle" parent="@android:style/Theme.Dialog">
         <item name="android:windowBackground">@android:color/transparent</item>
@@ -205,8 +212,10 @@
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowIsTranslucent">true</item>
     </style>
+
     <style name="TabStyle" parent="TextAppearance.Design.Tab">
         <item name="textAllCaps">false</item>
         <item name="android:textSize">18sp</item>
     </style>
 </resources>
+

@@ -30,6 +30,7 @@ import cn.sharesdk.wechat.friends.Wechat;
 import com.blankj.utilcode.util.DeviceUtils;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.model.HttpParams;
+import com.mdx.framework.service.subscriber.HttpResultSubscriberListener;
 
 import java.util.HashMap;
 import java.util.Random;

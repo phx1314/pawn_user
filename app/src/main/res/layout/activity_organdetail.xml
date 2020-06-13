@@ -1,187 +1,37 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:fitsSystemWindows="true">
-
-    <include layout="@layout/titlebar"/>
-
-
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/bg_default">
-
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/white"
-                android:padding="10dp">
-
-                <TextView
-                    android:id="@+id/tv_name_organdetail"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="16sp"
-                    android:textColor="@color/black1"/>
-
-                <View style="@style/line" android:layout_marginTop="10dp"/>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp">
-
-                    <TextView
-                        android:layout_width="80dp"
-                        android:layout_height="wrap_content"
-                        android:text="平台成交量"
-                        android:textSize="14sp"
-                        android:textColor="@color/black1"/>
-
-                    <TextView
-                        android:id="@+id/tv_dealAmount_organdetail"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="14sp"
-                        android:textColor="@color/red_k"/>
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp">
-
-                    <TextView
-                        android:layout_width="80dp"
-                        android:layout_height="wrap_content"
-                        android:text="注册资金"
-                        android:textSize="14sp"
-                        android:textColor="@color/black1"/>
-
-                    <TextView
-                        android:id="@+id/tv_registeredCapital_organdetail"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="14sp"
-                        android:textColor="@color/text_gray"/>
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp">
-
-                    <TextView
-                        android:layout_width="80dp"
-                        android:layout_height="wrap_content"
-                        android:text="法人代表"
-                        android:textSize="14sp"
-                        android:textColor="@color/black1"/>
-
-                    <TextView
-                        android:id="@+id/tv_lagalPerson_organdetail"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="14sp"
-                        android:textColor="@color/text_gray"/>
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp">
-
-                    <TextView
-                        android:layout_width="80dp"
-                        android:layout_height="wrap_content"
-                        android:text="注册地址"
-                        android:textSize="14sp"
-                        android:textColor="@color/black1"/>
-
-                    <TextView
-                        android:id="@+id/tv_address_organdetail"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="14sp"
-                        android:textColor="@color/text_gray"/>
-
-                </LinearLayout>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/white"
-                android:padding="10dp"
-                android:layout_marginTop="10dp">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="公司简介"
-                    android:textSize="14sp"
-                    android:textColor="@color/black1"/>
-
-
-                <TextView
-                    android:id="@+id/tv_introduction_organdetail"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:textSize="14sp"
-                    android:textColor="@color/text_gray"
-                   />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/white"
-                android:padding="10dp"
-                android:layout_marginTop="10dp">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="公司环境"
-                    android:textSize="14sp"
-                    android:textColor="@color/black1"/>
-
-
-                <com.glavesoft.view.GridViewForNoScroll
-                    android:id="@+id/gv_pics_organdetail"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:cacheColorHint="#00000000"
-                    android:columnWidth="150dp"
-                    android:gravity="center"
-                    android:listSelector="#00000000"
-                    android:numColumns="3"
-                    android:scrollbars="none"
-                    android:stretchMode="columnWidth"
-                    android:verticalSpacing="15dp"
-                    android:background="@color/white"/>
-
-            </LinearLayout>
-
-        </LinearLayout>
-
-    </ScrollView>
-
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent" android:fitsSystemWindows="true">
+     <include layout="@layout/titlebar" />
+     <ScrollView android:layout_width="match_parent" android:layout_height="match_parent" android:background="@color/bg_default">
+          <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent">
+               <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@color/white" android:padding="@dimen/j10dp">
+                    <TextView android:id="@+id/tv_name_organdetail" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="16sp" android:textColor="@color/black1" />
+                    <View style="@style/line" android:layout_marginTop="@dimen/j10dp" />
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j8dp">
+                         <TextView android:layout_width="@dimen/j80dp" android:layout_height="wrap_content" android:text="平台成交量" android:textSize="14sp" android:textColor="@color/black1" />
+                         <TextView android:id="@+id/tv_dealAmount_organdetail" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="14sp" android:textColor="@color/red_k" />
+                    </LinearLayout>
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j8dp">
+                         <TextView android:layout_width="@dimen/j80dp" android:layout_height="wrap_content" android:text="注册资金" android:textSize="14sp" android:textColor="@color/black1" />
+                         <TextView android:id="@+id/tv_registeredCapital_organdetail" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="14sp" android:textColor="@color/text_gray" />
+                    </LinearLayout>
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j8dp">
+                         <TextView android:layout_width="@dimen/j80dp" android:layout_height="wrap_content" android:text="法人代表" android:textSize="14sp" android:textColor="@color/black1" />
+                         <TextView android:id="@+id/tv_lagalPerson_organdetail" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="14sp" android:textColor="@color/text_gray" />
+                    </LinearLayout>
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j8dp">
+                         <TextView android:layout_width="@dimen/j80dp" android:layout_height="wrap_content" android:text="注册地址" android:textSize="14sp" android:textColor="@color/black1" />
+                         <TextView android:id="@+id/tv_address_organdetail" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="14sp" android:textColor="@color/text_gray" />
+                    </LinearLayout>
+               </LinearLayout>
+               <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@color/white" android:padding="@dimen/j10dp" android:layout_marginTop="@dimen/j10dp">
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="公司简介" android:textSize="14sp" android:textColor="@color/black1" />
+                    <TextView android:id="@+id/tv_introduction_organdetail" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j8dp" android:textSize="14sp" android:textColor="@color/text_gray" />
+               </LinearLayout>
+               <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@color/white" android:padding="@dimen/j10dp" android:layout_marginTop="@dimen/j10dp">
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="公司环境" android:textSize="14sp" android:textColor="@color/black1" />
+                    <com.glavesoft.view.GridViewForNoScroll android:id="@+id/gv_pics_organdetail" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j10dp" android:cacheColorHint="#00000000" android:columnWidth="@dimen/j150dp" android:gravity="center" android:listSelector="#00000000" android:numColumns="3" android:scrollbars="none" android:stretchMode="columnWidth" android:verticalSpacing="@dimen/j15dp" android:background="@color/white" />
+               </LinearLayout>
+          </LinearLayout>
+     </ScrollView>
 </LinearLayout>
+

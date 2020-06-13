@@ -1,12 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:id="@+id/titlebar_ll_main"
-                android:layout_width="fill_parent"
-                android:layout_height="45dp"
-                android:background="@color/bg_title"
-                android:gravity="center"
-                android:orientation="horizontal"
-                >
+    android:id="@+id/titlebar_ll_main"
+    android:layout_width="fill_parent"
+    android:layout_height="@dimen/j45dp"
+    android:background="@color/bg_title"
+    android:gravity="center"
+    android:orientation="horizontal">
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -19,29 +18,29 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center_vertical"
-            android:paddingLeft="10dp"
-            android:paddingRight="20dp"
+            android:paddingLeft="@dimen/j10dp"
+            android:paddingRight="@dimen/j20dp"
             android:src="@drawable/top_fh"
-            android:visibility="gone"/>
+            android:visibility="gone" />
 
         <TextView
             android:id="@+id/titlebar_left"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:gravity="center_vertical"
-            android:paddingLeft="10dp"
-            android:paddingRight="5dp"
+            android:paddingLeft="@dimen/j10dp"
+            android:paddingRight="@dimen/j5dp"
             android:textColor="@android:color/white"
             android:textSize="14sp"
-            android:visibility="gone"/>
+            android:visibility="gone" />
     </LinearLayout>
 
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_centerInParent="true"
-        android:gravity="center">
+        android:gravity="center"
+        android:orientation="vertical">
 
         <TextView
             android:id="@+id/titlebar_name"
@@ -50,102 +49,93 @@
             android:ellipsize="end"
             android:gravity="center"
             android:singleLine="true"
+            android:text=""
             android:textColor="@android:color/white"
-            android:textSize="18sp"
-            android:text=""/>
+            android:textSize="18sp" />
 
         <LinearLayout
             android:id="@+id/ll_en"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
+            android:layout_marginTop="@dimen/j4dp"
             android:gravity="center_vertical"
             android:visibility="gone">
 
             <View
-                android:layout_width="45dp"
-                android:layout_height="0.5dp"
-                android:background="@color/white"/>
+                android:layout_width="@dimen/j45dp"
+                android:layout_height="@dimen/j0_5dp"
+                android:background="@color/white" />
 
             <ImageView
                 android:id="@+id/iv_en"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp"
-                />
+                android:layout_marginLeft="@dimen/j15dp"
+                android:layout_marginRight="@dimen/j15dp" />
 
             <View
-                android:layout_width="45dp"
-                android:layout_height="0.5dp"
-                android:background="@color/white"/>
-
+                android:layout_width="@dimen/j45dp"
+                android:layout_height="@dimen/j0_5dp"
+                android:background="@color/white" />
         </LinearLayout>
-
-
     </LinearLayout>
-
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/j10dp"
         android:gravity="center_vertical"
-        android:orientation="horizontal"
-        android:layout_marginRight="10dp">
+        android:orientation="horizontal">
 
         <ImageView
             android:id="@+id/titlebar_search"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:paddingLeft="10dp"
+            android:paddingLeft="@dimen/j10dp"
             android:src="@drawable/bf_white_search"
-            android:visibility="gone"
-            />
+            android:visibility="gone" />
 
         <ImageView
             android:id="@+id/titlebar_kf"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:paddingLeft="10dp"
+            android:paddingLeft="@dimen/j10dp"
             android:src="@mipmap/kf1"
-            android:visibility="gone"
-            />
+            android:visibility="gone" />
 
         <ImageView
             android:id="@+id/titlebar_publish"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:paddingRight="10dp"
-            android:paddingLeft="10dp"
-            android:visibility="gone"
-            />
+            android:layout_width="@dimen/j40dp"
+            android:layout_height="@dimen/j40dp"
+            android:paddingLeft="@dimen/j10dp"
+            android:paddingRight="@dimen/j10dp"
+            android:visibility="gone" />
 
         <ImageView
             android:id="@+id/titlebar_news"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:visibility="gone"
-            android:background="@drawable/news"/>
+            android:background="@drawable/news"
+            android:visibility="gone" />
 
         <ImageView
             android:id="@+id/titlebar_share"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:paddingRight="10dp"
+            android:layout_width="@dimen/j40dp"
+            android:layout_height="@dimen/j40dp"
+            android:paddingRight="@dimen/j10dp"
             android:src="@drawable/share1"
-            android:visibility="gone"
-            />
+            android:visibility="gone" />
 
         <TextView
             android:id="@+id/titlebar_right"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/j10dp"
             android:gravity="center_vertical"
             android:textColor="@android:color/white"
             android:textSize="14sp"
-            android:layout_marginLeft="10dp"
-            android:visibility="gone"/>
+            android:visibility="gone" />
     </LinearLayout>
-
 </RelativeLayout>
+

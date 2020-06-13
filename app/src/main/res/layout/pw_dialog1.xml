@@ -1,68 +1,12 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:gravity="center"
-    android:background="#80000000"
-    android:orientation="vertical">
-
-    <LinearLayout
-        android:layout_width="255dp"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:background="@drawable/coner_text_bg1"
-        android:gravity="center"
-        android:orientation="vertical">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:text="提示"
-            android:textColor="@color/bg_title"
-            android:textSize="16sp"/>
-
-        <TextView
-            android:id="@+id/tv_content"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:padding="10dp"
-            android:text="为确保该账号是本人操作，典当操作需要进行人脸身份验证"
-            android:textColor="@color/black1"
-            android:textSize="15sp"/>
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="horizontal"
-            android:layout_marginBottom="10dp">
-
-            <Button
-                android:id="@+id/btn_cancel"
-                android:layout_width="90dp"
-                android:layout_height="30dp"
-                android:background="@drawable/shape_cancle"
-                android:gravity="center"
-                android:text="取消"
-                android:textColor="@color/white"
-                android:textSize="14sp"/>
-
-            <Button
-                android:id="@+id/btn_ok"
-                android:layout_width="90dp"
-                android:layout_height="30dp"
-                android:layout_marginLeft="30dp"
-                android:background="@drawable/shape_red"
-                android:gravity="center"
-                android:text="确定"
-                android:textColor="@color/white"
-                android:textSize="14sp"/>
-
-        </LinearLayout>
-    </LinearLayout>
-
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center" android:background="#80000000" android:orientation="vertical">
+     <LinearLayout android:layout_width="@dimen/j255dp" android:layout_height="wrap_content" android:layout_centerInParent="true" android:background="@drawable/coner_text_bg1" android:gravity="center" android:orientation="vertical">
+          <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j10dp" android:layout_marginBottom="@dimen/j10dp" android:text="提示" android:textColor="@color/bg_title" android:textSize="16sp" />
+          <TextView android:id="@+id/tv_content" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/j10dp" android:padding="@dimen/j10dp" android:text="为确保该账号是本人操作，典当操作需要进行人脸身份验证" android:textColor="@color/black1" android:textSize="15sp" />
+          <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center" android:orientation="horizontal" android:layout_marginBottom="@dimen/j10dp">
+               <Button android:id="@+id/btn_cancel" android:layout_width="@dimen/j90dp" android:layout_height="@dimen/j30dp" android:background="@drawable/shape_cancle" android:gravity="center" android:text="取消" android:textColor="@color/white" android:textSize="14sp" />
+               <Button android:id="@+id/btn_ok" android:layout_width="@dimen/j90dp" android:layout_height="@dimen/j30dp" android:layout_marginLeft="@dimen/j30dp" android:background="@drawable/shape_red" android:gravity="center" android:text="确定" android:textColor="@color/white" android:textSize="14sp" />
+          </LinearLayout>
+     </LinearLayout>
 </LinearLayout>
+

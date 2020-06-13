@@ -1,10 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
-<shape xmlns:android="http://schemas.android.com/apk/res/android"
-    android:shape="line">
-    <size android:height="1dp" />
-    <stroke
-        android:dashGap="8dp"
-        android:dashWidth="5dp"
-        android:width="1dp"
-        android:color="@color/gray" />
+<?xml version="1.0" encoding="UTF-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="line">
+     <size android:height="@dimen/j1dp" />
+     <stroke android:dashGap="@dimen/j8dp" android:dashWidth="@dimen/j5dp" android:width="@dimen/j1dp" android:color="@color/gray" />
 </shape>
+

@@ -1,460 +1,75 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/bg_title"
-    android:fitsSystemWindows="true"
-    android:focusable="true"
-    android:focusableInTouchMode="true">
-
-    <include layout="@layout/titlebar"/>
-
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/bg_default">
-
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-
-           <include layout="@layout/layout_pics"/>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/white"
-                android:layout_marginTop="1dp"
-                android:padding="10dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="*"
-                    android:textSize="14sp"
-                    android:textColor="@color/red_k"
-                    android:visibility="gone"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="品牌"
-                    android:textSize="15sp"
-                    android:textColor="@color/black1"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="(如：卡地亚)"
-                    android:textSize="11sp"
-                    android:textColor="@color/text_gray"
-                    android:visibility="invisible"/>
-
-                <TextView
-                    android:id="@+id/tv_brand_jewellery"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@null"
-                    android:gravity="center_vertical|right"
-                    android:paddingLeft="10dp"
-                    android:hint=""
-                    android:textColorHint="@color/text_gray"
-                    android:textColor="@color/black1"
-                    android:textSize="15sp"
-                    />
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/xzz1"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/white"
-                android:layout_marginTop="1dp"
-                android:padding="10dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="*"
-                    android:textSize="14sp"
-                    android:textColor="@color/red_k"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="主体材质"
-                    android:textSize="15sp"
-                    android:textColor="@color/black1"/>
-
-                <TextView
-                    android:id="@+id/tv_texture_jewellery"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="right"
-                    android:paddingLeft="10dp"
-                    android:textSize="15sp"
-                    android:textColor="@color/black1"/>
-
-               <ImageView
-                   android:layout_width="wrap_content"
-                   android:layout_height="wrap_content"
-                   android:src="@drawable/xzz1"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/white"
-                android:layout_marginTop="1dp"
-                android:padding="10dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="镶石材质"
-                    android:textSize="15sp"
-                    android:textColor="@color/black1"/>
-
-                <TextView
-                    android:id="@+id/tv_xstexture_jewellery"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="right"
-                    android:paddingLeft="10dp"
-                    android:textSize="15sp"
-                    android:textColor="@color/black1"/>
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/xzz1"/>
-
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/white"
-                android:layout_marginTop="1dp"
-                android:padding="10dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="*"
-                    android:textSize="14sp"
-                    android:textColor="@color/red_k"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="使用情况"
-                    android:textSize="15sp"
-                    android:textColor="@color/black1"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="(如：9.9成新)"
-                    android:textSize="11sp"
-                    android:textColor="@color/text_gray"/>
-
-                <TextView
-                    android:id="@+id/tv_degree_jewellery"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="right"
-                    android:paddingLeft="10dp"
-                    android:textSize="15sp"
-                    android:textColor="@color/black1"/>
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/xzz1"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
-                android:paddingTop="5dp"
-                android:paddingBottom="5dp">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="9.9成新：附件齐全，未佩戴，商品状态好"
-                    android:textSize="12sp"
-                    android:textColor="@color/text_gray"/>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="2dp"
-                    android:text="9.5成新：外观可见细小/轻微的使用痕迹"
-                    android:textSize="12sp"
-                    android:textColor="@color/text_gray"/>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="2dp"
-                    android:text="9.0成新：外观有正常使用产生的划痕磨损，可修复"
-                    android:textSize="12sp"
-                    android:textColor="@color/text_gray"/>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="2dp"
-                    android:text="8.5成新：外观磨损较重，可见明显划痕/磕痕"
-                    android:textSize="12sp"
-                    android:textColor="@color/text_gray"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/white"
-                android:padding="10dp"
-                android:orientation="vertical"
-                android:layout_marginBottom="1dp"
-                >
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="附件"
-                        android:textSize="15sp"
-                        android:textColor="@color/black1"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="(可以多选哦)"
-                        android:textSize="11sp"
-                        android:textColor="@color/text_gray"/>
-
-                </LinearLayout>
-
-
-                <com.glavesoft.view.GridViewForNoScroll
-                    android:id="@+id/gv_enclosure_jewellery"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:cacheColorHint="#00000000"
-                    android:columnWidth="150dp"
-                    android:listSelector="#00000000"
-                    android:numColumns="3"
-                    android:scrollbars="none"
-                    android:stretchMode="columnWidth"
-                    android:verticalSpacing="15dp"
-                    android:background="@color/white"/>
-
-            </LinearLayout>
-
-            <include layout="@layout/layout_pics_fj" />
-
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
-                android:paddingTop="5dp"
-                android:paddingBottom="5dp">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="提示：附件是否齐全，对珠宝的最终估值很重要哦"
-                    android:textSize="12sp"
-                    android:textColor="@color/text_gray"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/white"
-                android:padding="10dp">
-
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="购买价格"
-                    android:textSize="15sp"
-                    android:textColor="@color/black1"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="(人名币 元)"
-                    android:textSize="11sp"
-                    android:textColor="@color/text_gray"/>
-
-                <EditText
-                    android:id="@+id/et_price_jewellery"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@null"
-                    android:gravity="center_vertical|right"
-                    android:paddingLeft="10dp"
-                    android:hint="请输入价格"
-                    android:inputType="numberDecimal"
-                    android:textColorHint="@color/text_gray"
-                    android:textColor="@color/black1"
-                    android:textSize="15sp"
-                    />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/white"
-                android:layout_marginTop="1dp"
-                android:padding="10dp">
-
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="购买时间"
-                    android:textSize="15sp"
-                    android:textColor="@color/black1"/>
-
-                <TextView
-                    android:id="@+id/tv_time_jewellery"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="right"
-                    android:paddingLeft="10dp"
-                    android:textSize="15sp"
-                    android:textColor="@color/black1"/>
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/xzz1"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
-                android:paddingTop="5dp"
-                android:paddingBottom="5dp"
-                android:visibility="gone">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="提示：建议填写以提高估价准确率"
-                    android:textSize="12sp"
-                    android:textColor="@color/text_gray"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/white"
-                android:layout_marginTop="1dp"
-                android:padding="10dp">
-
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="补充描述"
-                    android:textSize="15sp"
-                    android:textColor="@color/black1"/>
-
-
-                <EditText
-                    android:id="@+id/et_info_jewellery"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@null"
-                    android:gravity="center_vertical|right"
-                    android:paddingLeft="10dp"
-                    android:hint="请输入补充描述"
-                    android:textColorHint="@color/text_gray"
-                    android:textColor="@color/black1"
-                    android:textSize="15sp"
-                    />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
-                android:paddingTop="5dp"
-                android:paddingBottom="5dp">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="提示：如无法估价，请转至邮寄鉴定"
-                    android:textSize="12sp"
-                    android:textColor="@color/red_k"/>
-
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:id="@+id/ll_submit_jewellery"
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:layout_margin="25dp"
-                android:gravity="center"
-                android:background="@mipmap/button">
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@mipmap/button_send"/>
-
-            </LinearLayout>
-
-        </LinearLayout>
-
-    </ScrollView>
-
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent" android:background="@color/bg_title" android:fitsSystemWindows="true" android:focusable="true" android:focusableInTouchMode="true">
+     <include layout="@layout/titlebar" />
+     <ScrollView android:layout_width="match_parent" android:layout_height="match_parent" android:background="@color/bg_default">
+          <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent">
+               <include layout="@layout/layout_pics" />
+               <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@color/white" android:layout_marginTop="@dimen/j1dp" android:padding="@dimen/j10dp">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="*" android:textSize="14sp" android:textColor="@color/red_k" android:visibility="gone" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="品牌" android:textSize="15sp" android:textColor="@color/black1" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="(如：卡地亚)" android:textSize="11sp" android:textColor="@color/text_gray" android:visibility="invisible" />
+                    <TextView android:id="@+id/tv_brand_jewellery" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:background="@null" android:gravity="center_vertical|right" android:paddingLeft="@dimen/j10dp" android:hint="" android:textColorHint="@color/text_gray" android:textColor="@color/black1" android:textSize="15sp" />
+                    <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/xzz1" />
+               </LinearLayout>
+               <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@color/white" android:layout_marginTop="@dimen/j1dp" android:padding="@dimen/j10dp">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="*" android:textSize="14sp" android:textColor="@color/red_k" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="主体材质" android:textSize="15sp" android:textColor="@color/black1" />
+                    <TextView android:id="@+id/tv_texture_jewellery" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="right" android:paddingLeft="@dimen/j10dp" android:textSize="15sp" android:textColor="@color/black1" />
+                    <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/xzz1" />
+               </LinearLayout>
+               <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@color/white" android:layout_marginTop="@dimen/j1dp" android:padding="@dimen/j10dp">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="镶石材质" android:textSize="15sp" android:textColor="@color/black1" />
+                    <TextView android:id="@+id/tv_xstexture_jewellery" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="right" android:paddingLeft="@dimen/j10dp" android:textSize="15sp" android:textColor="@color/black1" />
+                    <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/xzz1" />
+               </LinearLayout>
+               <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@color/white" android:layout_marginTop="@dimen/j1dp" android:padding="@dimen/j10dp">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="*" android:textSize="14sp" android:textColor="@color/red_k" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="使用情况" android:textSize="15sp" android:textColor="@color/black1" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="(如：9.9成新)" android:textSize="11sp" android:textColor="@color/text_gray" />
+                    <TextView android:id="@+id/tv_degree_jewellery" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="right" android:paddingLeft="@dimen/j10dp" android:textSize="15sp" android:textColor="@color/black1" />
+                    <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/xzz1" />
+               </LinearLayout>
+               <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingLeft="@dimen/j10dp" android:paddingRight="@dimen/j10dp" android:paddingTop="@dimen/j5dp" android:paddingBottom="@dimen/j5dp">
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="9.9成新：附件齐全，未佩戴，商品状态好" android:textSize="12sp" android:textColor="@color/text_gray" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j2dp" android:text="9.5成新：外观可见细小/轻微的使用痕迹" android:textSize="12sp" android:textColor="@color/text_gray" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j2dp" android:text="9.0成新：外观有正常使用产生的划痕磨损，可修复" android:textSize="12sp" android:textColor="@color/text_gray" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j2dp" android:text="8.5成新：外观磨损较重，可见明显划痕/磕痕" android:textSize="12sp" android:textColor="@color/text_gray" />
+               </LinearLayout>
+               <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@color/white" android:padding="@dimen/j10dp" android:orientation="vertical" android:layout_marginBottom="@dimen/j1dp">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+                         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="附件" android:textSize="15sp" android:textColor="@color/black1" />
+                         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="(可以多选哦)" android:textSize="11sp" android:textColor="@color/text_gray" />
+                    </LinearLayout>
+                    <com.glavesoft.view.GridViewForNoScroll android:id="@+id/gv_enclosure_jewellery" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j10dp" android:cacheColorHint="#00000000" android:columnWidth="@dimen/j150dp" android:listSelector="#00000000" android:numColumns="3" android:scrollbars="none" android:stretchMode="columnWidth" android:verticalSpacing="@dimen/j15dp" android:background="@color/white" />
+               </LinearLayout>
+               <include layout="@layout/layout_pics_fj" />
+               <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingLeft="@dimen/j10dp" android:paddingRight="@dimen/j10dp" android:paddingTop="@dimen/j5dp" android:paddingBottom="@dimen/j5dp">
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="提示：附件是否齐全，对珠宝的最终估值很重要哦" android:textSize="12sp" android:textColor="@color/text_gray" />
+               </LinearLayout>
+               <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@color/white" android:padding="@dimen/j10dp">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="购买价格" android:textSize="15sp" android:textColor="@color/black1" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="(人名币 元)" android:textSize="11sp" android:textColor="@color/text_gray" />
+                    <EditText android:id="@+id/et_price_jewellery" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:background="@null" android:gravity="center_vertical|right" android:paddingLeft="@dimen/j10dp" android:hint="请输入价格" android:inputType="numberDecimal" android:textColorHint="@color/text_gray" android:textColor="@color/black1" android:textSize="15sp" />
+               </LinearLayout>
+               <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@color/white" android:layout_marginTop="@dimen/j1dp" android:padding="@dimen/j10dp">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="购买时间" android:textSize="15sp" android:textColor="@color/black1" />
+                    <TextView android:id="@+id/tv_time_jewellery" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="right" android:paddingLeft="@dimen/j10dp" android:textSize="15sp" android:textColor="@color/black1" />
+                    <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/xzz1" />
+               </LinearLayout>
+               <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingLeft="@dimen/j10dp" android:paddingRight="@dimen/j10dp" android:paddingTop="@dimen/j5dp" android:paddingBottom="@dimen/j5dp" android:visibility="gone">
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="提示：建议填写以提高估价准确率" android:textSize="12sp" android:textColor="@color/text_gray" />
+               </LinearLayout>
+               <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@color/white" android:layout_marginTop="@dimen/j1dp" android:padding="@dimen/j10dp">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="补充描述" android:textSize="15sp" android:textColor="@color/black1" />
+                    <EditText android:id="@+id/et_info_jewellery" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:background="@null" android:gravity="center_vertical|right" android:paddingLeft="@dimen/j10dp" android:hint="请输入补充描述" android:textColorHint="@color/text_gray" android:textColor="@color/black1" android:textSize="15sp" />
+               </LinearLayout>
+               <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingLeft="@dimen/j10dp" android:paddingRight="@dimen/j10dp" android:paddingTop="@dimen/j5dp" android:paddingBottom="@dimen/j5dp">
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="提示：如无法估价，请转至邮寄鉴定" android:textSize="12sp" android:textColor="@color/red_k" />
+               </LinearLayout>
+               <LinearLayout android:id="@+id/ll_submit_jewellery" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="@dimen/j45dp" android:layout_margin="@dimen/j25dp" android:gravity="center" android:background="@mipmap/button">
+                    <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@mipmap/button_send" />
+               </LinearLayout>
+          </LinearLayout>
+     </ScrollView>
 </LinearLayout>
+

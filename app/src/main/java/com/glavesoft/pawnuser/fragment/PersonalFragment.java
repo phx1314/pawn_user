@@ -14,6 +14,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.blankj.utilcode.util.AppUtils;
+import com.glavesoft.F;
 import com.glavesoft.okGo.JsonCallback;
 import com.glavesoft.pawnuser.R;
 import com.glavesoft.pawnuser.activity.login.LoginActivity;
@@ -31,9 +32,11 @@ import com.glavesoft.pawnuser.activity.personal.SettingActivity;
 import com.glavesoft.pawnuser.activity.shoppingmall.OrderActivity;
 import com.glavesoft.pawnuser.adapter.CommonAdapter;
 import com.glavesoft.pawnuser.adapter.ViewHolder;
+import com.glavesoft.pawnuser.base.BaseActivity;
 import com.glavesoft.pawnuser.base.BaseFragment;
 import com.glavesoft.pawnuser.constant.BaseConstant;
 import com.glavesoft.pawnuser.frg.FrgRenzheng;
+import com.glavesoft.pawnuser.frg.FrgShangjiaduan;
 import com.glavesoft.pawnuser.mod.DataResult;
 import com.glavesoft.pawnuser.mod.ItemInfo;
 import com.glavesoft.pawnuser.mod.LawInfo;
@@ -50,6 +53,8 @@ import com.mdx.framework.utility.Helper;
 
 import java.util.ArrayList;
 import java.util.Random;
+
+import static com.glavesoft.pawnuser.constant.BaseConstant.URL;
 
 /**
  * @author 严光
@@ -73,7 +78,7 @@ public class PersonalFragment extends BaseFragment implements View.OnClickListen
     private GridViewForNoScroll nsgv_home_jdxp;
     //    int[] img = new int[]{R.drawable.wdyw,R.drawable.scdd,R.drawable.wlxx,R.drawable.ddjl,R.drawable.ddjk,R.drawable.wdyhk,R.drawable.rlyz,R.drawable.wdkf,R.drawable.tgm};
 //    String[] title = new String[]{"典当业务","商城订单","物流信息","典当记录","典当监控","我的银行卡","人脸认证","客服","推广二维码"};
-    int[] img = new int[]{R.drawable.wdyw, R.drawable.scdd, R.drawable.wlxx, R.drawable.ddjl, R.drawable.ddjk, R.drawable.wdyhk, R.drawable.rlyz, R.drawable.wdkf, R.drawable.wdkf};
+    int[] img = new int[]{R.drawable.wdyw, R.drawable.scdd, R.drawable.wlxx, R.drawable.ddjl, R.drawable.ddjk, R.drawable.wdyhk, R.drawable.rlyz, R.drawable.wdkf, R.drawable.sjd};
     String[] title = new String[]{"业务中", "商城订单", "物流信息", "业务记录", "业务监控", "我的银行卡", "人脸认证", "客服", "商家端"};
     ArrayList<ItemInfo> list = new ArrayList<>();
 
@@ -191,8 +196,37 @@ public class PersonalFragment extends BaseFragment implements View.OnClickListen
                 } else if (position == 7) {//客服
                     gotokf_J(getActivity());
                 } else if (position == 8) {
-//                    startActivity(new Intent(getActivity(), EwmActivity.class));
-                    Helper.startActivity(getContext(), FrgRenzheng.class, TitleAct.class);
+                    HttpParams param = new HttpParams();
+                    param.put("token", LocalData.getInstance().getUserInfo().getToken());//8d223eae-eeda-4a59-a038-4b0478363df9
+                    OkGo.<DataResult<ArrayList<LawInfo>>>get(URL + "auth/passOrNot")
+                            .params(param)
+                            .execute(new JsonCallback<DataResult<ArrayList<LawInfo>>>() {
+                                @Override
+                                public void onSuccess(Response<DataResult<ArrayList<LawInfo>>> response) {
+                                    if (response == null) {
+                                        CustomToast.show(getString(R.string.http_request_fail));
+                                        return;
+                                    }
+                                    if (response.body().getErrorCode() == 1) {
+                                        Helper.startActivity(getContext(), FrgShangjiaduan.class, TitleAct.class);
+                                    } else if (response.body().getErrorCode() == 0) {
+                                        F.INSTANCE.toast("认证审核中");
+                                    } else if (response.body().getErrorCode() == 2) {
+                                        Helper.startActivity(getContext(), FrgRenzheng.class, TitleAct.class);
+                                    } else if (response.body().getErrorCode() == DataResult.RESULT_102) {
+                                        toLogin();
+                                    } else {
+                                        Helper.startActivity(getContext(), FrgRenzheng.class, TitleAct.class);
+                                        CustomToast.show(response.body().getErrorMsg());
+                                    }
+                                }
+
+                                @Override
+                                public void onError(Response<DataResult<ArrayList<LawInfo>>> response) {
+                                    showVolleyError(null);
+                                }
+                            });
+
                 }
             }
         });

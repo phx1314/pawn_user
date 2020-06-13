@@ -1,37 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@color/white"
-    android:fitsSystemWindows="true">
-
-    <include layout="@layout/titlebar" />
-
-    <WebView
-        android:id="@+id/wv"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1"/>
-
-
-    <LinearLayout
-        android:id="@+id/ll_submit_reference"
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:layout_marginLeft="25dp"
-        android:layout_marginRight="25dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        android:gravity="center"
-        android:background="@mipmap/button">
-
-       <ImageView
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:src="@mipmap/return_to_upload"/>
-
-    </LinearLayout>
-
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:background="@color/white" android:fitsSystemWindows="true">
+     <include layout="@layout/titlebar" />
+     <WebView android:id="@+id/wv" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1" />
+     <LinearLayout android:id="@+id/ll_submit_reference" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="@dimen/j45dp" android:layout_marginLeft="@dimen/j25dp" android:layout_marginRight="@dimen/j25dp" android:layout_marginTop="@dimen/j10dp" android:layout_marginBottom="@dimen/j10dp" android:gravity="center" android:background="@mipmap/button">
+          <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@mipmap/return_to_upload" />
+     </LinearLayout>
 </LinearLayout>
+

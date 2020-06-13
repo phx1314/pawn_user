@@ -1,254 +1,50 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
-    android:orientation="vertical"
-    android:background="@color/bg_gray"
-    tools:context="com.glavesoft.pawnuser.activity.main.StoreDetailActivity">
-    <include layout="@layout/titlebar" />
-    <RelativeLayout
-        android:id="@+id/id_stickynavlayout_topview"
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:background="@color/white"
-        android:gravity="center_vertical">
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:paddingTop="5dp">
-
-            <ImageView
-                android:id="@+id/iv_store_icon"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:src="@mipmap/tx"
-                android:scaleType="centerCrop"/>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="5dp"
-                android:gravity="center|left"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/tv_storename"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="常州宝祥典当行"
-                    android:textColor="@color/black"
-                    android:textSize="16dp" />
-
-                <TextView
-                    android:id="@+id/tv_store_commentlevel"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:text="评价等级：高"
-                    android:textColor="@color/transparent1"
-                    android:textSize="13dp" />
-            </LinearLayout>
-        </LinearLayout>
-
-    </RelativeLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:background="@color/white"
-        android:paddingLeft="5dp"
-        android:paddingBottom="10dp"
-        android:orientation="vertical">
-
-        <LinearLayout
-            android:paddingTop="10dp"
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <TextView
-                android:layout_width="0dp"
-                android:layout_weight="3"
-                android:layout_height="wrap_content"
-                android:text="好评率"
-                android:textColor="@color/transparent1"
-                android:textSize="15dp" />
-            <TextView
-                android:id="@+id/tv_store_rate"
-                android:layout_width="0dp"
-                android:layout_weight="7"
-                android:layout_height="wrap_content"
-                android:text="100%"
-                android:textColor="@color/transparent1"
-                android:textSize="15dp" />
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:paddingTop="10dp"
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <TextView
-                android:layout_width="0dp"
-                android:layout_weight="3"
-                android:layout_height="wrap_content"
-                android:text="开店时间"
-                android:textColor="@color/transparent1"
-                android:textSize="15dp" />
-            <TextView
-                android:id="@+id/tv_store_createtime"
-                android:layout_width="0dp"
-                android:layout_weight="7"
-                android:layout_height="wrap_content"
-                android:text="2018-7-6 11：12：00"
-                android:textColor="@color/transparent1"
-                android:textSize="15dp" />
-        </LinearLayout>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:background="@color/white"
-        android:paddingLeft="5dp"
-        android:paddingBottom="10dp"
-        android:orientation="vertical">
-
-        <LinearLayout
-            android:paddingTop="10dp"
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <TextView
-                android:layout_width="0dp"
-                android:layout_weight="3"
-                android:layout_height="wrap_content"
-                android:text="描述相符"
-                android:textColor="@color/transparent1"
-                android:textSize="15dp" />
-            <TextView
-                android:id="@+id/tv_store_memo"
-                android:layout_width="0dp"
-                android:layout_weight="7"
-                android:layout_height="wrap_content"
-                android:text="高    优于同行"
-                android:textColor="@color/red_del"
-                android:textSize="15dp" />
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:paddingTop="10dp"
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <TextView
-                android:layout_width="0dp"
-                android:layout_weight="3"
-                android:layout_height="wrap_content"
-                android:text="服务态度"
-                android:textColor="@color/transparent1"
-                android:textSize="15dp" />
-            <TextView
-                android:id="@+id/tv_store_service"
-                android:layout_width="0dp"
-                android:layout_weight="7"
-                android:layout_height="wrap_content"
-                android:text="高   优于同行"
-                android:textColor="@color/red_del"
-                android:textSize="15dp" />
-        </LinearLayout>
-        <LinearLayout
-            android:paddingTop="10dp"
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <TextView
-                android:layout_width="0dp"
-                android:layout_weight="3"
-                android:layout_height="wrap_content"
-                android:text="物流服务"
-                android:textColor="@color/transparent1"
-                android:textSize="15dp" />
-            <TextView
-                android:id="@+id/tv_store_wuliu"
-                android:layout_width="0dp"
-                android:layout_weight="7"
-                android:layout_height="wrap_content"
-                android:text="高   优于同行"
-                android:textColor="@color/red_del"
-                android:textSize="15dp" />
-        </LinearLayout>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:background="@color/white"
-        android:paddingLeft="5dp"
-        android:paddingBottom="10dp"
-        android:orientation="vertical">
-
-        <LinearLayout
-            android:paddingTop="10dp"
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <TextView
-                android:layout_width="0dp"
-                android:layout_weight="3"
-                android:layout_height="wrap_content"
-                android:text="服务电话 "
-                android:textColor="@color/transparent1"
-                android:textSize="15dp" />
-            <TextView
-                android:id="@+id/tv_store_phone"
-                android:layout_width="0dp"
-                android:layout_weight="7"
-                android:layout_height="wrap_content"
-                android:text="15295063176"
-                android:textColor="@color/transparent1"
-                android:textSize="15dp" />
-        </LinearLayout>
-
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:background="@color/white"
-        android:paddingLeft="5dp"
-        android:paddingBottom="10dp"
-        android:orientation="vertical">
-
-        <LinearLayout
-            android:paddingTop="10dp"
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <TextView
-                android:layout_width="0dp"
-                android:layout_weight="3"
-                android:layout_height="wrap_content"
-                android:text="店铺资质"
-                android:textColor="@color/transparent1"
-                android:textSize="15dp" />
-            <TextView
-                android:id="@+id/tv_store_zizhi"
-                android:layout_width="0dp"
-                android:layout_weight="7"
-                android:layout_height="wrap_content"
-                android:text="平台认证"
-                android:textColor="@color/transparent1"
-                android:textSize="15dp" />
-        </LinearLayout>
-
-    </LinearLayout>
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent" android:layout_height="match_parent" android:fitsSystemWindows="true" android:orientation="vertical" android:background="@color/bg_gray" tools:context="com.glavesoft.pawnuser.activity.main.StoreDetailActivity">
+     <include layout="@layout/titlebar" />
+     <RelativeLayout android:id="@+id/id_stickynavlayout_topview" android:layout_width="match_parent" android:layout_height="@dimen/j80dp" android:background="@color/white" android:gravity="center_vertical">
+          <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:paddingLeft="@dimen/j10dp" android:paddingRight="@dimen/j10dp" android:paddingTop="@dimen/j5dp">
+               <ImageView android:id="@+id/iv_store_icon" android:layout_width="@dimen/j50dp" android:layout_height="@dimen/j50dp" android:src="@mipmap/tx" android:scaleType="centerCrop" />
+               <LinearLayout android:layout_width="wrap_content" android:layout_height="match_parent" android:layout_marginLeft="@dimen/j5dp" android:gravity="center|left" android:orientation="vertical">
+                    <TextView android:id="@+id/tv_storename" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="常州宝祥典当行" android:textColor="@color/black" android:textSize="@dimen/j16dp" />
+                    <TextView android:id="@+id/tv_store_commentlevel" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j5dp" android:text="评价等级：高" android:textColor="@color/transparent1" android:textSize="@dimen/j13dp" />
+               </LinearLayout>
+          </LinearLayout>
+     </RelativeLayout>
+     <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j20dp" android:background="@color/white" android:paddingLeft="@dimen/j5dp" android:paddingBottom="@dimen/j10dp" android:orientation="vertical">
+          <LinearLayout android:paddingTop="@dimen/j10dp" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content">
+               <TextView android:layout_width="0dp" android:layout_weight="3" android:layout_height="wrap_content" android:text="好评率" android:textColor="@color/transparent1" android:textSize="@dimen/j15dp" />
+               <TextView android:id="@+id/tv_store_rate" android:layout_width="0dp" android:layout_weight="7" android:layout_height="wrap_content" android:text="100%" android:textColor="@color/transparent1" android:textSize="@dimen/j15dp" />
+          </LinearLayout>
+          <LinearLayout android:paddingTop="@dimen/j10dp" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content">
+               <TextView android:layout_width="0dp" android:layout_weight="3" android:layout_height="wrap_content" android:text="开店时间" android:textColor="@color/transparent1" android:textSize="@dimen/j15dp" />
+               <TextView android:id="@+id/tv_store_createtime" android:layout_width="0dp" android:layout_weight="7" android:layout_height="wrap_content" android:text="2018-7-6 11：12：00" android:textColor="@color/transparent1" android:textSize="@dimen/j15dp" />
+          </LinearLayout>
+     </LinearLayout>
+     <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j20dp" android:background="@color/white" android:paddingLeft="@dimen/j5dp" android:paddingBottom="@dimen/j10dp" android:orientation="vertical">
+          <LinearLayout android:paddingTop="@dimen/j10dp" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content">
+               <TextView android:layout_width="0dp" android:layout_weight="3" android:layout_height="wrap_content" android:text="描述相符" android:textColor="@color/transparent1" android:textSize="@dimen/j15dp" />
+               <TextView android:id="@+id/tv_store_memo" android:layout_width="0dp" android:layout_weight="7" android:layout_height="wrap_content" android:text="高    优于同行" android:textColor="@color/red_del" android:textSize="@dimen/j15dp" />
+          </LinearLayout>
+          <LinearLayout android:paddingTop="@dimen/j10dp" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content">
+               <TextView android:layout_width="0dp" android:layout_weight="3" android:layout_height="wrap_content" android:text="服务态度" android:textColor="@color/transparent1" android:textSize="@dimen/j15dp" />
+               <TextView android:id="@+id/tv_store_service" android:layout_width="0dp" android:layout_weight="7" android:layout_height="wrap_content" android:text="高   优于同行" android:textColor="@color/red_del" android:textSize="@dimen/j15dp" />
+          </LinearLayout>
+          <LinearLayout android:paddingTop="@dimen/j10dp" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content">
+               <TextView android:layout_width="0dp" android:layout_weight="3" android:layout_height="wrap_content" android:text="物流服务" android:textColor="@color/transparent1" android:textSize="@dimen/j15dp" />
+               <TextView android:id="@+id/tv_store_wuliu" android:layout_width="0dp" android:layout_weight="7" android:layout_height="wrap_content" android:text="高   优于同行" android:textColor="@color/red_del" android:textSize="@dimen/j15dp" />
+          </LinearLayout>
+     </LinearLayout>
+     <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j20dp" android:background="@color/white" android:paddingLeft="@dimen/j5dp" android:paddingBottom="@dimen/j10dp" android:orientation="vertical">
+          <LinearLayout android:paddingTop="@dimen/j10dp" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content">
+               <TextView android:layout_width="0dp" android:layout_weight="3" android:layout_height="wrap_content" android:text="服务电话 " android:textColor="@color/transparent1" android:textSize="@dimen/j15dp" />
+               <TextView android:id="@+id/tv_store_phone" android:layout_width="0dp" android:layout_weight="7" android:layout_height="wrap_content" android:text="15295063176" android:textColor="@color/transparent1" android:textSize="@dimen/j15dp" />
+          </LinearLayout>
+     </LinearLayout>
+     <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j20dp" android:background="@color/white" android:paddingLeft="@dimen/j5dp" android:paddingBottom="@dimen/j10dp" android:orientation="vertical">
+          <LinearLayout android:paddingTop="@dimen/j10dp" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content">
+               <TextView android:layout_width="0dp" android:layout_weight="3" android:layout_height="wrap_content" android:text="店铺资质" android:textColor="@color/transparent1" android:textSize="@dimen/j15dp" />
+               <TextView android:id="@+id/tv_store_zizhi" android:layout_width="0dp" android:layout_weight="7" android:layout_height="wrap_content" android:text="平台认证" android:textColor="@color/transparent1" android:textSize="@dimen/j15dp" />
+          </LinearLayout>
+     </LinearLayout>
 </LinearLayout>
+

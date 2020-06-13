@@ -1,68 +1,14 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/bg_title"
-    android:fitsSystemWindows="true">
-
-    <include layout="@layout/titlebar" android:id="@+id/titlebar_refresh"/>
-
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/bg_default">
-
-        <cn.bingoogolapple.refreshlayout.BGARefreshLayout
-            android:id="@+id/rl_listview_refresh"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1">
-
-            <ListView
-                android:id="@+id/lv_listview"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:divider="@null"
-                android:listSelector="@android:color/transparent"
-                />
-        </cn.bingoogolapple.refreshlayout.BGARefreshLayout>
-
-
-        <LinearLayout
-            android:id="@+id/ll_nodata"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:orientation="vertical"
-            android:visibility="gone"
-            >
-
-            <TextView
-                android:id="@+id/tv_nodata"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:gravity="center"
-                android:text="暂无可寄卖宝贝，点击确定前往鉴定"
-                android:textColor="@color/black"
-                android:textSize="13sp"/>
-
-            <TextView
-                android:id="@+id/tv_submit"
-                android:layout_width="80dp"
-                android:layout_height="25dp"
-                android:layout_marginTop="5dp"
-                android:gravity="center"
-                android:background="@drawable/shape_green3"
-                android:textSize="14sp"
-                android:textColor="@color/white"
-                android:text="确定"/>
-
-        </LinearLayout>
-
-    </LinearLayout>
-
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent" android:background="@color/bg_title" android:fitsSystemWindows="true">
+     <include layout="@layout/titlebar" android:id="@+id/titlebar_refresh" />
+     <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent" android:background="@color/bg_default">
+          <cn.bingoogolapple.refreshlayout.BGARefreshLayout android:id="@+id/rl_listview_refresh" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1">
+               <ListView android:id="@+id/lv_listview" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:divider="@null" android:listSelector="@android:color/transparent" />
+          </cn.bingoogolapple.refreshlayout.BGARefreshLayout>
+          <LinearLayout android:id="@+id/ll_nodata" android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center" android:orientation="vertical" android:visibility="gone">
+               <TextView android:id="@+id/tv_nodata" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j10dp" android:gravity="center" android:text="暂无可寄卖宝贝，点击确定前往鉴定" android:textColor="@color/black" android:textSize="13sp" />
+               <TextView android:id="@+id/tv_submit" android:layout_width="@dimen/j80dp" android:layout_height="@dimen/j25dp" android:layout_marginTop="@dimen/j5dp" android:gravity="center" android:background="@drawable/shape_green3" android:textSize="14sp" android:textColor="@color/white" android:text="确定" />
+          </LinearLayout>
+     </LinearLayout>
 </LinearLayout>
+

@@ -73,6 +73,7 @@ import com.glavesoft.pawnuser.R;
 import com.google.gson.Gson;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.model.HttpParams;
+import com.mdx.framework.service.subscriber.HttpResultSubscriberListener;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.permissionutil.PermissionListener;
@@ -80,6 +81,9 @@ import com.permissionutil.PermissionUtil;
 import com.sobot.chat.SobotApi;
 import com.sobot.chat.api.enumtype.SobotChatTitleDisplayMode;
 import com.sobot.chat.api.model.Information;
+
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.lang.reflect.Field;
 import java.security.MessageDigest;
@@ -93,7 +97,7 @@ import java.util.Locale;
 
 import cn.bingoogolapple.refreshlayout.BGAMoocStyleRefreshViewHolder;
 
-public class BaseActivity extends AppCompatActivity
+public class BaseActivity extends AppCompatActivity implements  HttpResultSubscriberListener
 {
     protected TextView titlebar_left;
     protected TextView titlebar_right;
@@ -636,6 +640,21 @@ public class BaseActivity extends AppCompatActivity
                 .displayer(new FlexibleRoundedBitmapDisplayer(cornerRadius,corners)) // 自定义增强型BitmapDisplayer
                 .build();
         imageLoader.displayImage(url, imageView, options);
+
+    }
+
+    @Override
+    public void onError(@Nullable String s, @Nullable String s1, @Nullable String s2, @NotNull String s3) {
+
+    }
+
+    @Override
+    public void onNext(@Nullable Object o, @NotNull String s) {
+
+    }
+
+    @Override
+    public void onSuccess(@Nullable String s, @NotNull String s1) {
 
     }
 

@@ -1,31 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/white"
-    android:orientation="vertical">
-    <include layout="@layout/titlebar"/>
-    <com.glavesoft.pullrefresh.PullToRefreshListView
-        android:id="@+id/lv_list"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"/>
-
-
-    <LinearLayout
-        android:id="@+id/nodate_ll"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center_horizontal"
-        android:orientation="vertical"
-        android:visibility="gone">
-
-        <ImageView
-            android:id="@+id/nodate_img"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="130dp"
-            />
-    </LinearLayout>
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:background="@color/white" android:orientation="vertical">
+     <include layout="@layout/titlebar" />
+     <com.glavesoft.pullrefresh.PullToRefreshListView android:id="@+id/lv_list" android:layout_width="match_parent" android:layout_height="match_parent" android:paddingLeft="@dimen/j10dp" android:paddingRight="@dimen/j10dp" />
+     <LinearLayout android:id="@+id/nodate_ll" android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center_horizontal" android:orientation="vertical" android:visibility="gone">
+          <ImageView android:id="@+id/nodate_img" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j130dp" />
+     </LinearLayout>
 </LinearLayout>
+

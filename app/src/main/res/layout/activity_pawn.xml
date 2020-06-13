@@ -1,246 +1,41 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:fitsSystemWindows="true">
-
-    <include layout="@layout/titlebar"/>
-
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/bg_default">
-
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/white"
-                android:paddingTop="10dp"
-                android:layout_marginTop="10dp">
-
-                <TextView
-                    android:id="@+id/tv_name_pawn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_weight="1"
-                    android:text="翡翠手镯"
-                    android:textSize="16sp"
-                    android:textColor="@color/black1"/>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp">
-
-                    <TextView
-                        android:layout_width="66dp"
-                        android:layout_height="21dp"
-                        android:gravity="center"
-                        android:text="鉴定价"
-                        android:textSize="14sp"
-                        android:textColor="@color/white"
-                        android:background="@drawable/shape_red1"/>
-
-                    <TextView
-                        android:id="@+id/tv_jdprice_pawn"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="7dp"
-                        android:text="￥50000"
-                        android:textSize="17sp"
-                        android:textColor="@color/red_k"/>
-
-                </LinearLayout>
-
-                <com.glavesoft.view.GridViewForNoScroll
-                    android:id="@+id/gv_pics_pawn"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:cacheColorHint="#00000000"
-                    android:columnWidth="150dp"
-                    android:gravity="center"
-                    android:listSelector="#00000000"
-                    android:numColumns="3"
-                    android:scrollbars="none"
-                    android:stretchMode="columnWidth"
-                    android:verticalSpacing="15dp"
-                    android:background="@color/white"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/white"
-                android:layout_marginTop="10dp"
-                android:padding="10dp">
-
-                <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="期望当金"
-                        android:textSize="16sp"
-                        android:textColor="@color/black"/>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp">
-
-                        <EditText
-                            android:id="@+id/et_money_pawn"
-                            android:layout_width="match_parent"
-                            android:layout_height="40dp"
-                            android:layout_weight="1"
-                            android:background="@drawable/shape_kuang"
-                            android:gravity="center_vertical"
-                            android:paddingLeft="10dp"
-                            android:paddingRight="10dp"
-                            android:hint="请输入当款金额"
-                            android:textColorHint="@color/text_gray"
-                            android:inputType="numberDecimal"
-                            android:textColor="@color/black1"
-                            android:textSize="14sp"
-                            />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="5dp"
-                            android:text="元"
-                            android:textColor="@color/black"
-                            android:textSize="16sp" />
-
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent" android:fitsSystemWindows="true">
+     <include layout="@layout/titlebar" />
+     <ScrollView android:layout_width="match_parent" android:layout_height="match_parent" android:background="@color/bg_default">
+          <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent">
+               <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@color/white" android:paddingTop="@dimen/j10dp" android:layout_marginTop="@dimen/j10dp">
+                    <TextView android:id="@+id/tv_name_pawn" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/j10dp" android:layout_weight="1" android:text="翡翠手镯" android:textSize="16sp" android:textColor="@color/black1" />
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j8dp">
+                         <TextView android:layout_width="@dimen/j66dp" android:layout_height="@dimen/j21dp" android:gravity="center" android:text="鉴定价" android:textSize="14sp" android:textColor="@color/white" android:background="@drawable/shape_red1" />
+                         <TextView android:id="@+id/tv_jdprice_pawn" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/j7dp" android:text="￥50000" android:textSize="17sp" android:textColor="@color/red_k" />
                     </LinearLayout>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_marginLeft="10dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="期望费率"
-                        android:textSize="16sp"
-                        android:textColor="@color/black"/>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp">
-
-                        <EditText
-                            android:id="@+id/et_ll_pawn"
-                            android:layout_width="match_parent"
-                            android:layout_height="40dp"
-                            android:layout_weight="1"
-                            android:background="@drawable/shape_kuang"
-                            android:gravity="center_vertical"
-                            android:paddingLeft="10dp"
-                            android:paddingRight="10dp"
-                            android:hint="请输入期望费率"
-                            android:textColorHint="@color/text_gray"
-                            android:inputType="numberDecimal"
-                            android:textColor="@color/black1"
-                            android:textSize="14sp" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="5dp"
-                            android:text="%/月"
-                            android:textSize="16sp"
-                            android:textColor="@color/black"/>
-
+                    <com.glavesoft.view.GridViewForNoScroll android:id="@+id/gv_pics_pawn" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="@dimen/j10dp" android:cacheColorHint="#00000000" android:columnWidth="@dimen/j150dp" android:gravity="center" android:listSelector="#00000000" android:numColumns="3" android:scrollbars="none" android:stretchMode="columnWidth" android:verticalSpacing="@dimen/j15dp" android:background="@color/white" />
+               </LinearLayout>
+               <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@color/white" android:layout_marginTop="@dimen/j10dp" android:padding="@dimen/j10dp">
+                    <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1">
+                         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="期望当金" android:textSize="16sp" android:textColor="@color/black" />
+                         <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j10dp">
+                              <EditText android:id="@+id/et_money_pawn" android:layout_width="match_parent" android:layout_height="@dimen/j40dp" android:layout_weight="1" android:background="@drawable/shape_kuang" android:gravity="center_vertical" android:paddingLeft="@dimen/j10dp" android:paddingRight="@dimen/j10dp" android:hint="请输入当款金额" android:textColorHint="@color/text_gray" android:inputType="numberDecimal" android:textColor="@color/black1" android:textSize="14sp" />
+                              <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/j5dp" android:text="元" android:textColor="@color/black" android:textSize="16sp" />
+                         </LinearLayout>
                     </LinearLayout>
-                </LinearLayout>
-
-            </LinearLayout>
-            
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/white"
-                android:layout_marginTop="1dp"
-                android:padding="10dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="典当时长："
-                    android:textSize="16sp"
-                    android:textColor="@color/black"/>
-
-                <com.glavesoft.view.GridViewForNoScroll
-                    android:id="@+id/gv_timelong_pawn"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:cacheColorHint="#00000000"
-                    android:columnWidth="150dp"
-                    android:gravity="center"
-                    android:listSelector="#00000000"
-                    android:numColumns="4"
-                    android:scrollbars="none"
-                    android:stretchMode="columnWidth"
-                    android:verticalSpacing="15dp"
-                    android:background="@color/white"/>
-
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:id="@+id/ll_submit_pawn"
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:layout_marginLeft="25dp"
-                android:layout_marginRight="25dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="20dp"
-                android:gravity="center"
-                android:background="@mipmap/button">
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@mipmap/next"
-                    />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="2dp"
-                    android:textSize="8sp"
-                    android:textColor="#EBEBEB"
-                    android:text="NEXT"
-                    />
-
-            </LinearLayout>
-
-
-        </LinearLayout>
-    </ScrollView>
-
-
+                    <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginLeft="@dimen/j10dp">
+                         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="期望费率" android:textSize="16sp" android:textColor="@color/black" />
+                         <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j10dp">
+                              <EditText android:id="@+id/et_ll_pawn" android:layout_width="match_parent" android:layout_height="@dimen/j40dp" android:layout_weight="1" android:background="@drawable/shape_kuang" android:gravity="center_vertical" android:paddingLeft="@dimen/j10dp" android:paddingRight="@dimen/j10dp" android:hint="请输入期望费率" android:textColorHint="@color/text_gray" android:inputType="numberDecimal" android:textColor="@color/black1" android:textSize="14sp" />
+                              <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/j5dp" android:text="%/月" android:textSize="16sp" android:textColor="@color/black" />
+                         </LinearLayout>
+                    </LinearLayout>
+               </LinearLayout>
+               <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@color/white" android:layout_marginTop="@dimen/j1dp" android:padding="@dimen/j10dp">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="典当时长：" android:textSize="16sp" android:textColor="@color/black" />
+                    <com.glavesoft.view.GridViewForNoScroll android:id="@+id/gv_timelong_pawn" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j10dp" android:cacheColorHint="#00000000" android:columnWidth="@dimen/j150dp" android:gravity="center" android:listSelector="#00000000" android:numColumns="4" android:scrollbars="none" android:stretchMode="columnWidth" android:verticalSpacing="@dimen/j15dp" android:background="@color/white" />
+               </LinearLayout>
+               <LinearLayout android:id="@+id/ll_submit_pawn" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="@dimen/j45dp" android:layout_marginLeft="@dimen/j25dp" android:layout_marginRight="@dimen/j25dp" android:layout_marginTop="@dimen/j20dp" android:layout_marginBottom="@dimen/j20dp" android:gravity="center" android:background="@mipmap/button">
+                    <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@mipmap/next" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j2dp" android:textSize="8sp" android:textColor="#EBEBEB" android:text="NEXT" />
+               </LinearLayout>
+          </LinearLayout>
+     </ScrollView>
 </LinearLayout>
+

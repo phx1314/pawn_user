@@ -1,80 +1,15 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@color/white"
-    android:padding="10dp">
-
-    <FrameLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-
-        <ImageView
-            android:id="@+id/iv_pic_monitor"
-            android:layout_width="110dp"
-            android:layout_height="110dp"
-            android:layout_marginBottom="2dp"
-            android:scaleType="centerCrop"
-            />
-
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/bf_video_play"
-            android:layout_gravity="center"/>
-
-
-    </FrameLayout>
-
-
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:paddingLeft="8dp"
-            android:paddingRight="8dp"
-            android:paddingTop="3dp"
-            >
-
-            <TextView
-                android:id="@+id/tv_title_monitorvideo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="金狮"
-                android:textSize="15sp"
-                android:textColor="@color/black1"/>
-
-            <TextView
-                android:id="@+id/tv_time_monitorvideo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:text="录制时间：12424325432"
-                android:textSize="13sp"
-                android:textColor="@color/text_gray"
-                />
-
-            <TextView
-                android:id="@+id/tv_long_monitorvideo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:text="视频时长：6:20"
-                android:textSize="13sp"
-                android:textColor="@color/text_gray"
-                />
-
-
-
-        </LinearLayout>
-
-    </LinearLayout>
-
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@color/white" android:padding="@dimen/j10dp">
+     <FrameLayout android:layout_width="wrap_content" android:layout_height="wrap_content">
+          <ImageView android:id="@+id/iv_pic_monitor" android:layout_width="@dimen/j110dp" android:layout_height="@dimen/j110dp" android:layout_marginBottom="@dimen/j2dp" android:scaleType="centerCrop" />
+          <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/bf_video_play" android:layout_gravity="center" />
+     </FrameLayout>
+     <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent">
+          <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1" android:paddingLeft="@dimen/j8dp" android:paddingRight="@dimen/j8dp" android:paddingTop="@dimen/j3dp">
+               <TextView android:id="@+id/tv_title_monitorvideo" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="金狮" android:textSize="15sp" android:textColor="@color/black1" />
+               <TextView android:id="@+id/tv_time_monitorvideo" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j5dp" android:text="录制时间：12424325432" android:textSize="13sp" android:textColor="@color/text_gray" />
+               <TextView android:id="@+id/tv_long_monitorvideo" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j5dp" android:text="视频时长：6:20" android:textSize="13sp" android:textColor="@color/text_gray" />
+          </LinearLayout>
+     </LinearLayout>
 </LinearLayout>
+

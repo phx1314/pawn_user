@@ -1,50 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    >
-
-    <cn.bingoogolapple.refreshlayout.BGARefreshLayout
-        android:id="@+id/rl_gridview_refresh"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
-        <GridView
-            android:id="@+id/lv_types"
-            android:padding="8dp"
-            android:horizontalSpacing="8dp"
-            android:verticalSpacing="8dp"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:numColumns="2"
-            android:background="@color/white"
-            android:divider="@null"
-            android:listSelector="@android:color/transparent"
-            />
-    </cn.bingoogolapple.refreshlayout.BGARefreshLayout>
-
-
-    <LinearLayout
-        android:id="@+id/ll_nodata"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:visibility="gone"
-        >
-
-        <TextView
-            android:id="@+id/tv_nodata"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:gravity="center"
-            android:text="暂无寄卖信息，快去别的地方逛逛哦~"
-            android:textColor="@color/bg_title"
-            android:textSize="13sp"/>
-
-    </LinearLayout>
-
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical">
+     <cn.bingoogolapple.refreshlayout.BGARefreshLayout android:id="@+id/rl_gridview_refresh" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1">
+          <GridView android:id="@+id/lv_types" android:padding="@dimen/j8dp" android:horizontalSpacing="@dimen/j8dp" android:verticalSpacing="@dimen/j8dp" android:layout_width="match_parent" android:layout_height="match_parent" android:numColumns="2" android:background="@color/white" android:divider="@null" android:listSelector="@android:color/transparent" />
+     </cn.bingoogolapple.refreshlayout.BGARefreshLayout>
+     <LinearLayout android:id="@+id/ll_nodata" android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center" android:orientation="vertical" android:visibility="gone">
+          <TextView android:id="@+id/tv_nodata" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j10dp" android:gravity="center" android:text="暂无寄卖信息，快去别的地方逛逛哦~" android:textColor="@color/bg_title" android:textSize="13sp" />
+     </LinearLayout>
 </LinearLayout>
 

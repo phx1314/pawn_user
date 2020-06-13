@@ -1,162 +1,23 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/bg_default"
-    android:fitsSystemWindows="true">
-
-    <include layout="@layout/titlebar"/>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/white"
-        android:layout_marginTop="10dp"
-        android:paddingTop="15dp"
-        android:paddingBottom="15dp"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="收件人"
-            android:textColor="@color/text_gray"
-            android:textSize="16sp"
-            />
-
-        <TextView
-            android:id="@+id/tv_name_retrieve"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="right"
-            android:layout_marginLeft="10dp"
-            android:textColor="@color/black1"
-            android:textSize="16sp"
-            />
-
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/white"
-        android:layout_marginTop="1dp"
-        android:paddingTop="15dp"
-        android:paddingBottom="15dp"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="联系电话"
-            android:textColor="@color/text_gray"
-            android:textSize="16sp"
-            />
-
-        <TextView
-            android:id="@+id/tv_phone_retrieve"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="right"
-            android:layout_marginLeft="10dp"
-            android:textColor="@color/black1"
-            android:textSize="16sp"
-            />
-
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/white"
-        android:layout_marginTop="1dp"
-        android:paddingTop="15dp"
-        android:paddingBottom="15dp"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="省市区"
-            android:textColor="@color/text_gray"
-            android:textSize="16sp"
-            />
-
-        <TextView
-            android:id="@+id/tv_ssq_retrieve"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_marginLeft="10dp"
-            android:gravity="right"
-            android:textColor="@color/black1"
-            android:textSize="16sp"
-            />
-
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/white"
-        android:layout_marginTop="1dp"
-        android:paddingTop="15dp"
-        android:paddingBottom="15dp"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="所在地区"
-            android:textColor="@color/text_gray"
-            android:textSize="16sp"
-            />
-
-        <TextView
-            android:id="@+id/tv_dq_retrieve"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_marginLeft="10dp"
-            android:gravity="right"
-            android:textColor="@color/black1"
-            android:textSize="16sp"
-            />
-
-    </LinearLayout>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:text="注：邮费由用户到付自理。"
-        android:textColor="@color/red_k"
-        android:textSize="12sp"/>
-
-
-    <TextView
-        android:id="@+id/tv_submit_retrieve"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_marginLeft="25dp"
-        android:layout_marginRight="25dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp"
-        android:gravity="center"
-        android:text="确认取回"
-        android:textColor="@android:color/white"
-        android:background="@drawable/shape_red"
-        android:textSize="16sp"
-        />
-
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent" android:background="@color/bg_default" android:fitsSystemWindows="true">
+     <include layout="@layout/titlebar" />
+     <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@color/white" android:layout_marginTop="@dimen/j10dp" android:paddingTop="@dimen/j15dp" android:paddingBottom="@dimen/j15dp" android:paddingLeft="@dimen/j10dp" android:paddingRight="@dimen/j10dp">
+          <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="收件人" android:textColor="@color/text_gray" android:textSize="16sp" />
+          <TextView android:id="@+id/tv_name_retrieve" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="right" android:layout_marginLeft="@dimen/j10dp" android:textColor="@color/black1" android:textSize="16sp" />
+     </LinearLayout>
+     <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@color/white" android:layout_marginTop="@dimen/j1dp" android:paddingTop="@dimen/j15dp" android:paddingBottom="@dimen/j15dp" android:paddingLeft="@dimen/j10dp" android:paddingRight="@dimen/j10dp">
+          <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="联系电话" android:textColor="@color/text_gray" android:textSize="16sp" />
+          <TextView android:id="@+id/tv_phone_retrieve" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="right" android:layout_marginLeft="@dimen/j10dp" android:textColor="@color/black1" android:textSize="16sp" />
+     </LinearLayout>
+     <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@color/white" android:layout_marginTop="@dimen/j1dp" android:paddingTop="@dimen/j15dp" android:paddingBottom="@dimen/j15dp" android:paddingLeft="@dimen/j10dp" android:paddingRight="@dimen/j10dp">
+          <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="省市区" android:textColor="@color/text_gray" android:textSize="16sp" />
+          <TextView android:id="@+id/tv_ssq_retrieve" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginLeft="@dimen/j10dp" android:gravity="right" android:textColor="@color/black1" android:textSize="16sp" />
+     </LinearLayout>
+     <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@color/white" android:layout_marginTop="@dimen/j1dp" android:paddingTop="@dimen/j15dp" android:paddingBottom="@dimen/j15dp" android:paddingLeft="@dimen/j10dp" android:paddingRight="@dimen/j10dp">
+          <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="所在地区" android:textColor="@color/text_gray" android:textSize="16sp" />
+          <TextView android:id="@+id/tv_dq_retrieve" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginLeft="@dimen/j10dp" android:gravity="right" android:textColor="@color/black1" android:textSize="16sp" />
+     </LinearLayout>
+     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:padding="@dimen/j10dp" android:text="注：邮费由用户到付自理。" android:textColor="@color/red_k" android:textSize="12sp" />
+     <TextView android:id="@+id/tv_submit_retrieve" android:layout_width="match_parent" android:layout_height="@dimen/j40dp" android:layout_marginLeft="@dimen/j25dp" android:layout_marginRight="@dimen/j25dp" android:layout_marginTop="@dimen/j20dp" android:layout_marginBottom="@dimen/j20dp" android:gravity="center" android:text="确认取回" android:textColor="@android:color/white" android:background="@drawable/shape_red" android:textSize="16sp" />
 </LinearLayout>
+
