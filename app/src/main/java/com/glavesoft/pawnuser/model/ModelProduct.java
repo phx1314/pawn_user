@@ -16,7 +16,7 @@ public class ModelProduct implements Serializable {
     public List<?> footer;
     public List<RowsBean> rows;
 
-    public static class RowsBean {
+    public static class RowsBean implements Serializable {
         /**
          * mainMaterial : 牛肉
          * img : 000890ccb8e04719939c31f6c09f3ed9

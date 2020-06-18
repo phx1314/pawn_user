@@ -68,23 +68,25 @@
 
                 <TextView
                     android:id="@+id/mTextView_green"
-                    android:layout_width="@dimen/j45dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="@dimen/j20dp"
                     android:layout_marginRight="@dimen/j30dp"
                     android:background="@drawable/shape_green_kuang1"
                     android:gravity="center"
-                    android:padding="@dimen/j3dp"
+                    android:paddingLeft="@dimen/j10dp"
+                    android:paddingRight="@dimen/j10dp"
                     android:text="同意"
                     android:textColor="#12595B"
                     android:textSize="13sp" />
 
                 <TextView
                     android:id="@+id/mTextView_red"
-                    android:layout_width="@dimen/j45dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="@dimen/j20dp"
                     android:background="@drawable/shape_red_kuang1"
                     android:gravity="center"
-                    android:padding="@dimen/j3dp"
+                    android:paddingLeft="@dimen/j10dp"
+                    android:paddingRight="@dimen/j10dp"
                     android:text="驳回"
                     android:textColor="#B42929"
                     android:textSize="13sp" />

@@ -17,7 +17,7 @@
         app:xTabDividerGravity="center"
         app:xTabDividerWidthWidthText="true"
         app:xTabIndicatorColor="#000000"
-        app:xTabMode="scrollable"
+        app:xTabMode="fixed"
         app:xTabSelectedTextColor="#000000"
         app:xTabSelectedTextSize="15sp"
         app:xTabTextColor="#000000"

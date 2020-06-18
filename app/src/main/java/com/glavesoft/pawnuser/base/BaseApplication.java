@@ -25,6 +25,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.facebook.drawee.backends.pipeline.Fresco;
+import com.glavesoft.F;
 import com.glavesoft.pawnuser.R;
 import com.glavesoft.pawnuser.constant.BaseConstant;
 import com.glavesoft.pawnuser.mod.JpushInfo;
@@ -63,6 +64,7 @@ public class BaseApplication extends Application {
     public void onCreate() {
         super.onCreate();
         Frame.init(getApplicationContext());
+        F.INSTANCE.init();
         Phoenix.config()
                 .imageLoader(new com.guoxiaoxing.phoenix.core.listener.ImageLoader() {
                     @Override

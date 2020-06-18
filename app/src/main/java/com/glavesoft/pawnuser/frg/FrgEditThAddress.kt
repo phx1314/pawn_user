@@ -22,16 +22,19 @@ import com.lljjcoder.Interface.OnCityItemClickListener
 import com.lljjcoder.bean.CityBean
 import com.lljjcoder.bean.DistrictBean
 import com.lljjcoder.bean.ProvinceBean
+import com.lljjcoder.citywheel.CityConfig
 import com.lljjcoder.style.citypickerview.CityPickerView
 import com.mdx.framework.Frame
 import com.mdx.framework.utility.Helper
 import kotlinx.android.synthetic.main.frg_edit_th_address.*
-import kotlinx.android.synthetic.main.frg_geren_renzheng.*
 
 
 class FrgEditThAddress : BaseFrg() {
     lateinit var item: ModelGrzl.ReturnAddressBean
     var mPicker = CityPickerView()
+    var province: String = "江苏省"
+    var city: String = "常州市"
+    var district: String = "新北区"
     override fun create(savedInstanceState: Bundle?) {
         setContentView(R.layout.frg_edit_th_address)
         mPicker.init(context);
@@ -46,6 +49,9 @@ class FrgEditThAddress : BaseFrg() {
                 city: CityBean,
                 district: DistrictBean
             ) {
+                this@FrgEditThAddress.province = province.toString()
+                this@FrgEditThAddress.city = city.toString()
+                this@FrgEditThAddress.district = district.toString()
                 mTextView_arera.setText("$province$city$district")
             }
 
@@ -54,6 +60,12 @@ class FrgEditThAddress : BaseFrg() {
             }
         })
         mTextView_arera.setOnClickListener {
+            activity?.let { com.glavesoft.F.closeSoftKey(it) }
+            val cityConfig = CityConfig.Builder().build()
+            cityConfig.defaultProvinceName = province
+            cityConfig.defaultCityName = city
+            cityConfig.defaultDistrict = district
+            mPicker.setConfig(cityConfig)
             mPicker.showCityPicker()
         }
         mImageView_add.setOnClickListener {
@@ -65,7 +77,7 @@ class FrgEditThAddress : BaseFrg() {
                 Helper.toast("请输入联系电话")
                 return@setOnClickListener
             }
-            if (!PhoneFormatCheckUtils.isPhoneLegal(mEditText_phone.getText().toString().trim())) {
+            if (!PhoneFormatCheckUtils.isPhoneLegal(mTextView_phone.getText().toString().trim())) {
                 Helper.toast("请输入正确电话")
                 return@setOnClickListener
             }
@@ -83,15 +95,13 @@ class FrgEditThAddress : BaseFrg() {
             item.address = mTextView_address.text.toString()
             load(
                 F.gB().saveReturnAddress(
-                    item.id.toString(),
+                    if (item.id == 0) "" else item.id.toString(),
                     item.userId.toString(),
                     item.userName,
                     item.area,
                     item.address,
                     item.isDefault.toString(),
-                    item.phone,
-                    item.createTime,
-                    item.modifyTime
+                    item.phone
                 ), "saveReturnAddress"
             )
         }
@@ -108,13 +118,14 @@ class FrgEditThAddress : BaseFrg() {
         if (method == "saveReturnAddress") {
             Helper.toast("操作成功")
             Frame.HANDLES.sentAll("FrgThAddress", 0, "")
+            activity?.let { com.glavesoft.F.closeSoftKey(it) }
             finish()
         }
     }
 
     override fun setActionBar(mActionBar: LinearLayout?) {
         super.setActionBar(mActionBar)
-        if (TextUtils.isEmpty(item.id.toString())) {
+        if (item.id == 0) {
             mHead.setTitle("新增退货地址", "A D D   R E T U R N   A D D R E S S");
         } else {
             mHead.setTitle("编辑退货地址", "E D I T   R E T U R N   A D D R E S S");

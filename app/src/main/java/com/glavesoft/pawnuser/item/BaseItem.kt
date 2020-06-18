@@ -11,13 +11,17 @@
 
 package com.glavesoft.pawnuser.item;
 
+import android.app.Activity
 import android.app.ProgressDialog
 import android.content.Context;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.LinearLayout
+import com.glavesoft.F
+import com.glavesoft.F.closeSoftKey
 import com.glavesoft.pawnuser.frg.BaseFrg
 import com.glavesoft.pawnuser.mod.DataResult
+import com.google.gson.GsonBuilder
 import com.mdx.framework.Frame
 import com.mdx.framework.activity.BaseActivity
 import com.mdx.framework.service.subscriber.HttpResult
@@ -58,7 +62,8 @@ open class BaseItem(context: Context?) : LinearLayout(context), View.OnClickList
         handler.setId(id)
     }
 
-
+    override fun onProgress(progress: Int) {
+    }
     open fun disposeMsg(type: Int, obj: Any) {}
 
     override fun onError(code: String?, msg: String?, data: String?, method: String) {
@@ -66,7 +71,23 @@ open class BaseItem(context: Context?) : LinearLayout(context), View.OnClickList
     }
 
     override fun onNext(httpResult: Any?, method: String) {
-
+        try {
+            val mHttpResult = (httpResult as DataResult<*>)
+            if (mHttpResult.errorCode == DataResult.RESULT_OK_ZERO) {
+                onSuccess(GsonBuilder().serializeNulls().create().toJson(mHttpResult.data), method)
+            } else {
+                F.toast(mHttpResult.errorMsg)
+                onError(
+                    mHttpResult.errorCode.toString(),
+                    mHttpResult.errorMsg,
+                    GsonBuilder().serializeNulls().create()
+                        .toJson(mHttpResult.data),//serializeNulls()属性之后，就会导出值为null的属性了
+                    method
+                )
+            }
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
     }
 
 

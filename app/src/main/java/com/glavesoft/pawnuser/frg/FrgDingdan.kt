@@ -41,18 +41,27 @@ class FrgDingdan : BaseFrg() {
     }
 
     override fun initView() {
-        mAbPullListView.setApiLoadParams(
-            this,
-            "orderList",
-            if (state == "4") "" else state,
-            if (state == "4") "1" else "0",
-            "",
-            LocalData.getInstance().getUserInfo().getToken()
-        )
+        if (state == "4") {
+            mAbPullListView.setApiLoadParams(
+                this,
+                "afterSales",
+                LocalData.getInstance().getUserInfo().getToken()
+            )
+        } else {
+            mAbPullListView.setApiLoadParams(
+                this,
+                "orderList",
+                state,
+                "",
+                LocalData.getInstance().getUserInfo().getToken()
+            )
+        }
+
+
         mAbPullListView.setAbOnListViewListener { _, content ->
             run {
                 var mModelDingdan = F.data2Model(content, ModelDingdan::class.java)
-                AdaDingdan(context!!, mModelDingdan.rows)
+                AdaDingdan(context!!, mModelDingdan.rows, state)
             }
 
         }

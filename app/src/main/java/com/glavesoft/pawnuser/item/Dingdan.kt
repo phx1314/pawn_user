@@ -53,11 +53,14 @@ class Dingdan(context: Context?) : BaseItem(context) {
                 })
             } else if (mTextView_red.text.toString() == "填写物流") {
                 var mDialogTxwul = DialogTxwul(context)
-                com.mdx.framework.F.showCenterDialog(context, mDialogTxwul, object : CallBackOnly() {
-                    override fun goReturnDo(mDialog: Dialog) {
-                        mDialogTxwul.set(mDialog, item.code)
-                    }
-                })
+                com.mdx.framework.F.showCenterDialog(
+                    context,
+                    mDialogTxwul,
+                    object : CallBackOnly() {
+                        override fun goReturnDo(mDialog: Dialog) {
+                            mDialogTxwul.set(mDialog, item.code)
+                        }
+                    })
             }
         }
     }
@@ -68,42 +71,42 @@ class Dingdan(context: Context?) : BaseItem(context) {
         }
     }
 
-    fun set(item: ModelDingdan.RowsBean) {
+    fun set(item: ModelDingdan.RowsBean, state: String) {
         this.item = item
-        GlideLoader.loadImage(Image_URL + item.goodsImg, mImageView, R.drawable.tu)
+        GlideLoader.loadImage(Image_URL + item.goodsImg, mImageView, R.drawable.defalut_logo)
         mTextView_name.text = item.goodsName
         mTextView_order.text = "订单号:" + item.code
         mTextView_price.text = item.goodsPrice
-        when (item.state) {
-            1 -> {
+        when (state) {
+            "1" -> {
                 mTextView_state.text = "待付款"
                 mTextView_green.visibility = View.GONE
                 mTextView_red.visibility = View.GONE
             }
-            2 -> {
+            "2" -> {
                 mTextView_state.text = "待发货"
                 mTextView_green.visibility = View.GONE
                 mTextView_red.visibility = View.VISIBLE
                 mTextView_red.text = "填写物流"
             }
-            3 -> {
+            "3" -> {
                 mTextView_state.text = "待收货"
                 mTextView_green.visibility = View.GONE
                 mTextView_red.visibility = View.VISIBLE
                 mTextView_red.text = "用户已确认"
             }
-            else -> {
+            "4" -> {
+                mTextView_state.text = "售后"
                 if (item.refState == 1) {
-                    mTextView_state.text = "售后"
                     mTextView_green.visibility = View.VISIBLE
                     mTextView_red.visibility = View.VISIBLE
                     mTextView_red.text = "驳回"
                 } else {
-                    mTextView_state.text = "未知"
                     mTextView_green.visibility = View.GONE
                     mTextView_red.visibility = View.GONE
                 }
             }
+
         }
 
     }

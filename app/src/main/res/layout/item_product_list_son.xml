@@ -24,7 +24,8 @@
                 android:layout_height="@dimen/j137dp"
                 android:layout_centerHorizontal="true"
                 android:layout_marginLeft="@dimen/j24dp"
-                android:layout_marginRight="@dimen/j24dp" />
+                android:layout_marginRight="@dimen/j24dp"
+                android:scaleType="centerCrop" />
 
             <TextView
                 android:id="@+id/mTextView_info"
@@ -106,12 +107,17 @@
                 android:textColor="#29B0B4"
                 android:textSize="13sp" />
         </LinearLayout>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/gray" />
     </LinearLayout>
 
     <ImageView
         android:layout_width="1px"
         android:layout_height="match_parent"
-        android:background="#E5000000" />
+        android:background="@color/gray" />
 
     <LinearLayout
         android:id="@+id/mLinearLayout_2"
@@ -131,7 +137,8 @@
                 android:layout_height="@dimen/j137dp"
                 android:layout_centerHorizontal="true"
                 android:layout_marginLeft="@dimen/j24dp"
-                android:layout_marginRight="@dimen/j24dp" />
+                android:layout_marginRight="@dimen/j24dp"
+                android:scaleType="centerCrop" />
 
             <TextView
                 android:id="@+id/mTextView_info2"
@@ -213,6 +220,11 @@
                 android:textColor="#29B0B4"
                 android:textSize="13sp" />
         </LinearLayout>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/gray" />
     </LinearLayout>
 </LinearLayout>
 

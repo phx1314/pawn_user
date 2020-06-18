@@ -33,15 +33,15 @@ import android.widget.ProgressBar;
 import com.glavesoft.F;
 import com.glavesoft.pawnuser.R;
 import com.glavesoft.pawnuser.frg.BaseFrg;
+import com.glavesoft.pawnuser.mod.DataResult;
+import com.google.gson.GsonBuilder;
 import com.mdx.framework.Frame;
 import com.mdx.framework.adapter.MAdapter;
-import com.mdx.framework.service.subscriber.HttpResult;
 import com.mdx.framework.service.subscriber.HttpResultSubscriberListener;
 import com.mdx.framework.service.subscriber.S;
 import com.mdx.framework.utility.AbAppUtil;
 import com.mdx.framework.utility.AbLogUtil;
 import com.mdx.framework.utility.AbViewUtil;
-import com.mdx.framework.utility.Helper;
 import com.mdx.framework.view.listener.AbOnListListener;
 import com.mdx.framework.view.listener.AbOnListViewListener;
 import com.mdx.framework.view.pullview.AbListViewFooter;
@@ -49,8 +49,6 @@ import com.mdx.framework.view.pullview.AbListViewHeader;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.lang.reflect.Method;
 import java.util.ArrayList;
@@ -58,6 +56,9 @@ import java.util.ArrayList;
 import io.reactivex.Observable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
+
+import static com.glavesoft.pawnuser.mod.DataResult.RESULT_OK_ZERO;
+import static com.mdx.framework.utility.Helper.toast;
 
 // TODO: Auto-generated Javadoc
 
@@ -473,7 +474,7 @@ public class PListView extends ListView implements AbsListView.OnScrollListener,
             }
             data.add(PageIndex + "");
             data.add(PageSize + "");
-            Observable<HttpResult<Object>> o = (Observable<HttpResult<Object>>) m.invoke(object, com.mdx.framework.F.list2Array(data));
+            Observable<DataResult<Object>> o = (Observable<DataResult<Object>>) m.invoke(object, com.mdx.framework.F.list2Array(data));
             load(o, method);
         } catch (Exception e) {
             e.printStackTrace();
@@ -579,11 +580,11 @@ public class PListView extends ListView implements AbsListView.OnScrollListener,
         }
     }
 
-    public void load(Observable<HttpResult<Object>> o, String m) {
+    public void load(Observable<DataResult<Object>> o, String m) {
         S s = new S(this, new ProgressDialog(getContext()), m, false);
         mBaseFrg.compositeDisposable.add(s);
         if (!AbAppUtil.isNetworkAvailable(Frame.CONTEXT)) {
-            Helper.toast(getContext().getString(R.string.net_error));
+            toast(getContext().getString(R.string.net_error));
         }
         o.subscribeOn(Schedulers.newThread()).unsubscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
@@ -691,7 +692,28 @@ public class PListView extends ListView implements AbsListView.OnScrollListener,
 
 
     @Override
-    public void onNext(@Nullable Object o, @NotNull String s) {
+    public void onNext(@Nullable Object httpResult, @NotNull String method) {
+        try {
+            DataResult mHttpResult = (DataResult) httpResult;
+            if (mHttpResult.getErrorCode() == RESULT_OK_ZERO) {
+                onSuccess(new GsonBuilder().serializeNulls().create().toJson(mHttpResult.getData()), method);
+            } else {
+                toast(mHttpResult.getErrorMsg());
+                onError(
+                        mHttpResult.getErrorCode() + "",
+                        mHttpResult.getErrorMsg(),
+                        new GsonBuilder().serializeNulls().create()
+                                .toJson(mHttpResult.getData()),//serializeNulls()属性之后，就会导出值为null的属性了
+                        method
+                );
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void onProgress(int i) {
 
     }
 }

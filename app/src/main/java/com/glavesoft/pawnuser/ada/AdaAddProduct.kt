@@ -17,8 +17,9 @@ import android.view.ViewGroup;
 import android.view.View;
 
 import com.glavesoft.pawnuser.item.AddProduct;
+import com.glavesoft.pawnuser.model.ModelGridImgData
 
-class AdaAddProduct (context: Context, list: List<String>) : MAdapter<String>(context, list) {
+class AdaAddProduct (context: Context, list: List<ModelGridImgData>) : MAdapter<ModelGridImgData>(context, list) {
 
 
     override fun getview(position: Int, convertView: View?, parent: ViewGroup): View? {

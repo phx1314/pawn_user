@@ -97,7 +97,7 @@ import java.util.Locale;
 
 import cn.bingoogolapple.refreshlayout.BGAMoocStyleRefreshViewHolder;
 
-public class BaseActivity extends AppCompatActivity implements  HttpResultSubscriberListener
+public class BaseActivity extends AppCompatActivity
 {
     protected TextView titlebar_left;
     protected TextView titlebar_right;
@@ -643,20 +643,6 @@ public class BaseActivity extends AppCompatActivity implements  HttpResultSubscr
 
     }
 
-    @Override
-    public void onError(@Nullable String s, @Nullable String s1, @Nullable String s2, @NotNull String s3) {
-
-    }
-
-    @Override
-    public void onNext(@Nullable Object o, @NotNull String s) {
-
-    }
-
-    @Override
-    public void onSuccess(@Nullable String s, @NotNull String s1) {
-
-    }
 
     /**
      * 权限回调接口

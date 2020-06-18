@@ -39,6 +39,15 @@ class FrgAddProductList : BaseFrg() {
         setContentView(R.layout.frg_add_product_list)
     }
 
+    override fun disposeMsg(type: Int, obj: Any?) {
+        when (type) {
+            0 -> {
+                mAbPullListView.pullLoad()
+            }
+        }
+
+    }
+
     override fun initView() {
         mImageButton_search.setOnClickListener {
             mAbPullListView.setApiLoadParams(
@@ -48,6 +57,7 @@ class FrgAddProductList : BaseFrg() {
                 mEditText.text.toString(),
                 LocalData.getInstance().getUserInfo().getToken()
             )
+            F.closeSoftKey(activity!!)
         }
     }
 
@@ -76,7 +86,7 @@ class FrgAddProductList : BaseFrg() {
                         data.add(mModelData)
                     }
                 }
-                AdaProductListSon(context!!, data, "FrgAddProductList")
+                AdaProductListSon(context!!, data, "FrgAddProductList",2)
             }
 
         }

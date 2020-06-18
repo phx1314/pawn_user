@@ -68,7 +68,7 @@ class FrgProductListSon : BaseFrg() {
                         data.add(mModelData)
                     }
                 }
-                AdaProductListSon(context!!, data, "FrgProductListSon$state")
+                AdaProductListSon(context!!, data, "FrgProductListSon$state", state.toInt())
             }
 
         }

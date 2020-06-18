@@ -39,6 +39,9 @@ class FrgCwzx : BaseFrg() {
         mTextView_hk.setOnClickListener {
             Helper.startActivity(context, FrgHk::class.java, TitleAct::class.java)
         }
+        mButton_tx.setOnClickListener {
+            Helper.startActivity(context, FrgTx::class.java, TitleAct::class.java)
+        }
     }
 
     override fun loaddata() {

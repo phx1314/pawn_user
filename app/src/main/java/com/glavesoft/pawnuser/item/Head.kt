@@ -11,6 +11,7 @@
 
 package com.glavesoft.pawnuser.item
 
+import android.app.Activity
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
@@ -33,6 +34,7 @@ class Head(context: Context?) : LinearLayout(context) {
         if (b) mImageButton_back.visibility = View.VISIBLE else mImageButton_back.visibility =
             View.GONE
         mImageButton_back.setOnClickListener {
+//            com.glavesoft.F.closeSoftKey(context as Activity)
             (context as BaseActivity).finish()
         }
     }

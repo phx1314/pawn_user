@@ -24,7 +24,7 @@ import com.glavesoft.pawnuser.model.ModelDingdan
 import com.mdx.framework.activity.TitleAct
 import com.mdx.framework.utility.Helper
 
-class AdaDingdan(context: Context, list: List<ModelDingdan.RowsBean>) :
+class AdaDingdan(context: Context, list: List<ModelDingdan.RowsBean>, var state: String) :
     MAdapter<ModelDingdan.RowsBean>(context, list) {
 
 
@@ -35,7 +35,7 @@ class AdaDingdan(context: Context, list: List<ModelDingdan.RowsBean>) :
             convertView = Dingdan(context)
         }
         try {
-            (convertView as Dingdan).set(item)
+            (convertView as Dingdan).set(item, state)
         } catch (e: Exception) {
             e.printStackTrace()
         }

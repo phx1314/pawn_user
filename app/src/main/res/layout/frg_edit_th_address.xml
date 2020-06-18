@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#fff"
     android:gravity="center_horizontal"
     android:orientation="vertical"
     android:paddingLeft="@dimen/j18dp"
@@ -117,11 +118,11 @@
             android:id="@+id/mTextView_address"
             style="@style/text_style_15_black"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/j20dp"
             android:layout_weight="1"
             android:background="#00000000"
-            android:gravity="right"
+            android:gravity="right|center_vertical"
             android:hint="请输入"
             android:text="" />
     </LinearLayout>

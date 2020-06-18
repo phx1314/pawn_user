@@ -25,6 +25,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="#00000000"
+            android:padding="@dimen/j5dp"
             android:singleLine="true" />
 
         <ImageButton
@@ -40,8 +41,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:cacheColorHint="#00000000"
-        android:divider="#E5000000"
-        android:dividerHeight="1px"
+        android:divider="@null"
         android:footerDividersEnabled="true"
         android:headerDividersEnabled="false"
         android:listSelector="#00000000" />

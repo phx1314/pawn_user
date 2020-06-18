@@ -60,7 +60,7 @@ import java.util.Locale;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
 
-public class BaseFragment extends Fragment implements HttpResultSubscriberListener {
+public class BaseFragment extends Fragment   {
     protected TextView titlebar_left;
     protected TextView titlebar_right;
     protected TextView titlebar_name;
@@ -290,23 +290,7 @@ public class BaseFragment extends Fragment implements HttpResultSubscriberListen
 
     }
 
-    @Override
-    public void onError(@org.jetbrains.annotations.Nullable String s, @org.jetbrains.annotations.Nullable String s1, @org.jetbrains.annotations.Nullable String s2, @NotNull String s3) {
 
-    }
-
-    @Override
-    public void onNext(@org.jetbrains.annotations.Nullable Object o, @NotNull String s) {
-        if (o instanceof DataResult) {
-
-        }
-
-    }
-
-    @Override
-    public void onSuccess(@org.jetbrains.annotations.Nullable String s, @NotNull String s1) {
-
-    }
 
     /**
      * 权限回调接口

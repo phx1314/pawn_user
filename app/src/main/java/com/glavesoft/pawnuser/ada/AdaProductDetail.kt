@@ -6,8 +6,8 @@
 
 
 /**
-   
-*/
+
+ */
 
 package com.glavesoft.pawnuser.ada;
 
@@ -18,7 +18,8 @@ import android.view.View;
 
 import com.glavesoft.pawnuser.item.ProductDetail;
 
-class AdaProductDetail (context: Context, list: List<String>) : MAdapter<String>(context, list) {
+class AdaProductDetail(context: Context, list: List<String>, var hasVideo: Boolean) :
+    MAdapter<String>(context, list) {
 
 
     override fun getview(position: Int, convertView: View?, parent: ViewGroup): View? {
@@ -28,7 +29,7 @@ class AdaProductDetail (context: Context, list: List<String>) : MAdapter<String>
             convertView = ProductDetail(context)
         }
         try {
-            (convertView as ProductDetail).set(item)
+            (convertView as ProductDetail).set(item, hasVideo, position)
         } catch (e: Exception) {
             e.printStackTrace()
         }

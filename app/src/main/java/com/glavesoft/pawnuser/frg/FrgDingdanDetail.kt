@@ -146,7 +146,7 @@ class FrgDingdanDetail : BaseFrg() {
             mTextView_name.text = item.shipUser
             mTextView_phone.text = item.shipPhone
             mTextView_adress.text = item.shipAddress
-            GlideLoader.loadImage(BaseConstant.Image_URL + item.goodsImg, mImageView, R.drawable.tu)
+            GlideLoader.loadImage(BaseConstant.Image_URL + item.goodsImg, mImageView, R.drawable.defalut_logo)
             mTextView_pname.text = item.goodsName
             mTextView_price.text = item.goodsPrice
             mTextView_ddh.text = "订单号： " + item.code

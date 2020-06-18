@@ -1,19 +1,122 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent" android:layout_height="match_parent" android:background="#F0F0F0" android:gravity="center_horizontal" android:orientation="vertical" android:padding="@dimen/j14dp">
-     <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@drawable/shape_white_rz" android:orientation="vertical" android:paddingLeft="@dimen/j17dp" android:paddingTop="@dimen/j30dp" android:paddingRight="@dimen/j17dp" android:paddingBottom="@dimen/j17dp">
-          <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
-               <TextView style="@style/text_style_15_black" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1" android:text="提现金额：" />
-               <TextView android:id="@+id/mTextView_ye" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1" android:text="余额 ¥500.00" android:textColor="#B42929" android:textSize="12sp" />
-          </LinearLayout>
-          <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j26dp" android:orientation="horizontal">
-               <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="¥ " android:textColor="#000" android:textSize="25sp" />
-               <EditText android:id="@+id/mEditText" android:layout_width="match_parent" android:layout_height="wrap_content" android:background="#00000000" android:inputType="numberDecimal" android:singleLine="true" android:text="500" android:textColor="#000" android:textSize="25sp" />
-          </LinearLayout>
-          <ImageView android:layout_width="match_parent" android:layout_height="@dimen/j1dp" android:background="#ffbfbfbf" />
-          <TextView style="@style/text_style_15_black" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j35dp" android:text="提现方式：" />
-          <TextView android:id="@+id/mTextView_zfb" style="@style/text_style_15_black" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j26dp" android:background="@drawable/shape_selsect" android:drawableLeft="@drawable/zfb2" android:drawableRight="@drawable/xz2" android:drawablePadding="@dimen/j10dp" android:gravity="center_vertical" android:paddingLeft="@dimen/j11dp" android:paddingTop="@dimen/j5dp" android:paddingRight="@dimen/j10dp" android:paddingBottom="@dimen/j5dp" android:text="支付宝" />
-          <TextView android:id="@+id/mTextView_wx" style="@style/text_style_15_black" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j13dp" android:drawableLeft="@drawable/wx" android:drawableRight="@drawable/wxz" android:drawablePadding="@dimen/j10dp" android:gravity="center_vertical" android:paddingLeft="@dimen/j11dp" android:paddingTop="@dimen/j5dp" android:paddingRight="@dimen/j10dp" android:paddingBottom="@dimen/j5dp" android:text="微信" />
-     </LinearLayout>
-     <ImageButton android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j50dp" android:background="#00000000" android:src="@drawable/btn_qr" />
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F0F0F0"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="@dimen/j14dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_white_rz"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/j17dp"
+        android:paddingTop="@dimen/j30dp"
+        android:paddingRight="@dimen/j17dp"
+        android:paddingBottom="@dimen/j17dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/text_style_15_black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="提现金额：" />
+
+            <TextView
+                android:id="@+id/mTextView_ye"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="余额 ¥500.00"
+                android:textColor="#B42929"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/j26dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="¥ "
+                android:textColor="#000"
+                android:textSize="25sp" />
+
+            <EditText
+                android:id="@+id/mEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#00000000"
+                android:inputType="number"
+                android:singleLine="true"
+                android:textColor="#000"
+                android:textSize="25sp" />
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/j1dp"
+            android:background="#ffbfbfbf" />
+
+        <TextView
+            style="@style/text_style_15_black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/j35dp"
+            android:text="提现方式：" />
+
+        <TextView
+            android:id="@+id/mTextView_zfb"
+            style="@style/text_style_15_black"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/j26dp"
+            android:background="@drawable/shape_selsect"
+            android:drawableLeft="@drawable/zfb2"
+            android:drawableRight="@drawable/xz2"
+            android:drawablePadding="@dimen/j10dp"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/j11dp"
+            android:paddingTop="@dimen/j5dp"
+            android:paddingRight="@dimen/j10dp"
+            android:paddingBottom="@dimen/j5dp"
+            android:text="支付宝" />
+
+        <TextView
+            android:id="@+id/mTextView_wx"
+            style="@style/text_style_15_black"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/j13dp"
+            android:drawableLeft="@drawable/wx"
+            android:drawableRight="@drawable/wxz"
+            android:drawablePadding="@dimen/j10dp"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/j11dp"
+            android:paddingTop="@dimen/j5dp"
+            android:paddingRight="@dimen/j10dp"
+            android:paddingBottom="@dimen/j5dp"
+            android:text="微信" />
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/mImageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/j50dp"
+        android:background="#00000000"
+        android:src="@drawable/btn_qr" />
 </LinearLayout>
 

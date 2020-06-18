@@ -11,11 +11,14 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:fillViewport="true">
+        android:fillViewport="true"
+        android:scrollbars="none">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
             android:gravity="center_horizontal"
             android:orientation="vertical"
             android:paddingLeft="@dimen/j15dp"
@@ -66,15 +69,16 @@
                     android:layout_height="wrap_content"
                     android:text="分类" />
 
-                <EditText
+                <TextView
                     android:id="@+id/mEditText2"
                     style="@style/text_style_15_black"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="@dimen/j25dp"
                     android:background="#00000000"
+                    android:drawableRight="@drawable/ic_arrow"
                     android:gravity="center_vertical"
-                    android:hint="请输入"
+                    android:hint="请选择"
                     android:singleLine="true" />
             </LinearLayout>
 
@@ -407,6 +411,7 @@
                     style="@style/text_style_15_black"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
+                    android:inputType="numberDecimal"
                     android:layout_marginLeft="@dimen/j25dp"
                     android:layout_marginRight="@dimen/j15dp"
                     android:layout_weight="1"
@@ -447,6 +452,7 @@
                     android:layout_marginRight="@dimen/j15dp"
                     android:layout_weight="1"
                     android:background="#00000000"
+                    android:inputType="numberDecimal"
                     android:gravity="center_vertical"
                     android:hint="请输入"
                     android:singleLine="true" />
@@ -507,8 +513,48 @@
                     android:layout_height="wrap_content"
                     android:text="添加视频" />
 
+                <RelativeLayout
+                    android:id="@+id/mRelativeLayout_video"
+                    android:layout_width="@dimen/j76dp"
+                    android:layout_height="@dimen/j76dp"
+                    android:layout_marginTop="@dimen/j15dp">
+
+                    <ImageView
+                        android:id="@+id/mImageView_addvideo"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/add2" />
+
+                    <ImageView
+                        android:id="@+id/mImageView_bf"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:src="@drawable/bf_video_play"
+                        android:visibility="gone" />
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/j130dp"
+                android:layout_marginTop="@dimen/j10dp"
+                android:background="@drawable/shape_gray"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/j10dp"
+                android:paddingTop="@dimen/j12dp"
+                android:paddingRight="@dimen/j10dp"
+                android:paddingBottom="@dimen/j12dp">
+
+                <TextView
+                    style="@style/text_style_15_black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="添加视频主图" />
+
                 <ImageView
-                    android:id="@+id/mImageView_addvideo"
+                    android:id="@+id/mImageView_addvideoimg"
                     android:layout_width="@dimen/j76dp"
                     android:layout_height="@dimen/j76dp"
                     android:layout_marginTop="@dimen/j15dp"

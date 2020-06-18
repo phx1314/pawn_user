@@ -7,34 +7,50 @@ import java.io.Serializable;
  * @date: 2017/11/22
  * @company:常州宝丰
  */
-public class StoreGoodsInfo implements Serializable{
+public class StoreGoodsInfo implements Serializable {
 
-    private String addressCode;//收货地址code	integer/int32
-    private String authPrice;//鉴定价格	string
-    private String couponPrice;//优惠券减免金额	string
-    private String declare;//购买声明	string
-    private String description;//市场预估文本	string
-    private String goodsDescription;//商品描述	string
-    private String id;//商品id	integer/int32
-    private String images;//商品图片	string
-    private String payType;//支付方式(1:支付宝 2;微信)	integer/int32
-    private String price;//当前售价	string
-    private String property;//商品名称--绝当品	string
-    private String title;//商品名称
-    private String count;//竞拍次数
-    private String height;//商品图片长度
-    private String img;//商品封面
-    private String type;//是否是竞拍商品 0不是 1是
-    private String width;//商品图片宽度
-    private String name;
-    private String bannerVideo;
-    private String bannerVideoFace;
+    public String addressCode;//收货地址code	integer/int32
+    public String authPrice;//鉴定价格	string
+    public String couponPrice;//优惠券减免金额	string
+    public String declare;//购买声明	string
+    public String description;//市场预估文本	string
+    public String goodsDescription;//商品描述	string
+    public String id;//商品id	integer/int32
+    public String images;//商品图片	string
+    public String payType;//支付方式(1:支付宝 2;微信)	integer/int32
+    public String price;//当前售价	string
+    public String property;//商品名称--绝当品	string
+    public String title;//商品名称
+    public String count;//竞拍次数
+    public String height;//商品图片长度
+    public String img;//商品封面
+    public String type;//是否是竞拍商品 0不是 1是
+    public String width;//商品图片宽度
+    public String name;
+    public String bannerVideo;
+    public String bannerVideoFace;
+    public String cateCodeSon;
+    public String material;
+    public String materialName;
+    public String mainMaterial;
+    public String otherMaterial;
+    public String createYear;
+    public String brand;
+    public String newPercent;
+    public String theme;
+    public String style;
+    public String spec;
+    public String wordDescript;
+    public String ccAll;
+    public String weight;
+    public int cateCode;
 
-    private String source="";
-    private String orgLogo="";
-    private String orgId="";
-    private String orgName="";
-    private String orgIntroduction="";
+    public String source = "";
+    public String orgLogo = "";
+    public String orgId = "";
+    public String orgName = "";
+    public String reasonOfDismounting = "";
+    public String orgIntroduction = "";
 
     public String getAddressCode() {
         return addressCode;

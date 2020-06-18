@@ -63,7 +63,7 @@ interface ApiService {
     fun getGoods(
         @Query("state") state: String,
         @Query("goodsName") goodsName: String,
-        @Field("token") token: String = LocalData.getInstance().getUserInfo().getToken(),
+        @Query("token") token: String = LocalData.getInstance().getUserInfo().getToken(),
         @Query("page") page: String,
         @Query("rows") rows: String
     ): Observable<DataResult<Any>>
@@ -72,16 +72,30 @@ interface ApiService {
     @GET("auth/view/authInfo")
     fun authInfo(
         @Query("type") type: String,
-        @Field("token") token: String = LocalData.getInstance().getUserInfo().getToken()
+        @Query("token") token: String = LocalData.getInstance().getUserInfo().getToken()
     ): Observable<DataResult<Any>>
 
     //根据(状态)获取订单列表
     @GET("auth/order/orderList")
     fun orderList(
         @Query("state") state: String,
-        @Query("ref_state") ref_state: String,
         @Query("goodsName") goodsName: String,
-        @Field("token") token: String = LocalData.getInstance().getUserInfo().getToken(),
+        @Query("token") token: String = LocalData.getInstance().getUserInfo().getToken(),
+        @Query("page") page: String,
+        @Query("rows") rows: String
+    ): Observable<DataResult<Any>>
+
+    //删除发布的商品
+    @GET("auth/goods/delete")
+    fun goodsDelete(
+        @Query("goodsId") goodsId: String,
+        @Query("token") token: String = LocalData.getInstance().getUserInfo().getToken()
+    ): Observable<DataResult<Any>>
+
+    //获取售后订单列表
+    @GET("auth/order/afterSales")
+    fun afterSales(
+        @Query("token") token: String = LocalData.getInstance().getUserInfo().getToken(),
         @Query("page") page: String,
         @Query("rows") rows: String
     ): Observable<DataResult<Any>>
@@ -119,6 +133,28 @@ interface ApiService {
         @Field("refState") refState: String,
         @Field("refundNotVerifyReason") refundNotVerifyReason: String,
         @Field("orderCode") orderCode: String,
+        @Field("token") token: String = LocalData.getInstance().getUserInfo().getToken()
+    ): Observable<DataResult<Any>>
+
+    @POST("userShopCart/updateCart")
+    @FormUrlEncoded
+    fun updateCart(
+        @Field("goodsId") goodsId: String,
+        @Field("num") num: String = "1",
+        @Field("token") token: String = LocalData.getInstance().getUserInfo().getToken()
+    ): Observable<DataResult<Any>>
+
+    @POST("userGoods/getShareText")
+    @FormUrlEncoded
+    fun getShareText(
+        @Field("id") goodsId: String,
+        @Field("type") type: String
+    ): Observable<DataResult<Any>>
+
+    @POST("storeGoods/storeGoodsDetail")
+    @FormUrlEncoded
+    fun storeGoodsDetail(
+        @Field("id") id: String,
         @Field("token") token: String = LocalData.getInstance().getUserInfo().getToken()
     ): Observable<DataResult<Any>>
 
@@ -167,8 +203,6 @@ interface ApiService {
         @Field("address") address: String,
         @Field("isDefault") isDefault: String,
         @Field("phone") phone: String,
-        @Field("createTime") createTime: String,
-        @Field("modifyTime") modifyTime: String,
         @Field("token") token: String = LocalData.getInstance().getUserInfo().getToken()
     ): Observable<DataResult<Any>>
 
@@ -176,7 +210,7 @@ interface ApiService {
     @POST("auth/goods/save")
     @FormUrlEncoded
     fun save(
-        @FieldMap map: Map<String, String>
+        @FieldMap map: Map<String, String?>
     ): Observable<DataResult<Any>>
 
     //提交企业认证
@@ -199,11 +233,24 @@ interface ApiService {
         @QueryMap map: Map<String, String?>
     ): Observable<DataResult<Any>>
 
-    //上传文件
+    //单文件上传
     @Multipart
     @POST("common/upload")
     fun upload(
         @Part file: MultipartBody.Part
+    ): Observable<DataResult<Any>>
+
+    //上传多文件
+    @Multipart
+    @POST("common/upload")
+    fun uploadFiles(
+        @Part files: List<MultipartBody.Part>
+    ): Observable<DataResult<Any>>
+
+    //上传多文件
+    @POST("common/upload")
+    fun uploadFilesBody(
+        @Body files: MultipartBody
     ): Observable<DataResult<Any>>
 
 

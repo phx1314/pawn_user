@@ -12,8 +12,11 @@ package com.glavesoft.pawnuser.frg;
 
 import android.app.ProgressDialog
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.LinearLayout
+import android.widget.Toast
+import com.glavesoft.F
 import com.glavesoft.F.toast
 import com.glavesoft.pawnuser.item.Head
 import com.glavesoft.pawnuser.mod.DataResult
@@ -55,7 +58,7 @@ open class BaseFrg : MFragment(), View.OnClickListener, HttpResultSubscriberList
 
 
     override fun onError(code: String?, msg: String?, data: String?, mehotd: String) {
-
+        F.toast(msg)
     }
 
     override fun onNext(httpResult: Any?, method: String) {
@@ -78,13 +81,16 @@ open class BaseFrg : MFragment(), View.OnClickListener, HttpResultSubscriberList
         }
     }
 
+    override fun onProgress(progress: Int) {
+    }
+
     fun <T> load(
         o: Observable<DataResult<T>>,
         m: String,
         isShow: Boolean = true,
-        showMessage: String = "加载中"
+        showMessage: String = "加载中",
+        s: S = S(this, ProgressDialog(context).apply { this.setMessage(showMessage) }, m, isShow)
     ) {
-        var s = S(this, ProgressDialog(context).apply { this.setMessage(showMessage) }, m, isShow)
         compositeDisposable.add(s)
         if (!AbAppUtil.isNetworkAvailable(Frame.CONTEXT)) {
             Helper.toast("网络连接错误")
@@ -92,7 +98,8 @@ open class BaseFrg : MFragment(), View.OnClickListener, HttpResultSubscriberList
         o.subscribeOn(Schedulers.newThread()).unsubscribeOn(Schedulers.newThread())
             .observeOn(AndroidSchedulers.mainThread())
             .doOnSubscribe { if (s.isShow) s.mProgressDialog.show() }
-            .doFinally { if (s.mProgressDialog.isShowing) s.mProgressDialog.dismiss() }.subscribe(s)
+            .doFinally { if (s.mProgressDialog.isShowing) s.mProgressDialog.dismiss() }
+            .subscribe(s)
     }
 
     override fun setActionBar(actionBar: LinearLayout?) {
@@ -103,6 +110,11 @@ open class BaseFrg : MFragment(), View.OnClickListener, HttpResultSubscriberList
             LinearLayout.LayoutParams.MATCH_PARENT,
             LinearLayout.LayoutParams.WRAP_CONTENT
         )
+    }
+
+    override fun onPause() {
+        super.onPause()
+        activity?.let { com.glavesoft.F.closeSoftKey(it) }
     }
 
     override fun onDestroy() {
