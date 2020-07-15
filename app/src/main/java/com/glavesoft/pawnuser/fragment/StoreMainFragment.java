@@ -23,6 +23,7 @@ import com.glavesoft.pawnuser.adapter.CommonAdapter;
 import com.glavesoft.pawnuser.adapter.ViewHolder;
 import com.glavesoft.pawnuser.base.BaseFragment;
 import com.glavesoft.pawnuser.constant.BaseConstant;
+import com.glavesoft.pawnuser.frg.FrgProductDetail;
 import com.glavesoft.pawnuser.mod.DataResult;
 import com.glavesoft.pawnuser.mod.GoodsByOrgInfo;
 import com.glavesoft.pawnuser.mod.LocalData;
@@ -35,6 +36,8 @@ import com.google.gson.reflect.TypeToken;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.model.HttpParams;
 import com.lzy.okgo.model.Response;
+import com.mdx.framework.activity.TitleAct;
+import com.mdx.framework.utility.Helper;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
@@ -99,12 +102,18 @@ public class StoreMainFragment extends BaseFragment implements View.OnClickListe
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Intent intent = new Intent(StoreMainFragment.this.getContext(),
-                        GoodsDetailActivity.class);
-                intent.putExtra("id", goodsByOrgInfos.get(i).getId());
-                intent.putExtra("type", "rz");
-                startActivity(intent);
-
+//                Intent intent = new Intent(StoreMainFragment.this.getContext(),
+//                        GoodsDetailActivity.class);
+//                intent.putExtra("id", goodsByOrgInfos.get(i).getId());
+//                intent.putExtra("type", "rz");
+//                startActivity(intent);
+                Helper.startActivity(
+                        getActivity(),
+                        FrgProductDetail.class,
+                        TitleAct.class,
+                        "id",
+                        goodsByOrgInfos.get(i).getId(), "type", "rz"
+                );
             }
         });
         llRank1.setOnClickListener(this);
@@ -318,31 +327,52 @@ public class StoreMainFragment extends BaseFragment implements View.OnClickListe
         switch (view.getId()){
             case R.id.ll_rank1:
                 if (mostThreeGoodsInfos.size()>1){
-                    Intent intent = new Intent(StoreMainFragment.this.getContext(),
-                            GoodsDetailActivity.class);
-                    intent.putExtra("id", mostThreeGoodsInfos.get(0).getId()+"");
-                    intent.putExtra("type", "rz");
-                    startActivity(intent);
+//                    Intent intent = new Intent(StoreMainFragment.this.getContext(),
+//                            GoodsDetailActivity.class);
+//                    intent.putExtra("id", mostThreeGoodsInfos.get(0).getId()+"");
+//                    intent.putExtra("type", "rz");
+//                    startActivity(intent);
+                    Helper.startActivity(
+                            getActivity(),
+                            FrgProductDetail.class,
+                            TitleAct.class,
+                            "id",
+                            mostThreeGoodsInfos.get(0).getId()+"", "type", "rz"
+                    );
                 }
 
                 break;
             case R.id.ll_rank2:
                 if (mostThreeGoodsInfos.size()>2){
-                    Intent intent = new Intent(StoreMainFragment.this.getContext(),
-                            GoodsDetailActivity.class);
-                    intent.putExtra("id", mostThreeGoodsInfos.get(1).getId()+"");
-                    intent.putExtra("type", "rz");
-                    startActivity(intent);
+//                    Intent intent = new Intent(StoreMainFragment.this.getContext(),
+//                            GoodsDetailActivity.class);
+//                    intent.putExtra("id", mostThreeGoodsInfos.get(1).getId()+"");
+//                    intent.putExtra("type", "rz");
+//                    startActivity(intent);
+                    Helper.startActivity(
+                            getActivity(),
+                            FrgProductDetail.class,
+                            TitleAct.class,
+                            "id",
+                            mostThreeGoodsInfos.get(1).getId()+"", "type", "rz"
+                    );
                 }
 
                 break;
             case R.id.ll_rank3:
                 if (mostThreeGoodsInfos.size()==3){
-                    Intent intent = new Intent(StoreMainFragment.this.getContext(),
-                            GoodsDetailActivity.class);
-                    intent.putExtra("id", mostThreeGoodsInfos.get(2).getId()+"");
-                    intent.putExtra("type", "rz");
-                    startActivity(intent);
+//                    Intent intent = new Intent(StoreMainFragment.this.getContext(),
+//                            GoodsDetailActivity.class);
+//                    intent.putExtra("id", mostThreeGoodsInfos.get(2).getId()+"");
+//                    intent.putExtra("type", "rz");
+//                    startActivity(intent);
+                    Helper.startActivity(
+                            getActivity(),
+                            FrgProductDetail.class,
+                            TitleAct.class,
+                            "id",
+                            mostThreeGoodsInfos.get(2).getId()+"", "type", "rz"
+                    );
                 }
 
                 break;

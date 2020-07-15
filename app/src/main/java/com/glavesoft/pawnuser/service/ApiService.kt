@@ -58,6 +58,22 @@ interface ApiService {
         @Field("token") token: String = LocalData.getInstance().getUserInfo().getToken()
     ): Observable<DataResult<Any>>
 
+    //生成合同开始签署*
+    @POST("pawnTicketCenter/signPawnTicket")
+    @FormUrlEncoded
+    fun signPawnTicket(
+        @Field("pawnTicketId") pawnTicketId: String,
+        @Field("token") token: String = LocalData.getInstance().getUserInfo().getToken()
+    ): Observable<DataResult<Any>>
+
+    //查看合同*
+    @POST("pawnTicketCenter/showContract")
+    @FormUrlEncoded
+    fun showContract(
+        @Field("pawnTicketId") pawnTicketId: String,
+        @Field("token") token: String = LocalData.getInstance().getUserInfo().getToken()
+    ): Observable<DataResult<Any>>
+
     //根据(状态)获取发布商品
     @GET("auth/goods/getGoods")
     fun getGoods(
@@ -83,6 +99,16 @@ interface ApiService {
         @Query("token") token: String = LocalData.getInstance().getUserInfo().getToken(),
         @Query("page") page: String,
         @Query("rows") rows: String
+    ): Observable<DataResult<Any>>
+
+    //票据列表
+    @POST("pawnTicketCenter/pawnTicketList")
+    @FormUrlEncoded
+    fun pawnTicketList(
+        @Field("status") status: String,
+        @Field("token") token: String = LocalData.getInstance().getUserInfo().getToken(),
+        @Field("page") page: String,
+        @Field("limit") rows: String
     ): Observable<DataResult<Any>>
 
     //删除发布的商品
@@ -116,6 +142,12 @@ interface ApiService {
         @Field("shipCode") shipCode: String,
         @Field("orderCode") orderCode: String,
         @Field("token") token: String = LocalData.getInstance().getUserInfo().getToken()
+    ): Observable<DataResult<Any>>
+
+    @POST("common/appVerion")
+    @FormUrlEncoded
+    fun appVerion(
+        @Field("deviceType") deviceType: String = "1"
     ): Observable<DataResult<Any>>
 
     //订单详情
@@ -230,7 +262,7 @@ interface ApiService {
     //查询是否通过验证
     @GET("auth/passOrNot")
     fun passOrNot(
-        @QueryMap map: Map<String, String?>
+        @Query("token") token: String = LocalData.getInstance().getUserInfo().getToken()
     ): Observable<DataResult<Any>>
 
     //单文件上传

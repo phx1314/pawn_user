@@ -151,7 +151,7 @@ class FrgDingdanDetail : BaseFrg() {
             mTextView_price.text = item.goodsPrice
             mTextView_ddh.text = "订单号： " + item.code
             mTextView_ddstate.text =
-                Html.fromHtml("订单状态：  <font color='#B42929'>售后中</font>")
+                Html.fromHtml("订单状态：  <font color='#B42929'>$state</font>")
             mTextView_ddtime.text = "订单时间： " + item.createTime
             mTextView_wldh.setText(item.shipCode)
             mTextView_wlgs.setText(item.shipFirm)

@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:id="@+id/mLinearLayout"
+    android:layout_height="match_parent"
+    android:background="#F0F0F0"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/j10dp"
+        android:layout_marginRight="@dimen/j10dp"
+        android:layout_marginBottom="@dimen/j10dp"
+        android:background="@drawable/shape_white_rz"
+        android:orientation="vertical"
+        android:paddingRight="@dimen/j13dp"
+        android:paddingTop="@dimen/j15dp"
+        android:paddingBottom="@dimen/j15dp"
+        android:paddingLeft="@dimen/j13dp">
+
+        <TextView
+            android:id="@+id/mTextView_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="789798789789"
+            android:textColor="#12595B"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/j8dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/text_style_15_black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="当物名称："
+                android:textColor="#555555" />
+
+            <TextView
+                android:id="@+id/mTextView_name"
+                style="@style/text_style_15_black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="和田玉有爱"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/mTextView_qs"
+                style="@style/text_style_15_white"
+                android:layout_width="@dimen/j50dp"
+                android:layout_height="@dimen/j22dp"
+                android:background="@drawable/shape_green"
+                android:gravity="center"
+                android:text="签署" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/j8dp"
+            android:background="@drawable/shape_gray"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/j5dp"
+            android:paddingTop="@dimen/j8dp"
+            android:paddingRight="@dimen/j5dp"
+            android:paddingBottom="@dimen/j8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/text_style_15_black"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="典当金额："
+                        android:textColor="#555555" />
+
+                    <TextView
+                        android:id="@+id/mTextView_price"
+                        style="@style/text_style_15_black"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="￥5000"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/mLinearLayout_dd"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/text_style_15_black"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="种类："
+                        android:textColor="#555555" />
+
+                    <TextView
+                        android:id="@+id/mTextView_state"
+                        style="@style/text_style_15_black"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="典当"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/j8dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/text_style_15_black"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="月费率："
+                        android:textColor="#555555" />
+
+                    <TextView
+                        android:id="@+id/mTextView_yfv"
+                        style="@style/text_style_15_black"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="4.2%"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/mLinearLayout_ylv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/text_style_15_black"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="月利率："
+                        android:textColor="#555555" />
+
+                    <TextView
+                        android:id="@+id/mTextView_ylv"
+                        style="@style/text_style_15_black"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0%"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/j8dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/text_style_15_black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="制单日期："
+                    android:textColor="#555555" />
+
+                <TextView
+                    android:id="@+id/mTextView_zdrq"
+                    style="@style/text_style_15_black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2019-8-9"
+                    android:textStyle="bold" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/mLinearLayout_qsrq"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/j8dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/text_style_15_black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="签署日期："
+                    android:textColor="#555555" />
+
+                <TextView
+                    android:id="@+id/mTextView_qsrq"
+                    style="@style/text_style_15_black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="作废"
+                    android:textColor="#AB1414"
+                    android:textStyle="bold" />
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

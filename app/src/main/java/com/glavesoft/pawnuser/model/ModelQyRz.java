@@ -10,7 +10,9 @@ public class ModelQyRz implements Serializable {
     public String enterpriseName;
     public String legalPersonName;
     public String legalPersonCard;
+    public String storeIntroduce;
     public String businessLicensePhoto;
+    public String logo;
     public String legalPersonCardFront;
     public String legalPersonCardBack;
     public int createUser;

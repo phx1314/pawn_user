@@ -19,6 +19,7 @@ import com.glavesoft.pawnuser.adapter.CommonAdapter;
 import com.glavesoft.pawnuser.adapter.ViewHolder;
 import com.glavesoft.pawnuser.base.BaseFragment;
 import com.glavesoft.pawnuser.constant.BaseConstant;
+import com.glavesoft.pawnuser.frg.FrgProductDetail;
 import com.glavesoft.pawnuser.mod.DataResult;
 import com.glavesoft.pawnuser.mod.GoodsByOrgInfo;
 import com.glavesoft.pawnuser.mod.LocalData;
@@ -29,6 +30,8 @@ import com.glavesoft.volley.net.VolleyUtil;
 import com.google.gson.reflect.TypeToken;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.model.HttpParams;
+import com.mdx.framework.activity.TitleAct;
+import com.mdx.framework.utility.Helper;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -76,11 +79,17 @@ public class StoreGoodsFragment extends BaseFragment implements BGARefreshLayout
         gv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Intent intent=new Intent(StoreGoodsFragment.this.getContext(), GoodsDetailActivity.class);
-                intent.putExtra("id",goodsByOrgInfos.get(i).getId());
-                intent.putExtra("type","rz");
-                startActivity(intent);
-
+//                Intent intent=new Intent(StoreGoodsFragment.this.getContext(), GoodsDetailActivity.class);
+//                intent.putExtra("id",goodsByOrgInfos.get(i).getId());
+//                intent.putExtra("type","rz");
+//                startActivity(intent);
+                Helper.startActivity(
+                        getActivity(),
+                        FrgProductDetail.class,
+                        TitleAct.class,
+                        "id",
+                        goodsByOrgInfos.get(i).getId(), "type", "rz"
+                );
             }
         });
         storeAllGoods();

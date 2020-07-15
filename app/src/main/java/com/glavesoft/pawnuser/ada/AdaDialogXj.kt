@@ -1,7 +1,7 @@
 //
-//  AdaAddProduct
+//  AdaDialogXj
 //
-//  Created by 86139 on 2020-06-04 19:54:10
+//  Created by 86139 on 2020-07-10 13:56:24
 //  Copyright (c) 86139 All rights reserved.
 
 
@@ -16,19 +16,19 @@ import android.content.Context;
 import android.view.ViewGroup;
 import android.view.View;
 
-import com.glavesoft.pawnuser.item.AddProduct;
+import com.glavesoft.pawnuser.item.DialogXj;
 
-class AdaAddProduct (context: Context, list: List<String>) : MAdapter<String>(context, list) {
+class AdaDialogXj (context: Context, list: List<String>) : MAdapter<String>(context, list) {
 
 
     override fun getview(position: Int, convertView: View?, parent: ViewGroup): View? {
         var convertView = convertView
         val item = get(position)
         if (convertView == null) {
-            convertView = AddProduct(context)
+            convertView = DialogXj(context)
         }
         try {
-            (convertView as AddProduct).set(item)
+//            (convertView as DialogXj).set(item)
         } catch (e: Exception) {
             e.printStackTrace()
         }

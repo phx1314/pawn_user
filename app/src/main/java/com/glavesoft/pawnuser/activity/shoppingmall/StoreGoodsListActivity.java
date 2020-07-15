@@ -14,6 +14,7 @@ import com.glavesoft.pawnuser.adapter.CommonAdapter;
 import com.glavesoft.pawnuser.adapter.ViewHolder;
 import com.glavesoft.pawnuser.base.BaseActivity;
 import com.glavesoft.pawnuser.constant.BaseConstant;
+import com.glavesoft.pawnuser.frg.FrgProductDetail;
 import com.glavesoft.pawnuser.mod.DataResult;
 import com.glavesoft.pawnuser.mod.LocalData;
 import com.glavesoft.pawnuser.mod.StoreGoodsInfo;
@@ -24,6 +25,8 @@ import com.google.gson.reflect.TypeToken;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.model.HttpParams;
 import com.lzy.okgo.model.Response;
+import com.mdx.framework.activity.TitleAct;
+import com.mdx.framework.utility.Helper;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -100,16 +103,30 @@ public class StoreGoodsListActivity extends BaseActivity implements BGARefreshLa
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 if(state.equals("rz")){
-                    Intent intent = new Intent(StoreGoodsListActivity.this, GoodsDetailActivity.class);
-                    intent.putExtra("id",list.get(position).getId());
-                    intent.putExtra("type","rz");
-                    startActivity(intent);
+//                    Intent intent = new Intent(StoreGoodsListActivity.this, GoodsDetailActivity.class);
+//                    intent.putExtra("id",list.get(position).getId());
+//                    intent.putExtra("type","rz");
+//                    startActivity(intent);
+                    Helper.startActivity(
+                            StoreGoodsListActivity.this,
+                            FrgProductDetail.class,
+                            TitleAct.class,
+                            "id",
+                            list.get(position).getId(), "type", "rz"
+                    );
                 }else{
                     if(list.get(position).getType().equals("0")){
-                        Intent intent = new Intent(StoreGoodsListActivity.this, GoodsDetailActivity.class);
-                        intent.putExtra("id",list.get(position).getId());
-                        intent.putExtra("type","jd");
-                        startActivity(intent);
+//                        Intent intent = new Intent(StoreGoodsListActivity.this, GoodsDetailActivity.class);
+//                        intent.putExtra("id",list.get(position).getId());
+//                        intent.putExtra("type","jd");
+//                        startActivity(intent);
+                        Helper.startActivity(
+                                StoreGoodsListActivity.this,
+                                FrgProductDetail.class,
+                                TitleAct.class,
+                                "id",
+                                list.get(position).getId(), "type", "jd"
+                        );
                     }else{
                         Intent intent = new Intent(StoreGoodsListActivity.this, JdGoodsDetailActivity.class);
                         intent.putExtra("id",list.get(position).getId());

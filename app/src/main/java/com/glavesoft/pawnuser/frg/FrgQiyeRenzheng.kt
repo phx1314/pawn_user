@@ -24,15 +24,19 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.CircleCrop
 import com.bumptech.glide.request.RequestOptions
 import com.glavesoft.F
+import com.glavesoft.pawnuser.constant.BaseConstant
 import com.glavesoft.pawnuser.mod.LocalData
 import com.glavesoft.pawnuser.model.ModelGrRz
 import com.glavesoft.pawnuser.model.ModelQyRz
 import com.glavesoft.pawnuser.model.ModelUpload
 import com.glavesoft.util.GlideLoader
 import com.guoxiaoxing.phoenix.picker.Phoenix
+import kotlinx.android.synthetic.main.frg_geren_renzheng.*
 import kotlinx.android.synthetic.main.frg_qiye_renzheng.*
+import kotlinx.android.synthetic.main.frg_qiye_renzheng.mEditText_content
 import kotlinx.android.synthetic.main.frg_qiye_renzheng.mEditText_username
 import kotlinx.android.synthetic.main.frg_qiye_renzheng.mImageButton_sub
+import kotlinx.android.synthetic.main.frg_qiye_renzheng.mImageView
 import kotlinx.android.synthetic.main.frg_qiye_renzheng.mImageView_fm
 import kotlinx.android.synthetic.main.frg_qiye_renzheng.mImageView_zm
 
@@ -43,11 +47,15 @@ class FrgQiyeRenzheng : BaseFrg() {
     var businessLicensePhoto: String? = ""
     var legalPersonCardFront: String? = ""
     var legalPersonCardBack: String? = ""
+    var logo: String? = ""
     override fun create(savedInstanceState: Bundle?) {
         setContentView(R.layout.frg_qiye_renzheng)
     }
 
     override fun initView() {
+        mImageView.setOnClickListener {
+            F.takePhoto(activity!!, 10)
+        }
         mImageView_yyz.setOnClickListener {
             F.takePhoto(activity!!, 20)
         }
@@ -65,7 +73,13 @@ class FrgQiyeRenzheng : BaseFrg() {
             //返回的数据
             val result = Phoenix.result(data)
             var methodName: String = ""
-            if (requestCode === 20) {
+            if (requestCode === 10) {
+                Glide.with(this)
+                    .load(result[0].localPath)
+                    .apply(RequestOptions.bitmapTransform(CircleCrop()))
+                    .into(mImageView)
+                methodName = "upload0"
+            } else if (requestCode === 20) {
                 Glide.with(this)
                     .load(result[0].localPath)
                     .apply(RequestOptions.bitmapTransform(CircleCrop()))
@@ -89,8 +103,16 @@ class FrgQiyeRenzheng : BaseFrg() {
     override fun loaddata() {
         load(F.gB().authInfo("2"), "authInfo")
         mImageButton_sub.setOnClickListener {
+            if (TextUtils.isEmpty(logo)) {
+                F.toast("请选择logo");
+                return@setOnClickListener
+            }
             if (TextUtils.isEmpty(mEditText_username2.text.toString())) {
                 F.toast("请输入店铺名称");
+                return@setOnClickListener
+            }
+            if (TextUtils.isEmpty(mEditText_content.text.toString())) {
+                F.toast("请输入店铺介绍");
                 return@setOnClickListener
             }
             if (TextUtils.isEmpty(mEditText_qyname.text.toString())) {
@@ -122,6 +144,8 @@ class FrgQiyeRenzheng : BaseFrg() {
             mHashMap = HashMap()
             mHashMap.put("token", LocalData.getInstance().getUserInfo().getToken())
             mHashMap.put("storeName", mEditText_username2.text.toString())
+            mHashMap.put("storeIntroduce", mEditText_content.text.toString())
+            mHashMap.put("logo", logo)
             mHashMap.put("enterpriseName", mEditText_qyname.text.toString())
             mHashMap.put("legalPersonName", mEditText_username.text.toString())
             mHashMap.put("legalPersonCard", mEditText_sfz.text.toString())
@@ -134,7 +158,10 @@ class FrgQiyeRenzheng : BaseFrg() {
     }
 
     override fun onSuccess(data: String?, method: String) {
-        if (method == "upload1") {
+        if (method == "upload0") {
+            var mModelUpload1 = F.data2Model(data, ModelUpload::class.java)
+            logo = mModelUpload1?.id
+        } else if (method == "upload1") {
             var mModelUpload1 = F.data2Model(data, ModelUpload::class.java)
             businessLicensePhoto = mModelUpload1?.id
         } else if (method == "upload2") {
@@ -147,18 +174,20 @@ class FrgQiyeRenzheng : BaseFrg() {
             var data: Array<ModelQyRz> = F.data2Model(data, Array<ModelQyRz>::class.java)
             if (data.toMutableList().size > 0) {
                 mModelQyRz = data.toMutableList()[0]
-                GlideLoader.loadImage(mModelQyRz!!.businessLicensePhoto, mImageView_yyz, 0)
+                GlideLoader.loadCircleCropImage(BaseConstant.Image_URL +mModelQyRz!!.logo, mImageView, 0)
+                logo = mModelQyRz!!.logo
+                GlideLoader.loadImage(BaseConstant.Image_URL +mModelQyRz!!.businessLicensePhoto, mImageView_yyz, 0)
                 businessLicensePhoto = mModelQyRz!!.businessLicensePhoto
-                GlideLoader.loadImage(mModelQyRz!!.legalPersonCardFront, mImageView_zm, 0)
+                GlideLoader.loadImage(BaseConstant.Image_URL +mModelQyRz!!.legalPersonCardFront, mImageView_zm, 0)
                 legalPersonCardFront = mModelQyRz!!.legalPersonCardFront
-                GlideLoader.loadImage(mModelQyRz!!.legalPersonCardBack, mImageView_fm, 0)
+                GlideLoader.loadImage(BaseConstant.Image_URL +mModelQyRz!!.legalPersonCardBack, mImageView_fm, 0)
                 legalPersonCardBack = mModelQyRz!!.legalPersonCardBack
 
                 mEditText_username2.setText(mModelQyRz!!.storeName)
                 mEditText_qyname.setText(mModelQyRz!!.enterpriseName)
                 mEditText_username.setText(mModelQyRz!!.legalPersonName)
                 mEditText_sfz.setText(mModelQyRz!!.legalPersonCard)
-
+                mEditText_content.setText(mModelQyRz!!.storeIntroduce)
             }
         }
     }

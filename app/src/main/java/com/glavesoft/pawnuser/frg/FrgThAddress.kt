@@ -11,6 +11,7 @@
 
 package com.glavesoft.pawnuser.frg;
 
+import android.content.DialogInterface
 import android.os.Bundle;
 import android.text.TextUtils
 
@@ -54,7 +55,15 @@ class FrgThAddress : BaseFrg() {
                 load(F.gB().userInfo(), "userInfo")
             }
             1 -> {
-                load(F.gB().deleteReturnAddress(obj.toString()), "deleteReturnAddress")
+                com.mdx.framework.F.yShoure(
+                    activity, "删除", "确认删除"
+                ) { _, _ ->
+                    load(
+                        F.gB().deleteReturnAddress(obj.toString()),
+                        "deleteReturnAddress"
+                    )
+                }
+
             }
         }
 
@@ -65,13 +74,13 @@ class FrgThAddress : BaseFrg() {
     }
 
     override fun onSuccess(data: String?, method: String) {
-            if (method == "userInfo") {
-                mModelGrzl = F.data2Model(data, ModelGrzl::class.java)
-                mAbPullListView.adapter = AdaThAddress(context!!, mModelGrzl.returnAddress)
-            } else if (method == "deleteReturnAddress") {
-                F.toast("删除成功")
-                load(F.gB().userInfo(), "userInfo")
-            }
+        if (method == "userInfo") {
+            mModelGrzl = F.data2Model(data, ModelGrzl::class.java)
+            mAbPullListView.adapter = AdaThAddress(context!!, mModelGrzl.returnAddress)
+        } else if (method == "deleteReturnAddress") {
+            F.toast("删除成功")
+            load(F.gB().userInfo(), "userInfo")
+        }
     }
 
     override fun setActionBar(mActionBar: LinearLayout?) {

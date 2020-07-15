@@ -19,11 +19,15 @@ import com.glavesoft.pawnuser.activity.login.LoginActivity;
 import com.glavesoft.pawnuser.activity.main.GoodsDetailActivity;
 import com.glavesoft.pawnuser.activity.main.ShopcarSubmitActivity;
 import com.glavesoft.pawnuser.activity.main.StoreActivity;
+import com.glavesoft.pawnuser.activity.shoppingmall.StoreGoodsListActivity;
 import com.glavesoft.pawnuser.constant.BaseConstant;
+import com.glavesoft.pawnuser.frg.FrgProductDetail;
 import com.glavesoft.pawnuser.mod.ShopCar;
 import com.glavesoft.pawnuser.shoppingcar.OnShoppingCartChangeListener;
 import com.glavesoft.pawnuser.shoppingcar.ShoppingCartBiz;
 import com.glavesoft.view.UIAlertView;
+import com.mdx.framework.activity.TitleAct;
+import com.mdx.framework.utility.Helper;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
@@ -332,10 +336,17 @@ public class MyExpandableListAdapter extends BaseExpandableListAdapter {
                 case R.id.llGoodInfo:
                     String id = (String) v.getTag();
                     if (id!=null) {
-                        Intent intent = new Intent(mContext, GoodsDetailActivity.class);
-                        intent.putExtra("id",id+"");
-                        intent.putExtra("type","rz");
-                        mContext.startActivity(intent);
+//                        Intent intent = new Intent(mContext, GoodsDetailActivity.class);
+//                        intent.putExtra("id",id+"");
+//                        intent.putExtra("type","rz");
+//                        mContext.startActivity(intent);
+                        Helper.startActivity(
+                                mContext,
+                                FrgProductDetail.class,
+                                TitleAct.class,
+                                "id",
+                                id+"", "type", "rz"
+                        );
                     }
                     break;
                 case R.id.tvShopNameGroup:
@@ -351,10 +362,17 @@ public class MyExpandableListAdapter extends BaseExpandableListAdapter {
                 case R.id.ivGoods:
                     ShopCar.GoodsBean goodsBean1 = (ShopCar.GoodsBean) v.getTag();
                     if (goodsBean1!=null) {
-                        Intent intent = new Intent(mContext, GoodsDetailActivity.class);
-                        intent.putExtra("id",goodsBean1.getGoodsId()+"");
-                        intent.putExtra("type","rz");
-                        mContext.startActivity(intent);
+//                        Intent intent = new Intent(mContext, GoodsDetailActivity.class);
+//                        intent.putExtra("id",goodsBean1.getGoodsId()+"");
+//                        intent.putExtra("type","rz");
+//                        mContext.startActivity(intent);
+                        Helper.startActivity(
+                                mContext,
+                                FrgProductDetail.class,
+                                TitleAct.class,
+                                "id",
+                                goodsBean1.getGoodsId()+"", "type", "rz"
+                        );
                     }
                     break;
                 case R.id.tvGetCoupon:

@@ -25,28 +25,23 @@ import com.bumptech.glide.request.RequestOptions
 import com.glavesoft.F
 import com.glavesoft.pawnuser.R
 import com.glavesoft.pawnuser.ada.AdaAddProduct
-import com.glavesoft.pawnuser.ada.AdaProductDetail
 import com.glavesoft.pawnuser.constant.BaseConstant
 import com.glavesoft.pawnuser.mod.LocalData
 import com.glavesoft.pawnuser.mod.StoreGoodsInfo
-import com.glavesoft.pawnuser.model.ModelGridImgData
 import com.glavesoft.pawnuser.model.ModelUpload
 import com.glavesoft.util.GlideLoader
 import com.glavesoft.util.UploadFileRequestBody
 import com.guoxiaoxing.phoenix.compress.video.VideoCompressor
 import com.guoxiaoxing.phoenix.core.common.PhoenixConstant
+import com.guoxiaoxing.phoenix.core.model.MediaEntity
 import com.guoxiaoxing.phoenix.picker.Phoenix
 import com.mdx.framework.Frame
 import com.mdx.framework.activity.TitleAct
-import com.mdx.framework.frg.FrgList
 import com.mdx.framework.model.ModelDx
 import com.mdx.framework.service.subscriber.S
 import com.mdx.framework.utility.Helper
 import kotlinx.android.synthetic.main.frg_add_product.*
 import kotlinx.android.synthetic.main.frg_add_product.mGridView
-import kotlinx.android.synthetic.main.frg_dingdan_detail.*
-import kotlinx.android.synthetic.main.frg_product_detail.*
-import kotlinx.android.synthetic.main.frg_qiye_renzheng.*
 import okhttp3.MultipartBody
 import java.io.File
 
@@ -56,7 +51,9 @@ class FrgAddProduct : BaseFrg() {
     var video: String? = null
     var video_img: String? = null
     var cateCode: Int? = null
-    lateinit var mModelGridImgData: ModelGridImgData
+    var mProgressDialog: ProgressDialog? = null
+
+
     override fun create(savedInstanceState: Bundle?) {
         setContentView(R.layout.frg_add_product)
         p_id = activity!!.intent.getStringExtra("id")
@@ -65,17 +62,29 @@ class FrgAddProduct : BaseFrg() {
     override fun disposeMsg(type: Int, obj: Any?) {
         when (type) {
             0 -> {
-                F.takePhoto(activity!!, 40)
-                mModelGridImgData = ModelGridImgData()
+                F.takePhoto(
+                    activity!!, 40,
+                    maxPickNumber = 9 - (mGridView.adapter as AdaAddProduct).count
+                )
             }
             1 -> {
                 (mGridView.adapter as AdaAddProduct).remove(obj)
-                if (!TextUtils.isEmpty((mGridView.adapter as AdaAddProduct).get((mGridView.adapter as AdaAddProduct).count - 1).id)) {
-                    (mGridView.adapter as AdaAddProduct).add(ModelGridImgData())
+                if (!TextUtils.isEmpty((mGridView.adapter as AdaAddProduct).get((mGridView.adapter as AdaAddProduct).count - 1))) {
+                    (mGridView.adapter as AdaAddProduct).add("")
                 }
             }
             2 -> {
                 mEditText2.text = (obj as ModelDx).string
+                cateCode = (obj as ModelDx).id
+                if (cateCode == 4 || cateCode == 6) {
+                    mLinearLayout_son_code.visibility = View.VISIBLE
+                } else {
+                    mLinearLayout_son_code.visibility = View.GONE
+                }
+                mEditText3.text = ""
+            }
+            3 -> {
+                mEditText3.text = (obj as ModelDx).string
                 cateCode = (obj as ModelDx).id
             }
         }
@@ -84,7 +93,11 @@ class FrgAddProduct : BaseFrg() {
 
     override fun initView() {
         mRelativeLayout_video.setOnClickListener {
-            F.takePhoto(activity!!, 20, fileType = PhoenixConstant.TYPE_ALL)
+            F.takePhoto(
+                activity!!,
+                20,
+                fileType = PhoenixConstant.TYPE_ALL
+            )
         }
         mImageView_addvideoimg.setOnClickListener {
             F.takePhoto(activity!!, 30)
@@ -104,6 +117,21 @@ class FrgAddProduct : BaseFrg() {
                 F.list_fx
             )
         }
+        mEditText3.setOnClickListener {
+            Helper.startActivity(
+                context,
+                FrgListDx::class.java,
+                TitleAct::class.java,
+                "title",
+                "选择子分类",
+                "from",
+                "FrgAddProduct",
+                "type",
+                3,
+                "data",
+                if (cateCode == 4) F.list_fx_son_1 else F.list_fx_son_2
+            )
+        }
 
         mImageButton.setOnClickListener {
             if (TextUtils.isEmpty(mEditText1.text.toString())) {
@@ -114,8 +142,8 @@ class FrgAddProduct : BaseFrg() {
                 F.toast("请选择分类")
                 return@setOnClickListener
             }
-            if (TextUtils.isEmpty(mEditText3.text.toString())) {
-                F.toast("请输入子分类")
+            if ((cateCode == 4 || cateCode == 6) && TextUtils.isEmpty(mEditText3.text.toString())) {
+                F.toast("请选择子分类")
                 return@setOnClickListener
             }
             if (TextUtils.isEmpty(mEditText4.text.toString())) {
@@ -185,7 +213,7 @@ class FrgAddProduct : BaseFrg() {
             mHashMap["token"] = LocalData.getInstance().getUserInfo().getToken()
             mHashMap["name"] = mEditText1.text.toString()
             mHashMap["cateCode"] = cateCode.toString()
-            mHashMap["cateCodeSon"] = mEditText3.text.toString()
+            mHashMap["cateCodeSon"] = ""
             mHashMap["material"] = mEditText4.text.toString()
             mHashMap["weight"] = mEditText5.text.toString()
             mHashMap["mainMaterial"] = mEditText6.text.toString()
@@ -200,12 +228,13 @@ class FrgAddProduct : BaseFrg() {
             mHashMap["price"] = mEditText15.text.toString()
             mHashMap["wordDescript"] = mEditText16.text.toString()
             mHashMap["total"] = "1"
+            mHashMap["state"] = "1"
             mHashMap["bannerVideo"] = video ?: ""
             mHashMap["bannerVideoFace"] = video_img ?: ""
             var imgs = ""
             for (it in (mGridView.adapter as AdaAddProduct).list) {
-                if (!TextUtils.isEmpty(it.id))
-                    imgs += it.id + ","
+                if (!TextUtils.isEmpty(it))
+                    imgs += "$it,"
             }
             mHashMap.put("imgs", if (imgs == "") imgs else imgs.substring(0, imgs.length - 1))
             load(F.gB().save(mHashMap), "save")
@@ -219,7 +248,10 @@ class FrgAddProduct : BaseFrg() {
             val result = Phoenix.result(data)
             if (requestCode === 20) {
                 if (result[0].mimeType.contains("video")) {
-                    F.toast("文件压缩中，请稍后...")
+
+                    mProgressDialog = ProgressDialog(context)
+                    mProgressDialog?.setTitle("文件压缩中")
+                    mProgressDialog?.show()
                     val compressCachePath = File(
                         Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM),
                         "phoenix"
@@ -228,20 +260,16 @@ class FrgAddProduct : BaseFrg() {
                     val compressFile = File.createTempFile("compress", ".mp4", compressCachePath)
                     F.getVideoBody(result[0].localPath, compressFile,
                         object : VideoCompressor.Listener {
-                            override fun onTranscodeProgress(progress: Double) {}
+                            override fun onTranscodeProgress(progress: Double) {
+                            }
+
                             override fun onTranscodeCompleted() {
                                 doSomeThing(File(compressFile.absolutePath))
-                                Glide.with(context!!)
-                                    .setDefaultRequestOptions(
-                                        RequestOptions()
-                                            .frame(1000000)
-                                            .centerCrop()
-                                    )
-                                    .load(result[0].localPath)
-                                    .into(mImageView_addvideo)
                             }
 
                             override fun onTranscodeCanceled() {
+                                if (context != null)
+                                    mProgressDialog?.dismiss()
                                 Log.i("剪裁", "拒绝")
                             }
 
@@ -259,33 +287,43 @@ class FrgAddProduct : BaseFrg() {
                     .into(mImageView_addvideoimg)
                 load(F.gB().upload(F.getBody(result[0].localPath)), "upload2")
             } else if (requestCode === 40) {
-                mModelGridImgData.localUrl = result[0].localPath
-                load(F.gB().upload(F.getBody(result[0].localPath)), "upload3")
+                load(F.gB().uploadFiles(F.getBodys(result)), "upload3")
             }
         }
     }
 
     fun doSomeThing(compressFIle: File) {
-        var s = S(
-            this@FrgAddProduct,
-            ProgressDialog(context).apply {
-                this.setTitle("文件上传中")
-                this.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL)
-                this.max = 100
-            },
-            "upload1",
-            true
-        )
-        var body =
-            MultipartBody.Part.createFormData(
-                "file",
-                compressFIle.name,
-                UploadFileRequestBody(compressFIle, s)
+        if (context != null) {
+            mProgressDialog?.dismiss()
+            Glide.with(context!!)
+                .setDefaultRequestOptions(
+                    RequestOptions()
+                        .frame(1000000)
+                        .centerCrop()
+                )
+                .load(compressFIle.absolutePath)
+                .into(mImageView_addvideo)
+            var s = S(
+                this@FrgAddProduct,
+                ProgressDialog(context).apply {
+                    this.setTitle("文件上传中")
+                    this.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL)
+                    this.max = 100
+                },
+                "upload1",
+                true
             )
-        load(
-            F.gB(10000).upload(body),
-            "upload1", s = s
-        )
+            var body =
+                MultipartBody.Part.createFormData(
+                    "file",
+                    compressFIle.name,
+                    UploadFileRequestBody(compressFIle, s)
+                )
+            load(
+                F.gB(10000).upload(body),
+                "upload1", s = s
+            )
+        }
     }
 
 
@@ -297,8 +335,8 @@ class FrgAddProduct : BaseFrg() {
                 ), "storeGoodsDetail"
             )
         } else {
-            var mModelGridImgDatas = ArrayList<ModelGridImgData>()
-            mModelGridImgDatas.add(ModelGridImgData())
+            var mModelGridImgDatas = ArrayList<String>()
+            mModelGridImgDatas.add("")
             mGridView.adapter = AdaAddProduct(context!!, mModelGridImgDatas)
         }
 
@@ -319,13 +357,13 @@ class FrgAddProduct : BaseFrg() {
             video_img = mModelUpload?.id
         } else if (method == "upload3") {
             var mModelUpload = F.data2Model(data, ModelUpload::class.java)
-            mModelGridImgData.id = mModelUpload?.id
-            (mGridView.adapter as AdaAddProduct).add(
-                (mGridView.adapter as AdaAddProduct).count - 1,
-                mModelGridImgData
+
+            (mGridView.adapter as AdaAddProduct).remove((mGridView.adapter as AdaAddProduct).count - 1)
+            (mGridView.adapter as AdaAddProduct).AddAll(
+                mModelUpload.id.split(",")
             )
-            if ((mGridView.adapter as AdaAddProduct).count > 8) {
-                (mGridView.adapter as AdaAddProduct).remove((mGridView.adapter as AdaAddProduct).count - 1)
+            if ((mGridView.adapter as AdaAddProduct).count < 8) {
+                (mGridView.adapter as AdaAddProduct).add("")
             }
         } else if (method == "storeGoodsDetail") {
             var item = F.data2Model(data, StoreGoodsInfo::class.java)
@@ -337,7 +375,24 @@ class FrgAddProduct : BaseFrg() {
                 }
             }
             cateCode = item.cateCode
-            mEditText3.setText(item.cateCodeSon)
+            if (item.cateCode in 9..11) {
+                mEditText2.text = "古董艺术"
+                for (it in F.list_fx_son_1) {
+                    if (it.id == item.cateCode.toInt()) {
+                        mEditText3.text = it.string
+                        break
+                    }
+                }
+            }
+            if (item.cateCode in 12..15) {
+                mEditText2.text = "彩色珠宝"
+                for (it in F.list_fx_son_2) {
+                    if (it.id == item.cateCode.toInt()) {
+                        mEditText3.text = it.string
+                        break
+                    }
+                }
+            }
             mEditText4.setText(item.material)
             mEditText5.setText(item.weight)
             mEditText6.setText(item.mainMaterial)
@@ -366,17 +421,26 @@ class FrgAddProduct : BaseFrg() {
             if (!TextUtils.isEmpty(item.bannerVideo)) {
                 mImageView_bf.visibility = View.VISIBLE
             }
-            var mModelGridImgDatas = ArrayList<ModelGridImgData>()
+            var mModelGridImgDatas = ArrayList<String>()
             for (url in item.images.split(",")) {
-                mModelGridImgDatas.add(ModelGridImgData().apply { this.id = url })
+                mModelGridImgDatas.add(url)
             }
-            if (mModelGridImgDatas.size < 8) mModelGridImgDatas.add(ModelGridImgData())
+            if (mModelGridImgDatas.size < 8) mModelGridImgDatas.add("")
             mGridView.adapter = AdaAddProduct(context!!, mModelGridImgDatas)
         } else if (method == "save") {
             Helper.toast("操作成功")
             Frame.HANDLES.sentAll("FrgAddProductList", 0, "")
             finish()
         }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        mProgressDialog?.let {
+            if (it.isShowing)
+                it.dismiss()
+        }
+
     }
 
     override fun setActionBar(mActionBar: LinearLayout?) {

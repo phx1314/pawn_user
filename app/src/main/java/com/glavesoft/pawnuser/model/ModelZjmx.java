@@ -6,30 +6,30 @@ public class ModelZjmx implements Serializable {
 
 
     /**
-     * amount : 0
-     * createTime :
-     * id : 0
-     * info :
-     * item :
+     * amount : 0.10
+     * createTime : 2020-07-10 17:29:07
+     * id : 1221.0
+     * info : 用户确认收货
+     * item : 1
      * tradeCardBank :
      * tradeCardCode :
      * tradeNo :
      * tradeTicket :
-     * tradeType : 0
-     * type : 0
-     * userId : 0
+     * tradeType : 0.0
+     * type : 1.0
+     * userId : 621.0
      */
 
-    public int amount;
+    public String amount;
     public String createTime;
-    public int id;
+    public double id;
     public String info;
     public String item;
     public String tradeCardBank;
     public String tradeCardCode;
     public String tradeNo;
     public String tradeTicket;
-    public int tradeType;
-    public int type;
-    public int userId;
+    public double tradeType;
+    public double type;
+    public double userId;
 }

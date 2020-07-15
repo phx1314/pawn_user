@@ -172,8 +172,6 @@ public class PListView extends ListView implements AbsListView.OnScrollListener,
     public int gridCount = -1;
     public int PageIndex = 1;
     public int pageIndex = 1;
-    public String PageIndex_key = "page";
-    public String PageSize_key = "rows";
     public Handler mHandler = new Handler();
     public Runnable runnable;
     public BaseFrg mBaseFrg;
@@ -204,13 +202,6 @@ public class PListView extends ListView implements AbsListView.OnScrollListener,
         this.gridCount = gridCount;
     }
 
-    public void setPageIndex_key(String pageIndex_key) {
-        PageIndex_key = pageIndex_key;
-    }
-
-    public void setPageSize_key(String pageSize_key) {
-        PageSize_key = pageSize_key;
-    }
 
     /**
      * 构造.

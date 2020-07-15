@@ -65,9 +65,9 @@ class FrgHk : BaseFrg() {
         if (method == "financeinfo") {
             var item = F.data2Model(data, ModelCw::class.java)
             mTextView_price.text = "￥" + item.total
-            mTextView_dfk.text = "￥" + item.toBeDelivered
-            mTextView_dfh.text = "￥" + item.toBeHarvested
-            mTextView_dsh.text = "￥" + item.toBePai
+            mTextView_dfk.text = "￥" + item.toBePai
+            mTextView_dfh.text = "￥" + item.toBeDelivered
+            mTextView_dsh.text = "￥" + item.toBeHarvested
         }
     }
 

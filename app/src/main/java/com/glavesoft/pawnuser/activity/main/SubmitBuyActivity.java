@@ -376,9 +376,9 @@ public class SubmitBuyActivity extends BaseActivity implements View.OnClickListe
         param.put("token", LocalData.getInstance().getUserInfo().getToken());
         param.put("platform", payTool+"");
         if(type.equals("goodsdetail")){
-            param.put("goodsId", storeGoodsInfo.getId());
+            param.put("goodsId",  Double.valueOf(storeGoodsInfo.getId()).intValue());
         }else{
-            param.put("goodsId", jdGoodsInfo.getId());
+            param.put("goodsId", Double.valueOf(jdGoodsInfo.getId()).intValue());
         }
         if(!couponId.equals("")){
             param.put("couponId", couponId);

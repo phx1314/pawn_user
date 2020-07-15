@@ -12,6 +12,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:visibility="gone"
         android:gravity="center_vertical"
         android:orientation="horizontal"
         android:paddingTop="@dimen/j17dp"
@@ -37,7 +38,7 @@
 
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="1px"
+        android:layout_height="1px"  android:visibility="gone"
         android:background="#E2E2E2" />
 
     <LinearLayout

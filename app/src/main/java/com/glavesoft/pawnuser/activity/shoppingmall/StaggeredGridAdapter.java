@@ -25,11 +25,14 @@ import com.glavesoft.pawnuser.activity.main.GoodsDetailActivity;
 import com.glavesoft.pawnuser.activity.main.SubmitBuyActivity;
 import com.glavesoft.pawnuser.activity.main.WebActivity;
 import com.glavesoft.pawnuser.constant.BaseConstant;
+import com.glavesoft.pawnuser.frg.FrgProductDetail;
 import com.glavesoft.pawnuser.mod.StoreBannerInfo;
 import com.glavesoft.pawnuser.mod.StoreGoodsInfo;
 import com.glavesoft.util.ScreenUtils;
 import com.glavesoft.view.FlexibleRoundedBitmapDisplayer;
 import com.glavesoft.view.SlideShowView;
+import com.mdx.framework.activity.TitleAct;
+import com.mdx.framework.utility.Helper;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.assist.ImageScaleType;
@@ -180,20 +183,34 @@ class StaggeredGridAdapter extends RecyclerView.Adapter<StaggeredGridAdapter.MyV
 									intent.putExtra("url",StoreBannerList.get(position).getContent());
 									mContext.startActivity(intent);
 								}else if (StoreBannerList.get(position).getType().equals("3")){
-									Intent intent = new Intent(mContext, GoodsDetailActivity.class);
-									intent.putExtra("type","rz");
-									intent.putExtra("id",StoreBannerList.get(position).getContent());
-									mContext.startActivity(intent);
+//									Intent intent = new Intent(mContext, GoodsDetailActivity.class);
+//									intent.putExtra("type","rz");
+//									intent.putExtra("id",StoreBannerList.get(position).getContent());
+//									mContext.startActivity(intent);
+									Helper.startActivity(
+											mContext,
+											FrgProductDetail.class,
+											TitleAct.class,
+											"id",
+											StoreBannerList.get(position).getContent(), "type", "rz"
+									);
 								}else if (StoreBannerList.get(position).getType().equals("4")){
 									if(StoreBannerList.get(position).getState().equals("1")){
 										Intent intent = new Intent(mContext, JdGoodsDetailActivity.class);
 										intent.putExtra("id",StoreBannerList.get(position).getContent());
 										mContext.startActivity(intent);
 									}else{
-										Intent intent = new Intent(mContext, GoodsDetailActivity.class);
-										intent.putExtra("type","jd");
-										intent.putExtra("id",StoreBannerList.get(position).getContent());
-										mContext.startActivity(intent);
+//										Intent intent = new Intent(mContext, GoodsDetailActivity.class);
+//										intent.putExtra("type","jd");
+//										intent.putExtra("id",StoreBannerList.get(position).getContent());
+//										mContext.startActivity(intent);
+										Helper.startActivity(
+												mContext,
+												FrgProductDetail.class,
+												TitleAct.class,
+												"id",
+												StoreBannerList.get(position).getContent(), "type", "jd"
+										);
 									}
 
 								}else if (StoreBannerList.get(position).getType().equals("5")){
@@ -300,10 +317,17 @@ class StaggeredGridAdapter extends RecyclerView.Adapter<StaggeredGridAdapter.MyV
 					@Override
 					public void onClick(View v)
 					{
-						Intent intent = new Intent(mContext, GoodsDetailActivity.class);
-						intent.putExtra("type","rz");
-						intent.putExtra("id",mDatas.get(finalPosition).getId());
-						mContext.startActivity(intent);
+//						Intent intent = new Intent(mContext, GoodsDetailActivity.class);
+//						intent.putExtra("type","rz");
+//						intent.putExtra("id",mDatas.get(finalPosition).getId());
+//						mContext.startActivity(intent);
+						Helper.startActivity(
+								mContext,
+								FrgProductDetail.class,
+								TitleAct.class,
+								"id",
+								mDatas.get(finalPosition).getId(), "type", "rz"
+						);
 					}
 				});
 

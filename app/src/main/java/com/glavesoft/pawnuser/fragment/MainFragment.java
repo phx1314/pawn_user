@@ -46,6 +46,7 @@ import com.glavesoft.pawnuser.adapter.CommonAdapter;
 import com.glavesoft.pawnuser.adapter.ViewHolder;
 import com.glavesoft.pawnuser.base.BaseFragment;
 import com.glavesoft.pawnuser.constant.BaseConstant;
+import com.glavesoft.pawnuser.frg.FrgProductDetail;
 import com.glavesoft.pawnuser.mod.CouponInfo;
 import com.glavesoft.pawnuser.mod.DataInfo;
 import com.glavesoft.pawnuser.mod.DataResult;
@@ -67,6 +68,8 @@ import com.glavesoft.volley.net.VolleyUtil;
 import com.google.gson.reflect.TypeToken;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.model.Response;
+import com.mdx.framework.activity.TitleAct;
+import com.mdx.framework.utility.Helper;
 import com.sobot.chat.SobotApi;
 import com.sobot.chat.utils.ZhiChiConstant;
 
@@ -374,10 +377,17 @@ public class MainFragment extends BaseFragment implements MyScrollView.onScrollC
         nsgv_home_jdxp.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(getActivity(), GoodsDetailActivity.class);
-                intent.putExtra("id",IndexMenuList2.get(position+1).getId());
-                intent.putExtra("type","jd");
-                startActivity(intent);
+//                Intent intent = new Intent(getActivity(), GoodsDetailActivity.class);
+//                intent.putExtra("id",IndexMenuList2.get(position+1).getId());
+//                intent.putExtra("type","jd");
+//                startActivity(intent);
+                Helper.startActivity(
+                        getActivity(),
+                        FrgProductDetail.class,
+                        TitleAct.class,
+                        "id",
+                        IndexMenuList2.get(position+1).getId(), "type", "jd"
+                );
             }
         });
 
@@ -681,20 +691,35 @@ public class MainFragment extends BaseFragment implements MyScrollView.onScrollC
             }
 
         }else if (type.equals("3")){
-            Intent intent = new Intent(getActivity(), GoodsDetailActivity.class);
-            intent.putExtra("type","rz");
-            intent.putExtra("id",content);
-            startActivity(intent);
+//            Intent intent = new Intent(getActivity(), GoodsDetailActivity.class);
+//            intent.putExtra("type","rz");
+//            intent.putExtra("id",content);
+//            startActivity(intent);
+
+            Helper.startActivity(
+                    getActivity(),
+                    FrgProductDetail.class,
+                    TitleAct.class,
+                    "id",
+                    content, "type", "rz"
+            );
         }else if (type.equals("4")){
             if(State.equals("1")){//竞拍
                 Intent intent = new Intent(getActivity(), JdGoodsDetailActivity.class);
                 intent.putExtra("id",content);
                 startActivity(intent);
             }else{
-                Intent intent = new Intent(getActivity(), GoodsDetailActivity.class);
-                intent.putExtra("type","jd");
-                intent.putExtra("id",content);
-                startActivity(intent);
+//                Intent intent = new Intent(getActivity(), GoodsDetailActivity.class);
+//                intent.putExtra("type","jd");
+//                intent.putExtra("id",content);
+//                startActivity(intent);
+                Helper.startActivity(
+                        getActivity(),
+                        FrgProductDetail.class,
+                        TitleAct.class,
+                        "id",
+                        content, "type", "jd"
+                );
             }
 
         }else if (type.equals("6")){
@@ -842,10 +867,17 @@ public class MainFragment extends BaseFragment implements MyScrollView.onScrollC
     }
 
     private void gotoGoodsDetail(String id){
-        Intent intent = new Intent(getActivity(), GoodsDetailActivity.class);
-        intent.putExtra("id",id);
-        intent.putExtra("type","rz");
-        startActivity(intent);
+//        Intent intent = new Intent(getActivity(), GoodsDetailActivity.class);
+//        intent.putExtra("id",id);
+//        intent.putExtra("type","rz");
+//        startActivity(intent);
+        Helper.startActivity(
+                getActivity(),
+                FrgProductDetail.class,
+                TitleAct.class,
+                "id",
+                id, "type", "rz"
+        );
     }
 
     private void showgridList(final ArrayList<IndexMenuInfo> result) {
@@ -858,10 +890,17 @@ public class MainFragment extends BaseFragment implements MyScrollView.onScrollC
         fl_home_jdxp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), GoodsDetailActivity.class);
-                intent.putExtra("id",result.get(0).getId());
-                intent.putExtra("type","jd");
-                startActivity(intent);
+//                Intent intent = new Intent(getActivity(), GoodsDetailActivity.class);
+//                intent.putExtra("id",result.get(0).getId());
+//                intent.putExtra("type","jd");
+//                startActivity(intent);
+                Helper.startActivity(
+                        getActivity(),
+                        FrgProductDetail.class,
+                        TitleAct.class,
+                        "id",
+                        result.get(0).getId(), "type", "jd"
+                );
             }
         });
         if(result.size()>1){

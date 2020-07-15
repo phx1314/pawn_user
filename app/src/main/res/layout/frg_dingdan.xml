@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/mTextView_yd"
-        android:cacheColorHint="#00000000"
+        android:cacheColorHint="#00000000"  android:scrollbars="none"
         android:divider="@null"
         android:footerDividersEnabled="true"
         android:headerDividersEnabled="false"

@@ -25,8 +25,6 @@ import android.widget.TextView;
 import android.widget.EditText;
 import com.glavesoft.F
 import com.mdx.framework.Frame
-import kotlinx.android.synthetic.main.frg_add_product.view.*
-import kotlinx.android.synthetic.main.frg_dingdan_detail.*
 import kotlinx.android.synthetic.main.item_dialog_txwul.view.*
 
 
@@ -41,17 +39,17 @@ class DialogTxwul(context: Context?) : BaseItem(context) {
     fun set(mDialog: Dialog, code: String) {
         this.mDialog = mDialog;
         mTextView_sure.setOnClickListener {
-            if (TextUtils.isEmpty(mEditText1.text.toString())) {
+            if (TextUtils.isEmpty(mEditText_1.text.toString())) {
                 F.toast("请输入物流单号")
                 return@setOnClickListener
             }
-            if (TextUtils.isEmpty(mEditText2.text.toString())) {
+            if (TextUtils.isEmpty(mEditText_2.text.toString())) {
                 F.toast("请输入物流公司")
                 return@setOnClickListener
             }
             load(
                 F.gB().experter(
-                    mEditText1.text.toString(), mEditText2.text.toString(),
+                    mEditText_1.text.toString(), mEditText_2.text.toString(),
                     code
                 ), "experter"
             )

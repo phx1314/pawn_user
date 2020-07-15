@@ -33,6 +33,7 @@ import com.glavesoft.pawnuser.adapter.CommonAdapter;
 import com.glavesoft.pawnuser.adapter.ViewHolder;
 import com.glavesoft.pawnuser.base.BaseFragment;
 import com.glavesoft.pawnuser.constant.BaseConstant;
+import com.glavesoft.pawnuser.frg.FrgProductDetail;
 import com.glavesoft.pawnuser.mod.DataInfo;
 import com.glavesoft.pawnuser.mod.DataResult;
 import com.glavesoft.pawnuser.mod.LocalData;
@@ -44,6 +45,8 @@ import com.google.gson.reflect.TypeToken;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.model.HttpParams;
 import com.lzy.okgo.model.Response;
+import com.mdx.framework.activity.TitleAct;
+import com.mdx.framework.utility.Helper;
 import com.sobot.chat.SobotApi;
 import com.sobot.chat.api.enumtype.SobotChatTitleDisplayMode;
 import com.sobot.chat.api.model.ConsultingContent;
@@ -354,10 +357,18 @@ public class OrderFragment extends BaseFragment implements BGARefreshLayout.BGAR
 //                    intent.putExtra("type","rz");
                     startActivity(intent);
                 }else {
-                    Intent intent = new Intent(OrderFragment.this.getActivity(), GoodsDetailActivity.class);
-                    intent.putExtra("id",list.get(i).getGoodsId());
-                    intent.putExtra("type","rz");
-                    startActivity(intent);
+//                    Intent intent = new Intent(OrderFragment.this.getActivity(), GoodsDetailActivity.class);
+//                    intent.putExtra("id",list.get(i).getGoodsId());
+//                    intent.putExtra("type","rz");
+//                    startActivity(intent);
+
+                    Helper.startActivity(
+                            getActivity(),
+                            FrgProductDetail.class,
+                            TitleAct.class,
+                            "id",
+                            list.get(i).getGoodsId(), "type", "rz"
+                    );
                 }
 
             }

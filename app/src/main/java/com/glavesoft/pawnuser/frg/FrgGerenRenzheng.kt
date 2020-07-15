@@ -26,6 +26,7 @@ import com.glavesoft.F.gB
 import com.glavesoft.F.getBody
 import com.glavesoft.F.takePhoto
 import com.glavesoft.pawnuser.R
+import com.glavesoft.pawnuser.constant.BaseConstant.Image_URL
 import com.glavesoft.pawnuser.mod.LocalData
 import com.glavesoft.pawnuser.model.ModelGrRz
 import com.glavesoft.pawnuser.model.ModelUpload
@@ -173,16 +174,20 @@ class FrgGerenRenzheng : BaseFrg() {
             var data: Array<ModelGrRz> = data2Model(data, Array<ModelGrRz>::class.java)
             if (data.toMutableList().size > 0) {
                 mModelGrRz = data.toMutableList()[0]
-                GlideLoader.loadImage(mModelGrRz!!.logo, mImageView, 0)
+                GlideLoader.loadCircleCropImage(Image_URL+mModelGrRz!!.logo, mImageView, 0)
                 logo = mModelGrRz!!.logo
-                GlideLoader.loadImage(mModelGrRz!!.idCardFront, mImageView_zm, 0)
+                GlideLoader.loadImage(Image_URL+mModelGrRz!!.idCardFront, mImageView_zm, 0)
                 idCardFront = mModelGrRz!!.idCardFront
-                GlideLoader.loadImage(mModelGrRz!!.idCardBack, mImageView_fm, 0)
+                GlideLoader.loadImage(Image_URL+mModelGrRz!!.idCardBack, mImageView_fm, 0)
                 idCardBack = mModelGrRz!!.idCardBack
 
                 mEditText_name.setText(mModelGrRz!!.storeName)
                 mEditText_content.setText(mModelGrRz!!.storeIntroduce)
                 mEditText_username.setText(mModelGrRz!!.name)
+
+                mEditText_username.setText(mModelGrRz!!.name)
+                mEditText_card.setText(mModelGrRz!!.idCard)
+                mEditText_phone.setText(mModelGrRz!!.phone)
 
             }
         }

@@ -13,19 +13,14 @@ package com.glavesoft.pawnuser.item;
 
 import com.glavesoft.pawnuser.R;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.text.TextUtils
 import android.view.LayoutInflater;
-import android.view.ViewGroup;
 
 import android.view.View;
-import android.widget.ImageView;
 import com.glavesoft.pawnuser.constant.BaseConstant
-import com.glavesoft.pawnuser.model.ModelGridImgData
 import com.glavesoft.util.GlideLoader
 import com.mdx.framework.Frame
-import kotlinx.android.synthetic.main.frg_dingdan_detail.*
 import kotlinx.android.synthetic.main.item_add_product.view.*
 
 
@@ -37,14 +32,14 @@ class AddProduct(context: Context?) : BaseItem(context) {
 
     }
 
-    fun set(item: ModelGridImgData) {
-        if (TextUtils.isEmpty(item.id)) {
+    fun set(item: String) {
+        if (TextUtils.isEmpty(item)) {
             mImageView_del.visibility = View.GONE
         } else {
             mImageView_del.visibility = View.VISIBLE
         }
         GlideLoader.loadImage(
-            BaseConstant.Image_URL + item.id,
+            BaseConstant.Image_URL + item,
             mImageView,
             R.drawable.add2
         )
@@ -53,7 +48,7 @@ class AddProduct(context: Context?) : BaseItem(context) {
             Frame.HANDLES.sentAll("FrgAddProduct", 1, item)
         }
         mImageView.setOnClickListener {
-            if (TextUtils.isEmpty(item.id))
+            if (TextUtils.isEmpty(item))
                 Frame.HANDLES.sentAll("FrgAddProduct", 0, item)
         }
     }

@@ -2,6 +2,7 @@ package com.glavesoft.pawnuser.base;
 
 import android.Manifest;
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -28,6 +29,7 @@ import com.android.volley.VolleyError;
 import com.glavesoft.pawnuser.R;
 import com.glavesoft.pawnuser.activity.main.MainActivity;
 import com.glavesoft.pawnuser.constant.BaseConstant;
+import com.glavesoft.pawnuser.frg.BaseFrg;
 import com.glavesoft.pawnuser.mod.DataResult;
 import com.glavesoft.pawnuser.mod.LocalData;
 import com.glavesoft.pawnuser.mod.UserInfo;
@@ -39,6 +41,7 @@ import com.glavesoft.view.LoadingDialog;
 import com.google.gson.Gson;
 import com.mdx.framework.Frame;
 import com.mdx.framework.service.subscriber.HttpResultSubscriberListener;
+import com.mdx.framework.service.subscriber.S;
 import com.mdx.framework.utility.AbAppUtil;
 import com.mdx.framework.utility.Helper;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
@@ -60,11 +63,8 @@ import java.util.Locale;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
 
-public class BaseFragment extends Fragment   {
-    protected TextView titlebar_left;
-    protected TextView titlebar_right;
+public class BaseFragment extends BaseFrg {
     protected TextView titlebar_name;
-    protected ImageView titlebar_back;
     protected ImageView titlebar_search;
     private ImageLoader imageLoader;
     private DisplayImageOptions options, optionsHead;
@@ -75,7 +75,6 @@ public class BaseFragment extends Fragment   {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         return super.onCreateView(inflater, container, savedInstanceState);
     }
-
     public ImageLoader getImageLoader() {
         if (imageLoader == null) {
             imageLoader = ImageLoader.getInstance();

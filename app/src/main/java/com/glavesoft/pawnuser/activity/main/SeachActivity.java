@@ -13,6 +13,7 @@ import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+
 import com.android.volley.VolleyError;
 import com.glavesoft.okGo.JsonCallback;
 import com.glavesoft.pawnuser.R;
@@ -21,6 +22,7 @@ import com.glavesoft.pawnuser.adapter.CommonAdapter;
 import com.glavesoft.pawnuser.adapter.ViewHolder;
 import com.glavesoft.pawnuser.base.BaseActivity;
 import com.glavesoft.pawnuser.constant.BaseConstant;
+import com.glavesoft.pawnuser.frg.FrgProductDetail;
 import com.glavesoft.pawnuser.mod.DataResult;
 import com.glavesoft.pawnuser.mod.IndexMenuInfo;
 import com.glavesoft.pawnuser.mod.LocalData;
@@ -34,29 +36,33 @@ import com.google.gson.reflect.TypeToken;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.model.HttpParams;
 import com.lzy.okgo.model.Response;
+import com.mdx.framework.activity.TitleAct;
+import com.mdx.framework.utility.Helper;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
+
 import cn.bingoogolapple.refreshlayout.BGAMoocStyleRefreshViewHolder;
 import cn.bingoogolapple.refreshlayout.BGARefreshLayout;
 
 
-public class SeachActivity extends BaseActivity implements BGARefreshLayout.BGARefreshLayoutDelegate{
+public class SeachActivity extends BaseActivity implements BGARefreshLayout.BGARefreshLayoutDelegate {
     private BGARefreshLayout mRefreshLayout;
     private ListView lv_listview;
-    private ArrayList<IndexMenuInfo> list=new ArrayList<>();
+    private ArrayList<IndexMenuInfo> list = new ArrayList<>();
     CommonAdapter commAdapter;
-    private String keyword="";
-    private int page=1;
-    private int listsize=0;
-    private ArrayList<String> historcalList=new ArrayList<>();
+    private String keyword = "";
+    private int page = 1;
+    private int listsize = 0;
+    private ArrayList<String> historcalList = new ArrayList<>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
-        keyword=getIntent().getStringExtra("keyword");
+        keyword = getIntent().getStringExtra("keyword");
         init();
     }
 
@@ -71,10 +77,10 @@ public class SeachActivity extends BaseActivity implements BGARefreshLayout.BGAR
         gettitle_Searchet().setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-                if (actionId == EditorInfo.IME_ACTION_SEARCH){
-                    if(!v.getText().toString().trim().equals("")){
+                if (actionId == EditorInfo.IME_ACTION_SEARCH) {
+                    if (!v.getText().toString().trim().equals("")) {
                         savedata(v.getText().toString().trim());
-                        keyword=v.getText().toString().trim();
+                        keyword = v.getText().toString().trim();
                         resetPageData();
                     }
                     return true;
@@ -83,7 +89,7 @@ public class SeachActivity extends BaseActivity implements BGARefreshLayout.BGAR
             }
         });
 
-        mRefreshLayout=(BGARefreshLayout) findViewById(R.id.rl_listview_refresh);
+        mRefreshLayout = (BGARefreshLayout) findViewById(R.id.rl_listview_refresh);
         mRefreshLayout.setDelegate(this);
 
         BGAMoocStyleRefreshViewHolder moocStyleRefreshViewHolder = new BGAMoocStyleRefreshViewHolder(this, true);
@@ -91,55 +97,71 @@ public class SeachActivity extends BaseActivity implements BGARefreshLayout.BGAR
         moocStyleRefreshViewHolder.setUltimateColor(R.color.bg_title);
         mRefreshLayout.setRefreshViewHolder(moocStyleRefreshViewHolder);
 
-        lv_listview=(ListView)findViewById(R.id.lv_listview);
+        lv_listview = (ListView) findViewById(R.id.lv_listview);
 
         lv_listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                if(list.get(position).getState().equals("3")){
+                if (list.get(position).getState().equals("3")) {
                     Intent intent = new Intent(SeachActivity.this, JdGoodsDetailActivity.class);
-                    intent.putExtra("id",list.get(position).getId());
+                    intent.putExtra("id", list.get(position).getId());
                     startActivity(intent);
-                }else{
-                    if(list.get(position).getState().equals("1")){
-                        Intent intent = new Intent(SeachActivity.this, GoodsDetailActivity.class);
-                        intent.putExtra("id",list.get(position).getId());
-                        intent.putExtra("type","rz");
-                        startActivity(intent);
-                    }else{
-                        Intent intent = new Intent(SeachActivity.this, GoodsDetailActivity.class);
-                        intent.putExtra("id",list.get(position).getId());
-                        intent.putExtra("type","jd");
-                        startActivity(intent);
+                } else {
+                    if (list.get(position).getState().equals("1")) {
+//                        Intent intent = new Intent(SeachActivity.this, GoodsDetailActivity.class);
+//                        intent.putExtra("id", list.get(position).getId());
+//                        intent.putExtra("type", "rz");
+//                        startActivity(intent);
+
+                        Helper.startActivity(
+                                SeachActivity.this,
+                                FrgProductDetail.class,
+                                TitleAct.class,
+                                "id",
+                                list.get(position).getId(), "type", "rz"
+                        );
+                    } else {
+//                        Intent intent = new Intent(SeachActivity.this, GoodsDetailActivity.class);
+//                        intent.putExtra("id", list.get(position).getId());
+//                        intent.putExtra("type", "jd");
+//                        startActivity(intent);
+                        Helper.startActivity(
+                                SeachActivity.this,
+                                FrgProductDetail.class,
+                                TitleAct.class,
+                                "id",
+                                list.get(position).getId(), "type", "jd"
+                        );
                     }
                 }
             }
         });
 
-        if(PreferencesUtils.getStringPreferences(BaseConstant.AccountManager_NAME, BaseConstant.SharedPreferences_Historical, null)!=null){
-            java.lang.reflect.Type classtype = new TypeToken<ArrayList<String>>() {}.getType();
-            String jsonString=PreferencesUtils.getStringPreferences(BaseConstant.AccountManager_NAME, BaseConstant.SharedPreferences_Historical,null);
+        if (PreferencesUtils.getStringPreferences(BaseConstant.AccountManager_NAME, BaseConstant.SharedPreferences_Historical, null) != null) {
+            java.lang.reflect.Type classtype = new TypeToken<ArrayList<String>>() {
+            }.getType();
+            String jsonString = PreferencesUtils.getStringPreferences(BaseConstant.AccountManager_NAME, BaseConstant.SharedPreferences_Historical, null);
             historcalList = CommonUtils.fromJson(jsonString, classtype, CommonUtils.DEFAULT_DATE_PATTERN);
         }
 
         resetPageData();
     }
 
-    private void savedata(String keyword){
-        if(historcalList.contains(keyword)){
-            int index=0;
-            for(int i=0;i<historcalList.size();i++){
-                if(keyword.equals(historcalList.get(i))){
-                    index=i;
+    private void savedata(String keyword) {
+        if (historcalList.contains(keyword)) {
+            int index = 0;
+            for (int i = 0; i < historcalList.size(); i++) {
+                if (keyword.equals(historcalList.get(i))) {
+                    index = i;
                 }
             }
             historcalList.remove(index);
             historcalList.add(keyword);
-        }else{
+        } else {
             historcalList.add(keyword);
         }
 
-        if(historcalList.size()>10){
+        if (historcalList.size() > 10) {
             historcalList.remove(0);
         }
 
@@ -147,7 +169,8 @@ public class SeachActivity extends BaseActivity implements BGARefreshLayout.BGAR
     }
 
     //用于退出activity,避免countdown，造成资源浪费。
-    private SparseArray<CountDownTimer> countDownCounters= new SparseArray<>();
+    private SparseArray<CountDownTimer> countDownCounters = new SparseArray<>();
+
     private void showList(ArrayList<IndexMenuInfo> result) {
 
         if (commAdapter == null) {
@@ -164,36 +187,36 @@ public class SeachActivity extends BaseActivity implements BGARefreshLayout.BGAR
                     helper.getView(R.id.tv_countTime_jp).setVisibility(View.GONE);
                     helper.getView(R.id.ll_jdprice_jp).setVisibility(View.GONE);
 
-                    ImageView iv_pic_jp=(ImageView) helper.getView(R.id.iv_pic_jp);
-                    if(!item.getImg().equals("")){
-                        List<String> list= Arrays.asList(item.getImg().split(","));
-                        getImageLoader().displayImage(BaseConstant.Image_URL + list.get(0),iv_pic_jp,getImageLoaderOptions());
-                    }else{
-                        getImageLoader().displayImage("",iv_pic_jp,getImageLoaderOptions());
+                    ImageView iv_pic_jp = (ImageView) helper.getView(R.id.iv_pic_jp);
+                    if (!item.getImg().equals("")) {
+                        List<String> list = Arrays.asList(item.getImg().split(","));
+                        getImageLoader().displayImage(BaseConstant.Image_URL + list.get(0), iv_pic_jp, getImageLoaderOptions());
+                    } else {
+                        getImageLoader().displayImage("", iv_pic_jp, getImageLoaderOptions());
                     }
 
-                    helper.setText(R.id.tv_name_jp,item.getTitle());
-                    helper.setText(R.id.tv_jdprice_jp,"￥"+item.getPrice());
-                    helper.setText(R.id.tv_qprice_jp,"￥"+item.getPrice());
-                    helper.setText(R.id.tv_qprice1_jp,"售价：");
+                    helper.setText(R.id.tv_name_jp, item.getTitle());
+                    helper.setText(R.id.tv_jdprice_jp, "￥" + item.getPrice());
+                    helper.setText(R.id.tv_qprice_jp, "￥" + item.getPrice());
+                    helper.setText(R.id.tv_qprice1_jp, "售价：");
 
-                    if(item.getState().equals("2")){
+                    if (item.getState().equals("2")) {
                         helper.getView(R.id.ll_jdprice_jp).setVisibility(View.VISIBLE);
                     }
 
-                    if(item.getState().equals("3")){
+                    if (item.getState().equals("3")) {
                         helper.getView(R.id.ll_jdprice_jp).setVisibility(View.VISIBLE);
                         helper.getView(R.id.ll_newprice_jp).setVisibility(View.VISIBLE);
                         helper.getView(R.id.ll_myprice_jp).setVisibility(View.VISIBLE);
                         helper.getView(R.id.tv_countTime_jp).setVisibility(View.VISIBLE);
-                        helper.setText(R.id.tv_qprice1_jp,"起价：");
+                        helper.setText(R.id.tv_qprice1_jp, "起价：");
 
-                        helper.setText(R.id.tv_newprice_jp,"￥"+item.getMaxPrice());
-                        if(item.getMyPrice().equals("")){
+                        helper.setText(R.id.tv_newprice_jp, "￥" + item.getMaxPrice());
+                        if (item.getMyPrice().equals("")) {
                             helper.getView(R.id.ll_myprice_jp).setVisibility(View.GONE);
-                        }else{
+                        } else {
                             helper.getView(R.id.ll_myprice_jp).setVisibility(View.VISIBLE);
-                            helper.setText(R.id.tv_myprice_jp,"￥"+item.getMyPrice());
+                            helper.setText(R.id.tv_myprice_jp, "￥" + item.getMyPrice());
                         }
 
                         TextView tv_countTime_jp = (TextView) helper.getView(R.id.tv_countTime_jp);
@@ -204,7 +227,7 @@ public class SeachActivity extends BaseActivity implements BGARefreshLayout.BGAR
                         }
 
                         if (item.getTime() >= 0) {
-                            countDownTimer = new CountDownTimer(item.getTime()*1000, 1000) {
+                            countDownTimer = new CountDownTimer(item.getTime() * 1000, 1000) {
                                 public void onTick(long millisUntilFinished) {
                                     int day = 0, hour = 0, min = 0, sec = 0, sec11 = (int) item.getTime();
                                     if (item.getTime() >= 86400) {
@@ -223,7 +246,7 @@ public class SeachActivity extends BaseActivity implements BGARefreshLayout.BGAR
 
                                     //(day > 9 ? day : ("0" + day)) + ":" +
                                     String certTime = (hour > 9 ? hour : ("0" + hour)) + ":" + (min > 9 ? min : ("0" + min)) + ":" + (sec > 9 ? sec : ("0" + sec));
-                                    helper.setText(R.id.tv_countTime_jp, certTime+"后结束");
+                                    helper.setText(R.id.tv_countTime_jp, certTime + "后结束");
 
                                     item.setTime(item.getTime() - 1);
 
@@ -234,7 +257,7 @@ public class SeachActivity extends BaseActivity implements BGARefreshLayout.BGAR
                                 }
                             }.start();
                             countDownCounters.put(tv_countTime_jp.hashCode(), countDownTimer);
-                        }else{
+                        } else {
                             helper.setText(R.id.tv_countTime_jp, "已结束");
                         }
                     }
@@ -255,8 +278,7 @@ public class SeachActivity extends BaseActivity implements BGARefreshLayout.BGAR
         }
     }
 
-    private void resetPageData()
-    {
+    private void resetPageData() {
         page = 1;
         list.clear();
         commAdapter = null;
@@ -266,11 +288,11 @@ public class SeachActivity extends BaseActivity implements BGARefreshLayout.BGAR
 
     @Override
     public void onBGARefreshLayoutBeginRefreshing(BGARefreshLayout refreshLayout) {
-        if(titlebar_et_keywords.getText().toString().trim().length()>0&&!titlebar_et_keywords.getText().toString().equals("")){
-            keyword=titlebar_et_keywords.getText().toString().trim();
+        if (titlebar_et_keywords.getText().toString().trim().length() > 0 && !titlebar_et_keywords.getText().toString().equals("")) {
+            keyword = titlebar_et_keywords.getText().toString().trim();
             resetPageData();
-        }else{
-            keyword="";
+        } else {
+            keyword = "";
             list.clear();
             commAdapter = null;
             lv_listview.setAdapter(null);
@@ -281,10 +303,10 @@ public class SeachActivity extends BaseActivity implements BGARefreshLayout.BGAR
 
     @Override
     public boolean onBGARefreshLayoutBeginLoadingMore(BGARefreshLayout refreshLayout) {
-        if(listsize==10){
+        if (listsize == 10) {
             page++;
             searchIndexMenu();
-        }else{
+        } else {
             CustomToast.show("无更多数据");
             mRefreshLayout.endLoadingMore();
             return false;
@@ -292,14 +314,13 @@ public class SeachActivity extends BaseActivity implements BGARefreshLayout.BGAR
         return true;
     }
 
-    private void searchIndexMenu()
-    {
+    private void searchIndexMenu() {
         getlDialog().show();
-        String token= LocalData.getInstance().getUserInfo().getToken();
-        String url=BaseConstant.getApiPostUrl("userGoods/searchIndexMenu");
-        HttpParams param=new HttpParams();
-        param.put("token",token);
-        param.put("name",keyword);
+        String token = LocalData.getInstance().getUserInfo().getToken();
+        String url = BaseConstant.getApiPostUrl("userGoods/searchIndexMenu");
+        HttpParams param = new HttpParams();
+        param.put("token", token);
+        param.put("name", keyword);
         OkGo.<DataResult<ArrayList<IndexMenuInfo>>>post(url)
                 .params(param)
                 .execute(new JsonCallback<DataResult<ArrayList<IndexMenuInfo>>>() {
@@ -308,28 +329,27 @@ public class SeachActivity extends BaseActivity implements BGARefreshLayout.BGAR
                         getlDialog().dismiss();
                         mRefreshLayout.endRefreshing();
                         mRefreshLayout.endLoadingMore();
-                        if (response==null){
+                        if (response == null) {
                             CustomToast.show(getString(R.string.http_request_fail));
                             return;
                         }
 
-                        if(response.body().getErrorCode()== DataResult.RESULT_OK_ZERO){
-                            if(response.body().getData()!=null&&response.body().getData().size()>0){
+                        if (response.body().getErrorCode() == DataResult.RESULT_OK_ZERO) {
+                            if (response.body().getData() != null && response.body().getData().size() > 0) {
 
-                                listsize=response.body().getData().size();
-                                for (int i=0;i<response.body().getData().size();i++){
-                                    if(response.body().getData().get(i).getState().equals("3")){
-                                        response.body().getData().get(i).setTime(Long.valueOf( response.body().getData().get(i).getEndTime2()));
+                                listsize = response.body().getData().size();
+                                for (int i = 0; i < response.body().getData().size(); i++) {
+                                    if (response.body().getData().get(i).getState().equals("3")) {
+                                        response.body().getData().get(i).setTime(Long.valueOf(response.body().getData().get(i).getEndTime2()));
                                     }
                                 }
                                 showList(response.body().getData());
-                            }else{
+                            } else {
 
                             }
-                        }else if (response.body().getErrorCode()==DataResult.RESULT_102 )
-                        {
+                        } else if (response.body().getErrorCode() == DataResult.RESULT_102) {
                             toLogin();
-                        }else {
+                        } else {
                             CustomToast.show(response.body().getErrorMsg());
                         }
                     }

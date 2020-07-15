@@ -32,14 +32,14 @@ class Zjmx(context: Context?) : BaseItem(context) {
 
     fun set(item: ModelZjmx) {
 //        0 余额1支付宝2微信10线下银行卡
-        if (item.type == 1) {//增加
+        if (item.type.toInt() == 1) {//增加
             mTextView_1.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ruz, 0, 0, 0)
-        } else if (item.type == 2) {
+        } else if (item.type.toInt() == 2) {
             mTextView_1.setCompoundDrawablesWithIntrinsicBounds(R.drawable.tx2, 0, 0, 0)
         }
         mTextView_1.text = "提现金额：￥" + item.amount
         var type = ""
-        when (item.tradeType) {
+        when (item.tradeType.toInt()) {
             0 -> type = "余额"
             1 -> type = "支付宝"
             2 -> type = "微信"

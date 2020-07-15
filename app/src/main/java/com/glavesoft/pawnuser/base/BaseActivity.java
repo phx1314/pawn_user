@@ -57,6 +57,7 @@ import com.glavesoft.pawnuser.activity.video.VideoListActivity;
 import com.glavesoft.pawnuser.adapter.CommonAdapter;
 import com.glavesoft.pawnuser.adapter.ViewHolder;
 import com.glavesoft.pawnuser.constant.BaseConstant;
+import com.glavesoft.pawnuser.frg.FrgProductDetail;
 import com.glavesoft.pawnuser.mod.DataResult;
 import com.glavesoft.pawnuser.mod.LocalData;
 import com.glavesoft.pawnuser.mod.StoreGoodsInfo;
@@ -73,7 +74,9 @@ import com.glavesoft.pawnuser.R;
 import com.google.gson.Gson;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.model.HttpParams;
+import com.mdx.framework.activity.TitleAct;
 import com.mdx.framework.service.subscriber.HttpResultSubscriberListener;
+import com.mdx.framework.utility.Helper;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.permissionutil.PermissionListener;
@@ -793,14 +796,22 @@ public class BaseActivity extends AppCompatActivity
             @Override
             public void onClick(View view) {
                 popupWindo.dismiss();
-                Intent intent = new Intent(BaseActivity.this, GoodsDetailActivity.class);
-                if (info.getType().equals("1")){
-                    intent.putExtra("type","rz");
-                }else{
-                    intent.putExtra("type","jd");
-                }
-                intent.putExtra("id",info.getId());
-                startActivity(intent);
+//                Intent intent = new Intent(BaseActivity.this, GoodsDetailActivity.class);
+//                if (info.getType().equals("1")){
+//                    intent.putExtra("type","rz");
+//                }else{
+//                    intent.putExtra("type","jd");
+//                }
+//                intent.putExtra("id",info.getId());
+//                startActivity(intent);
+
+                Helper.startActivity(
+                        BaseActivity.this,
+                        FrgProductDetail.class,
+                        TitleAct.class,
+                        "id",
+                        info.getId(), "type", info.getType().equals("1")?"rz":"jd"
+                );
             }
         });
         Display display = getWindowManager().getDefaultDisplay();

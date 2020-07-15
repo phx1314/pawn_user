@@ -23,6 +23,7 @@ import com.glavesoft.F
 import com.glavesoft.F.list_fx
 import com.glavesoft.pawnuser.R
 import com.glavesoft.pawnuser.activity.login.LoginActivity
+import com.glavesoft.pawnuser.activity.main.StoreActivity
 import com.glavesoft.pawnuser.activity.main.SubmitBuyActivity
 import com.glavesoft.pawnuser.activity.pawn.GoodsCommentsActivity
 import com.glavesoft.pawnuser.activity.video.SingleVideoActivity
@@ -45,11 +46,13 @@ import kotlinx.android.synthetic.main.item_head.view.*
 class FrgProductDetail : BaseFrg() {
     lateinit var p_id: String
     var type: String = "rz"
-    lateinit var item: StoreGoodsInfo
+    var item: StoreGoodsInfo? = null
+    var isShow: Boolean = true
     override fun create(savedInstanceState: Bundle?) {
         setContentView(R.layout.frg_product_detail)
         p_id = activity!!.intent.getStringExtra("id")
         type = activity!!.intent.getStringExtra("type")
+        isShow = activity!!.intent.getBooleanExtra("isShow", true)
     }
 
     override fun disposeMsg(type: Int, obj: Any?) {
@@ -58,10 +61,10 @@ class FrgProductDetail : BaseFrg() {
                 val intent = Intent(activity, SingleVideoActivity::class.java)
                 intent.putExtra(
                     "url",
-                    BaseConstant.Video_URL + item.bannerVideo
+                    BaseConstant.Video_URL + item?.bannerVideo
                 )
                 intent.putExtra("type", JCVideoPlayerStandard.SCREEN_LAYOUT_NORMAL)
-                intent.putExtra("name", item.title)
+                intent.putExtra("name", item?.title)
                 intent.putExtra("id", p_id)
                 startActivity(intent)
             }
@@ -69,6 +72,20 @@ class FrgProductDetail : BaseFrg() {
     }
 
     override fun initView() {
+        if (!isShow) {
+            mLinearLayout_bottom.visibility = View.GONE
+        }
+        mLinearLayout_store.setOnClickListener {
+            item?.let {
+                var intent = Intent()
+                intent.setClass(context!!, StoreActivity::class.java)
+                intent.putExtra("storeid", it.getOrgId().toDouble().toInt().toString())
+                startActivity(intent)
+            }
+        }
+        mImageView_topic.setOnClickListener {
+            mLinearLayout_store.performClick()
+        }
         mTextView_pj.setOnClickListener {
             startActivity(
                 Intent(context, GoodsCommentsActivity::class.java).putExtra(
@@ -142,58 +159,78 @@ class FrgProductDetail : BaseFrg() {
             }
         } else if (method == "storeGoodsDetail") {
             item = F.data2Model(data, StoreGoodsInfo::class.java)
-            mLinearLayout.visibility = View.VISIBLE
-            mTextView_name.text = item.orgName
-            mTextView_xj_reason.text = "下架原因：" + item.reasonOfDismounting
-            mTextView_p_name.text = item.title
-            mTextView_content.text = item.wordDescript
-            if (item.source == "6") {
-                mTextView_renzheng_type.text = "个人认证"
-            } else if (item.source == "7") {
-                mTextView_renzheng_type.text = "企业认证"
-            } else if (item.source == "1") {
-                mTextView_renzheng_type.text = "平台"
-            } else if (item.source == "2") {
-                mTextView_renzheng_type.text = "机构"
-            } else if (item.source == "3") {
-                mTextView_renzheng_type.text = "服务商"
-            } else if (item.source == "4") {
-                mTextView_renzheng_type.text = "供应商"
-            } else if (item.source == "5") {
-                mTextView_renzheng_type.text = "寄拍"
-            }
+            item?.let {
+                mLinearLayout.visibility = View.VISIBLE
+                mTextView_name.text = it.orgName
+                mTextView_xj_reason.text = "下架原因：" + it.reasonOfDismounting
+                mTextView_p_name.text = it.title
+                mTextView_content.text = it.wordDescript
+                if (it.source == "6") {
+                    mTextView_renzheng_type.text = "个人认证"
+                } else if (it.source == "7") {
+                    mTextView_renzheng_type.text = "企业认证"
+                } else if (it.source == "1") {
+                    mTextView_renzheng_type.text = "平台"
+                } else if (it.source == "2") {
+                    mTextView_renzheng_type.text = "机构"
+                } else if (it.source == "3") {
+                    mTextView_renzheng_type.text = "服务商"
+                } else if (it.source == "4") {
+                    mTextView_renzheng_type.text = "供应商"
+                } else if (it.source == "5") {
+                    mTextView_renzheng_type.text = "寄拍"
+                }
 
-            for (it in list_fx) {
-                if (it.id == item.cateCode) {
-                    mTextView1.text = it.string
-                    break
+                for (it1 in list_fx) {
+                    if (it1.id == it.cateCode) {
+                        mTextView1.text = it1.string
+                        break
+                    }
+                }
+
+                if (it.cateCode in 9..11) {
+                    mTextView1.text = "古董艺术"
+                    for (it1 in F.list_fx_son_1) {
+                        if (it1.id == it.cateCode) {
+                            mTextView2.text = it1.string
+                            break
+                        }
+                    }
+                }
+                if (it.cateCode in 12..15) {
+                    mTextView1.text = "彩色珠宝"
+                    for (it1 in F.list_fx_son_2) {
+                        if (it1.id == it.cateCode) {
+                            mTextView2.text = it1.string
+                            break
+                        }
+                    }
+                }
+                mTextView3.text = it.material
+                mTextView4.text = it.weight
+                mTextView5.text = it.mainMaterial
+                mTextView6.text = it.otherMaterial
+                mTextView7.text = it.brand
+                mTextView8.text = it.createYear
+                mTextView9.text = it.theme
+                mTextView10.text = it.newPercent
+                mTextView11.text = it.style
+                mTextView12.text = it.materialName
+                mTextView13.text = it.ccAll ?: "" + "厘米"
+                mTextView14.text = it.price ?: "" + "元"
+                GlideLoader.loadImage(
+                    BaseConstant.Image_URL + it.orgLogo,
+                    mImageView_topic,
+                    R.drawable.add2
+                )
+                if (!TextUtils.isEmpty(it.bannerVideo)) {
+                    it.images = it.bannerVideoFace + "," + it.images
+                    mGridView.adapter = AdaProductDetail(context!!, it.images.split(","), true)
+                } else {
+                    mGridView.adapter = AdaProductDetail(context!!, it.images.split(","), false)
                 }
             }
 
-            mTextView2.text = item.cateCodeSon
-            mTextView3.text = item.material
-            mTextView4.text = item.weight
-            mTextView5.text = item.mainMaterial
-            mTextView6.text = item.otherMaterial
-            mTextView7.text = item.brand
-            mTextView8.text = item.createYear
-            mTextView9.text = item.theme
-            mTextView10.text = item.newPercent
-            mTextView11.text = item.style
-            mTextView12.text = item.materialName
-            mTextView13.text = item.ccAll + "厘米"
-            mTextView14.text = item.price + "元"
-            GlideLoader.loadImage(
-                BaseConstant.Image_URL + item.orgLogo,
-                mImageView_topic,
-                R.drawable.add2
-            )
-            if (!TextUtils.isEmpty(item.bannerVideo)) {
-                item.images = item.bannerVideoFace + "," + item.images
-                mGridView.adapter = AdaProductDetail(context!!, item.images.split(","), true)
-            } else {
-                mGridView.adapter = AdaProductDetail(context!!, item.images.split(","), false)
-            }
 
         }
     }
@@ -226,14 +263,13 @@ class FrgProductDetail : BaseFrg() {
             //指定客服id
             //指定客服id
             info.receptionistId = "71764f63c3ca497ba974f938b26389eb"
-            if (item != null) {
-                //咨询内容
+            item?.let {  //咨询内容
                 val consultingContent = ConsultingContent()
                 //咨询内容标题，必填
-                consultingContent.sobotGoodsTitle = item.name
+                consultingContent.sobotGoodsTitle = it.name
                 //咨询内容图片，选填 但必须是图片地址
-                if (item.images != "") {
-                    val list = item.images.split(",")
+                if (it.images != "") {
+                    val list = it.images.split(",")
                     consultingContent.sobotGoodsImgUrl =
                         BaseConstant.Image_URL + list.toMutableList()[0]
                 }
@@ -242,7 +278,7 @@ class FrgProductDetail : BaseFrg() {
                 //描述，选填
                 //consultingContent.setSobotGoodsDescribe("XXX超级电视 S5");
                 //标签，选填
-                consultingContent.sobotGoodsLable = "￥" + item.price
+                consultingContent.sobotGoodsLable = "￥" + it.price
                 //可以设置为null
                 info.consultingContent = consultingContent
             }

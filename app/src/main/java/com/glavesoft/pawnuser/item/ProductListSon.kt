@@ -11,6 +11,7 @@
 
 package com.glavesoft.pawnuser.item;
 
+import android.app.Dialog
 import android.content.Context
 import android.content.DialogInterface
 import android.text.TextUtils
@@ -27,7 +28,7 @@ import com.glavesoft.util.GlideLoader
 import com.mdx.framework.Frame
 import com.mdx.framework.activity.TitleAct
 import com.mdx.framework.utility.Helper
-import kotlinx.android.synthetic.main.frg_dingdan_detail_shz.*
+import com.mdx.framework.view.CallBackOnly
 import kotlinx.android.synthetic.main.item_product_list_son.view.*
 
 
@@ -45,7 +46,7 @@ class ProductListSon(context: Context?) : BaseItem(context) {
                 FrgProductDetail::class.java,
                 TitleAct::class.java,
                 "id",
-                item.mList[0].id.toString(), "type", "rz"
+                item.mList[0].id.toString(), "type", "rz", "isShow", false
             )
         }
         mLinearLayout_2.setOnClickListener {
@@ -54,7 +55,7 @@ class ProductListSon(context: Context?) : BaseItem(context) {
                 FrgProductDetail::class.java,
                 TitleAct::class.java,
                 "id",
-                item.mList[1].id.toString(), "type", "rz"
+                item.mList[1].id.toString(), "type", "rz", "isShow", false
             )
         }
         mImageButton_edit.setOnClickListener {
@@ -157,13 +158,13 @@ class ProductListSon(context: Context?) : BaseItem(context) {
                 mTextView_price.text = it.price
                 if (type == 1) {//0下架1上架2新增待上架
                     mTextView_state.text = "下架"
-                    if (!TextUtils.isEmpty(it.reasonOfDismounting)) {
-                        mTextView_info.visibility = View.VISIBLE
-                        mTextView_info.text = it.reasonOfDismounting
-                    }
                 } else {
                     mTextView_state.text = "上架"
                     mLinearLayout_cz.visibility = View.VISIBLE
+                    if (!TextUtils.isEmpty(it.reasonOfDismounting)) {
+                        mTextView_info.visibility = View.VISIBLE
+                        mTextView_info.text = "平台下架：" + it.reasonOfDismounting
+                    }
                 }
             } else if (i == 1) {
                 mTextView_info2.visibility = View.GONE
@@ -177,13 +178,13 @@ class ProductListSon(context: Context?) : BaseItem(context) {
                 mTextView_price2.text = it.price
                 if (type == 1) {//0下架1上架2新增待上架
                     mTextView_state2.text = "下架"
-                    if (!TextUtils.isEmpty(it.reasonOfDismounting)) {
-                        mTextView_info2.visibility = View.VISIBLE
-                        mTextView_info2.text = it.reasonOfDismounting
-                    }
                 } else {
                     mTextView_state2.text = "上架"
                     mLinearLayout_cz2.visibility = View.VISIBLE
+                    if (!TextUtils.isEmpty(it.reasonOfDismounting)) {
+                        mTextView_info2.visibility = View.VISIBLE
+                        mTextView_info2.text = "平台下架：" + it.reasonOfDismounting
+                    }
                 }
             }
         }

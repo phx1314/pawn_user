@@ -21,8 +21,8 @@ android {
         applicationId "com.glavesoft.pawnuser"
         minSdkVersion 21
         targetSdkVersion 29
-        versionCode 24
-        versionName "2.4"
+        versionCode 28
+        versionName "2.8"
         multiDexEnabled true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         signingConfig signingConfigs.config
@@ -142,7 +142,7 @@ dependencies {
     compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.8.4'
     compile 'com.zhy:flowlayout-lib:1.0.3'
     compile 'me.relex:photodraweeview:1.1.0'
-    implementation('com.github.phx1314:Frame:3.8') {
+    implementation('com.github.phx1314:Frame:3.9') {
         exclude group: 'com.google.zxing'
     }
 }

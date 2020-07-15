@@ -1,5 +1,6 @@
 package com.glavesoft.pawnuser.fragment;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -35,6 +36,7 @@ import com.glavesoft.pawnuser.adapter.ViewHolder;
 import com.glavesoft.pawnuser.base.BaseActivity;
 import com.glavesoft.pawnuser.base.BaseFragment;
 import com.glavesoft.pawnuser.constant.BaseConstant;
+import com.glavesoft.pawnuser.frg.FrgPjzx;
 import com.glavesoft.pawnuser.frg.FrgRenzheng;
 import com.glavesoft.pawnuser.frg.FrgShangjiaduan;
 import com.glavesoft.pawnuser.mod.DataResult;
@@ -49,18 +51,23 @@ import com.lzy.okgo.OkGo;
 import com.lzy.okgo.model.HttpParams;
 import com.lzy.okgo.model.Response;
 import com.mdx.framework.activity.TitleAct;
+import com.mdx.framework.service.subscriber.S;
 import com.mdx.framework.utility.Helper;
+
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.Random;
 
 import static com.glavesoft.pawnuser.constant.BaseConstant.URL;
+import static com.mdx.framework.service.ServiceFactoryKt.gB;
 
 /**
  * @author 严光
  * @date: 2017/10/19
  * @company:常州宝丰
  */
+//18262963098 15151963763
 public class PersonalFragment extends BaseFragment implements View.OnClickListener {
 
     private LinearLayout ll_myinfo;
@@ -76,10 +83,10 @@ public class PersonalFragment extends BaseFragment implements View.OnClickListen
     private LinearLayout ll_en;
 
     private GridViewForNoScroll nsgv_home_jdxp;
-    //    int[] img = new int[]{R.drawable.wdyw,R.drawable.scdd,R.drawable.wlxx,R.drawable.ddjl,R.drawable.ddjk,R.drawable.wdyhk,R.drawable.rlyz,R.drawable.wdkf,R.drawable.tgm};
-//    String[] title = new String[]{"典当业务","商城订单","物流信息","典当记录","典当监控","我的银行卡","人脸认证","客服","推广二维码"};
-    int[] img = new int[]{R.drawable.wdyw, R.drawable.scdd, R.drawable.wlxx, R.drawable.ddjl, R.drawable.ddjk, R.drawable.wdyhk, R.drawable.rlyz, R.drawable.wdkf, R.drawable.sjd};
-    String[] title = new String[]{"业务中", "商城订单", "物流信息", "业务记录", "业务监控", "我的银行卡", "人脸认证", "客服", "商家端"};
+    int[] img = new int[]{R.drawable.wdyw, R.drawable.scdd, R.drawable.wlxx, R.drawable.pjzx, R.drawable.ddjl, R.drawable.ddjk, R.drawable.wdyhk, R.drawable.rlyz, R.drawable.wdkf };
+    String[] title = new String[]{"业务中", "商城订单", "物流信息", "票据中心", "业务记录", "业务监控", "我的银行卡", "人脸认证", "客服" };
+//    int[] img = new int[]{R.drawable.wdyw, R.drawable.scdd, R.drawable.wlxx, R.drawable.pjzx, R.drawable.ddjl, R.drawable.ddjk, R.drawable.wdyhk, R.drawable.rlyz, R.drawable.wdkf, R.drawable.sjd};
+//    String[] title = new String[]{"业务中", "商城订单", "物流信息", "票据中心", "业务记录", "业务监控", "我的银行卡", "人脸认证", "客服", "商家端"};
     ArrayList<ItemInfo> list = new ArrayList<>();
 
     public static PersonalFragment newInstance(int index) {
@@ -148,14 +155,6 @@ public class PersonalFragment extends BaseFragment implements View.OnClickListen
         ll_htjl.setOnClickListener(this);
 
         tv_my_version.setText("版本号 V" + AppUtils.getAppVersionName());
-//        try {
-//            PackageManager pm = getActivity().getPackageManager();
-//            PackageInfo pi = pm.getPackageInfo(getActivity().getPackageName(), 0);
-//            tv_my_version.setText("版本号 V" + pi.versionName);
-//        } catch (PackageManager.NameNotFoundException e) {
-//            //tv_my_version.setText("版本号 V1.0");
-//            e.printStackTrace();
-//        }
         for (int i = 0; i < img.length; i++) {
             ItemInfo info = new ItemInfo();
             info.setTitle(title[i]);
@@ -181,55 +180,48 @@ public class PersonalFragment extends BaseFragment implements View.OnClickListen
                     startActivity(new Intent(getActivity(), OrderActivity.class));
                 } else if (position == 2) {//我的物流
                     startActivity(new Intent(getActivity(), LogisticsActivity.class));
-                } else if (position == 3) {//典当记录
+                } else if (position == 3) {//票据中心
+                    Helper.startActivity(getContext(), FrgPjzx.class, TitleAct.class);
+                } else if (position == 4) {//典当记录
                     startActivity(new Intent(getActivity(), PawnRecordActivity.class));
-                } else if (position == 4) {//典当监控
+                } else if (position == 5) {//典当监控
                     startActivity(new Intent(getActivity(), MonitorActivity.class));
-                } else if (position == 5) {//我的银行卡
+                } else if (position == 6) {//我的银行卡
                     startActivity(new Intent(getActivity(), BankCardActivity.class));
-                } else if (position == 6) {//人脸识别
+                } else if (position == 7) {//人脸识别
                     if (LocalData.getInstance().getUserInfo().getIsBind().equals("1")) {//已绑定
                         CustomToast.show("您已绑定");
                     } else {
                         startActivity(new Intent(getActivity(), BindIDcardActivity.class));
                     }
-                } else if (position == 7) {//客服
+                } else if (position == 8) {//客服
                     gotokf_J(getActivity());
-                } else if (position == 8) {
-                    HttpParams param = new HttpParams();
-                    param.put("token", LocalData.getInstance().getUserInfo().getToken());//8d223eae-eeda-4a59-a038-4b0478363df9
-                    OkGo.<DataResult<ArrayList<LawInfo>>>get(URL + "auth/passOrNot")
-                            .params(param)
-                            .execute(new JsonCallback<DataResult<ArrayList<LawInfo>>>() {
-                                @Override
-                                public void onSuccess(Response<DataResult<ArrayList<LawInfo>>> response) {
-                                    if (response == null) {
-                                        CustomToast.show(getString(R.string.http_request_fail));
-                                        return;
-                                    }
-                                    if (response.body().getErrorCode() == 1) {
-                                        Helper.startActivity(getContext(), FrgShangjiaduan.class, TitleAct.class);
-                                    } else if (response.body().getErrorCode() == 0) {
-                                        F.INSTANCE.toast("认证审核中");
-                                    } else if (response.body().getErrorCode() == 2) {
-                                        Helper.startActivity(getContext(), FrgRenzheng.class, TitleAct.class);
-                                    } else if (response.body().getErrorCode() == DataResult.RESULT_102) {
-                                        toLogin();
-                                    } else {
-                                        Helper.startActivity(getContext(), FrgRenzheng.class, TitleAct.class);
-                                        CustomToast.show(response.body().getErrorMsg());
-                                    }
-                                }
-
-                                @Override
-                                public void onError(Response<DataResult<ArrayList<LawInfo>>> response) {
-                                    showVolleyError(null);
-                                }
-                            });
-
+                } else if (position == 9) {
+                    load(F.INSTANCE.gB(50).passOrNot(LocalData.getInstance().getUserInfo().getToken()), "passOrNot", true, "加载中", new S(PersonalFragment.this, new ProgressDialog(getContext()), "passOrNot", true));
                 }
             }
         });
+    }
+
+    @Override
+    public void onSuccess(@org.jetbrains.annotations.Nullable String data, @NotNull String method) {
+        if (method.equals("passOrNot")) {
+            F.INSTANCE.toast("认证审核中");
+
+        }
+    }
+
+    @Override
+    public void onError(@org.jetbrains.annotations.Nullable String code, @org.jetbrains.annotations.Nullable String msg, @org.jetbrains.annotations.Nullable String data, @NotNull String mehotd) {
+        if (code.equals("1")) {
+            Helper.startActivity(getContext(), FrgShangjiaduan.class, TitleAct.class);
+        } else if (code.equals("2")) {
+            Helper.startActivity(getContext(), FrgRenzheng.class, TitleAct.class);
+        } else if (Integer.valueOf(code) == DataResult.RESULT_102) {
+            toLogin();
+        } else {
+            Helper.startActivity(getContext(), FrgRenzheng.class, TitleAct.class);
+        }
     }
 
     public void onResume() {

@@ -31,6 +31,8 @@ import java.io.IOException
 
 object F {
     var list_fx: ArrayList<ModelDx> = ArrayList()
+    var list_fx_son_1: ArrayList<ModelDx> = ArrayList()
+    var list_fx_son_2: ArrayList<ModelDx> = ArrayList()
     fun gB(TIME: Long = 50) = com.mdx.framework.service.gB(
         ApiService::class.java,
         BaseConstant.URL,
@@ -40,18 +42,23 @@ object F {
     )
 
     fun init() {
-        list_fx.add(ModelDx("钻石", 1))
-        list_fx.add(ModelDx("彩色宝石", 2))
-        list_fx.add(ModelDx("手表", 3))
-        list_fx.add(ModelDx("珠宝饰品", 4))
-        list_fx.add(ModelDx("翡翠及饰品", 5))
-        list_fx.add(ModelDx("和田玉及饰品", 6))
-        list_fx.add(ModelDx("贵金属及贵金属饰品", 7))
-        list_fx.add(ModelDx("瓷器", 8))
-        list_fx.add(ModelDx("书法", 9))
-        list_fx.add(ModelDx("绘画", 10))
-        list_fx.add(ModelDx("文玩杂项", 11))
-        list_fx.add(ModelDx("其他物品", 12))
+        list_fx.add(ModelDx("钟表", 1))
+        list_fx.add(ModelDx("翡翠", 2))
+        list_fx.add(ModelDx("和田玉", 3))
+        list_fx.add(ModelDx("古董艺术", 4))
+        list_fx.add(ModelDx("书画", 5))
+        list_fx.add(ModelDx("彩色珠宝", 6))
+        list_fx.add(ModelDx("钻石", 7))
+        list_fx.add(ModelDx("更多", 8))
+
+        list_fx_son_1.add(ModelDx("明清砚台", 9))
+        list_fx_son_1.add(ModelDx("文玩", 10))
+        list_fx_son_1.add(ModelDx("杂项", 11))
+
+        list_fx_son_2.add(ModelDx("红蓝宝石", 12))
+        list_fx_son_2.add(ModelDx("祖母绿", 13))
+        list_fx_son_2.add(ModelDx("珍珠", 14))
+        list_fx_son_2.add(ModelDx("碧玺", 15))
 
     }
 
@@ -70,8 +77,7 @@ object F {
     }
 
     fun getBody(
-        filePath: String,
-        mMediaType: String? = "image/jpg"
+        filePath: String
     ): MultipartBody.Part {
         var body: MultipartBody.Part
         val file = File(filePath)
@@ -96,6 +102,16 @@ object F {
                 )
         }
         return body
+    }
+
+    fun getBodys(
+        data: List<MediaEntity>
+    ): List<MultipartBody.Part> {
+        var bodys = ArrayList<MultipartBody.Part>()
+        for (item in data) {
+            bodys.add(getBody(item.localPath))
+        }
+        return bodys
     }
 
 
