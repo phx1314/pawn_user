@@ -23,6 +23,7 @@ import android.widget.TextView;
 import android.widget.ViewFlipper;
 
 import com.android.volley.VolleyError;
+import com.glavesoft.F;
 import com.glavesoft.okGo.JsonCallback;
 import com.glavesoft.pawnuser.R;
 import com.glavesoft.pawnuser.activity.appraisal.EvaluationActivity;
@@ -381,13 +382,7 @@ public class MainFragment extends BaseFragment implements MyScrollView.onScrollC
 //                intent.putExtra("id",IndexMenuList2.get(position+1).getId());
 //                intent.putExtra("type","jd");
 //                startActivity(intent);
-                Helper.startActivity(
-                        getActivity(),
-                        FrgProductDetail.class,
-                        TitleAct.class,
-                        "id",
-                        IndexMenuList2.get(position+1).getId(), "type", "jd"
-                );
+                F.INSTANCE.go2GoodeDetail(getActivity(),     IndexMenuList2.get(position+1).getId(), "jd");
             }
         });
 
@@ -696,13 +691,7 @@ public class MainFragment extends BaseFragment implements MyScrollView.onScrollC
 //            intent.putExtra("id",content);
 //            startActivity(intent);
 
-            Helper.startActivity(
-                    getActivity(),
-                    FrgProductDetail.class,
-                    TitleAct.class,
-                    "id",
-                    content, "type", "rz"
-            );
+            F.INSTANCE.go2GoodeDetail(getActivity(),  content, "rz");
         }else if (type.equals("4")){
             if(State.equals("1")){//竞拍
                 Intent intent = new Intent(getActivity(), JdGoodsDetailActivity.class);
@@ -713,13 +702,7 @@ public class MainFragment extends BaseFragment implements MyScrollView.onScrollC
 //                intent.putExtra("type","jd");
 //                intent.putExtra("id",content);
 //                startActivity(intent);
-                Helper.startActivity(
-                        getActivity(),
-                        FrgProductDetail.class,
-                        TitleAct.class,
-                        "id",
-                        content, "type", "jd"
-                );
+                F.INSTANCE.go2GoodeDetail(getActivity(),  content, "jd");
             }
 
         }else if (type.equals("6")){
@@ -871,13 +854,7 @@ public class MainFragment extends BaseFragment implements MyScrollView.onScrollC
 //        intent.putExtra("id",id);
 //        intent.putExtra("type","rz");
 //        startActivity(intent);
-        Helper.startActivity(
-                getActivity(),
-                FrgProductDetail.class,
-                TitleAct.class,
-                "id",
-                id, "type", "rz"
-        );
+        F.INSTANCE.go2GoodeDetail(getActivity(),  id, "rz");
     }
 
     private void showgridList(final ArrayList<IndexMenuInfo> result) {
@@ -894,13 +871,7 @@ public class MainFragment extends BaseFragment implements MyScrollView.onScrollC
 //                intent.putExtra("id",result.get(0).getId());
 //                intent.putExtra("type","jd");
 //                startActivity(intent);
-                Helper.startActivity(
-                        getActivity(),
-                        FrgProductDetail.class,
-                        TitleAct.class,
-                        "id",
-                        result.get(0).getId(), "type", "jd"
-                );
+                F.INSTANCE.go2GoodeDetail(getActivity(),   result.get(0).getId(), "jd");
             }
         });
         if(result.size()>1){

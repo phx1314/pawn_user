@@ -12,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import com.android.volley.VolleyError;
+import com.glavesoft.F;
 import com.glavesoft.okGo.JsonCallback;
 import com.glavesoft.pawnuser.R;
 import com.glavesoft.pawnuser.activity.main.GoodsDetailActivity;
@@ -48,9 +49,7 @@ import cn.bingoogolapple.refreshlayout.BGARefreshLayout;
 public class StoreGoodsFragment extends BaseFragment implements BGARefreshLayout
         .BGARefreshLayoutDelegate{
     public  String FragType="0";
-    private ScrollView mScrollView;
     private GridView gv;
-    private List<String> mDatas = new ArrayList<String>();
     public static String orgId;
     private BGARefreshLayout mRefreshLayout;
     private List<GoodsByOrgInfo> goodsByOrgInfos;
@@ -76,21 +75,12 @@ public class StoreGoodsFragment extends BaseFragment implements BGARefreshLayout
         mRefreshLayout.setRefreshViewHolder(moocStyleRefreshViewHolder);
 
         gv = (GridView) view.findViewById(R.id.grid_all);
-        gv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+        gv.setOnItemClickListener((adapterView, view1, i, l) -> {
 //                Intent intent=new Intent(StoreGoodsFragment.this.getContext(), GoodsDetailActivity.class);
 //                intent.putExtra("id",goodsByOrgInfos.get(i).getId());
 //                intent.putExtra("type","rz");
 //                startActivity(intent);
-                Helper.startActivity(
-                        getActivity(),
-                        FrgProductDetail.class,
-                        TitleAct.class,
-                        "id",
-                        goodsByOrgInfos.get(i).getId(), "type", "rz"
-                );
-            }
+            F.INSTANCE.go2GoodeDetail(getActivity(),    goodsByOrgInfos.get(i).getId(), "rz");
         });
         storeAllGoods();
         return view;

@@ -13,6 +13,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.glavesoft.F;
 import com.glavesoft.pawnuser.R;
 import com.glavesoft.pawnuser.activity.login.LoginActivity;
 import com.glavesoft.pawnuser.activity.main.GoodsDetailActivity;
@@ -200,13 +201,7 @@ public class JdStaggeredGridAdapter extends RecyclerView.Adapter<JdStaggeredGrid
 //                                    intent.putExtra("type","rz");
 //                                    intent.putExtra("id",StoreBannerList.get(position).getContent());
 //                                    mContext.startActivity(intent);
-                                    Helper.startActivity(
-                                            mContext,
-                                            FrgProductDetail.class,
-                                            TitleAct.class,
-                                            "id",
-                                            StoreBannerList.get(position).getContent(), "type", "rz"
-                                    );
+                                    F.INSTANCE.go2GoodeDetail(mContext, StoreBannerList.get(position).getContent(),"rz");
                                 }else if (StoreBannerList.get(position).getType().equals("4")){
                                     if(StoreBannerList.get(position).getState().equals("1")){
                                         Intent intent = new Intent(mContext, JdGoodsDetailActivity.class);
@@ -217,13 +212,7 @@ public class JdStaggeredGridAdapter extends RecyclerView.Adapter<JdStaggeredGrid
 //                                        intent.putExtra("type","jd");
 //                                        intent.putExtra("id",StoreBannerList.get(position).getContent());
 //                                        mContext.startActivity(intent);
-                                        Helper.startActivity(
-                                                mContext,
-                                                FrgProductDetail.class,
-                                                TitleAct.class,
-                                                "id",
-                                                StoreBannerList.get(position).getContent(), "type", "jd"
-                                        );
+                                        F.INSTANCE.go2GoodeDetail(mContext,  StoreBannerList.get(position).getContent(),"jd");
                                     }
 
                                 }else if (StoreBannerList.get(position).getType().equals("5")){
@@ -350,14 +339,7 @@ public class JdStaggeredGridAdapter extends RecyclerView.Adapter<JdStaggeredGrid
 //                        intent.putExtra("id",mDatas.get(finalPosition).getId());
 //                        intent.putExtra("type","jd");
 //                        mContext.startActivity(intent);
-
-                        Helper.startActivity(
-                                mContext,
-                                FrgProductDetail.class,
-                                TitleAct.class,
-                                "id",
-                                mDatas.get(finalPosition).getId(), "type", "jd"
-                        );
+                        F.INSTANCE.go2GoodeDetail(mContext, mDatas.get(finalPosition).getId(),"jd");
                     }
 
                 }

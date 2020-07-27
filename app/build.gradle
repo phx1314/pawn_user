@@ -145,6 +145,7 @@ dependencies {
     implementation('com.github.phx1314:Frame:3.9') {
         exclude group: 'com.google.zxing'
     }
+    implementation 'com.tencent.bugly:crashreport:3.1.0'
 }
 
 configurations.all {

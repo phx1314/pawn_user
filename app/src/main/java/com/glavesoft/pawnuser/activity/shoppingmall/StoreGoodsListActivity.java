@@ -7,6 +7,7 @@ import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
 import com.android.volley.VolleyError;
+import com.glavesoft.F;
 import com.glavesoft.okGo.JsonCallback;
 import com.glavesoft.pawnuser.R;
 import com.glavesoft.pawnuser.activity.main.GoodsDetailActivity;
@@ -107,26 +108,14 @@ public class StoreGoodsListActivity extends BaseActivity implements BGARefreshLa
 //                    intent.putExtra("id",list.get(position).getId());
 //                    intent.putExtra("type","rz");
 //                    startActivity(intent);
-                    Helper.startActivity(
-                            StoreGoodsListActivity.this,
-                            FrgProductDetail.class,
-                            TitleAct.class,
-                            "id",
-                            list.get(position).getId(), "type", "rz"
-                    );
+                    F.INSTANCE.go2GoodeDetail(StoreGoodsListActivity.this,  list.get(position).getId(),"rz");
                 }else{
                     if(list.get(position).getType().equals("0")){
 //                        Intent intent = new Intent(StoreGoodsListActivity.this, GoodsDetailActivity.class);
 //                        intent.putExtra("id",list.get(position).getId());
 //                        intent.putExtra("type","jd");
 //                        startActivity(intent);
-                        Helper.startActivity(
-                                StoreGoodsListActivity.this,
-                                FrgProductDetail.class,
-                                TitleAct.class,
-                                "id",
-                                list.get(position).getId(), "type", "jd"
-                        );
+                        F.INSTANCE.go2GoodeDetail(StoreGoodsListActivity.this,  list.get(position).getId(),"jd");
                     }else{
                         Intent intent = new Intent(StoreGoodsListActivity.this, JdGoodsDetailActivity.class);
                         intent.putExtra("id",list.get(position).getId());

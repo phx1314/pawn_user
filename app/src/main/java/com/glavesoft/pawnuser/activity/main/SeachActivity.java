@@ -15,6 +15,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.android.volley.VolleyError;
+import com.glavesoft.F;
 import com.glavesoft.okGo.JsonCallback;
 import com.glavesoft.pawnuser.R;
 import com.glavesoft.pawnuser.activity.shoppingmall.JdGoodsDetailActivity;
@@ -112,26 +113,13 @@ public class SeachActivity extends BaseActivity implements BGARefreshLayout.BGAR
 //                        intent.putExtra("id", list.get(position).getId());
 //                        intent.putExtra("type", "rz");
 //                        startActivity(intent);
-
-                        Helper.startActivity(
-                                SeachActivity.this,
-                                FrgProductDetail.class,
-                                TitleAct.class,
-                                "id",
-                                list.get(position).getId(), "type", "rz"
-                        );
+                        F.INSTANCE.go2GoodeDetail(SeachActivity.this, list.get(position).getId(),"rz");
                     } else {
 //                        Intent intent = new Intent(SeachActivity.this, GoodsDetailActivity.class);
 //                        intent.putExtra("id", list.get(position).getId());
 //                        intent.putExtra("type", "jd");
 //                        startActivity(intent);
-                        Helper.startActivity(
-                                SeachActivity.this,
-                                FrgProductDetail.class,
-                                TitleAct.class,
-                                "id",
-                                list.get(position).getId(), "type", "jd"
-                        );
+                        F.INSTANCE.go2GoodeDetail(SeachActivity.this, list.get(position).getId(),"jd");
                     }
                 }
             }

@@ -33,6 +33,7 @@ import android.widget.TextView;
 
 import com.android.volley.VolleyError;
 import com.blankj.utilcode.util.StringUtils;
+import com.glavesoft.F;
 import com.glavesoft.okGo.JsonCallback;
 import com.glavesoft.pawnuser.activity.appraisal.AddSendCallActivity;
 import com.glavesoft.pawnuser.activity.appraisal.EmeraldActivity;
@@ -805,13 +806,7 @@ public class BaseActivity extends AppCompatActivity
 //                intent.putExtra("id",info.getId());
 //                startActivity(intent);
 
-                Helper.startActivity(
-                        BaseActivity.this,
-                        FrgProductDetail.class,
-                        TitleAct.class,
-                        "id",
-                        info.getId(), "type", info.getType().equals("1")?"rz":"jd"
-                );
+                F.INSTANCE.go2GoodeDetail(BaseActivity.this,    info.getId(),info.getType().equals("1")?"rz":"jd");
             }
         });
         Display display = getWindowManager().getDefaultDisplay();

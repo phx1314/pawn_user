@@ -16,6 +16,7 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.glavesoft.F;
 import com.glavesoft.okGo.JsonCallback;
 import com.glavesoft.pawnuser.R;
 import com.glavesoft.pawnuser.activity.main.GoodsDetailActivity;
@@ -99,25 +100,13 @@ public class GoodsSeachFragment extends BaseFragment implements BGARefreshLayout
 //                        intent.putExtra("id", list.get(position).getId());
 //                        intent.putExtra("type", "rz");
 //                        startActivity(intent);
-                        Helper.startActivity(
-                                GoodsSeachFragment.this.getActivity(),
-                                FrgProductDetail.class,
-                                TitleAct.class,
-                                "id",
-                                list.get(position).getId(), "type", "rz"
-                        );
+                        F.INSTANCE.go2GoodeDetail(getActivity(),     list.get(position).getId(), "rz");
                     } else {
 //                        Intent intent = new Intent(GoodsSeachFragment.this.getActivity(), GoodsDetailActivity.class);
 //                        intent.putExtra("id", list.get(position).getId());
 //                        intent.putExtra("type", "jd");
 //                        startActivity(intent);
-                        Helper.startActivity(
-                                GoodsSeachFragment.this.getActivity(),
-                                FrgProductDetail.class,
-                                TitleAct.class,
-                                "id",
-                                list.get(position).getId(), "type", "jd"
-                        );
+                        F.INSTANCE.go2GoodeDetail(getActivity(),     list.get(position).getId(), "jd");
                     }
                 }
             }

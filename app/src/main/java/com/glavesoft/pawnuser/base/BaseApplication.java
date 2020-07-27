@@ -46,6 +46,7 @@ import com.nostra13.universalimageloader.core.assist.ImageScaleType;
 import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
 import com.sobot.chat.SobotApi;
 import com.sobot.chat.SobotUIConfig;
+import com.tencent.bugly.crashreport.CrashReport;
 import com.xsj.crasheye.Crasheye;
 
 import java.io.File;
@@ -96,6 +97,7 @@ public class BaseApplication extends Application {
             StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder();
             StrictMode.setVmPolicy(builder.build());
         }
+        CrashReport.initCrashReport(getApplicationContext(), "e08644bb96", true);
     }
 
     public static BaseApplication getInstance() {

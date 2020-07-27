@@ -83,10 +83,10 @@ public class PersonalFragment extends BaseFragment implements View.OnClickListen
     private LinearLayout ll_en;
 
     private GridViewForNoScroll nsgv_home_jdxp;
-    int[] img = new int[]{R.drawable.wdyw, R.drawable.scdd, R.drawable.wlxx, R.drawable.pjzx, R.drawable.ddjl, R.drawable.ddjk, R.drawable.wdyhk, R.drawable.rlyz, R.drawable.wdkf };
-    String[] title = new String[]{"业务中", "商城订单", "物流信息", "票据中心", "业务记录", "业务监控", "我的银行卡", "人脸认证", "客服" };
-//    int[] img = new int[]{R.drawable.wdyw, R.drawable.scdd, R.drawable.wlxx, R.drawable.pjzx, R.drawable.ddjl, R.drawable.ddjk, R.drawable.wdyhk, R.drawable.rlyz, R.drawable.wdkf, R.drawable.sjd};
-//    String[] title = new String[]{"业务中", "商城订单", "物流信息", "票据中心", "业务记录", "业务监控", "我的银行卡", "人脸认证", "客服", "商家端"};
+//    int[] img = new int[]{R.drawable.wdyw, R.drawable.scdd, R.drawable.wlxx, R.drawable.pjzx, R.drawable.ddjl, R.drawable.ddjk, R.drawable.wdyhk, R.drawable.rlyz, R.drawable.wdkf };
+//    String[] title = new String[]{"业务中", "商城订单", "物流信息", "票据中心", "业务记录", "业务监控", "我的银行卡", "人脸认证", "客服" };
+    int[] img = new int[]{R.drawable.wdyw, R.drawable.scdd, R.drawable.wlxx, R.drawable.pjzx, R.drawable.ddjl, R.drawable.ddjk, R.drawable.wdyhk, R.drawable.rlyz, R.drawable.wdkf, R.drawable.sjd};
+    String[] title = new String[]{"业务中", "商城订单", "物流信息", "票据中心", "业务记录", "业务监控", "我的银行卡", "人脸认证", "客服", "商家端"};
     ArrayList<ItemInfo> list = new ArrayList<>();
 
     public static PersonalFragment newInstance(int index) {

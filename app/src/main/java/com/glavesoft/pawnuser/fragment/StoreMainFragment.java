@@ -16,6 +16,7 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.android.volley.VolleyError;
+import com.glavesoft.F;
 import com.glavesoft.okGo.JsonCallback;
 import com.glavesoft.pawnuser.R;
 import com.glavesoft.pawnuser.activity.main.GoodsDetailActivity;
@@ -88,13 +89,14 @@ public class StoreMainFragment extends BaseFragment implements View.OnClickListe
     CommonAdapter commAdapter;
     private int page = 1;
     private List<MostThreeGoodsInfo> mostThreeGoodsInfos;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle
             savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_store_main, container, false);
         //initView(view);
         goodsByOrgInfos = new ArrayList<>();
-        mostThreeGoodsInfos=new ArrayList<>();
+        mostThreeGoodsInfos = new ArrayList<>();
         lv = (GridView) view.findViewById(R.id.grid_like);
         storeGoodsRank();
         storeAllGoods();
@@ -107,13 +109,7 @@ public class StoreMainFragment extends BaseFragment implements View.OnClickListe
 //                intent.putExtra("id", goodsByOrgInfos.get(i).getId());
 //                intent.putExtra("type", "rz");
 //                startActivity(intent);
-                Helper.startActivity(
-                        getActivity(),
-                        FrgProductDetail.class,
-                        TitleAct.class,
-                        "id",
-                        goodsByOrgInfos.get(i).getId(), "type", "rz"
-                );
+                F.INSTANCE.go2GoodeDetail(getActivity(), goodsByOrgInfos.get(i).getId(), "rz");
             }
         });
         llRank1.setOnClickListener(this);
@@ -124,8 +120,8 @@ public class StoreMainFragment extends BaseFragment implements View.OnClickListe
 
     private void storeGoodsRank() {
         getlDialog().show();
-        String url=BaseConstant.getApiPostUrl("pawnOrg/getMostThreeGoods");
-        HttpParams param=new HttpParams();
+        String url = BaseConstant.getApiPostUrl("pawnOrg/getMostThreeGoods");
+        HttpParams param = new HttpParams();
         param.put("orgId", orgId);
         OkGo.<DataResult<List<MostThreeGoodsInfo>>>post(url)
                 .params(param)
@@ -133,14 +129,14 @@ public class StoreMainFragment extends BaseFragment implements View.OnClickListe
                     @Override
                     public void onSuccess(com.lzy.okgo.model.Response<DataResult<List<MostThreeGoodsInfo>>> response) {
                         getlDialog().dismiss();
-                        if (response==null){
+                        if (response == null) {
                             CustomToast.show(getString(R.string.http_request_fail));
                             return;
                         }
 
-                        if(response.body().getErrorCode()== DataResult.RESULT_OK_ZERO){
+                        if (response.body().getErrorCode() == DataResult.RESULT_OK_ZERO) {
                             if (response.body().getData() != null) {
-                                mostThreeGoodsInfos=response.body().getData();
+                                mostThreeGoodsInfos = response.body().getData();
                                 for (int i = 0; i < response.body().getData().size(); i++) {
                                     MostThreeGoodsInfo mostThreeGoodsInfo = response.body().getData()
                                             .get(i);
@@ -181,10 +177,9 @@ public class StoreMainFragment extends BaseFragment implements View.OnClickListe
                                     }
                                 }
                             }
-                        }else if (DataResult.RESULT_102 == response.body().getErrorCode())
-                        {
+                        } else if (DataResult.RESULT_102 == response.body().getErrorCode()) {
                             toLogin();
-                        }else {
+                        } else {
                             CustomToast.show(response.body().getErrorMsg());
                         }
                     }
@@ -199,8 +194,8 @@ public class StoreMainFragment extends BaseFragment implements View.OnClickListe
 
     private void storeAllGoods() {
         getlDialog().show();
-        String url=BaseConstant.getApiPostUrl("pawnOrg/getGoodsByOrg");
-        HttpParams param=new HttpParams();
+        String url = BaseConstant.getApiPostUrl("pawnOrg/getGoodsByOrg");
+        HttpParams param = new HttpParams();
         param.put("orgId", orgId);
         param.put("page", page + "");
         param.put("limit", "10");
@@ -211,19 +206,18 @@ public class StoreMainFragment extends BaseFragment implements View.OnClickListe
                     @Override
                     public void onSuccess(Response<DataResult<ArrayList<GoodsByOrgInfo>>> response) {
                         getlDialog().dismiss();
-                        if (response==null){
+                        if (response == null) {
                             CustomToast.show(getString(R.string.http_request_fail));
                             return;
                         }
 
-                        if(response.body().getErrorCode()== DataResult.RESULT_OK_ZERO){
+                        if (response.body().getErrorCode() == DataResult.RESULT_OK_ZERO) {
                             if (response.body().getData() != null) {
                                 showList(response.body().getData());
                             }
-                        }else if (response.body().getErrorCode()==DataResult.RESULT_102 )
-                        {
+                        } else if (response.body().getErrorCode() == DataResult.RESULT_102) {
                             toLogin();
-                        }else {
+                        } else {
                             CustomToast.show(response.body().getErrorMsg());
                         }
                     }
@@ -248,12 +242,12 @@ public class StoreMainFragment extends BaseFragment implements View.OnClickListe
 
                     ImageView iv_item_staggered_icon = (ImageView) helper.getView(R.id
                             .iv_item_staggered_icon);
-                    int width= ScreenUtils.getInstance().getWidth();
-                    width=width-ScreenUtils.dp2px(mContext,24);
-                    width=width/2;
+                    int width = ScreenUtils.getInstance().getWidth();
+                    width = width - ScreenUtils.dp2px(mContext, 24);
+                    width = width / 2;
                     ViewGroup.LayoutParams lp = iv_item_staggered_icon.getLayoutParams();
-                    lp.width=width;
-                    lp.height = width*100/168;
+                    lp.width = width;
+                    lp.height = width * 100 / 168;
                     iv_item_staggered_icon.setLayoutParams(lp);
 
                     if (!item.getImg().equals("")) {
@@ -266,12 +260,12 @@ public class StoreMainFragment extends BaseFragment implements View.OnClickListe
                     helper.setText(R.id.tv_price_staggered, "￥" + item.getPrice());
                     helper.setText(R.id.tv_item_staggered_desc, item.getName());
 
-                    if (item.getSource()!=null){
-                        if (item.getSource().equals("3")){
+                    if (item.getSource() != null) {
+                        if (item.getSource().equals("3")) {
                             helper.setText(R.id.tv_type, "自营");
-                        }else if (item.getSource().equals("4")){
+                        } else if (item.getSource().equals("4")) {
                             helper.setText(R.id.tv_type, "臻品");
-                        }else if (item.getSource().equals("2")){
+                        } else if (item.getSource().equals("2")) {
                             helper.setText(R.id.tv_type, "绝当品");
                         }
                     }
@@ -324,55 +318,37 @@ public class StoreMainFragment extends BaseFragment implements View.OnClickListe
 
     @Override
     public void onClick(View view) {
-        switch (view.getId()){
+        switch (view.getId()) {
             case R.id.ll_rank1:
-                if (mostThreeGoodsInfos.size()>1){
+                if (mostThreeGoodsInfos.size() > 1) {
 //                    Intent intent = new Intent(StoreMainFragment.this.getContext(),
 //                            GoodsDetailActivity.class);
 //                    intent.putExtra("id", mostThreeGoodsInfos.get(0).getId()+"");
 //                    intent.putExtra("type", "rz");
 //                    startActivity(intent);
-                    Helper.startActivity(
-                            getActivity(),
-                            FrgProductDetail.class,
-                            TitleAct.class,
-                            "id",
-                            mostThreeGoodsInfos.get(0).getId()+"", "type", "rz"
-                    );
+                    F.INSTANCE.go2GoodeDetail(getActivity(), mostThreeGoodsInfos.get(0).getId() + "", "rz");
                 }
 
                 break;
             case R.id.ll_rank2:
-                if (mostThreeGoodsInfos.size()>2){
+                if (mostThreeGoodsInfos.size() > 2) {
 //                    Intent intent = new Intent(StoreMainFragment.this.getContext(),
 //                            GoodsDetailActivity.class);
 //                    intent.putExtra("id", mostThreeGoodsInfos.get(1).getId()+"");
 //                    intent.putExtra("type", "rz");
 //                    startActivity(intent);
-                    Helper.startActivity(
-                            getActivity(),
-                            FrgProductDetail.class,
-                            TitleAct.class,
-                            "id",
-                            mostThreeGoodsInfos.get(1).getId()+"", "type", "rz"
-                    );
+                    F.INSTANCE.go2GoodeDetail(getActivity(), mostThreeGoodsInfos.get(1).getId() + "", "rz");
                 }
 
                 break;
             case R.id.ll_rank3:
-                if (mostThreeGoodsInfos.size()==3){
+                if (mostThreeGoodsInfos.size() == 3) {
 //                    Intent intent = new Intent(StoreMainFragment.this.getContext(),
 //                            GoodsDetailActivity.class);
 //                    intent.putExtra("id", mostThreeGoodsInfos.get(2).getId()+"");
 //                    intent.putExtra("type", "rz");
 //                    startActivity(intent);
-                    Helper.startActivity(
-                            getActivity(),
-                            FrgProductDetail.class,
-                            TitleAct.class,
-                            "id",
-                            mostThreeGoodsInfos.get(2).getId()+"", "type", "rz"
-                    );
+                    F.INSTANCE.go2GoodeDetail(getActivity(), mostThreeGoodsInfos.get(2).getId() + "", "rz");
                 }
 
                 break;

@@ -2,14 +2,17 @@ package com.glavesoft
 
 import android.app.Activity
 import android.content.Context
+import android.content.Intent
 import android.graphics.Color
 import android.preference.PreferenceManager
 import android.text.TextUtils
 import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import com.glavesoft.pawnuser.R
+import com.glavesoft.pawnuser.activity.main.GoodsDetailActivity
 import com.glavesoft.pawnuser.constant.BaseConstant
 import com.glavesoft.pawnuser.converter.CustomGsonConverterFactory
+import com.glavesoft.pawnuser.frg.FrgProductDetail
 import com.glavesoft.pawnuser.mod.LocalData
 import com.glavesoft.pawnuser.service.ApiService
 import com.google.gson.Gson
@@ -21,7 +24,9 @@ import com.guoxiaoxing.phoenix.core.model.MediaEntity
 import com.guoxiaoxing.phoenix.core.model.MimeType
 import com.guoxiaoxing.phoenix.picker.Phoenix
 import com.mdx.framework.Frame
+import com.mdx.framework.activity.TitleAct
 import com.mdx.framework.model.ModelDx
+import com.mdx.framework.utility.Helper
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
@@ -74,6 +79,21 @@ object F {
         } catch (e: IOException) {
             e.printStackTrace()
         }
+    }
+
+    fun go2GoodeDetail(mContext: Context, id: String, type: String) {
+        var intent = Intent(mContext, GoodsDetailActivity::class.java)
+        intent.putExtra("type", type)
+        intent.putExtra("id", id)
+        mContext.startActivity(intent)
+//        Helper.startActivity(
+//            mContext,
+//            FrgProductDetail::class.java,
+//            TitleAct::class.java,
+//            "id",
+//            id, "type", type
+//        )
+
     }
 
     fun getBody(

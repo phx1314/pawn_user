@@ -22,6 +22,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.android.volley.VolleyError;
+import com.glavesoft.F;
 import com.glavesoft.okGo.JsonCallback;
 import com.glavesoft.pawnuser.R;
 import com.glavesoft.pawnuser.activity.appraisal.SendCallGoodDetailActivity;
@@ -362,13 +363,7 @@ public class OrderFragment extends BaseFragment implements BGARefreshLayout.BGAR
 //                    intent.putExtra("type","rz");
 //                    startActivity(intent);
 
-                    Helper.startActivity(
-                            getActivity(),
-                            FrgProductDetail.class,
-                            TitleAct.class,
-                            "id",
-                            list.get(i).getGoodsId(), "type", "rz"
-                    );
+                    F.INSTANCE.go2GoodeDetail(getActivity(),    list.get(i).getGoodsId(), "rz");
                 }
 
             }

@@ -19,6 +19,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Priority;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.request.RequestOptions;
+import com.glavesoft.F;
 import com.glavesoft.pawnuser.R;
 import com.glavesoft.pawnuser.activity.login.LoginActivity;
 import com.glavesoft.pawnuser.activity.main.GoodsDetailActivity;
@@ -187,13 +188,7 @@ class StaggeredGridAdapter extends RecyclerView.Adapter<StaggeredGridAdapter.MyV
 //									intent.putExtra("type","rz");
 //									intent.putExtra("id",StoreBannerList.get(position).getContent());
 //									mContext.startActivity(intent);
-									Helper.startActivity(
-											mContext,
-											FrgProductDetail.class,
-											TitleAct.class,
-											"id",
-											StoreBannerList.get(position).getContent(), "type", "rz"
-									);
+									F.INSTANCE.go2GoodeDetail(mContext,  StoreBannerList.get(position).getContent(),"rz");
 								}else if (StoreBannerList.get(position).getType().equals("4")){
 									if(StoreBannerList.get(position).getState().equals("1")){
 										Intent intent = new Intent(mContext, JdGoodsDetailActivity.class);
@@ -204,13 +199,7 @@ class StaggeredGridAdapter extends RecyclerView.Adapter<StaggeredGridAdapter.MyV
 //										intent.putExtra("type","jd");
 //										intent.putExtra("id",StoreBannerList.get(position).getContent());
 //										mContext.startActivity(intent);
-										Helper.startActivity(
-												mContext,
-												FrgProductDetail.class,
-												TitleAct.class,
-												"id",
-												StoreBannerList.get(position).getContent(), "type", "jd"
-										);
+										F.INSTANCE.go2GoodeDetail(mContext,  StoreBannerList.get(position).getContent(),"jd");
 									}
 
 								}else if (StoreBannerList.get(position).getType().equals("5")){
@@ -321,13 +310,7 @@ class StaggeredGridAdapter extends RecyclerView.Adapter<StaggeredGridAdapter.MyV
 //						intent.putExtra("type","rz");
 //						intent.putExtra("id",mDatas.get(finalPosition).getId());
 //						mContext.startActivity(intent);
-						Helper.startActivity(
-								mContext,
-								FrgProductDetail.class,
-								TitleAct.class,
-								"id",
-								mDatas.get(finalPosition).getId(), "type", "rz"
-						);
+						F.INSTANCE.go2GoodeDetail(mContext, mDatas.get(finalPosition).getId() ,"rz");
 					}
 				});
 

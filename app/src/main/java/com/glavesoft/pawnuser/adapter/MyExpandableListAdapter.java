@@ -14,6 +14,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.glavesoft.F;
 import com.glavesoft.pawnuser.R;
 import com.glavesoft.pawnuser.activity.login.LoginActivity;
 import com.glavesoft.pawnuser.activity.main.GoodsDetailActivity;
@@ -340,13 +341,7 @@ public class MyExpandableListAdapter extends BaseExpandableListAdapter {
 //                        intent.putExtra("id",id+"");
 //                        intent.putExtra("type","rz");
 //                        mContext.startActivity(intent);
-                        Helper.startActivity(
-                                mContext,
-                                FrgProductDetail.class,
-                                TitleAct.class,
-                                "id",
-                                id+"", "type", "rz"
-                        );
+                        F.INSTANCE.go2GoodeDetail(mContext,  id+"","rz");
                     }
                     break;
                 case R.id.tvShopNameGroup:
@@ -366,13 +361,7 @@ public class MyExpandableListAdapter extends BaseExpandableListAdapter {
 //                        intent.putExtra("id",goodsBean1.getGoodsId()+"");
 //                        intent.putExtra("type","rz");
 //                        mContext.startActivity(intent);
-                        Helper.startActivity(
-                                mContext,
-                                FrgProductDetail.class,
-                                TitleAct.class,
-                                "id",
-                                goodsBean1.getGoodsId()+"", "type", "rz"
-                        );
+                        F.INSTANCE.go2GoodeDetail(mContext,   goodsBean1.getGoodsId()+"","rz");
                     }
                     break;
                 case R.id.tvGetCoupon:
