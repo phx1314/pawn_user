@@ -152,7 +152,6 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
         mLinearLayout_register = (LinearLayout) findViewById(R.id.mLinearLayout_register);
         mImageView_back.setOnClickListener(v -> {
             finish();
-
         });
         mTextView_dl.post (new Runnable() {
             @Override
