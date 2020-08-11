@@ -51,7 +51,8 @@
             android:singleLine="true"
             android:text=""
             android:textColor="@android:color/white"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
         <LinearLayout
             android:id="@+id/ll_en"
@@ -101,7 +102,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:paddingLeft="@dimen/j10dp"
-            android:src="@mipmap/kf1"
+            android:src="@drawable/kefu2"
             android:visibility="gone" />
 
         <ImageView

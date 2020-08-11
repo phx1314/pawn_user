@@ -14,6 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/j121dp"
         android:background="@drawable/shape_white_rz"
+        android:elevation="@dimen/j3dp"
         android:orientation="horizontal">
 
         <ImageView
@@ -40,6 +41,7 @@
         android:layout_height="@dimen/j121dp"
         android:layout_marginTop="@dimen/j20dp"
         android:background="@drawable/shape_white_rz"
+        android:elevation="@dimen/j3dp"
         android:orientation="horizontal">
 
         <ImageView
@@ -52,9 +54,9 @@
             style="@style/text_style_17_black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/j17dp"
+            android:layout_marginLeft="@dimen/j31dp"
             android:layout_marginTop="@dimen/j37dp"
-            android:drawableLeft="@drawable/sp"
+            android:drawableLeft="@drawable/xz__"
             android:drawablePadding="@dimen/j18dp"
             android:gravity="center"
             android:text="新增商品" />

@@ -1,22 +1,110 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@color/white">
-     <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="@dimen/j10dp">
-          <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content">
-               <TextView android:id="@+id/tv_name_address" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:text="阳光" android:textSize="16sp" android:textColor="@color/black1" />
-               <TextView android:id="@+id/tv_phone_address" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="1544564" android:textSize="16sp" android:textColor="@color/text_gray" />
-          </LinearLayout>
-          <TextView android:id="@+id/tv_address" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j6dp" android:text="江苏省常州市" android:textSize="14sp" android:textColor="@color/black1" />
-     </LinearLayout>
-     <View style="@style/line" />
-     <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingTop="@dimen/j5dp" android:paddingBottom="@dimen/j5dp" android:gravity="center_vertical">
-          <LinearLayout android:id="@+id/ll_mr_address" android:layout_width="wrap_content" android:layout_height="wrap_content" android:gravity="center_vertical">
-               <ImageView android:id="@+id/iv_mr_address" android:layout_width="wrap_content" android:layout_height="wrap_content" android:padding="@dimen/j5dp" android:layout_marginLeft="@dimen/j10dp" android:src="@drawable/yuan" />
-               <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="设为默认地址" android:textSize="13sp" android:textColor="@color/black" />
-          </LinearLayout>
-          <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical|right">
-               <TextView android:id="@+id/tv_del_address" android:layout_width="@dimen/j70dp" android:layout_height="match_parent" android:gravity="center" android:layout_marginRight="@dimen/j10dp" android:background="@drawable/shape_green_kuang1" android:text="删 除" android:textColor="@color/bg_title" android:textSize="12sp" />
-               <TextView android:id="@+id/tv_update_address" android:layout_width="@dimen/j70dp" android:layout_height="wrap_content" android:gravity="center" android:layout_marginRight="@dimen/j10dp" android:paddingTop="@dimen/j2dp" android:paddingBottom="@dimen/j2dp" android:paddingLeft="@dimen/j6dp" android:paddingRight="@dimen/j6dp" android:background="@drawable/shape_green4" android:text="编 辑" android:textSize="12sp" android:textColor="@color/white" />
-          </LinearLayout>
-     </LinearLayout>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/j10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_name_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="阳光"
+                android:textColor="@color/black1"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tv_phone_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1544564"
+                android:textColor="@color/text_gray"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/j6dp"
+            android:text="江苏省常州市"
+            android:textColor="@color/black1"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <View style="@style/line" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:paddingTop="@dimen/j5dp"
+        android:paddingBottom="@dimen/j5dp">
+
+        <LinearLayout
+            android:id="@+id/ll_mr_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:id="@+id/iv_mr_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/j10dp"
+                android:padding="@dimen/j5dp"
+                android:src="@drawable/yuan" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="设为默认地址"
+                android:textColor="@color/black"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical|right">
+
+            <TextView
+                android:id="@+id/tv_del_address"
+                android:layout_width="@dimen/j70dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="@dimen/j10dp"
+                android:background="@drawable/shape_green_kuang1"
+                android:gravity="center"
+                android:text="删 除"
+                android:textColor="@color/bg_title"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tv_update_address"
+                android:layout_width="@dimen/j70dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/j10dp"
+                android:background="@drawable/shape_green4"
+                android:gravity="center"
+                android:paddingLeft="@dimen/j6dp"
+                android:paddingTop="@dimen/j2dp"
+                android:paddingRight="@dimen/j6dp"
+                android:paddingBottom="@dimen/j2dp"
+                android:text="编 辑"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </LinearLayout>
 </LinearLayout>
 

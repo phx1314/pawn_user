@@ -60,7 +60,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:drawableLeft="@drawable/mr"
+                android:drawableLeft="@drawable/registered_tick"
                 android:drawablePadding="@dimen/j10dp"
                 android:gravity="center_vertical"
                 android:paddingLeft="@dimen/j10dp"
@@ -72,7 +72,7 @@
                 android:layout_height="@dimen/j20dp"
                 android:background="@drawable/shape_green_kuang1"
                 android:text="刪除"
-                android:textColor="#12595B"
+                android:textColor="@color/bg_title"
                 android:textSize="12sp" />
 
             <Button
@@ -80,7 +80,7 @@
                 android:layout_width="@dimen/j65dp"
                 android:layout_height="@dimen/j20dp"
                 android:layout_marginLeft="@dimen/j8dp"
-                android:background="@drawable/shape_green4"
+                android:background="@drawable/shape_qs"
                 android:text="编辑"
                 android:textColor="#fff"
                 android:textSize="12sp" />

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:id="@+id/mLinearLayout"
     android:layout_height="match_parent"
-    android:background="#F0F0F0"
+    android:background="@color/bg_default"
     android:gravity="center_horizontal"
     android:orientation="vertical">
 
@@ -18,7 +18,7 @@
         android:background="@drawable/shape_white_rz"
         android:orientation="vertical"
         android:paddingRight="@dimen/j13dp"
-        android:paddingTop="@dimen/j15dp"
+        android:paddingTop="@dimen/j15dp"  android:elevation="@dimen/j3dp"
         android:paddingBottom="@dimen/j15dp"
         android:paddingLeft="@dimen/j13dp">
 
@@ -27,7 +27,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="789798789789"
-            android:textColor="#12595B"
+            android:textColor="@color/bg_title"
             android:textSize="16sp"
             android:textStyle="bold" />
 
@@ -59,7 +59,7 @@
                 style="@style/text_style_15_white"
                 android:layout_width="@dimen/j50dp"
                 android:layout_height="@dimen/j22dp"
-                android:background="@drawable/shape_green"
+                android:background="@drawable/shape_qs"
                 android:gravity="center"
                 android:text="签署" />
         </LinearLayout>
@@ -68,7 +68,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/j8dp"
-            android:background="@drawable/shape_gray"
+            android:background="@drawable/shape_bg"
             android:orientation="vertical"
             android:paddingLeft="@dimen/j5dp"
             android:paddingTop="@dimen/j8dp"

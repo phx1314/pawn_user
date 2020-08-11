@@ -82,17 +82,17 @@ object F {
     }
 
     fun go2GoodeDetail(mContext: Context, id: String, type: String) {
-        var intent = Intent(mContext, GoodsDetailActivity::class.java)
-        intent.putExtra("type", type)
-        intent.putExtra("id", id)
-        mContext.startActivity(intent)
-//        Helper.startActivity(
-//            mContext,
-//            FrgProductDetail::class.java,
-//            TitleAct::class.java,
-//            "id",
-//            id, "type", type
-//        )
+//        var intent = Intent(mContext, GoodsDetailActivity::class.java)
+//        intent.putExtra("type", type)
+//        intent.putExtra("id", id)
+//        mContext.startActivity(intent)
+        Helper.startActivity(
+            mContext,
+            FrgProductDetail::class.java,
+            TitleAct::class.java,
+            "id",
+            id, "type", type
+        )
 
     }
 

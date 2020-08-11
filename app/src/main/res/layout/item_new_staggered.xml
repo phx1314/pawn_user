@@ -1,17 +1,109 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@color/white" android:layout_marginTop="@dimen/j5dp" android:layout_marginBottom="@dimen/j5dp" android:layout_marginLeft="@dimen/j5dp" android:layout_marginRight="@dimen/j5dp" android:id="@+id/ll_item_staggered">
-     <ImageView android:id="@+id/iv_item_staggered_icon" android:layout_width="wrap_content" android:layout_height="@dimen/j100dp" android:scaleType="centerCrop" />
-     <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@drawable/shape_coner_white2">
-          <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical">
-               <ImageView android:visibility="gone" android:id="@+id/iv_type" android:layout_gravity="center" android:layout_marginRight="@dimen/j5dp" android:src="@drawable/icon_jdp" android:layout_width="@dimen/j55dp" android:layout_height="@dimen/j16dp" />
-               <TextView android:id="@+id/tv_type" android:layout_width="@dimen/j50dp" android:layout_height="wrap_content" android:background="@drawable/shape_orange" android:gravity="center" android:text="自营" android:textColor="@color/white" android:textSize="10sp" />
-               <TextView android:id="@+id/tv_item_staggered_desc" android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="@dimen/j5dp" android:text="我是描述文本" android:textColor="@color/black" android:textSize="14sp" android:singleLine="true" />
-          </LinearLayout>
-          <TextView android:id="@+id/tv_item_count" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/j5dp" android:singleLine="true" android:drawableLeft="@mipmap/paimai" android:drawablePadding="@dimen/j2dp" android:text="10次" android:textColor="@color/black1" android:textSize="13sp" android:visibility="gone" />
-          <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical">
-               <TextView android:id="@+id/tv_price_staggered" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:padding="@dimen/j5dp" android:text="￥2万" android:textColor="@color/black" android:textSize="14sp" />
-               <TextView android:id="@+id/tv_submit" android:layout_width="@dimen/j60dp" android:layout_height="@dimen/j20dp" android:layout_marginRight="@dimen/j5dp" android:gravity="center" android:text="购买" android:textColor="@android:color/white" android:background="@drawable/shape_green4" android:textSize="12sp" />
-          </LinearLayout>
-     </LinearLayout>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_item_staggered"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#fff"
+    android:orientation="vertical"
+    android:padding="@dimen/j20dp">
+
+    <RelativeLayout
+        android:layout_width="@dimen/j120dp"
+        android:layout_height="@dimen/j120dp">
+
+        <ImageView
+            android:id="@+id/iv_item_staggered_icon"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop" />
+
+        <TextView
+            android:id="@+id/tv_type"
+            android:layout_width="@dimen/j45dp"
+            android:layout_height="@dimen/j18dp"
+            android:background="@drawable/jued_"
+            android:gravity="center"
+            android:text="自营"
+            android:textColor="@color/white"
+            android:textSize="10sp" />
+
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/iv_type"
+                android:layout_width="@dimen/j55dp"
+                android:layout_height="@dimen/j16dp"
+                android:layout_gravity="center"
+                android:layout_marginRight="@dimen/j5dp"
+                android:src="@drawable/icon_jdp"
+                android:visibility="gone" />
+
+
+            <TextView
+                android:id="@+id/tv_item_staggered_desc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:padding="@dimen/j5dp"
+                android:singleLine="true"
+                android:text="我是描述文本"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_item_count"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/j5dp"
+            android:drawableLeft="@mipmap/paimai"
+            android:drawablePadding="@dimen/j2dp"
+            android:singleLine="true"
+            android:text="10次"
+            android:textColor="@color/black1"
+            android:textSize="13sp"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/tv_price_staggered"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:padding="@dimen/j5dp"
+                android:singleLine="true"
+                android:text="￥2万"
+                android:textColor="#B62928"
+                android:textSize="11sp" />
+
+            <TextView
+                android:id="@+id/tv_submit"
+                android:layout_width="@dimen/j35dp"
+                android:layout_height="@dimen/j18dp"
+                android:layout_marginRight="@dimen/j5dp"
+                android:background="@drawable/shape_green_kuang1"
+                android:gravity="center"
+                android:text="购买"
+                android:textColor="@color/bg_title"
+                android:textSize="11sp" />
+        </LinearLayout>
+    </LinearLayout>
 </LinearLayout>
 

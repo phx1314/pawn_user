@@ -14,6 +14,8 @@ package com.glavesoft.pawnuser.item;
 import android.app.Dialog
 import android.content.Context
 import android.content.DialogInterface
+import android.graphics.Color
+import android.graphics.Paint
 import android.text.TextUtils
 import android.view.LayoutInflater
 import android.view.View
@@ -39,7 +41,10 @@ class ProductListSon(context: Context?) : BaseItem(context) {
     init {
         val flater = LayoutInflater.from(context)
         flater.inflate(R.layout.item_product_list_son, this)
-
+//        mTextView_state.getPaint().setFlags(Paint.UNDERLINE_TEXT_FLAG); //下划线
+//        mTextView_state.getPaint().setAntiAlias(true);//抗锯齿
+//        mTextView_state2.getPaint().setFlags(Paint.UNDERLINE_TEXT_FLAG); //下划线
+//        mTextView_state2.getPaint().setAntiAlias(true);//抗锯齿
         mLinearLayout_1.setOnClickListener {
             Helper.startActivity(
                 context,
@@ -158,8 +163,10 @@ class ProductListSon(context: Context?) : BaseItem(context) {
                 mTextView_price.text = it.price
                 if (type == 1) {//0下架1上架2新增待上架
                     mTextView_state.text = "下架"
+                    mTextView_state.setTextColor(Color.parseColor("#DA8B54"))
                 } else {
                     mTextView_state.text = "上架"
+                    mTextView_state.setTextColor(resources.getColor(R.color.bg_title))
                     mLinearLayout_cz.visibility = View.VISIBLE
                     if (!TextUtils.isEmpty(it.reasonOfDismounting)) {
                         mTextView_info.visibility = View.VISIBLE
@@ -178,8 +185,10 @@ class ProductListSon(context: Context?) : BaseItem(context) {
                 mTextView_price2.text = it.price
                 if (type == 1) {//0下架1上架2新增待上架
                     mTextView_state2.text = "下架"
+                    mTextView_state2.setTextColor(Color.parseColor("#DA8B54"))
                 } else {
                     mTextView_state2.text = "上架"
+                    mTextView_state2.setTextColor(resources.getColor(R.color.bg_title))
                     mLinearLayout_cz2.visibility = View.VISIBLE
                     if (!TextUtils.isEmpty(it.reasonOfDismounting)) {
                         mTextView_info2.visibility = View.VISIBLE

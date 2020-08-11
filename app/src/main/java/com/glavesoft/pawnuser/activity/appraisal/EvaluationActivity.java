@@ -96,7 +96,7 @@ public class EvaluationActivity extends BaseActivity{
         setTitleName("估价");
         setTitleNameEn(R.mipmap.evaluation);
 
-        setTitle_right("帮助", new View.OnClickListener() {
+        setTitle_titlebar_kf( new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 gotokf_Z(EvaluationActivity.this);

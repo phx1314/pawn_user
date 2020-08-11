@@ -71,7 +71,7 @@
         </provider>
         <activity
             android:name=".activity.main.StartActivity"
-            android:theme="@style/StartTheme">
+            android:theme="@style/actNNS">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />

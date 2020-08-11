@@ -20,7 +20,7 @@ public class CertificateActivity extends BaseActivity implements View.OnClickLis
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_certificate);
+        setContentView(R.layout.activity_certificate_n);
 
         initView();
     }

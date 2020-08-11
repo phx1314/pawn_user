@@ -1,70 +1,407 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent" android:background="@color/bg_title" android:fitsSystemWindows="true" android:focusable="true" android:focusableInTouchMode="true">
-     <include layout="@layout/titlebar" />
-     <ScrollView android:layout_width="match_parent" android:layout_height="match_parent">
-          <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent" android:background="@color/bg_default">
-               <TextView android:layout_width="match_parent" android:layout_height="match_parent" android:padding="@dimen/j10dp" android:text="宝祥典当" android:textSize="18sp" android:textColor="@color/black1" android:background="@color/white" />
-               <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@color/white" android:padding="@dimen/j10dp" android:layout_marginTop="@dimen/j1dp">
-                    <TextView android:id="@+id/tv_address_mail" android:layout_width="match_parent" android:layout_height="match_parent" android:text="公司地址：" android:textSize="16sp" android:textColor="@color/black1" android:background="@color/white" />
-                    <TextView android:id="@+id/tv_lxr_mail" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginTop="@dimen/j6dp" android:text="联系人：" android:textSize="16sp" android:textColor="@color/black1" android:background="@color/white" />
-                    <TextView android:id="@+id/tv_phone_mail" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginTop="@dimen/j6dp" android:text="联系电话：" android:textSize="16sp" android:textColor="@color/black1" android:background="@color/white" />
-               </LinearLayout>
-               <LinearLayout android:id="@+id/ll_pics_mail" android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@color/white" android:padding="@dimen/j10dp" android:orientation="vertical" android:layout_marginTop="@dimen/j10dp">
-                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="添加藏品图片" android:textSize="14sp" android:textColor="@color/black1" />
-                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j3dp" android:text="(多角度照片，最少3张，最多9张，整体照片，局部照片，细节照片)" android:textSize="11sp" android:textColor="@color/text_gray" />
-                    <com.glavesoft.view.GridViewForNoScroll android:id="@+id/gv_pics_mail" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j10dp" android:layout_marginLeft="@dimen/j5dp" android:cacheColorHint="#00000000" android:columnWidth="@dimen/j150dp" android:listSelector="#00000000" android:numColumns="3" android:scrollbars="none" android:stretchMode="columnWidth" android:verticalSpacing="@dimen/j15dp" android:background="@color/white" />
-               </LinearLayout>
-               <LinearLayout android:id="@+id/ll_pic_mail" android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@color/white" android:layout_marginTop="@dimen/j10dp" android:orientation="vertical" android:visibility="gone">
-                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="藏品信息" android:padding="@dimen/j10dp" android:textSize="14sp" android:textColor="@color/black1" />
-                    <View style="@style/line" />
-                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="@dimen/j10dp">
-                         <ImageView android:id="@+id/iv_pic_mail" android:layout_width="@dimen/j110dp" android:layout_height="@dimen/j80dp" android:scaleType="centerCrop" />
-                         <TextView android:id="@+id/tv_name_mail" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/j10dp" android:text="玉石" android:textSize="16sp" android:textColor="@color/black1" />
-                    </LinearLayout>
-               </LinearLayout>
-               <LinearLayout android:id="@+id/ll_one_mail" android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@color/white" android:orientation="vertical" android:layout_marginTop="@dimen/j10dp">
-                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@color/white" android:padding="@dimen/j10dp" android:text="步骤一：封条，请自备白纸封条两张，样式如下图所示" android:textSize="14sp" android:textColor="@color/black1" />
-                    <View style="@style/line" />
-                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="@dimen/j10dp" android:gravity="center">
-                         <ImageView android:id="@+id/iv_one_mail" android:layout_width="@dimen/j240dp" android:layout_height="@dimen/j140dp" android:layout_marginRight="@dimen/j10dp" android:src="@drawable/yangzhang" android:scaleType="centerCrop" />
-                    </LinearLayout>
-               </LinearLayout>
-               <LinearLayout android:id="@+id/ll_two_mail" android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@color/white" android:orientation="vertical" android:layout_marginTop="@dimen/j10dp">
-                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@color/white" android:padding="@dimen/j10dp" android:text="步骤二：照示例图所示贴封条，另一张空白签名封条一并放入打包盒邮寄" android:textSize="14sp" android:textColor="@color/black1" />
-                    <View style="@style/line" />
-                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="@dimen/j10dp" android:gravity="center">
-                         <ImageView android:id="@+id/iv_two_mail" android:layout_width="@dimen/j240dp" android:layout_height="@dimen/j140dp" android:layout_marginRight="@dimen/j10dp" android:src="@drawable/yangzhang1" android:scaleType="centerCrop" />
-                    </LinearLayout>
-               </LinearLayout>
-               <LinearLayout android:id="@+id/ll_video_mail" android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@color/white" android:orientation="vertical" android:layout_marginTop="@dimen/j10dp">
-                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@color/white" android:padding="@dimen/j10dp" android:text="步骤三：拍摄邮寄打包视频" android:textSize="14sp" android:textColor="@color/black1" />
-                    <View style="@style/line" />
-                    <FrameLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="@dimen/j15dp">
-                         <ImageView android:id="@+id/iv_video_add" android:layout_width="@dimen/j100dp" android:layout_height="@dimen/j100dp" android:background="@drawable/shipin" android:scaleType="centerCrop" />
-                         <ImageView android:id="@+id/iv_video" android:layout_width="@dimen/j100dp" android:layout_height="@dimen/j100dp" android:background="@drawable/shipin" android:scaleType="centerCrop" android:visibility="gone" />
-                         <ImageView android:id="@+id/iv_video_play" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/spbf" android:layout_gravity="center" android:visibility="gone" />
-                         <ImageView android:id="@+id/iv_video_del" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/shanchu" android:layout_gravity="right" android:visibility="gone" />
-                    </FrameLayout>
-               </LinearLayout>
-               <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="@dimen/j10dp" android:text="注：在邮寄藏品时，请拍摄藏品装箱打包时的视频发送给平台客服以确保收货时藏品的完好一致，否则概不负责。" android:textColor="@color/red_k" android:textSize="12sp" />
-               <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:layout_marginTop="@dimen/j1dp" android:padding="@dimen/j10dp" android:background="@color/white">
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/text16sp" android:text="物流公司" />
-                    <TextView android:id="@+id/tv_wlgs_mail" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="right" android:textSize="16sp" android:textColor="@color/text_gray" android:text="顺丰快递" />
-                    <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:paddingBottom="@dimen/j2dp" android:layout_gravity="center_vertical" android:src="@drawable/xzz" android:visibility="gone" />
-               </LinearLayout>
-               <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:layout_marginTop="@dimen/j1dp" android:padding="@dimen/j10dp" android:background="@color/white">
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/text16sp" android:text="物流单号" />
-                    <EditText android:id="@+id/et_wldh_mail" android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical|right" android:layout_marginLeft="@dimen/j5dp" android:background="@null" android:hint="请输入寄送的物流单号" android:textSize="16sp" android:textColor="@color/black1" android:textColorHint="@color/gray" android:maxLines="1" />
-               </LinearLayout>
-               <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:layout_marginTop="@dimen/j1dp" android:padding="@dimen/j10dp" android:background="@color/white">
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/text16sp" android:text="保价金额" />
-                    <EditText android:id="@+id/et_money_mail" android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical|right" android:layout_marginLeft="@dimen/j5dp" android:background="@null" android:hint="请输入保价金额" android:textSize="16sp" android:textColor="@color/black1" android:textColorHint="@color/gray" android:inputType="numberDecimal" android:maxLines="1" />
-               </LinearLayout>
-               <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="@dimen/j10dp" android:text="注：请务必将物流单号填写正确！" android:textColor="@color/red_k" android:textSize="12sp" />
-               <LinearLayout android:id="@+id/ll_submit_mail" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="@dimen/j45dp" android:layout_marginLeft="@dimen/j25dp" android:layout_marginRight="@dimen/j25dp" android:layout_marginTop="@dimen/j10dp" android:layout_marginBottom="@dimen/j20dp" android:gravity="center" android:background="@mipmap/button">
-                    <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@mipmap/button_send" />
-               </LinearLayout>
-          </LinearLayout>
-     </ScrollView>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_title"
+    android:fitsSystemWindows="true"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical">
+
+    <include layout="@layout/titlebar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/bg_default"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:padding="@dimen/j10dp"
+                android:text="宝祥典当"
+                android:textColor="@color/black1"
+                android:textSize="18sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/j1dp"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:padding="@dimen/j10dp">
+
+                <TextView
+                    android:id="@+id/tv_address_mail"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"
+                    android:text="公司地址："
+                    android:textColor="@color/black1"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/tv_lxr_mail"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/j6dp"
+                    android:background="@color/white"
+                    android:text="联系人："
+                    android:textColor="@color/black1"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/tv_phone_mail"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/j6dp"
+                    android:background="@color/white"
+                    android:text="联系电话："
+                    android:textColor="@color/black1"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_pics_mail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/j10dp"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:padding="@dimen/j10dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="添加藏品图片"
+                    android:textColor="@color/black1"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/j3dp"
+                    android:text="(多角度照片，最少3张，最多9张，整体照片，局部照片，细节照片)"
+                    android:textColor="@color/text_gray"
+                    android:textSize="11sp" />
+
+                <com.glavesoft.view.GridViewForNoScroll
+                    android:id="@+id/gv_pics_mail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/j5dp"
+                    android:layout_marginTop="@dimen/j10dp"
+                    android:background="@color/white"
+                    android:cacheColorHint="#00000000"
+                    android:columnWidth="@dimen/j150dp"
+                    android:listSelector="#00000000"
+                    android:numColumns="3"
+                    android:scrollbars="none"
+                    android:stretchMode="columnWidth"
+                    android:verticalSpacing="@dimen/j15dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_pic_mail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/j10dp"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/j10dp"
+                    android:text="藏品信息"
+                    android:textColor="@color/black1"
+                    android:textSize="14sp" />
+
+                <View style="@style/line" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/j10dp">
+
+                    <ImageView
+                        android:id="@+id/iv_pic_mail"
+                        android:layout_width="@dimen/j110dp"
+                        android:layout_height="@dimen/j80dp"
+                        android:scaleType="centerCrop" />
+
+                    <TextView
+                        android:id="@+id/tv_name_mail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/j10dp"
+                        android:text="玉石"
+                        android:textColor="@color/black1"
+                        android:textSize="16sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_one_mail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/j10dp"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:padding="@dimen/j10dp"
+                    android:text="步骤一：封条，请自备白纸封条两张，样式如下图所示"
+                    android:textColor="@color/black1"
+                    android:textSize="14sp" />
+
+                <View style="@style/line" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="@dimen/j10dp">
+
+                    <ImageView
+                        android:id="@+id/iv_one_mail"
+                        android:layout_width="@dimen/j240dp"
+                        android:layout_height="@dimen/j140dp"
+                        android:layout_marginRight="@dimen/j10dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/yangzhang" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_two_mail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/j10dp"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:padding="@dimen/j10dp"
+                    android:text="步骤二：照示例图所示贴封条，另一张空白签名封条一并放入打包盒邮寄"
+                    android:textColor="@color/black1"
+                    android:textSize="14sp" />
+
+                <View style="@style/line" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="@dimen/j10dp">
+
+                    <ImageView
+                        android:id="@+id/iv_two_mail"
+                        android:layout_width="@dimen/j240dp"
+                        android:layout_height="@dimen/j140dp"
+                        android:layout_marginRight="@dimen/j10dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/yangzhang1" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_video_mail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/j10dp"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:padding="@dimen/j10dp"
+                    android:text="步骤三：拍摄邮寄打包视频"
+                    android:textColor="@color/black1"
+                    android:textSize="14sp" />
+
+                <View style="@style/line" />
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/j15dp">
+
+                    <ImageView
+                        android:id="@+id/iv_video_add"
+                        android:layout_width="@dimen/j100dp"
+                        android:layout_height="@dimen/j100dp"
+                        android:background="@drawable/shipin"
+                        android:scaleType="centerCrop" />
+
+                    <ImageView
+                        android:id="@+id/iv_video"
+                        android:layout_width="@dimen/j100dp"
+                        android:layout_height="@dimen/j100dp"
+                        android:background="@drawable/shipin"
+                        android:scaleType="centerCrop"
+                        android:visibility="gone" />
+
+                    <ImageView
+                        android:id="@+id/iv_video_play"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:background="@drawable/spbf"
+                        android:visibility="gone" />
+
+                    <ImageView
+                        android:id="@+id/iv_video_del"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:background="@drawable/shanchu"
+                        android:visibility="gone" />
+                </FrameLayout>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/j10dp"
+                android:text="注：在邮寄藏品时，请拍摄藏品装箱打包时的视频发送给平台客服以确保收货时藏品的完好一致，否则概不负责。"
+                android:textColor="@color/red_k"
+                android:textSize="12sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/j1dp"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:padding="@dimen/j10dp">
+
+                <TextView
+                    style="@style/text16sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="物流公司" />
+
+                <TextView
+                    android:id="@+id/tv_wlgs_mail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:text="顺丰快递"
+                    android:textColor="@color/text_gray"
+                    android:textSize="16sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:paddingBottom="@dimen/j2dp"
+                    android:src="@drawable/xzz"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/j1dp"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:padding="@dimen/j10dp">
+
+                <TextView
+                    style="@style/text16sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="物流单号" />
+
+                <EditText
+                    android:id="@+id/et_wldh_mail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/j5dp"
+                    android:background="@null"
+                    android:gravity="center_vertical|right"
+                    android:hint="请输入寄送的物流单号"
+                    android:maxLines="1"
+                    android:textColor="@color/black1"
+                    android:textColorHint="@color/gray"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/j1dp"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:padding="@dimen/j10dp">
+
+                <TextView
+                    style="@style/text16sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="保价金额" />
+
+                <EditText
+                    android:id="@+id/et_money_mail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/j5dp"
+                    android:background="@null"
+                    android:gravity="center_vertical|right"
+                    android:hint="请输入保价金额"
+                    android:inputType="numberDecimal"
+                    android:maxLines="1"
+                    android:textColor="@color/black1"
+                    android:textColorHint="@color/gray"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/j10dp"
+                android:text="注：请务必将物流单号填写正确！"
+                android:textColor="@color/red_k"
+                android:textSize="12sp" />
+
+            <LinearLayout
+                android:id="@+id/ll_submit_mail"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/j45dp"
+                android:layout_marginLeft="@dimen/j25dp"
+                android:layout_marginTop="@dimen/j10dp"
+                android:layout_marginRight="@dimen/j25dp"
+                android:layout_marginBottom="@dimen/j20dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                 <TextView
+                     android:layout_width="match_parent"
+                     android:layout_height="@dimen/j45dp"
+                     android:background="@drawable/shape_login"
+                     android:gravity="center"
+                     android:text="发送鉴定申请"
+                     android:textColor="@android:color/white"
+                     android:textSize="16sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>
 

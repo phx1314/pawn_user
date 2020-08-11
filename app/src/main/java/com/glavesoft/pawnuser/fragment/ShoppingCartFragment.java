@@ -80,10 +80,6 @@ public class ShoppingCartFragment extends BaseFragment implements BGARefreshLayo
     @BindView(R.id.rlBottomBar)
     RelativeLayout rlBottomBar;
 
-    @BindView(R.id.iv_en)
-    ImageView iv_en;
-    @BindView(R.id.ll_en)
-    LinearLayout ll_en;
 
     private int index;
     private Unbinder unbinder;
@@ -170,12 +166,6 @@ public class ShoppingCartFragment extends BaseFragment implements BGARefreshLayo
     }
 
     private void initView(View view) {
-        titlebar_name = (TextView) view.findViewById(R.id.titlebar_name);
-        titlebar_name.setVisibility(View.VISIBLE);
-        titlebar_name.setText("购物车");
-        iv_en.setVisibility(View.VISIBLE);
-        iv_en.setImageResource(R.mipmap.shopping_cart);
-        ll_en.setVisibility(View.VISIBLE);
         mRefreshLayout.setDelegate(this);
         BGAMoocStyleRefreshViewHolder moocStyleRefreshViewHolder = new BGAMoocStyleRefreshViewHolder(getActivity(), true);
         moocStyleRefreshViewHolder.setOriginalImage(R.mipmap.custom_mooc_icon);

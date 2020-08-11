@@ -19,7 +19,7 @@
         app:xTabDividerWidthWidthText="true"
         app:xTabIndicatorColor="#00000000"
         app:xTabMode="fixed"
-        app:xTabSelectedTextColor="#12595B"
+        app:xTabSelectedTextColor="@color/bg_title"
         app:xTabSelectedTextSize="18sp"
         app:xTabTextColor="#555555"
         app:xTabTextSelectedBold="true"

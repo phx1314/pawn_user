@@ -4,183 +4,193 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="#fff"
-    android:paddingLeft="@dimen/j20dp"
-    android:paddingRight="@dimen/j20dp">
+    android:background="@color/bg_default"
+    android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:visibility="gone"
-        android:gravity="center_vertical"
-        android:orientation="horizontal"
-        android:paddingTop="@dimen/j17dp"
-        android:paddingBottom="@dimen/j17dp">
+        android:layout_margin="@dimen/j15dp"
+        android:background="@drawable/shape_white_rz"
+        android:elevation="@dimen/j3dp"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/j20dp"
+        android:paddingRight="@dimen/j20dp">
 
-        <TextView
-            style="@style/text_style_15_black"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="头像:" />
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingTop="@dimen/j17dp"
+            android:paddingBottom="@dimen/j17dp"
+            android:visibility="gone">
+
+            <TextView
+                style="@style/text_style_15_black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="头像:" />
+
+            <ImageView
+                android:id="@+id/mImageView"
+                android:layout_width="@dimen/j48dp"
+                android:layout_height="@dimen/j48dp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/gt" />
+        </LinearLayout>
 
         <ImageView
-            android:id="@+id/mImageView"
-            android:layout_width="@dimen/j48dp"
-            android:layout_height="@dimen/j48dp" />
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="#E2E2E2"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="@dimen/j17dp"
+            android:paddingBottom="@dimen/j17dp">
+
+            <TextView
+                style="@style/text_style_15_black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="店铺名称:" />
+
+            <TextView
+                android:id="@+id/mTextView_name"
+                style="@style/text_style_15_black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="" />
+        </LinearLayout>
 
         <ImageView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="#E2E2E2" />
+
+        <LinearLayout
+            android:id="@+id/mLinearLayout_address"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:src="@drawable/gt" />
+            android:orientation="horizontal"
+            android:paddingTop="@dimen/j17dp"
+            android:paddingBottom="@dimen/j17dp">
+
+            <TextView
+                style="@style/text_style_15_black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="退货地址:" />
+
+            <TextView
+                android:id="@+id/mTextView_th_address"
+                style="@style/text_style_15_black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableRight="@drawable/gt"
+                android:text="" />
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="#E2E2E2"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="@dimen/j17dp"
+            android:paddingBottom="@dimen/j17dp"
+            android:visibility="gone">
+
+            <TextView
+                style="@style/text_style_15_black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="个性签名" />
+
+            <EditText
+                android:id="@+id/mTextView_sign"
+                style="@style/text_style_15_black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#00000000"
+                android:gravity="right"
+                android:singleLine="true"
+                android:text="" />
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="#E2E2E2" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="@dimen/j17dp"
+            android:paddingBottom="@dimen/j17dp">
+
+            <TextView
+                style="@style/text_style_15_black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="联系人:" />
+
+            <TextView
+                android:id="@+id/mTextView_lxr"
+                style="@style/text_style_15_black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="" />
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="#E2E2E2" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="@dimen/j17dp"
+            android:paddingBottom="@dimen/j17dp">
+
+            <TextView
+                style="@style/text_style_15_black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="手机号码:" />
+
+            <TextView
+                android:id="@+id/mTextView_phone"
+                style="@style/text_style_15_black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="" />
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="#E2E2E2" />
     </LinearLayout>
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="1px"  android:visibility="gone"
-        android:background="#E2E2E2" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:paddingTop="@dimen/j17dp"
-        android:paddingBottom="@dimen/j17dp">
-
-        <TextView
-            style="@style/text_style_15_black"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="店铺名称:" />
-
-        <TextView
-            android:id="@+id/mTextView_name"
-            style="@style/text_style_15_black"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="" />
-    </LinearLayout>
-
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="1px"
-        android:background="#E2E2E2" />
-
-    <LinearLayout
-        android:id="@+id/mLinearLayout_address"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:paddingTop="@dimen/j17dp"
-        android:paddingBottom="@dimen/j17dp">
-
-        <TextView
-            style="@style/text_style_15_black"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="退货地址:" />
-
-        <TextView
-            android:id="@+id/mTextView_th_address"
-            style="@style/text_style_15_black"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:drawableRight="@drawable/gt"
-            android:text="" />
-    </LinearLayout>
-
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="1px"
-        android:background="#E2E2E2"
-        android:visibility="gone" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:paddingTop="@dimen/j17dp"
-        android:paddingBottom="@dimen/j17dp"
-        android:visibility="gone">
-
-        <TextView
-            style="@style/text_style_15_black"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="个性签名" />
-
-        <EditText
-            android:id="@+id/mTextView_sign"
-            style="@style/text_style_15_black"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="#00000000"
-            android:gravity="right"
-            android:singleLine="true"
-            android:text="" />
-    </LinearLayout>
-
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="1px"
-        android:background="#E2E2E2" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:paddingTop="@dimen/j17dp"
-        android:paddingBottom="@dimen/j17dp">
-
-        <TextView
-            style="@style/text_style_15_black"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="联系人:" />
-
-        <TextView
-            android:id="@+id/mTextView_lxr"
-            style="@style/text_style_15_black"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="" />
-    </LinearLayout>
-
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="1px"
-        android:background="#E2E2E2" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:paddingTop="@dimen/j17dp"
-        android:paddingBottom="@dimen/j17dp">
-
-        <TextView
-            style="@style/text_style_15_black"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="手机号码:" />
-
-        <TextView
-            android:id="@+id/mTextView_phone"
-            style="@style/text_style_15_black"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="" />
-    </LinearLayout>
-
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="1px"
-        android:background="#E2E2E2" />
 </LinearLayout>
-

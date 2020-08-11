@@ -1,78 +1,450 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent" android:background="@color/bg_title" android:fitsSystemWindows="true" android:focusable="true" android:focusableInTouchMode="true">
-     <include layout="@layout/titlebar" />
-     <ScrollView android:layout_width="match_parent" android:layout_height="match_parent" android:background="@color/bg_default">
-          <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent">
-               <include layout="@layout/layout_pics" />
-               <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@color/white" android:layout_marginTop="@dimen/j1dp" android:padding="@dimen/j10dp">
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="品牌" android:textSize="15sp" android:textColor="@color/black1" />
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="(如：劳力士)" android:textSize="11sp" android:textColor="@color/text_gray" android:visibility="invisible" />
-                    <TextView android:id="@+id/tv_brand_watch" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:background="@null" android:gravity="center_vertical|right" android:paddingLeft="@dimen/j10dp" android:hint="" android:textColorHint="@color/text_gray" android:textColor="@color/black1" android:textSize="15sp" />
-                    <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/xzz1" />
-               </LinearLayout>
-               <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@color/white" android:layout_marginTop="@dimen/j1dp" android:padding="@dimen/j10dp">
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="*" android:textSize="14sp" android:textColor="@color/red_k" />
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1" android:text="男女款" android:textSize="15sp" android:textColor="@color/black1" />
-                    <RadioGroup android:id="@+id/rg_sex" android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal">
-                         <RadioButton android:id="@+id/rg_man" android:layout_width="wrap_content" android:layout_height="wrap_content" android:button="@drawable/select_sex" android:checked="true" android:textSize="15sp" android:textColor="@color/text_gray" android:text=" 男款" />
-                         <RadioButton android:id="@+id/rg_woman" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/j10dp" android:button="@drawable/select_sex" android:textSize="15sp" android:textColor="@color/text_gray" android:text=" 女款" />
-                    </RadioGroup>
-               </LinearLayout>
-               <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@color/white" android:layout_marginTop="@dimen/j1dp" android:padding="@dimen/j10dp">
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="表体材质" android:textSize="15sp" android:textColor="@color/black1" />
-                    <TextView android:id="@+id/tv_texture_watch" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="right" android:paddingLeft="@dimen/j10dp" android:textSize="15sp" android:textColor="@color/black1" />
-                    <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/xzz1" />
-               </LinearLayout>
-               <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@color/white" android:layout_marginTop="@dimen/j1dp" android:padding="@dimen/j10dp">
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="机芯类型" android:textSize="15sp" android:textColor="@color/black1" />
-                    <TextView android:id="@+id/tv_jxtype_watch" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="right" android:paddingLeft="@dimen/j10dp" android:textSize="15sp" android:textColor="@color/black1" />
-                    <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/xzz1" />
-               </LinearLayout>
-               <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingLeft="@dimen/j10dp" android:paddingRight="@dimen/j10dp" android:paddingTop="@dimen/j5dp" android:paddingBottom="@dimen/j5dp">
-                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="机械：表盘有Automatic字样，秒针连续走动" android:textSize="12sp" android:textColor="@color/text_gray" />
-                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j2dp" android:text="石英：表盘有Quartz字样，秒针跳动走时" android:textSize="12sp" android:textColor="@color/text_gray" />
-               </LinearLayout>
-               <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@color/white" android:layout_marginTop="@dimen/j1dp" android:padding="@dimen/j10dp">
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="*" android:textSize="14sp" android:textColor="@color/red_k" />
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="使用情况" android:textSize="15sp" android:textColor="@color/black1" />
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="(如：9.9成新)" android:textSize="11sp" android:textColor="@color/text_gray" />
-                    <TextView android:id="@+id/tv_degree_watch" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="right" android:paddingLeft="@dimen/j10dp" android:textSize="15sp" android:textColor="@color/black1" />
-                    <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/xzz1" />
-               </LinearLayout>
-               <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingLeft="@dimen/j10dp" android:paddingRight="@dimen/j10dp" android:paddingTop="@dimen/j5dp" android:paddingBottom="@dimen/j5dp">
-                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="9.9成新：附件齐全，未佩戴，商品状态好" android:textSize="12sp" android:textColor="@color/text_gray" />
-                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j2dp" android:text="9.5成新：外观可见细小/轻微的使用痕迹" android:textSize="12sp" android:textColor="@color/text_gray" />
-                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j2dp" android:text="9.0成新：外观有正常使用产生的划痕磨损，可修复" android:textSize="12sp" android:textColor="@color/text_gray" />
-                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j2dp" android:text="8.5成新：外观磨损较重，可见明显划痕/磕痕" android:textSize="12sp" android:textColor="@color/text_gray" />
-               </LinearLayout>
-               <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@color/white" android:padding="@dimen/j10dp" android:orientation="vertical" android:layout_marginBottom="@dimen/j1dp">
-                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content">
-                         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="配件" android:textSize="15sp" android:textColor="@color/black1" />
-                         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="(可以多选哦)" android:textSize="11sp" android:textColor="@color/text_gray" />
-                    </LinearLayout>
-                    <com.glavesoft.view.GridViewForNoScroll android:id="@+id/gv_enclosure_watch" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j10dp" android:layout_marginLeft="@dimen/j5dp" android:cacheColorHint="#00000000" android:columnWidth="@dimen/j150dp" android:listSelector="#00000000" android:numColumns="3" android:scrollbars="none" android:stretchMode="columnWidth" android:verticalSpacing="@dimen/j15dp" android:background="@color/white" />
-               </LinearLayout>
-               <include layout="@layout/layout_pics_fj" />
-               <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingLeft="@dimen/j10dp" android:paddingRight="@dimen/j10dp" android:paddingTop="@dimen/j5dp" android:paddingBottom="@dimen/j5dp">
-                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="提示：附件是否齐全，对珠宝的最终估值很重要哦" android:textSize="12sp" android:textColor="@color/text_gray" />
-               </LinearLayout>
-               <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@color/white" android:padding="@dimen/j10dp">
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="购买价格" android:textSize="15sp" android:textColor="@color/black1" />
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="(人名币 元)" android:textSize="11sp" android:textColor="@color/text_gray" />
-                    <EditText android:id="@+id/et_price_watch" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:background="@null" android:gravity="center_vertical|right" android:paddingLeft="@dimen/j10dp" android:hint="请输入价格" android:inputType="numberDecimal" android:textColorHint="@color/text_gray" android:textColor="@color/black1" android:textSize="15sp" />
-               </LinearLayout>
-               <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@color/white" android:layout_marginTop="@dimen/j1dp" android:padding="@dimen/j10dp">
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="购买时间" android:textSize="15sp" android:textColor="@color/black1" />
-                    <TextView android:id="@+id/tv_time_watch" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="right" android:paddingLeft="@dimen/j10dp" android:textSize="15sp" android:textColor="@color/black1" />
-                    <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/xzz1" />
-               </LinearLayout>
-               <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingLeft="@dimen/j10dp" android:paddingRight="@dimen/j10dp" android:paddingTop="@dimen/j5dp" android:paddingBottom="@dimen/j5dp">
-                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="提示：如无法估价，请转至邮寄鉴定" android:textSize="12sp" android:textColor="@color/red_k" />
-               </LinearLayout>
-               <LinearLayout android:id="@+id/ll_submit_watch" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="@dimen/j45dp" android:layout_margin="@dimen/j25dp" android:gravity="center" android:background="@mipmap/button">
-                    <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@mipmap/button_send" />
-               </LinearLayout>
-          </LinearLayout>
-     </ScrollView>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_title"
+    android:fitsSystemWindows="true"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical">
+
+    <include layout="@layout/titlebar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bg_default">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <include layout="@layout/layout_pics" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/j1dp"
+                android:background="@color/white"
+                android:padding="@dimen/j10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="品牌"
+                    android:textColor="@color/black1"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="(如：劳力士)"
+                    android:textColor="@color/text_gray"
+                    android:textSize="11sp"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/tv_brand_watch"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:gravity="center_vertical|right"
+                    android:hint=""
+                    android:paddingLeft="@dimen/j10dp"
+                    android:textColor="@color/black1"
+                    android:textColorHint="@color/text_gray"
+                    android:textSize="15sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/xzz1" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/j1dp"
+                android:background="@color/white"
+                android:padding="@dimen/j10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="*"
+                    android:textColor="@color/red_k"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="男女款"
+                    android:textColor="@color/black1"
+                    android:textSize="15sp" />
+
+                <RadioGroup
+                    android:id="@+id/rg_sex"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/rg_man"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:button="@drawable/select_sex"
+                        android:checked="true"
+                        android:text=" 男款"
+                        android:textColor="@color/text_gray"
+                        android:textSize="15sp" />
+
+                    <RadioButton
+                        android:id="@+id/rg_woman"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/j10dp"
+                        android:button="@drawable/select_sex"
+                        android:text=" 女款"
+                        android:textColor="@color/text_gray"
+                        android:textSize="15sp" />
+                </RadioGroup>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/j1dp"
+                android:background="@color/white"
+                android:padding="@dimen/j10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="表体材质"
+                    android:textColor="@color/black1"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/tv_texture_watch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:paddingLeft="@dimen/j10dp"
+                    android:textColor="@color/black1"
+                    android:textSize="15sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/xzz1" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/j1dp"
+                android:background="@color/white"
+                android:padding="@dimen/j10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="机芯类型"
+                    android:textColor="@color/black1"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/tv_jxtype_watch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:paddingLeft="@dimen/j10dp"
+                    android:textColor="@color/black1"
+                    android:textSize="15sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/xzz1" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/j10dp"
+                android:paddingTop="@dimen/j5dp"
+                android:paddingRight="@dimen/j10dp"
+                android:paddingBottom="@dimen/j5dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="机械：表盘有Automatic字样，秒针连续走动"
+                    android:textColor="@color/text_gray"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/j2dp"
+                    android:text="石英：表盘有Quartz字样，秒针跳动走时"
+                    android:textColor="@color/text_gray"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/j1dp"
+                android:background="@color/white"
+                android:padding="@dimen/j10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="*"
+                    android:textColor="@color/red_k"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="使用情况"
+                    android:textColor="@color/black1"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="(如：9.9成新)"
+                    android:textColor="@color/text_gray"
+                    android:textSize="11sp" />
+
+                <TextView
+                    android:id="@+id/tv_degree_watch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:paddingLeft="@dimen/j10dp"
+                    android:textColor="@color/black1"
+                    android:textSize="15sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/xzz1" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/j10dp"
+                android:paddingTop="@dimen/j5dp"
+                android:paddingRight="@dimen/j10dp"
+                android:paddingBottom="@dimen/j5dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="9.9成新：附件齐全，未佩戴，商品状态好"
+                    android:textColor="@color/text_gray"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/j2dp"
+                    android:text="9.5成新：外观可见细小/轻微的使用痕迹"
+                    android:textColor="@color/text_gray"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/j2dp"
+                    android:text="9.0成新：外观有正常使用产生的划痕磨损，可修复"
+                    android:textColor="@color/text_gray"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/j2dp"
+                    android:text="8.5成新：外观磨损较重，可见明显划痕/磕痕"
+                    android:textColor="@color/text_gray"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/j1dp"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:padding="@dimen/j10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="配件"
+                        android:textColor="@color/black1"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="(可以多选哦)"
+                        android:textColor="@color/text_gray"
+                        android:textSize="11sp" />
+                </LinearLayout>
+
+                <com.glavesoft.view.GridViewForNoScroll
+                    android:id="@+id/gv_enclosure_watch"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/j5dp"
+                    android:layout_marginTop="@dimen/j10dp"
+                    android:background="@color/white"
+                    android:cacheColorHint="#00000000"
+                    android:columnWidth="@dimen/j150dp"
+                    android:listSelector="#00000000"
+                    android:numColumns="3"
+                    android:scrollbars="none"
+                    android:stretchMode="columnWidth"
+                    android:verticalSpacing="@dimen/j15dp" />
+            </LinearLayout>
+
+            <include layout="@layout/layout_pics_fj" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/j10dp"
+                android:paddingTop="@dimen/j5dp"
+                android:paddingRight="@dimen/j10dp"
+                android:paddingBottom="@dimen/j5dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="提示：附件是否齐全，对珠宝的最终估值很重要哦"
+                    android:textColor="@color/text_gray"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:padding="@dimen/j10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="购买价格"
+                    android:textColor="@color/black1"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="(人名币 元)"
+                    android:textColor="@color/text_gray"
+                    android:textSize="11sp" />
+
+                <EditText
+                    android:id="@+id/et_price_watch"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:gravity="center_vertical|right"
+                    android:hint="请输入价格"
+                    android:inputType="numberDecimal"
+                    android:paddingLeft="@dimen/j10dp"
+                    android:textColor="@color/black1"
+                    android:textColorHint="@color/text_gray"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/j1dp"
+                android:background="@color/white"
+                android:padding="@dimen/j10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="购买时间"
+                    android:textColor="@color/black1"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/tv_time_watch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:paddingLeft="@dimen/j10dp"
+                    android:textColor="@color/black1"
+                    android:textSize="15sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/xzz1" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/j10dp"
+                android:paddingTop="@dimen/j5dp"
+                android:paddingRight="@dimen/j10dp"
+                android:paddingBottom="@dimen/j5dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="提示：如无法估价，请转至邮寄鉴定"
+                    android:textColor="@color/red_k"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_submit_watch"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/j45dp"
+                android:layout_margin="@dimen/j25dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                 <TextView
+                     android:layout_width="match_parent"
+                     android:layout_height="@dimen/j45dp"
+                     android:background="@drawable/shape_login"
+                     android:gravity="center"
+                     android:text="发送鉴定申请"
+                     android:textColor="@android:color/white"
+                     android:textSize="16sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>
 

@@ -1,30 +1,159 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent">
-     <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@color/white" android:orientation="vertical">
-          <LinearLayout android:id="@+id/ll_pics_evaluationinfo" android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@color/white" android:paddingTop="@dimen/j10dp" android:paddingLeft="@dimen/j10dp" android:paddingBottom="@dimen/j10dp" android:orientation="vertical">
-               <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical">
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="*" android:textSize="14sp" android:textColor="@color/red_k" />
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1" android:text="外观照" android:textSize="15sp" android:textColor="@color/black" />
-                    <TextView android:id="@+id/tv_pic_ck" android:layout_width="@dimen/j76dp" android:layout_height="wrap_content" android:paddingTop="@dimen/j2dp" android:paddingBottom="@dimen/j2dp" android:paddingLeft="@dimen/j5dp" android:paddingRight="@dimen/j5dp" android:gravity="center" android:background="@drawable/shape_red2" android:text="照片参考" android:textSize="12sp" android:textColor="@color/white" />
-               </LinearLayout>
-               <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j3dp" android:text="(多角度照片，最少3张，最多9张，整体照片，局部照片，细节照片)" android:textSize="11sp" android:textColor="@color/text_gray" />
-               <com.glavesoft.view.GridViewForNoScroll android:id="@+id/gv_pics_evaluationinfo" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j10dp" android:layout_marginLeft="@dimen/j5dp" android:cacheColorHint="#00000000" android:columnWidth="@dimen/j150dp" android:listSelector="#00000000" android:numColumns="3" android:scrollbars="none" android:stretchMode="columnWidth" android:verticalSpacing="@dimen/j15dp" android:background="@color/white" />
-          </LinearLayout>
-          <View style="@style/line" />
-          <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="@dimen/j10dp">
-               <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content">
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="*" android:textSize="14sp" android:textColor="@color/red_k" />
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1" android:text="外观视频" android:textSize="15sp" android:textColor="@color/black1" />
-               </LinearLayout>
-               <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j3dp" android:text="(拍摄时长一分钟以内，多角度、整体、局部细节拍摄)" android:textSize="11sp" android:textColor="@color/text_gray" />
-          </LinearLayout>
-          <View style="@style/line" />
-          <FrameLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="@dimen/j15dp">
-               <ImageView android:id="@+id/iv_video_add" android:layout_width="@dimen/j100dp" android:layout_height="@dimen/j100dp" android:background="@drawable/shipin" android:scaleType="centerCrop" />
-               <ImageView android:id="@+id/iv_video" android:layout_width="@dimen/j100dp" android:layout_height="@dimen/j100dp" android:background="@drawable/shipin" android:scaleType="centerCrop" android:visibility="gone" />
-               <ImageView android:id="@+id/iv_video_play" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/spbf" android:layout_gravity="center" android:visibility="gone" />
-               <ImageView android:id="@+id/iv_video_del" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/shanchu" android:layout_gravity="right" android:visibility="gone" />
-          </FrameLayout>
-     </LinearLayout>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/ll_pics_evaluationinfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/j10dp"
+            android:paddingTop="@dimen/j10dp"
+            android:paddingBottom="@dimen/j10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="*"
+                    android:textColor="@color/red_k"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="外观照"
+                    android:textColor="@color/black"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/tv_pic_ck"
+                    android:layout_width="@dimen/j76dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/shape_red2"
+                    android:gravity="center"
+                    android:paddingLeft="@dimen/j5dp"
+                    android:paddingTop="@dimen/j2dp"
+                    android:paddingRight="@dimen/j5dp"
+                    android:paddingBottom="@dimen/j2dp"
+                    android:text="照片参考"
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/j3dp"
+                android:text="(多角度照片，最少3张，最多9张，整体照片，局部照片，细节照片)"
+                android:textColor="@color/text_gray"
+                android:textSize="11sp" />
+
+            <com.glavesoft.view.GridViewForNoScroll
+                android:id="@+id/gv_pics_evaluationinfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/j5dp"
+                android:layout_marginTop="@dimen/j10dp"
+                android:background="@color/white"
+                android:cacheColorHint="#00000000"
+                android:columnWidth="@dimen/j150dp"
+                android:listSelector="#00000000"
+                android:numColumns="3"
+                android:scrollbars="none"
+                android:stretchMode="columnWidth"
+                android:verticalSpacing="@dimen/j15dp" />
+        </LinearLayout>
+
+        <View style="@style/line" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/j10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="*"
+                    android:textColor="@color/red_k"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="外观视频"
+                    android:textColor="@color/black1"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/j3dp"
+                android:text="(拍摄时长一分钟以内，多角度、整体、局部细节拍摄)"
+                android:textColor="@color/text_gray"
+                android:textSize="11sp" />
+        </LinearLayout>
+
+        <View style="@style/line" />
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/j15dp">
+
+            <ImageView
+                android:id="@+id/iv_video_add"
+                android:layout_width="@dimen/j100dp"
+                android:layout_height="@dimen/j100dp"
+                android:background="@drawable/shipin"
+                android:scaleType="centerCrop" />
+
+            <ImageView
+                android:id="@+id/iv_video"
+                android:layout_width="@dimen/j100dp"
+                android:layout_height="@dimen/j100dp"
+                android:background="@drawable/shipin"
+                android:scaleType="centerCrop"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/iv_video_play"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/spbf"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/iv_video_del"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:background="@drawable/shanchu"
+                android:visibility="gone" />
+        </FrameLayout>
+    </LinearLayout>
 </LinearLayout>
 

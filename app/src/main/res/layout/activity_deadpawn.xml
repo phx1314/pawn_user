@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@color/bg_default"
     android:fitsSystemWindows="true"
     android:orientation="vertical">
 
@@ -11,7 +11,8 @@
     <cn.bingoogolapple.refreshlayout.BGARefreshLayout
         android:id="@+id/rl_recyclerview_refresh"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:padding="@dimen/j10dp">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_recyclerview_data"

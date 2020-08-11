@@ -1,10 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:pv="http://schemas.android.com/apk/res/com.glavesoft.pawnuser" android:id="@+id/title_home" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@color/bg_title" android:fitsSystemWindows="true">
-     <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j10dp" android:layout_marginBottom="@dimen/j10dp" android:gravity="center_vertical">
-          <com.glavesoft.view.RoundImageView android:id="@+id/iv_home_tx" android:layout_width="@dimen/j35dp" android:layout_height="@dimen/j35dp" android:layout_marginLeft="@dimen/j10dp" android:scaleType="fitXY" android:src="@drawable/tx" pv:border_thickness="@dimen/j1dp" android:visibility="gone" pv:border_inside_color="#fffff1" />
-          <ImageView android:id="@+id/iv_home_sys" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/sys" android:layout_marginLeft="@dimen/j10dp" android:scaleType="fitXY" android:visibility="gone" />
-          <TextView android:id="@+id/titlebar_home_search" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginRight="@dimen/j10dp" android:paddingLeft="@dimen/j8dp" android:paddingTop="@dimen/j6dp" android:paddingBottom="@dimen/j6dp" android:gravity="center_vertical" android:textSize="14sp" android:drawablePadding="@dimen/j5dp" android:textColor="@color/black1" android:drawableLeft="@drawable/search1" android:background="@drawable/shape_home_search" android:layout_marginLeft="@dimen/j15dp" />
-          <ImageView android:id="@+id/tv_home_news" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/j5dp" android:paddingTop="@dimen/j10dp" android:paddingBottom="@dimen/j10dp" android:layout_marginRight="@dimen/j10dp" android:src="@drawable/news" />
-     </LinearLayout>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:pv="http://schemas.android.com/apk/res/com.glavesoft.pawnuser"
+    android:id="@+id/title_home"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:fitsSystemWindows="true"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/j10dp"
+        android:layout_marginBottom="@dimen/j10dp"
+        android:gravity="center_vertical">
+
+        <com.glavesoft.view.RoundImageView
+            android:id="@+id/iv_home_tx"
+            android:layout_width="@dimen/j35dp"
+            android:layout_height="@dimen/j35dp"
+            android:layout_marginLeft="@dimen/j10dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/tx"
+            android:visibility="gone"
+            pv:border_inside_color="#fffff1"
+            pv:border_thickness="@dimen/j1dp" />
+
+        <ImageView
+            android:id="@+id/iv_home_sys"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/j10dp"
+            android:background="@drawable/sys"
+            android:scaleType="fitXY"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/titlebar_home_search"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/j15dp"
+            android:layout_marginRight="@dimen/j10dp"
+            android:layout_weight="1"
+            android:background="@drawable/shape_home_search"
+            android:drawableLeft="@drawable/search_"
+            android:drawablePadding="@dimen/j5dp"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/j8dp"
+            android:paddingTop="@dimen/j6dp"
+            android:paddingBottom="@dimen/j6dp"
+            android:textColor="@color/black1"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tv_home_news"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/j5dp"
+            android:layout_marginRight="@dimen/j10dp"
+            android:drawableTop="@drawable/news_"
+            android:text="消息"
+            android:textColor="#fff"
+            android:textSize="13sp" />
+    </LinearLayout>
 </LinearLayout>
 

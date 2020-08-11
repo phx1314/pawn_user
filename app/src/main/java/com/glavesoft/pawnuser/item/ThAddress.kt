@@ -64,7 +64,7 @@ class ThAddress(context: Context?) : BaseItem(context) {
         this.mAdaThAddress = mAdaThAddress
         this.item = item
         mCheckBox.setCompoundDrawablesWithIntrinsicBounds(
-            if (item.isDefault == 1) R.drawable.mr else R.drawable.mr_,
+            if (item.isDefault == 1) R.drawable.registered_tick else R.drawable.mr_,
             0,
             0,
             0

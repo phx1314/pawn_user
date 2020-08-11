@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.android.volley.VolleyError;
 import com.glavesoft.okGo.JsonCallback;
@@ -30,6 +31,7 @@ import java.util.Map;
  */
 public class FeedBackActivity extends BaseActivity implements View.OnClickListener{
     EditText et_feedback;
+    TextView button_dl;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -45,7 +47,8 @@ public class FeedBackActivity extends BaseActivity implements View.OnClickListen
         setTitleNameEn(R.mipmap.problem_feedback);
 
         et_feedback  = (EditText) findViewById(R.id.et_feedback);
-        setTitle_right("提交", new View.OnClickListener() {
+        button_dl  = (TextView) findViewById(R.id.button_dl);
+        button_dl.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(et_feedback.getText().toString().trim().length()==0){
@@ -55,6 +58,16 @@ public class FeedBackActivity extends BaseActivity implements View.OnClickListen
                 }
             }
         });
+//        setTitle_right("提交", new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                if(et_feedback.getText().toString().trim().length()==0){
+//                    CustomToast.show("请输入您的反馈内容");
+//                }else{
+//                    Feedback();
+//                }
+//            }
+//        });
 
     }
 

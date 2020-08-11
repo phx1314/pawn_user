@@ -2,8 +2,10 @@ package com.glavesoft.pawnuser.activity.shoppingmall;
 
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
+
 import android.view.Display;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -43,32 +45,32 @@ import cn.bingoogolapple.refreshlayout.BGARefreshLayout;
  * @date: 2017/11/30
  * @company:常州宝丰
  */
-public class DeadPawnageActivity extends BaseActivity implements BGARefreshLayout.BGARefreshLayoutDelegate{
+public class DeadPawnageActivity extends BaseActivity implements BGARefreshLayout.BGARefreshLayoutDelegate {
     private BGARefreshLayout mRefreshLayout;
     private RecyclerView mDataRv;
-    private ArrayList<StoreGoodsInfo> list=new ArrayList<>();
+    private ArrayList<StoreGoodsInfo> list = new ArrayList<>();
     private View headerview;
     private SlideShowView ssv_header_shoppingmall_pic;
     private JdStaggeredGridAdapter mStaggeredGridAdapter;
-    private List<String> adlist=new ArrayList<>();
+    private List<String> adlist = new ArrayList<>();
 
 
-    private ArrayList<StoreBannerInfo> StoreBannerList=new ArrayList<>();
-    private int page=1;
-    private int listsize=0;
+    private ArrayList<StoreBannerInfo> StoreBannerList = new ArrayList<>();
+    private int page = 1;
+    private int listsize = 0;
 
-    private String timeUp="0";//时间排序 0升序 1降序
-    private String priceUp="0";//价格 0升序 1降序
-    private String orgId="";//商铺id
+    private String timeUp = "0";//时间排序 0升序 1降序
+    private String priceUp = "0";//价格 0升序 1降序
+    private String orgId = "";//商铺id
 
     private LinearLayout ll_screen;
 
-    private ArrayList<orgInfo> orglist=new ArrayList<>();
+    private ArrayList<orgInfo> orglist = new ArrayList<>();
+
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_deadpawn);
+        setContentView(R.layout.activity_shoppingmall);
 
         initView();
     }
@@ -80,11 +82,10 @@ public class DeadPawnageActivity extends BaseActivity implements BGARefreshLayou
 
         headerview = LayoutInflater.from(DeadPawnageActivity.this).inflate(R.layout.header_jdshop, mDataRv, false);
         ssv_header_shoppingmall_pic = (SlideShowView) headerview.findViewById(R.id.ssv_header_shoppingmall_pic);
-        ll_screen= (LinearLayout) headerview.findViewById(R.id.ll_screen);
+        ll_screen = (LinearLayout) headerview.findViewById(R.id.ll_screen);
 
 
-
-        mRefreshLayout=(BGARefreshLayout) findViewById(R.id.rl_recyclerview_refresh);
+        mRefreshLayout = (BGARefreshLayout) findViewById(R.id.rl_recyclerview_refresh);
         mRefreshLayout.setDelegate(this);
 
 //        mRefreshLayout.setCustomHeaderView(headerview, true);
@@ -111,27 +112,27 @@ public class DeadPawnageActivity extends BaseActivity implements BGARefreshLayou
             public void itemOnClickListener(String type) {
 //                TextView tvName = (TextView)view;
                 //提示点击的子控件的文本
-                if(type.equals("时间")){
-                    if(timeUp.equals("0")){
-                        timeUp="1";
-                    }else{
-                        timeUp="0";
+                if (type.equals("时间")) {
+                    if (timeUp.equals("0")) {
+                        timeUp = "1";
+                    } else {
+                        timeUp = "0";
                     }
-                    orgId="";
+                    orgId = "";
                     resetPageData();
                 }
 
-                if(type.equals("价格")){
-                    if(priceUp.equals("0")){
-                        priceUp="1";
-                    }else{
-                        priceUp="0";
+                if (type.equals("价格")) {
+                    if (priceUp.equals("0")) {
+                        priceUp = "1";
+                    } else {
+                        priceUp = "0";
                     }
-                    orgId="";
+                    orgId = "";
                     resetPageData();
                 }
 
-                if(type.equals("店铺")){
+                if (type.equals("店铺")) {
                     orgName();
                 }
             }
@@ -142,19 +143,17 @@ public class DeadPawnageActivity extends BaseActivity implements BGARefreshLayou
     }
 
     private PopupWindow popwindow;
-    public void showPopupWindow()
-    {
+
+    public void showPopupWindow() {
         View view = LayoutInflater.from(this).inflate(R.layout.pw_listview, null);
 
         ListView lv_district = ((ListView) view.findViewById(R.id.lv_content));
-        lv_district.setOnItemClickListener(new AdapterView.OnItemClickListener()
-        {
+        lv_district.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id)
-            {
-                if (!orgId.equals(orglist.get(position).getOrgId())){
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                if (!orgId.equals(orglist.get(position).getOrgId())) {
                     popwindow.dismiss();
-                    orgId=orglist.get(position).getOrgId();
+                    orgId = orglist.get(position).getOrgId();
                     resetPageData();
                 }
             }
@@ -165,11 +164,11 @@ public class DeadPawnageActivity extends BaseActivity implements BGARefreshLayou
             @Override
             public void convert(final ViewHolder helper, final orgInfo item) {
                 helper.setText(R.id.textview, item.getOrgName());
-                if (item.getOrgId().equals(orgId)){
-                    helper.getView(R.id.rl_list).setBackgroundColor(getResources().getColor(R.color.bg_title));
-                }else{
-                    helper.getView(R.id.rl_list).setBackgroundColor(getResources().getColor(R.color.green_bg));
-                }
+//                if (item.getOrgId().equals(orgId)) {
+//                    helper.getView(R.id.rl_list).setBackgroundColor(getResources().getColor(R.color.bg_title));
+//                } else {
+//                    helper.getView(R.id.rl_list).setBackgroundColor(getResources().getColor(R.color.green_bg));
+//                }
             }
         };
         lv_district.setAdapter(commAdapter);
@@ -180,36 +179,32 @@ public class DeadPawnageActivity extends BaseActivity implements BGARefreshLayou
         int aHeight = headerview.getHeight() + location[1];
         int tHeight = getWindowManager().getDefaultDisplay().getHeight() - aHeight;
         int aWidth = headerview.getWidth();
-        popwindow = new PopupWindow(view, aWidth - ScreenUtils.dp2px(this,40), tHeight, true);
+        popwindow = new PopupWindow(view, aWidth, tHeight, true);
         popwindow.setOutsideTouchable(true);
         popwindow.setBackgroundDrawable(new ColorDrawable());
-        popwindow.showAtLocation(view, Gravity.NO_GRAVITY, location[0]+ScreenUtils.dp2px(this, 40), aHeight);
+        popwindow.showAsDropDown(headerview, 0, 0);
     }
 
     private PopupWindow popupWindo;
-    public void showPopupWindow1()
-    {
-        if (popupWindo!=null){
-            popupWindo=null;
+
+    public void showPopupWindow1() {
+        if (popupWindo != null) {
+            popupWindo = null;
         }
         View view = LayoutInflater.from(this).inflate(R.layout.pw_shop, null);
-        ImageView iv_kk = (ImageView)view.findViewById(R.id.iv_kk);
-        ImageView iv_close = (ImageView)view.findViewById(R.id.iv_close);
+        ImageView iv_kk = (ImageView) view.findViewById(R.id.iv_kk);
+        ImageView iv_close = (ImageView) view.findViewById(R.id.iv_close);
 
-        iv_kk.setOnClickListener(new View.OnClickListener()
-        {
+        iv_kk.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v)
-            {
+            public void onClick(View v) {
                 popupWindo.dismiss();
             }
         });
 
-        iv_close.setOnClickListener(new View.OnClickListener()
-        {
+        iv_close.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v)
-            {
+            public void onClick(View v) {
                 popupWindo.dismiss();
             }
         });
@@ -242,10 +237,10 @@ public class DeadPawnageActivity extends BaseActivity implements BGARefreshLayou
 
     @Override
     public boolean onBGARefreshLayoutBeginLoadingMore(BGARefreshLayout refreshLayout) {
-        if(listsize==10){
+        if (listsize == 10) {
             page++;
             storeJDGoodsList();
-        }else{
+        } else {
             CustomToast.show("无更多数据");
             mRefreshLayout.endLoadingMore();
             return false;
@@ -253,8 +248,7 @@ public class DeadPawnageActivity extends BaseActivity implements BGARefreshLayou
         return true;
     }
 
-    private void resetPageData()
-    {
+    private void resetPageData() {
         page = 1;
         list.clear();
 //        mStaggeredGridAdapter = null;
@@ -262,10 +256,9 @@ public class DeadPawnageActivity extends BaseActivity implements BGARefreshLayou
         storeJDGoodsList();
     }
 
-    private void jdGoodsBanner()
-    {
-        String token= LocalData.getInstance().getUserInfo().getToken();
-        String url=BaseConstant.getApiPostUrl("storeGoods/jdGoodsBanner");
+    private void jdGoodsBanner() {
+        String token = LocalData.getInstance().getUserInfo().getToken();
+        String url = BaseConstant.getApiPostUrl("storeGoods/jdGoodsBanner");
         getlDialog().show();
         OkGo.<DataResult<ArrayList<StoreBannerInfo>>>post(url)
                 .params("token", token)
@@ -275,28 +268,27 @@ public class DeadPawnageActivity extends BaseActivity implements BGARefreshLayou
                     @Override
                     public void onSuccess(Response<DataResult<ArrayList<StoreBannerInfo>>> response) {
                         getlDialog().dismiss();
-                        if (response==null){
+                        if (response == null) {
                             CustomToast.show(getString(R.string.http_request_fail));
                             return;
                         }
 
-                        if(response.body().getErrorCode()== DataResult.RESULT_OK_ZERO){
+                        if (response.body().getErrorCode() == DataResult.RESULT_OK_ZERO) {
 
-                            if(response.body().getData()!=null&&response.body().getData().size()>0){
-                                StoreBannerList=response.body().getData();
+                            if (response.body().getData() != null && response.body().getData().size() > 0) {
+                                StoreBannerList = response.body().getData();
                                 ssv_header_shoppingmall_pic.setVisibility(View.VISIBLE);
-                            }else{
+                            } else {
                                 ssv_header_shoppingmall_pic.setVisibility(View.GONE);
                             }
 
                             headerview = LayoutInflater.from(DeadPawnageActivity.this).inflate(R.layout.header_jdshop, mDataRv, false);
-                            mStaggeredGridAdapter.setHeaderView(headerview,StoreBannerList);
+                            mStaggeredGridAdapter.setHeaderView(headerview, StoreBannerList);
                             //showPopupWindow1();
 
-                        }else if (response.body().getErrorCode()==DataResult.RESULT_102)
-                        {
+                        } else if (response.body().getErrorCode() == DataResult.RESULT_102) {
                             toLogin();
-                        }else {
+                        } else {
                             CustomToast.show(response.body().getErrorMsg());
                         }
                     }
@@ -310,14 +302,13 @@ public class DeadPawnageActivity extends BaseActivity implements BGARefreshLayou
     }
 
 
-    private void storeJDGoodsList()
-    {
-        String token= LocalData.getInstance().getUserInfo().getToken();
-        String url=BaseConstant.getApiPostUrl("storeGoods/storeJDGoodsList");
+    private void storeJDGoodsList() {
+        String token = LocalData.getInstance().getUserInfo().getToken();
+        String url = BaseConstant.getApiPostUrl("storeGoods/storeJDGoodsList");
         getlDialog().show();
         OkGo.<DataResult<ArrayList<StoreGoodsInfo>>>post(url)
                 .params("token", token)
-                .params("page", page+"")
+                .params("page", page + "")
                 .params("limit", "10")
                 .params("timeUp", timeUp)
                 .params("priceUp", priceUp)
@@ -328,37 +319,36 @@ public class DeadPawnageActivity extends BaseActivity implements BGARefreshLayou
                         getlDialog().dismiss();
                         mRefreshLayout.endRefreshing();
                         mRefreshLayout.endLoadingMore();
-                        if (response==null){
+                        if (response == null) {
                             CustomToast.show(getString(R.string.http_request_fail));
                             return;
                         }
 
-                        if(response.body().getErrorCode()== DataResult.RESULT_OK_ZERO){
+                        if (response.body().getErrorCode() == DataResult.RESULT_OK_ZERO) {
 
-                            if(response.body().getData()!=null&&response.body().getData().size()>0){
-                                listsize=response.body().getData().size();
-                                if(list.size()==0){
-                                    list= response.body().getData();
-                                }else {
+                            if (response.body().getData() != null && response.body().getData().size() > 0) {
+                                listsize = response.body().getData().size();
+                                if (list.size() == 0) {
+                                    list = response.body().getData();
+                                } else {
                                     for (int i = 0; i < response.body().getData().size(); i++) {
                                         list.add(response.body().getData().get(i));
                                     }
                                 }
                                 mStaggeredGridAdapter.refreshDatas(list);
 
-                            }else{
-                                if(list.size()>0){
+                            } else {
+                                if (list.size() > 0) {
                                     CustomToast.show("无更多数据");
-                                }else{
+                                } else {
                                     mStaggeredGridAdapter.refreshDatas(list);
                                 }
                             }
 
 
-                        }else if (response.body().getErrorCode()==DataResult.RESULT_102 )
-                        {
+                        } else if (response.body().getErrorCode() == DataResult.RESULT_102) {
                             toLogin();
-                        }else {
+                        } else {
                             CustomToast.show(response.body().getErrorMsg());
                         }
                     }
@@ -373,10 +363,9 @@ public class DeadPawnageActivity extends BaseActivity implements BGARefreshLayou
                 });
     }
 
-    private void orgName()
-    {
-        String token= LocalData.getInstance().getUserInfo().getToken();
-        String url=BaseConstant.getApiPostUrl("storeGoods/orgName");
+    private void orgName() {
+        String token = LocalData.getInstance().getUserInfo().getToken();
+        String url = BaseConstant.getApiPostUrl("storeGoods/orgName");
         getlDialog().show();
         OkGo.<DataResult<ArrayList<orgInfo>>>post(url)
                 .params("token", token)
@@ -386,25 +375,24 @@ public class DeadPawnageActivity extends BaseActivity implements BGARefreshLayou
                     @Override
                     public void onSuccess(Response<DataResult<ArrayList<orgInfo>>> response) {
                         getlDialog().dismiss();
-                        if (response==null){
+                        if (response == null) {
                             CustomToast.show(getString(R.string.http_request_fail));
                             return;
                         }
 
-                        if(response.body().getErrorCode()== DataResult.RESULT_OK_ZERO){
+                        if (response.body().getErrorCode() == DataResult.RESULT_OK_ZERO) {
 
-                            if(response.body().getData()!=null&&response.body().getData().size()>0){
-                                orglist=response.body().getData();
+                            if (response.body().getData() != null && response.body().getData().size() > 0) {
+                                orglist = response.body().getData();
                                 showPopupWindow();
 
-                            }else{
+                            } else {
 
                             }
 
-                        }else if (response.body().getErrorCode()==DataResult.RESULT_102)
-                        {
+                        } else if (response.body().getErrorCode() == DataResult.RESULT_102) {
                             toLogin();
-                        }else {
+                        } else {
                             CustomToast.show(response.body().getErrorMsg());
                         }
                     }

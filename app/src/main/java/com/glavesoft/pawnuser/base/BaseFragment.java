@@ -6,6 +6,7 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Build;
@@ -46,6 +47,9 @@ import com.mdx.framework.utility.AbAppUtil;
 import com.mdx.framework.utility.Helper;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
+import com.nostra13.universalimageloader.core.assist.ImageScaleType;
+import com.nostra13.universalimageloader.core.display.CircleBitmapDisplayer;
+import com.nostra13.universalimageloader.core.display.RoundedBitmapDisplayer;
 import com.permissionutil.PermissionListener;
 import com.permissionutil.PermissionUtil;
 import com.sobot.chat.SobotApi;
@@ -75,6 +79,7 @@ public class BaseFragment extends BaseFrg {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         return super.onCreateView(inflater, container, savedInstanceState);
     }
+
     public ImageLoader getImageLoader() {
         if (imageLoader == null) {
             imageLoader = ImageLoader.getInstance();
@@ -281,14 +286,26 @@ public class BaseFragment extends BaseFrg {
                 .showImageOnLoading(image).showStubImage(image)
                 .showImageForEmptyUri(image)//url为空时显示的图片
                 .showImageOnFail(image)//加载失败显示的图片
-                .cacheInMemory()//内存缓存
-                .cacheOnDisc()//磁盘缓存
-                .displayer(new FlexibleRoundedBitmapDisplayer(cornerRadius, corners)) // 自定义增强型BitmapDisplayer
+                .cacheInMemory(true).cacheOnDisk(true)
+                .displayer(new RoundedBitmapDisplayer(cornerRadius, corners)) // 自定义增强型BitmapDisplayer
                 .build();
         imageLoader.displayImage(url, imageView, options);
 
     }
 
+    public void setOvelImage(String url, int image, ImageView imageView) {
+        ImageLoader imageLoader = ImageLoader.getInstance();
+        DisplayImageOptions options = new DisplayImageOptions.Builder()
+                .showImageOnLoading(image).showStubImage(image)
+                .showImageForEmptyUri(image)//url为空时显示的图片
+                .showImageOnFail(image)//加载失败显示的图片
+                .cacheInMemory()//内存缓存
+                .cacheOnDisc()//磁盘缓存
+                .displayer(new CircleBitmapDisplayer()) // 自定义增强型BitmapDisplayer
+                .build();
+        imageLoader.displayImage(url, imageView, options);
+
+    }
 
 
     /**

@@ -35,7 +35,7 @@
     <string name="Camera_toast" tools:ignore="MissingTranslation">我们需要摄像头权限和录音权限才能正常使用该功能！</string>
     <string name="Location_toast" tools:ignore="MissingTranslation">我们需要定位权限才能正常使用该功能！</string>
     <string name="shop_title" tools:ignore="MissingTranslation">购物车(%s)</string>
-    <string name="count_money" tools:ignore="MissingTranslation">合计：￥%s</string>
+    <string name="count_money" tools:ignore="MissingTranslation">￥%s</string>
     <string name="count_goods" tools:ignore="MissingTranslation">结算（%s）</string>
     <string name="wx_toast_login" tools:ignore="MissingTranslation">用户信息已存在，正在跳转登录操作…</string>
     <string name="wx_toast_loginthird" tools:ignore="MissingTranslation">使用第三方帐号登录中…</string>

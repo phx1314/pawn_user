@@ -51,7 +51,7 @@ public class BindPhoneActivity  extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_bind_phone);
+        setContentView(R.layout.activity_bind_phone_n);
         type=getIntent().getStringExtra("type");
         openid=getIntent().getStringExtra("openid");
         setView();

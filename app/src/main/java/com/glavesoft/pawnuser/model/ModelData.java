@@ -10,5 +10,6 @@ import java.util.List;
 
 public class ModelData<T> implements Serializable {
     public List<T> mList = new ArrayList();
+    public int count;
 
 }

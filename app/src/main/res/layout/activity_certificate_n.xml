@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_default"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <include layout="@layout/titlebar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"  android:elevation="@dimen/j3dp"
+        android:layout_margin="@dimen/j16dp"
+        android:background="@drawable/shape_white_rz"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/kb_" />
+
+        <LinearLayout
+            android:id="@+id/ll_number_certificate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/j15dp"
+            android:layout_marginTop="@dimen/j25dp"
+            android:layout_marginRight="@dimen/j15dp"
+            android:background="@drawable/shape_k"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/j25dp"
+            android:paddingTop="@dimen/j18dp"
+            android:paddingRight="@dimen/j16dp"
+            android:paddingBottom="@dimen/j20dp">
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/bianhao_"
+                android:drawableRight="@drawable/ck_"
+                android:drawablePadding="@dimen/j18dp"
+                android:gravity="center_vertical"
+
+                android:text="编号查询"
+                android:textColor="@color/black1"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_gj_certificate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/j15dp"
+            android:layout_marginTop="@dimen/j25dp"
+            android:layout_marginRight="@dimen/j15dp"
+            android:layout_marginBottom="@dimen/j25dp"
+            android:background="@drawable/shape_k"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/j25dp"
+            android:paddingTop="@dimen/j18dp"
+            android:paddingRight="@dimen/j16dp"
+            android:paddingBottom="@dimen/j20dp">
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/sousuo_"
+                android:drawableRight="@drawable/ck_"
+                android:drawablePadding="@dimen/j18dp"
+                android:gravity="center_vertical"
+
+                android:text="高级搜索"
+                android:textColor="@color/black1"
+                android:textSize="16sp" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
+

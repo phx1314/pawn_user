@@ -1,37 +1,208 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent" android:background="@color/bg_title" android:fitsSystemWindows="true">
-     <include layout="@layout/titlebar" />
-     <ScrollView android:layout_width="match_parent" android:layout_height="match_parent" android:background="@color/bg_default">
-          <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent">
-               <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@color/white" android:paddingLeft="@dimen/j10dp" android:paddingTop="@dimen/j10dp" android:paddingBottom="@dimen/j10dp" android:orientation="vertical">
-                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical">
-                         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1" android:text="第一步：上传藏品照片" android:textSize="15sp" android:textColor="@color/black1" />
-                         <TextView android:id="@+id/tv_pic_ck" android:layout_width="@dimen/j74dp" android:layout_height="wrap_content" android:gravity="center" android:paddingTop="@dimen/j2dp" android:paddingBottom="@dimen/j2dp" android:paddingLeft="@dimen/j5dp" android:paddingRight="@dimen/j5dp" android:background="@drawable/shape_red2" android:text="照片参考" android:textSize="12sp" android:textColor="@color/white" />
-                    </LinearLayout>
-                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j3dp" android:text="(多角度照片，最少3张，最多9张，整体照片，局部照片，细节照片)" android:textSize="11sp" android:textColor="@color/text_gray" />
-                    <com.glavesoft.view.GridViewForNoScroll android:id="@+id/gv_pics_evaluationinfo" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j10dp" android:layout_marginLeft="@dimen/j5dp" android:cacheColorHint="#00000000" android:columnWidth="@dimen/j150dp" android:listSelector="#00000000" android:numColumns="3" android:scrollbars="none" android:stretchMode="columnWidth" android:verticalSpacing="@dimen/j15dp" android:background="@color/white" />
-               </LinearLayout>
-               <LinearLayout android:id="@+id/ll_video_mail" android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@color/white" android:orientation="vertical" android:layout_marginTop="@dimen/j1dp" android:padding="@dimen/j10dp">
-                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@color/white" android:text="第二步：上传藏品视频" android:textSize="14sp" android:textColor="@color/black1" />
-                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j3dp" android:text="(拍摄时长一分钟以内，多角度、整体、局部细节拍摄)" android:textSize="11sp" android:textColor="@color/text_gray" />
-                    <FrameLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="@dimen/j5dp">
-                         <ImageView android:id="@+id/iv_video_add" android:layout_width="@dimen/j100dp" android:layout_height="@dimen/j100dp" android:background="@drawable/shipin" android:scaleType="centerCrop" />
-                         <ImageView android:id="@+id/iv_video" android:layout_width="@dimen/j100dp" android:layout_height="@dimen/j100dp" android:background="@drawable/shipin" android:scaleType="centerCrop" android:visibility="gone" />
-                         <ImageView android:id="@+id/iv_video_play" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/spbf" android:layout_gravity="center" android:visibility="gone" />
-                         <ImageView android:id="@+id/iv_video_del" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/shanchu" android:layout_gravity="right" android:visibility="gone" />
-                    </FrameLayout>
-               </LinearLayout>
-               <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@color/white" android:layout_marginTop="@dimen/j1dp" android:padding="@dimen/j10dp" android:orientation="vertical">
-                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content">
-                         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="第三步：藏品描述及鉴定要求" android:textSize="15sp" android:textColor="@color/black1" />
-                         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="(限500字)" android:textSize="13sp" android:textColor="@color/text_gray" />
-                    </LinearLayout>
-                    <EditText android:id="@+id/et_require_other" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j10dp" android:gravity="top" android:padding="@dimen/j10dp" android:background="@drawable/shape_other_txt" android:minLines="4" android:maxLength="500" android:textSize="13sp" android:textColor="@color/black1" android:textColorHint="@color/text_gray" android:hint="1、请写明需要专家鉴定的内容，如真伪、价格；\n2、请详细的描述藏品的特征，如材质、朝代、尺寸；\n3、专家鉴定结果仅代表专家个人意见，仅供参考。" />
-               </LinearLayout>
-               <LinearLayout android:id="@+id/ll_submit_other" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="@dimen/j45dp" android:layout_margin="@dimen/j25dp" android:gravity="center" android:background="@mipmap/button">
-                    <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@mipmap/button_send" />
-               </LinearLayout>
-          </LinearLayout>
-     </ScrollView>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_title"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <include layout="@layout/titlebar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bg_default">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/j10dp"
+                android:paddingTop="@dimen/j10dp"
+                android:paddingBottom="@dimen/j10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="第一步：上传藏品照片"
+                        android:textColor="@color/black1"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/tv_pic_ck"
+                        android:layout_width="@dimen/j74dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/shape_red2"
+                        android:gravity="center"
+                        android:paddingLeft="@dimen/j5dp"
+                        android:paddingTop="@dimen/j2dp"
+                        android:paddingRight="@dimen/j5dp"
+                        android:paddingBottom="@dimen/j2dp"
+                        android:text="照片参考"
+                        android:textColor="@color/white"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/j3dp"
+                    android:text="(多角度照片，最少3张，最多9张，整体照片，局部照片，细节照片)"
+                    android:textColor="@color/text_gray"
+                    android:textSize="11sp" />
+
+                <com.glavesoft.view.GridViewForNoScroll
+                    android:id="@+id/gv_pics_evaluationinfo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/j5dp"
+                    android:layout_marginTop="@dimen/j10dp"
+                    android:background="@color/white"
+                    android:cacheColorHint="#00000000"
+                    android:columnWidth="@dimen/j150dp"
+                    android:listSelector="#00000000"
+                    android:numColumns="3"
+                    android:scrollbars="none"
+                    android:stretchMode="columnWidth"
+                    android:verticalSpacing="@dimen/j15dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_video_mail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/j1dp"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:padding="@dimen/j10dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:text="第二步：上传藏品视频"
+                    android:textColor="@color/black1"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/j3dp"
+                    android:text="(拍摄时长一分钟以内，多角度、整体、局部细节拍摄)"
+                    android:textColor="@color/text_gray"
+                    android:textSize="11sp" />
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/j5dp">
+
+                    <ImageView
+                        android:id="@+id/iv_video_add"
+                        android:layout_width="@dimen/j100dp"
+                        android:layout_height="@dimen/j100dp"
+                        android:background="@drawable/shipin"
+                        android:scaleType="centerCrop" />
+
+                    <ImageView
+                        android:id="@+id/iv_video"
+                        android:layout_width="@dimen/j100dp"
+                        android:layout_height="@dimen/j100dp"
+                        android:background="@drawable/shipin"
+                        android:scaleType="centerCrop"
+                        android:visibility="gone" />
+
+                    <ImageView
+                        android:id="@+id/iv_video_play"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:background="@drawable/spbf"
+                        android:visibility="gone" />
+
+                    <ImageView
+                        android:id="@+id/iv_video_del"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:background="@drawable/shanchu"
+                        android:visibility="gone" />
+                </FrameLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/j1dp"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:padding="@dimen/j10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="第三步：藏品描述及鉴定要求"
+                        android:textColor="@color/black1"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="(限500字)"
+                        android:textColor="@color/text_gray"
+                        android:textSize="13sp" />
+                </LinearLayout>
+
+                <EditText
+                    android:id="@+id/et_require_other"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/j10dp"
+                    android:background="@drawable/shape_other_txt"
+                    android:gravity="top"
+                    android:hint="1、请写明需要专家鉴定的内容，如真伪、价格；\n2、请详细的描述藏品的特征，如材质、朝代、尺寸；\n3、专家鉴定结果仅代表专家个人意见，仅供参考。"
+                    android:maxLength="500"
+                    android:minLines="4"
+                    android:padding="@dimen/j10dp"
+                    android:textColor="@color/black1"
+                    android:textColorHint="@color/text_gray"
+                    android:textSize="13sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_submit_other"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/j45dp"
+                android:layout_margin="@dimen/j25dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                 <TextView
+                     android:layout_width="match_parent"
+                     android:layout_height="@dimen/j45dp"
+                     android:background="@drawable/shape_login"
+                     android:gravity="center"
+                     android:text="发送鉴定申请"
+                     android:textColor="@android:color/white"
+                     android:textSize="16sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>
 

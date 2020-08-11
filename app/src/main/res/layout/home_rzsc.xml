@@ -1,53 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@color/bg_default">
-     <FrameLayout android:id="@+id/fl_home_rzsc" android:layout_width="match_parent" android:layout_height="wrap_content">
-          <ImageView android:id="@+id/iv_home_rzsc" android:layout_width="match_parent" android:layout_height="@dimen/j150dp" android:scaleType="centerCrop" />
-          <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_gravity="bottom" android:gravity="bottom" android:paddingLeft="@dimen/j10dp" android:paddingBottom="@dimen/j5dp" android:orientation="vertical" android:background="@drawable/tm">
-               <TextView android:id="@+id/tv_home_rzsc_name" android:layout_width="match_parent" android:layout_height="wrap_content" android:singleLine="true" android:text="精品商品" android:textColor="@color/white" android:textSize="14sp" />
-          </LinearLayout>
-     </FrameLayout>
-     <LinearLayout android:id="@+id/ll_home_rzsc_goods" android:layout_width="match_parent" android:layout_height="@dimen/j141dp" android:visibility="gone">
-          <LinearLayout android:id="@+id/ll_home_rzsc1" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1" android:orientation="vertical" android:padding="@dimen/j10dp" android:background="@color/white">
-               <TextView android:id="@+id/tv_home_rzsc_title1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="14sp" android:textColor="@color/black" android:singleLine="true" />
-               <TextView android:id="@+id/tv_home_rzsc_content1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j2dp" android:textSize="13sp" android:textColor="@color/text_gray" android:singleLine="true" />
-               <ImageView android:id="@+id/iv_home_rzsc_pic1" android:layout_width="@dimen/j140dp" android:layout_height="match_parent" android:layout_marginTop="@dimen/j5dp" android:scaleType="centerCrop" />
-          </LinearLayout>
-          <View android:layout_width="@dimen/j1dp" android:layout_height="match_parent" />
-          <LinearLayout android:layout_width="match_parent" android:layout_height="@dimen/j141dp" android:layout_weight="1" android:orientation="vertical">
-               <LinearLayout android:id="@+id/ll_home_rzsc2" android:layout_width="match_parent" android:layout_height="@dimen/j70dp" android:gravity="top" android:padding="@dimen/j10dp" android:background="@color/white">
-                    <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
-                         <TextView android:id="@+id/tv_home_rzsc_title2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="14sp" android:textColor="@color/black" android:singleLine="true" />
-                         <TextView android:id="@+id/tv_home_rzsc_content2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="13sp" android:textColor="@color/text_gray" android:singleLine="true" />
-                    </LinearLayout>
-                    <ImageView android:id="@+id/iv_home_rzsc_pic2" android:layout_width="@dimen/j70dp" android:layout_height="@dimen/j55dp" android:scaleType="centerCrop" />
-               </LinearLayout>
-               <View android:layout_width="match_parent" android:layout_height="@dimen/j1dp" />
-               <LinearLayout android:id="@+id/ll_home_rzsc3" android:layout_width="match_parent" android:layout_height="@dimen/j70dp" android:gravity="top" android:padding="@dimen/j10dp" android:background="@color/white">
-                    <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
-                         <TextView android:id="@+id/tv_home_rzsc_title3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="14sp" android:textColor="@color/black" android:singleLine="true" />
-                         <TextView android:id="@+id/tv_home_rzsc_content3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="13sp" android:textColor="@color/text_gray" android:singleLine="true" />
-                    </LinearLayout>
-                    <ImageView android:id="@+id/iv_home_rzsc_pic3" android:layout_width="@dimen/j70dp" android:layout_height="@dimen/j55dp" android:scaleType="centerCrop" />
-               </LinearLayout>
-          </LinearLayout>
-     </LinearLayout>
-     <LinearLayout android:id="@+id/ll_home_rzsc_goods1" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j1dp" android:visibility="gone">
-          <LinearLayout android:id="@+id/ll_home_rzsc4" android:layout_width="match_parent" android:layout_height="@dimen/j70dp" android:layout_weight="1" android:gravity="top" android:padding="@dimen/j10dp" android:background="@color/white">
-               <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
-                    <TextView android:id="@+id/tv_home_rzsc_title4" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="14sp" android:textColor="@color/black" android:singleLine="true" />
-                    <TextView android:id="@+id/tv_home_rzsc_content4" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="13sp" android:textColor="@color/text_gray" android:singleLine="true" />
-               </LinearLayout>
-               <ImageView android:id="@+id/iv_home_rzsc_pic4" android:layout_width="@dimen/j70dp" android:layout_height="@dimen/j55dp" android:scaleType="centerCrop" />
-          </LinearLayout>
-          <View android:layout_width="@dimen/j1dp" android:layout_height="match_parent" />
-          <LinearLayout android:id="@+id/ll_home_rzsc5" android:layout_width="match_parent" android:layout_height="@dimen/j70dp" android:layout_weight="1" android:gravity="top" android:padding="@dimen/j10dp" android:background="@color/white">
-               <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
-                    <TextView android:id="@+id/tv_home_rzsc_title5" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="14sp" android:textColor="@color/black" android:singleLine="true" />
-                    <TextView android:id="@+id/tv_home_rzsc_content5" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="13sp" android:textColor="@color/text_gray" android:singleLine="true" />
-               </LinearLayout>
-               <ImageView android:id="@+id/iv_home_rzsc_pic5" android:layout_width="@dimen/j70dp" android:layout_height="@dimen/j55dp" android:scaleType="centerCrop" />
-          </LinearLayout>
-     </LinearLayout>
-     <com.glavesoft.view.GridViewForNoScroll android:id="@+id/grid_home_rzsc" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:horizontalSpacing="@dimen/j1dp" android:numColumns="2" android:layout_marginTop="@dimen/j5dp" android:background="@color/white" />
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:id="@+id/fl_home_rzsc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/j10dp">
+
+        <ImageView
+            android:id="@+id/iv_home_rzsc"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/j110dp"
+            android:scaleType="centerCrop" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:gravity="bottom"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/j10dp"
+            android:paddingBottom="@dimen/j5dp">
+
+            <TextView
+                android:id="@+id/tv_home_rzsc_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:text="精品商品"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+        </LinearLayout>
+    </FrameLayout>
+
+    <com.glavesoft.view.GridViewForNoScroll
+        android:id="@+id/grid_home_rzsc"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/j10dp"
+        android:layout_weight="1"
+        android:background="@color/white"
+        android:horizontalSpacing="@dimen/j10dp"
+        android:numColumns="3"
+        android:verticalSpacing="@dimen/j10dp" />
 </LinearLayout>
 

@@ -26,6 +26,7 @@ import com.glavesoft.pawnuser.frg.FrgProductDetail;
 import com.glavesoft.pawnuser.mod.ShopCar;
 import com.glavesoft.pawnuser.shoppingcar.OnShoppingCartChangeListener;
 import com.glavesoft.pawnuser.shoppingcar.ShoppingCartBiz;
+import com.glavesoft.util.GlideLoader;
 import com.glavesoft.view.UIAlertView;
 import com.mdx.framework.activity.TitleAct;
 import com.mdx.framework.utility.Helper;
@@ -168,7 +169,6 @@ public class MyExpandableListAdapter extends BaseExpandableListAdapter {
             holder.ivGoods= (ImageView) convertView.findViewById(R.id.ivGoods);
             holder.tvDel = (TextView) convertView.findViewById(R.id.tvDel);
             holder.ivCheckGood = (ImageView) convertView.findViewById(R.id.ivCheckGood);
-            holder.rlEditStatus = (RelativeLayout) convertView.findViewById(R.id.rlEditStatus);
             holder.llGoodInfo = (LinearLayout) convertView.findViewById(R.id.llGoodInfo);
             holder.ivAdd = (ImageView) convertView.findViewById(R.id.ivAdd);
             holder.ivReduce = (ImageView) convertView.findViewById(R.id.ivReduce);
@@ -202,7 +202,8 @@ public class MyExpandableListAdapter extends BaseExpandableListAdapter {
         String pdtDesc ="描述";
         String goodName = mListGoods.get(groupPosition).getGoods().get(childPosition).getGoodsName();
         if(!goods.getGoodsImg().equals("")) {
-            ImageLoader.getInstance().displayImage(BaseConstant.Image_URL+goods.getGoodsImg(),  holder.ivGoods, options);
+//            ImageLoader.getInstance().displayImage(BaseConstant.Image_URL+goods.getGoodsImg(),  holder.ivGoods, options);
+            GlideLoader.loadRoundImage(BaseConstant.Image_URL + goods.getGoodsImg(), holder.ivGoods, R.drawable.sy_bj);
         }else{
             ImageLoader.getInstance().displayImage("",  holder.ivGoods, options);
         }
@@ -224,10 +225,8 @@ public class MyExpandableListAdapter extends BaseExpandableListAdapter {
         ShoppingCartBiz.checkItem(isChildSelected, holder.ivCheckGood);
         if (isEditing) {
             holder.llGoodInfo.setVisibility(View.GONE);
-            holder.rlEditStatus.setVisibility(View.VISIBLE);
         } else {
             holder.llGoodInfo.setVisibility(View.VISIBLE);
-            holder.rlEditStatus.setVisibility(View.GONE);
         }
         holder.rl_item_shopcar.setOnClickListener(listener);
         holder.ivCheckGood.setOnClickListener(listener);
@@ -437,8 +436,6 @@ public class MyExpandableListAdapter extends BaseExpandableListAdapter {
         ImageView ivCheckGood;
         /** 非编辑状态 */
         LinearLayout llGoodInfo;
-        /** 编辑状态 */
-        RelativeLayout rlEditStatus;
         /** +1 */
         ImageView ivAdd;
         /** -1 */

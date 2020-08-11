@@ -70,6 +70,19 @@ import static com.mdx.framework.service.ServiceFactoryKt.gB;
 //18262963098 15151963763
 public class PersonalFragment extends BaseFragment implements View.OnClickListener {
 
+    public ImageView mImageView_set;
+    public TextView tv_wdyhq;
+    public TextView tv_htjl;
+    public LinearLayout mLinearLayout_1;
+    public LinearLayout mLinearLayout_2;
+    public LinearLayout mLinearLayout_3;
+    public LinearLayout mLinearLayout_4;
+    public LinearLayout mLinearLayout_5;
+    public LinearLayout mLinearLayout_6;
+    public LinearLayout mLinearLayout_7;
+    public LinearLayout mLinearLayout_8;
+    public LinearLayout mLinearLayout_9;
+    public LinearLayout mLinearLayout_10;
     private LinearLayout ll_myinfo;
     //    private ImageView iv_personal_back,iv_personal_set;
     private TextView tv_my_version;
@@ -78,16 +91,11 @@ public class PersonalFragment extends BaseFragment implements View.OnClickListen
     private RoundImageView my_photo;
     private TextView tv_my_name, tv_my_phone;
 
-    private ImageView titlebar_kf;
-    private ImageView iv_en;
-    private LinearLayout ll_en;
 
-    private GridViewForNoScroll nsgv_home_jdxp;
 //    int[] img = new int[]{R.drawable.wdyw, R.drawable.scdd, R.drawable.wlxx, R.drawable.pjzx, R.drawable.ddjl, R.drawable.ddjk, R.drawable.wdyhk, R.drawable.rlyz, R.drawable.wdkf };
 //    String[] title = new String[]{"业务中", "商城订单", "物流信息", "票据中心", "业务记录", "业务监控", "我的银行卡", "人脸认证", "客服" };
-    int[] img = new int[]{R.drawable.wdyw, R.drawable.scdd, R.drawable.wlxx, R.drawable.pjzx, R.drawable.ddjl, R.drawable.ddjk, R.drawable.wdyhk, R.drawable.rlyz, R.drawable.wdkf, R.drawable.sjd};
-    String[] title = new String[]{"业务中", "商城订单", "物流信息", "票据中心", "业务记录", "业务监控", "我的银行卡", "人脸认证", "客服", "商家端"};
-    ArrayList<ItemInfo> list = new ArrayList<>();
+//    int[] img = new int[]{R.drawable.wdyw, R.drawable.scdd, R.drawable.wlxx, R.drawable.pjzx, R.drawable.ddjl, R.drawable.ddjk, R.drawable.wdyhk, R.drawable.rlyz, R.drawable.wdkf, R.drawable.sjd};
+//    String[] title = new String[]{"业务中", "商城订单", "物流信息", "票据中心", "业务记录", "业务监控", "我的银行卡", "人脸认证", "客服", "商家端"};
 
     public static PersonalFragment newInstance(int index) {
         PersonalFragment fragment = new PersonalFragment();
@@ -111,7 +119,7 @@ public class PersonalFragment extends BaseFragment implements View.OnClickListen
 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.activity_personal, container, false);
+        View view = inflater.inflate(R.layout.activity_personal_n, container, false);
         initView(view);
         lawList();
         return view;
@@ -119,21 +127,17 @@ public class PersonalFragment extends BaseFragment implements View.OnClickListen
 
     private void initView(View view) {
         ll_myinfo = (LinearLayout) view.findViewById(R.id.ll_myinfo);
-//        iv_personal_back= (ImageView) view.findViewById(R.id.iv_personal_back);
-//        iv_personal_set= (ImageView) view.findViewById(R.id.iv_personal_set);
-
-        titlebar_name = (TextView) view.findViewById(R.id.titlebar_name);
-        iv_en = (ImageView) view.findViewById(R.id.iv_en);
-        titlebar_kf = (ImageView) view.findViewById(R.id.titlebar_kf);
-        ll_en = (LinearLayout) view.findViewById(R.id.ll_en);
-
-        titlebar_name.setVisibility(View.VISIBLE);
-        titlebar_name.setText("个人中心");
-        iv_en.setVisibility(View.VISIBLE);
-        iv_en.setImageResource(R.mipmap.personal_center);
-        ll_en.setVisibility(View.VISIBLE);
-        titlebar_kf.setVisibility(View.VISIBLE);
-        titlebar_kf.setImageResource(R.drawable.sz);
+        mLinearLayout_1 = (LinearLayout) view.findViewById(R.id.mLinearLayout_1);
+        mImageView_set = (ImageView) view.findViewById(R.id.mImageView_set);
+        mLinearLayout_2 = (LinearLayout) view.findViewById(R.id.mLinearLayout_2);
+        mLinearLayout_3 = (LinearLayout) view.findViewById(R.id.mLinearLayout_3);
+        mLinearLayout_4 = (LinearLayout) view.findViewById(R.id.mLinearLayout_4);
+        mLinearLayout_5 = (LinearLayout) view.findViewById(R.id.mLinearLayout_5);
+        mLinearLayout_6 = (LinearLayout) view.findViewById(R.id.mLinearLayout_6);
+        mLinearLayout_7 = (LinearLayout) view.findViewById(R.id.mLinearLayout_7);
+        mLinearLayout_8 = (LinearLayout) view.findViewById(R.id.mLinearLayout_8);
+        mLinearLayout_9 = (LinearLayout) view.findViewById(R.id.mLinearLayout_9);
+        mLinearLayout_10 = (LinearLayout) view.findViewById(R.id.mLinearLayout_10);
 
         my_photo = (RoundImageView) view.findViewById(R.id.my_photo);
         RandomTx();
@@ -143,64 +147,28 @@ public class PersonalFragment extends BaseFragment implements View.OnClickListen
 
         ll_wdyhq = (LinearLayout) view.findViewById(R.id.ll_wdyhq);
 
-        nsgv_home_jdxp = (GridViewForNoScroll) view.findViewById(R.id.nsgv_home_jdxp);
 
         ll_htjl = (LinearLayout) view.findViewById(R.id.ll_htjl);
         tv_my_version = (TextView) view.findViewById(R.id.tv_my_version);
 
         ll_myinfo.setOnClickListener(this);
-        titlebar_kf.setOnClickListener(this);
+        mImageView_set.setOnClickListener(this);
+        mLinearLayout_1.setOnClickListener(this);
+        mLinearLayout_2.setOnClickListener(this);
+        mLinearLayout_3.setOnClickListener(this);
+        mLinearLayout_4.setOnClickListener(this);
+        mLinearLayout_5.setOnClickListener(this);
+        mLinearLayout_6.setOnClickListener(this);
+        mLinearLayout_7.setOnClickListener(this);
+        mLinearLayout_8.setOnClickListener(this);
+        mLinearLayout_9.setOnClickListener(this);
+        mLinearLayout_10.setOnClickListener(this);
 
         ll_wdyhq.setOnClickListener(this);
         ll_htjl.setOnClickListener(this);
 
         tv_my_version.setText("版本号 V" + AppUtils.getAppVersionName());
-        for (int i = 0; i < img.length; i++) {
-            ItemInfo info = new ItemInfo();
-            info.setTitle(title[i]);
-            info.setImg(img[i]);
-            list.add(info);
-        }
-        showgridList(list);
 
-        nsgv_home_jdxp.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
-                if (position != 7 && position != 8) {
-                    if (!BaseConstant.isLogin()) {
-                        startActivity(new Intent(getActivity(), LoginActivity.class));
-                        return;
-                    }
-                }
-
-                if (position == 0) {//我的业务
-                    startActivity(new Intent(getActivity(), MyPawnActivity.class));
-                } else if (position == 1) {//商城订单
-                    startActivity(new Intent(getActivity(), OrderActivity.class));
-                } else if (position == 2) {//我的物流
-                    startActivity(new Intent(getActivity(), LogisticsActivity.class));
-                } else if (position == 3) {//票据中心
-                    Helper.startActivity(getContext(), FrgPjzx.class, TitleAct.class);
-                } else if (position == 4) {//典当记录
-                    startActivity(new Intent(getActivity(), PawnRecordActivity.class));
-                } else if (position == 5) {//典当监控
-                    startActivity(new Intent(getActivity(), MonitorActivity.class));
-                } else if (position == 6) {//我的银行卡
-                    startActivity(new Intent(getActivity(), BankCardActivity.class));
-                } else if (position == 7) {//人脸识别
-                    if (LocalData.getInstance().getUserInfo().getIsBind().equals("1")) {//已绑定
-                        CustomToast.show("您已绑定");
-                    } else {
-                        startActivity(new Intent(getActivity(), BindIDcardActivity.class));
-                    }
-                } else if (position == 8) {//客服
-                    gotokf_J(getActivity());
-                } else if (position == 9) {
-                    load(F.INSTANCE.gB(50).passOrNot(LocalData.getInstance().getUserInfo().getToken()), "passOrNot", true, "加载中", new S(PersonalFragment.this, new ProgressDialog(getContext()), "passOrNot", true));
-                }
-            }
-        });
     }
 
     @Override
@@ -264,7 +232,7 @@ public class PersonalFragment extends BaseFragment implements View.OnClickListen
     public void onClick(View v) {
         Intent intent = null;
         switch (v.getId()) {
-            case R.id.titlebar_kf://设置
+            case R.id.mImageView_set://设置
                 startActivity(new Intent(getActivity(), SettingActivity.class));
                 break;
             case R.id.ll_myinfo://个人资料
@@ -291,6 +259,76 @@ public class PersonalFragment extends BaseFragment implements View.OnClickListen
                     startActivity(new Intent(getActivity(), LoginActivity.class));
                 }
                 break;
+            case R.id.mLinearLayout_1:
+                if (!BaseConstant.isLogin()) {
+                    startActivity(new Intent(getActivity(), LoginActivity.class));
+                    return;
+                }
+
+                startActivity(new Intent(getActivity(), MyPawnActivity.class));
+                break;
+            case R.id.mLinearLayout_2:
+                if (!BaseConstant.isLogin()) {
+                    startActivity(new Intent(getActivity(), LoginActivity.class));
+                    return;
+                }
+                startActivity(new Intent(getActivity(), OrderActivity.class));
+                break;
+            case R.id.mLinearLayout_3:
+                if (!BaseConstant.isLogin()) {
+                    startActivity(new Intent(getActivity(), LoginActivity.class));
+                    return;
+                }
+                startActivity(new Intent(getActivity(), LogisticsActivity.class));
+                break;
+            case R.id.mLinearLayout_4:
+                if (!BaseConstant.isLogin()) {
+                    startActivity(new Intent(getActivity(), LoginActivity.class));
+                    return;
+                }
+                Helper.startActivity(getContext(), FrgPjzx.class, TitleAct.class);
+                break;
+            case R.id.mLinearLayout_5:
+                if (!BaseConstant.isLogin()) {
+                    startActivity(new Intent(getActivity(), LoginActivity.class));
+                    return;
+                }
+                startActivity(new Intent(getActivity(), PawnRecordActivity.class));
+                break;
+            case R.id.mLinearLayout_6:
+                if (!BaseConstant.isLogin()) {
+                    startActivity(new Intent(getActivity(), LoginActivity.class));
+                    return;
+                }
+                startActivity(new Intent(getActivity(), MonitorActivity.class));
+                break;
+            case R.id.mLinearLayout_7:
+                if (!BaseConstant.isLogin()) {
+                    startActivity(new Intent(getActivity(), LoginActivity.class));
+                    return;
+                }
+                startActivity(new Intent(getActivity(), BankCardActivity.class));
+                break;
+            case R.id.mLinearLayout_8:
+                if (!BaseConstant.isLogin()) {
+                    startActivity(new Intent(getActivity(), LoginActivity.class));
+                    return;
+                }
+                if (LocalData.getInstance().getUserInfo().getIsBind().equals("1")) {//已绑定
+                    CustomToast.show("您已绑定");
+                } else {
+                    startActivity(new Intent(getActivity(), BindIDcardActivity.class));
+                }
+            case R.id.mLinearLayout_9:
+                if (!BaseConstant.isLogin()) {
+                    startActivity(new Intent(getActivity(), LoginActivity.class));
+                    return;
+                }
+                gotokf_J(getActivity());
+                break;
+            case R.id.mLinearLayout_10:
+                load(F.INSTANCE.gB(50).passOrNot(LocalData.getInstance().getUserInfo().getToken()), "passOrNot", true, "加载中", new S(PersonalFragment.this, new ProgressDialog(getContext()), "passOrNot", true));
+                break;
         }
     }
 
@@ -304,7 +342,6 @@ public class PersonalFragment extends BaseFragment implements View.OnClickListen
             }
         };
 
-        nsgv_home_jdxp.setAdapter(commAdapter);
     }
 
     private void lawList() {
@@ -350,5 +387,6 @@ public class PersonalFragment extends BaseFragment implements View.OnClickListen
                     }
                 });
     }
+
 
 }

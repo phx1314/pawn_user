@@ -58,15 +58,12 @@ class FrgProductDetail : BaseFrg() {
     override fun disposeMsg(type: Int, obj: Any?) {
         when (type) {
             0 -> {
-                val intent = Intent(activity, SingleVideoActivity::class.java)
-                intent.putExtra(
-                    "url",
-                    BaseConstant.Video_URL + item?.bannerVideo
+                JCVideoPlayerStandard.startFullscreen(
+                    context,
+                    JCVideoPlayerStandard::class.java,
+                    BaseConstant.Video_URL + item?.bannerVideo, ""
                 )
-                intent.putExtra("type", JCVideoPlayerStandard.SCREEN_LAYOUT_NORMAL)
-                intent.putExtra("name", item?.title)
-                intent.putExtra("id", p_id)
-                startActivity(intent)
+
             }
         }
     }
@@ -218,7 +215,7 @@ class FrgProductDetail : BaseFrg() {
                 mTextView12.text = it.materialName
                 mTextView13.text = it.ccAll ?: "" + "厘米"
                 mTextView14.text = it.price ?: "" + "元"
-                GlideLoader.loadImage(
+                GlideLoader.loadCircleCropImage(
                     BaseConstant.Image_URL + it.orgLogo,
                     mImageView_topic,
                     R.drawable.add2

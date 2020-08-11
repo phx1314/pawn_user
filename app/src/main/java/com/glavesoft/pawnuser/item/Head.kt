@@ -43,7 +43,7 @@ class Head(context: Context?) : LinearLayout(context) {
     fun setTitle(s: String, s_en: String) {
         mTextView_title.visibility = View.VISIBLE
         mTextView_title.text = s
-        mLinearLayout_bottom.visibility = View.VISIBLE
+//        mLinearLayout_bottom.visibility = View.VISIBLE
         mTextView_en.text = s_en
     }
 

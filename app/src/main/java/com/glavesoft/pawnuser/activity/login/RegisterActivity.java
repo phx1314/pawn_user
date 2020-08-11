@@ -51,7 +51,6 @@ public class RegisterActivity extends BaseActivity {
                 tv_reg_yzm.setText(count + " 秒");
             } else {
                 tv_reg_yzm.setText("获取验证码");
-                tv_reg_yzm.setBackgroundResource(R.drawable.shape_login);
                 tv_reg_yzm.setClickable(true);
             }
             super.handleMessage(msg);
@@ -65,7 +64,6 @@ public class RegisterActivity extends BaseActivity {
             timer.cancel();
         }
         tv_reg_yzm.setText("获取验证码");
-        tv_reg_yzm.setBackgroundResource(R.drawable.shape_login);
         tv_reg_yzm.setClickable(true);
     }
 
@@ -94,7 +92,7 @@ public class RegisterActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_register);
+        setContentView(R.layout.activity_register_n);
         type=getIntent().getStringExtra("type");
         setView();
         setListener();
@@ -198,28 +196,6 @@ public class RegisterActivity extends BaseActivity {
      *  发送短信验证码接口
      */
     private void SendMessageTask(){
-//        String a="",b="";
-//        a= BaseConstant.generateWord();
-//        String word1=a.substring(0, 2);
-//        String word2=a.substring(3, 8);
-//        String word3=a.substring(2, 3);
-//        String word4=word1+word2+word3;
-//
-//        String word5=word4.substring(0, 3);
-//        String word6=word4.substring(3, 5);
-//        String word7=word4.substring(5, 8);
-//        String word8=word5+word7+word6;
-//
-//        String word9=BaseConstant.stringToMD5(word8);
-//
-//        String word10=word9.substring(0, 12);
-//        String word11=word9.substring(13, 32);
-//        String word12=word10+"u"+word11;
-//
-//        String word13=word12+BaseConstant.Key;
-//
-//        b=BaseConstant.stringToMD51(word13);
-
         getlDialog().show();
         String url=BaseConstant.getApiPostUrl("account/getMobileMsg");
         HttpParams param=new HttpParams();
@@ -243,7 +219,6 @@ public class RegisterActivity extends BaseActivity {
 
                         if(response.body().getErrorCode()== DataResult.RESULT_OK_ZERO){
                             startCount();//开始数秒
-                            tv_reg_yzm.setBackgroundResource(R.drawable.shape_regist);
                             tv_reg_yzm.setClickable(false);
                             CustomToast.show("发送成功");
                         }else {

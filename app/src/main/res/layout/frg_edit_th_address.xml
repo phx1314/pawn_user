@@ -131,12 +131,17 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/j2dp"
         android:background="@drawable/shape_dash_line" />
-
-    <ImageView
+    <TextView
         android:id="@+id/mImageView_add"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/j56dp"
-        android:src="@drawable/preservation" />
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/j45dp"
+        android:layout_marginLeft="@dimen/j25dp"
+        android:layout_marginTop="@dimen/j25dp"
+        android:layout_marginRight="@dimen/j25dp"
+        android:background="@drawable/shape_login"
+        android:gravity="center"
+        android:text="确认添加"
+        android:textColor="@android:color/white"
+        android:textSize="16sp" />
 </LinearLayout>
 

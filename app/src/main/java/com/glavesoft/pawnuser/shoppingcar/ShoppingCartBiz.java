@@ -34,7 +34,7 @@ public class ShoppingCartBiz {
         for (int i = 0; i < list.size(); i++) {
             list.get(i).setIsGroupSelected(isSelectAll);
             for (int j = 0; j < list.get(i).getGoods().size(); j++) {
-                if (list.get(i).getGoods().get(j).getIsOnline()==1){
+                if (list.get(i).getGoods().get(j).getIsOnline() == 1) {
                     list.get(i).getGoods().get(j).setIsChildSelected(isSelectAll);
                 }
 
@@ -114,9 +114,9 @@ public class ShoppingCartBiz {
      */
     public static boolean checkItem(boolean isSelect, ImageView ivCheck) {
         if (isSelect) {
-            ivCheck.setImageResource(R.drawable.ic__shop_checked);
+            ivCheck.setImageResource(R.drawable.gx_);
         } else {
-            ivCheck.setImageResource(R.drawable.ic_uncheck);
+            ivCheck.setImageResource(R.drawable.wgx_);
         }
         return isSelect;
     }
@@ -136,8 +136,8 @@ public class ShoppingCartBiz {
             for (int j = 0; j < listGoods.get(i).getGoods().size(); j++) {
                 boolean isSelectd = listGoods.get(i).getGoods().get(j).isChildSelected();
                 if (isSelectd) {
-                    String price = listGoods.get(i).getGoods().get(j).getGoodsPrice()+"";
-                    String num = listGoods.get(i).getGoods().get(j).getNum()+"";
+                    String price = listGoods.get(i).getGoods().get(j).getGoodsPrice() + "";
+                    String num = listGoods.get(i).getGoods().get(j).getNum() + "";
                     String countMoney = DecimalUtil.multiply(price, num);
                     selectedMoney = DecimalUtil.add(selectedMoney, countMoney);
                     selectedCount = DecimalUtil.add(selectedCount, "1");
@@ -148,13 +148,14 @@ public class ShoppingCartBiz {
         infos[1] = selectedMoney;
         return infos;
     }
+
     public static ArrayList<String> getShoppingIds(List<ShopCar> listGoods) {
         ArrayList<String> infos = new ArrayList<>();
         for (int i = 0; i < listGoods.size(); i++) {
             for (int j = 0; j < listGoods.get(i).getGoods().size(); j++) {
                 boolean isSelectd = listGoods.get(i).getGoods().get(j).isChildSelected();
                 if (isSelectd) {
-                    infos.add( listGoods.get(i).getGoods().get(j).getGoodsId()+"");
+                    infos.add(listGoods.get(i).getGoods().get(j).getGoodsId() + "");
                 }
             }
         }
@@ -167,7 +168,7 @@ public class ShoppingCartBiz {
             for (int j = 0; j < listGoods.get(i).getGoods().size(); j++) {
                 boolean isSelectd = listGoods.get(i).getGoods().get(j).isChildSelected();
                 if (isSelectd) {
-                    infos.add( listGoods.get(i).getGoods().get(j).getNum()+"");
+                    infos.add(listGoods.get(i).getGoods().get(j).getNum() + "");
                 }
             }
         }
@@ -189,7 +190,7 @@ public class ShoppingCartBiz {
      * @param num       此商品的数量
      */
     public static void addGoodToCart(String productID, String num) {
-       ShoppingCartDao.getInstance().saveShoppingInfo(productID, num);
+        ShoppingCartDao.getInstance().saveShoppingInfo(productID, num);
     }
 
     /**
@@ -198,58 +199,57 @@ public class ShoppingCartBiz {
      * @param productID 规格ID
      */
     public static void delGood(String productID) {
-       ShoppingCartDao.getInstance().deleteShoppingInfo(productID);
+        ShoppingCartDao.getInstance().deleteShoppingInfo(productID);
         delNetShopcar(productID);
     }
 
-    /** 删除全部商品 */
+    /**
+     * 删除全部商品
+     */
     public static void delAllGoods() {
 
         ShoppingCartDao.getInstance().delAllGoods();
     }
-    private static void delNetShopcar(String goodsId){
+
+    private static void delNetShopcar(String goodsId) {
         Map<String, String> param = new HashMap<>();
         param.put("token", LocalData.getInstance().getUserInfo().getToken());
         param.put("goodsId", goodsId);
 
-        java.lang.reflect.Type classtype = new TypeToken<DataResult>() {}.getType();
+        java.lang.reflect.Type classtype = new TypeToken<DataResult>() {
+        }.getType();
         String url = BaseConstant.getApiPostUrl("userShopCart/delGoods");
-        VolleyUtil.postObjectApi(url, param, classtype, new ResponseListener<DataResult>()
-        {
+        VolleyUtil.postObjectApi(url, param, classtype, new ResponseListener<DataResult>() {
             @Override
-            public void onErrorResponse(VolleyError error)
-            {
+            public void onErrorResponse(VolleyError error) {
 
             }
 
             @Override
-            public void onResponse(DataResult response)
-            {
-                if (response == null)
-                {
+            public void onResponse(DataResult response) {
+                if (response == null) {
                     CustomToast.show("网络连接失败");
                     return;
                 }
-                if (DataResult.RESULT_OK_ZERO == response.getErrorCode())
-                {
-                    if(response.getData()!=null){
+                if (DataResult.RESULT_OK_ZERO == response.getErrorCode()) {
+                    if (response.getData() != null) {
                         CustomToast.show("删除成功");
                     }
 
-                }else if (DataResult.RESULT_102 == response.getErrorCode())
-                {
+                } else if (DataResult.RESULT_102 == response.getErrorCode()) {
 //                    toLogin();
-                }else
-                {
+                } else {
                     CustomToast.show(response.getErrorMsg());
                 }
             }
         });
     }
 
-    /** 增减数量，操作通用，数据不通用 */
+    /**
+     * 增减数量，操作通用，数据不通用
+     */
     public static void addOrReduceGoodsNum(boolean isPlus, ShopCar.GoodsBean goods, TextView tvNum) {
-        String currentNum = goods.getNum()+"";
+        String currentNum = goods.getNum() + "";
         String num = "1";
         if (isPlus) {
             num = String.valueOf(Integer.parseInt(currentNum) + 1);
@@ -261,55 +261,49 @@ public class ShoppingCartBiz {
                 num = "1";
             }
         }
-        String productID = goods.getGoodsId()+"";
-        editNetShopcar(productID,num,goods,tvNum);
+        String productID = goods.getGoodsId() + "";
+        editNetShopcar(productID, num, goods, tvNum);
 
     }
 
-    private static void editNetShopcar(final String goodsId, final String num, final ShopCar.GoodsBean goods, final TextView tvNum){
+    private static void editNetShopcar(final String goodsId, final String num, final ShopCar.GoodsBean goods, final TextView tvNum) {
         Map<String, String> param = new HashMap<>();
         param.put("token", LocalData.getInstance().getUserInfo().getToken());
         param.put("goodsId", goodsId);
         param.put("num", num);
 
-        java.lang.reflect.Type classtype = new TypeToken<DataResult<String>>() {}.getType();
+        java.lang.reflect.Type classtype = new TypeToken<DataResult<String>>() {
+        }.getType();
         String url = BaseConstant.getApiPostUrl("userShopCart/updateCart");
-        VolleyUtil.postObjectApi(url, param, classtype, new ResponseListener<DataResult<String>>()
-        {
+        VolleyUtil.postObjectApi(url, param, classtype, new ResponseListener<DataResult<String>>() {
             @Override
-            public void onErrorResponse(VolleyError error)
-            {
+            public void onErrorResponse(VolleyError error) {
 
             }
 
             @Override
-            public void onResponse(DataResult<String> response)
-            {
-                if (response == null)
-                {
+            public void onResponse(DataResult<String> response) {
+                if (response == null) {
                     CustomToast.show("网络连接失败");
                     return;
                 }
-                if (DataResult.RESULT_OK_ZERO == response.getErrorCode())
-                {
-                    if(response.getData()!=null){
-                        if (response.getData().equals("1")){
+                if (DataResult.RESULT_OK_ZERO == response.getErrorCode()) {
+                    if (response.getData() != null) {
+                        if (response.getData().equals("1")) {
                             CustomToast.show("修改成功");
                             tvNum.setText(num);
                             goods.setNum(Integer.parseInt(num));
                             updateGoodsNumber(goodsId, num);
 
-                        }else {
+                        } else {
                             CustomToast.show("错误");
                         }
 
                     }
 
-                }else if (DataResult.RESULT_102 == response.getErrorCode())
-                {
+                } else if (DataResult.RESULT_102 == response.getErrorCode()) {
 //                    toLogin();
-                }else
-                {
+                } else {
                     CustomToast.show(response.getErrorMsg());
                 }
             }
@@ -335,7 +329,7 @@ public class ShoppingCartBiz {
      */
     public static int getGoodsCount() {
         //return Constant.ShoppingcarGoodsCount;
-       return ShoppingCartDao.getInstance().getGoodsCount();
+        return ShoppingCartDao.getInstance().getGoodsCount();
     }
 
     /**
@@ -348,7 +342,9 @@ public class ShoppingCartBiz {
         return ShoppingCartDao.getInstance().getProductList();
     }
 
-    /** 由于这次服务端没有保存商品数量，需要此步骤来处理数量（非通用部分） */
+    /**
+     * 由于这次服务端没有保存商品数量，需要此步骤来处理数量（非通用部分）
+     */
     public static void updateShopList(List<ShopCar> list) {
         if (list == null) {
             return;
@@ -367,8 +363,8 @@ public class ShoppingCartBiz {
                 if (goods == null) {
                     continue;
                 }
-                String productID = goods.getGoodsId()+"";
-                String num =goods.getNum()+"";
+                String productID = goods.getGoodsId() + "";
+                String num = goods.getNum() + "";
 //               String num = ShoppingCartDao.getInstance().getNumByProductID(productID);
                 //list.get(i).getGoods().get(j).setNumber(num);
             }

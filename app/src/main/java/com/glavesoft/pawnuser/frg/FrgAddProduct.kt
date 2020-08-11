@@ -146,50 +146,50 @@ class FrgAddProduct : BaseFrg() {
                 F.toast("请选择子分类")
                 return@setOnClickListener
             }
-            if (TextUtils.isEmpty(mEditText4.text.toString())) {
-                F.toast("请输入材质")
-                return@setOnClickListener
-            }
-            if (TextUtils.isEmpty(mEditText5.text.toString())) {
-                F.toast("请输入质量")
-                return@setOnClickListener
-            }
-            if (TextUtils.isEmpty(mEditText6.text.toString())) {
-                F.toast("请输入主材")
-                return@setOnClickListener
-            }
-            if (TextUtils.isEmpty(mEditText7.text.toString())) {
-                F.toast("请输入辅材")
-                return@setOnClickListener
-            }
-            if (TextUtils.isEmpty(mEditText8.text.toString())) {
-                F.toast("请输入品牌")
-                return@setOnClickListener
-            }
-            if (TextUtils.isEmpty(mEditText9.text.toString())) {
-                F.toast("请输入年代")
-                return@setOnClickListener
-            }
-            if (TextUtils.isEmpty(mEditText10.text.toString())) {
-                F.toast("请输入题材")
-                return@setOnClickListener
-            }
-            if (TextUtils.isEmpty(mEditText11.text.toString())) {
-                F.toast("请输入新旧程度")
-                return@setOnClickListener
-            }
-            if (TextUtils.isEmpty(mEditText12.text.toString())) {
-                F.toast("请输入样式")
-                return@setOnClickListener
-            }
-            if (TextUtils.isEmpty(mEditText13.text.toString())) {
-                F.toast("请输入种地")
-                return@setOnClickListener
-            }
-            if (TextUtils.isEmpty(mEditText14.text.toString())) {
-                F.toast("请输入尺寸")
-                return@setOnClickListener
-            }
+//            if (TextUtils.isEmpty(mEditText4.text.toString())) {
+//                F.toast("请输入材质")
+//                return@setOnClickListener
+//            }
+//            if (TextUtils.isEmpty(mEditText5.text.toString())) {
+//                F.toast("请输入质量")
+//                return@setOnClickListener
+//            }
+//            if (TextUtils.isEmpty(mEditText6.text.toString())) {
+//                F.toast("请输入主材")
+//                return@setOnClickListener
+//            }
+//            if (TextUtils.isEmpty(mEditText7.text.toString())) {
+//                F.toast("请输入辅材")
+//                return@setOnClickListener
+//            }
+//            if (TextUtils.isEmpty(mEditText8.text.toString())) {
+//                F.toast("请输入品牌")
+//                return@setOnClickListener
+//            }
+//            if (TextUtils.isEmpty(mEditText9.text.toString())) {
+//                F.toast("请输入年代")
+//                return@setOnClickListener
+//            }
+//            if (TextUtils.isEmpty(mEditText10.text.toString())) {
+//                F.toast("请输入题材")
+//                return@setOnClickListener
+//            }
+//            if (TextUtils.isEmpty(mEditText11.text.toString())) {
+//                F.toast("请输入新旧程度")
+//                return@setOnClickListener
+//            }
+//            if (TextUtils.isEmpty(mEditText12.text.toString())) {
+//                F.toast("请输入样式")
+//                return@setOnClickListener
+//            }
+//            if (TextUtils.isEmpty(mEditText13.text.toString())) {
+//                F.toast("请输入种地")
+//                return@setOnClickListener
+//            }
+//            if (TextUtils.isEmpty(mEditText14.text.toString())) {
+//                F.toast("请输入尺寸")
+//                return@setOnClickListener
+//            }
             if (TextUtils.isEmpty(mEditText15.text.toString())) {
                 F.toast("请输入售价")
                 return@setOnClickListener
@@ -198,14 +198,14 @@ class FrgAddProduct : BaseFrg() {
                 F.toast("请输入描述")
                 return@setOnClickListener
             }
-            if (!TextUtils.isEmpty(video_img) && TextUtils.isEmpty(video)) {
-                F.toast("请选择视频")
-                return@setOnClickListener
-            }
-            if (TextUtils.isEmpty(video_img) && !TextUtils.isEmpty(video)) {
-                F.toast("请选择视频封面")
-                return@setOnClickListener
-            }
+//            if (!TextUtils.isEmpty(video_img) && TextUtils.isEmpty(video)) {
+//                F.toast("请选择视频")
+//                return@setOnClickListener
+//            }
+//            if (TextUtils.isEmpty(video_img) && !TextUtils.isEmpty(video)) {
+//                F.toast("请选择视频封面")
+//                return@setOnClickListener
+//            }
             var mHashMap = HashMap<String, String?>()
             if (!TextUtils.isEmpty(p_id)) {
                 mHashMap.put("id", p_id)

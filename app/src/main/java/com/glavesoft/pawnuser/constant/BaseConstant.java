@@ -19,12 +19,12 @@ import java.util.regex.Pattern;
 public class BaseConstant
 {
 	//测式
-//	public final static String BaseURL = "http://baidu.paidangwang.net/paidangAdmin";
-//	public final static String URL = "http://baidu.paidangwang.net/paidangUserApi/api/";
+	public final static String BaseURL = "http://baidu.paidangwang.net/paidangAdmin";
+	public final static String URL = "http://baidu.paidangwang.net/paidangUserApi/api/";
 
     //正式
-	public final static String BaseURL = "http://baidu.paidangwang.net/admin";
-	public final static String URL = "http://baidu.paidangwang.net/user-api/api/";
+//	public final static String BaseURL = "http://baidu.paidangwang.net/admin";
+//	public final static String URL = "http://baidu.paidangwang.net/user-api/api/";
 
 	//保存数据库名称等
 	public final static String AccountManager_NAME = "com.glavesoft.pawnuser";

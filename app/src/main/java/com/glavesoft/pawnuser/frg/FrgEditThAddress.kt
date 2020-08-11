@@ -68,6 +68,11 @@ class FrgEditThAddress : BaseFrg() {
             mPicker.setConfig(cityConfig)
             mPicker.showCityPicker()
         }
+        if (item.id == 0) {
+            mImageView_add.text="确认添加"
+        } else {
+            mImageView_add.text="确定"
+        }
         mImageView_add.setOnClickListener {
             if (TextUtils.isEmpty(mTextView_name.text.toString())) {
                 Helper.toast("请输入收件人姓名")

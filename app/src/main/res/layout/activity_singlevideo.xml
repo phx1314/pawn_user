@@ -1,29 +1,147 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:background="@color/bg_title" android:fitsSystemWindows="true">
-     <include layout="@layout/titlebar" />
-     <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:background="@color/white">
-          <RelativeLayout android:id="@+id/activity_main" android:layout_width="match_parent" android:layout_height="@dimen/j205dp">
-               <fm.jiecao.jcvideoplayer_lib.JCVideoPlayerStandard android:id="@+id/single_video" android:layout_width="match_parent" android:layout_height="@dimen/j205dp" />
-               <master.flame.danmaku.ui.widget.DanmakuView android:id="@+id/danmaku_view" android:layout_width="match_parent" android:layout_height="@dimen/j150dp" android:visibility="gone" />
-          </RelativeLayout>
-          <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="@dimen/j10dp" android:gravity="center_vertical">
-               <TextView android:id="@+id/tv_title_singlevideo" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:textColor="@color/black" android:textSize="15sp" android:text="" />
-               <TextView android:id="@+id/tv_number_singlevideo" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j2dp" android:textColor="@color/black" android:textSize="12sp" android:text="" />
-               <ImageView android:id="@+id/iv_share_video" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/j6dp" android:src="@drawable/fx" />
-          </LinearLayout>
-          <View android:layout_width="match_parent" android:layout_height="@dimen/j5dp" android:background="@color/bg_default" />
-          <cn.bingoogolapple.refreshlayout.BGARefreshLayout android:id="@+id/rl_listview_refresh" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1">
-               <ListView android:id="@+id/lv_listview" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:divider="@color/bg_default" android:dividerHeight="@dimen/j1dp" android:listSelector="@android:color/transparent" />
-          </cn.bingoogolapple.refreshlayout.BGARefreshLayout>
-          <View style="@style/line" />
-          <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:background="@color/white" android:padding="@dimen/j7dp">
-               <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center_vertical" android:paddingTop="@dimen/j8dp" android:paddingBottom="@dimen/j8dp" android:paddingLeft="@dimen/j10dp" android:paddingRight="@dimen/j10dp" android:background="@drawable/shape_kuang">
-                    <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/pinglun" android:visibility="gone" />
-                    <EditText android:id="@+id/et_comment_newsdetail" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:paddingLeft="@dimen/j5dp" android:paddingRight="@dimen/j5dp" android:background="@color/transparent" android:text="" android:textSize="14sp" android:textColor="@color/black1" android:imeOptions="actionSend" android:inputType="text" android:hint="请输入内容" />
-                    <ImageView android:id="@+id/iv_sendcomment_newsdetail" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/j6dp" android:background="@drawable/fs" />
-               </LinearLayout>
-               <ImageView android:id="@+id/iv_collection_pinglun" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/j10dp" android:padding="@dimen/j5dp" android:visibility="gone" android:src="@drawable/bf_pinglun" />
-          </LinearLayout>
-     </LinearLayout>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_title"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <include layout="@layout/titlebar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/activity_main"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/j205dp">
+
+            <fm.jiecao.jcvideoplayer_lib.JCVideoPlayerStandard
+                android:id="@+id/single_video"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/j205dp" />
+
+            <master.flame.danmaku.ui.widget.DanmakuView
+                android:id="@+id/danmaku_view"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/j150dp"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:padding="@dimen/j10dp">
+
+            <TextView
+                android:id="@+id/tv_title_singlevideo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text=""
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/tv_number_singlevideo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/j2dp"
+                android:text=""
+                android:textColor="@color/black"
+                android:textSize="12sp" />
+
+            <ImageView
+                android:id="@+id/iv_share_video"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/j6dp"
+                android:src="@drawable/fx" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/j5dp"
+            android:background="@color/bg_default" />
+
+        <cn.bingoogolapple.refreshlayout.BGARefreshLayout
+            android:id="@+id/rl_listview_refresh"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <ListView
+                android:id="@+id/lv_listview"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:divider="@color/bg_default"
+                android:dividerHeight="@dimen/j1dp"
+                android:listSelector="@android:color/transparent" />
+        </cn.bingoogolapple.refreshlayout.BGARefreshLayout>
+
+        <View style="@style/line" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:gravity="center_vertical"
+            android:padding="@dimen/j7dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/shape_kuang"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/j10dp"
+                android:paddingTop="@dimen/j8dp"
+                android:paddingRight="@dimen/j10dp"
+                android:paddingBottom="@dimen/j8dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/pinglun"
+                    android:visibility="gone" />
+
+                <EditText
+                    android:id="@+id/et_comment_newsdetail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@color/transparent"
+                    android:hint="请输入内容"
+                    android:imeOptions="actionSend"
+                    android:inputType="text"
+                    android:paddingLeft="@dimen/j5dp"
+                    android:paddingRight="@dimen/j5dp"
+                    android:text=""
+                    android:textColor="@color/black1"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:id="@+id/iv_sendcomment_newsdetail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/j6dp"
+                    android:background="@drawable/fs" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/iv_collection_pinglun"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/j10dp"
+                android:padding="@dimen/j5dp"
+                android:src="@drawable/bf_pinglun"
+                android:visibility="gone" />
+        </LinearLayout>
+    </LinearLayout>
 </LinearLayout>
 

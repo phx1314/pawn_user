@@ -552,9 +552,9 @@ public class WatchActivity extends BaseActivity implements View.OnClickListener{
                 helper.setText(R.id.tv_enclosure,item);
 
                 if(selectenclosurelist.contains(item)){
-                    helper.getView(R.id.iv_enclosure).setBackgroundResource(R.drawable.xz_);
+                    helper.getView(R.id.iv_enclosure).setBackgroundResource(R.drawable.registered_tick);
                 }else{
-                    helper.getView(R.id.iv_enclosure).setBackgroundResource(R.drawable.xz);
+                    helper.getView(R.id.iv_enclosure).setBackgroundResource(R.drawable.registered_tick1);
                 }
 
                 helper.getView(R.id.ll_enclosure).setOnClickListener(new View.OnClickListener() {

@@ -10,8 +10,10 @@ import android.graphics.Bitmap;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
 import android.os.Bundle;
+
 import androidx.annotation.IdRes;
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.Display;
@@ -101,14 +103,13 @@ import java.util.Locale;
 
 import cn.bingoogolapple.refreshlayout.BGAMoocStyleRefreshViewHolder;
 
-public class BaseActivity extends AppCompatActivity
-{
+public class BaseActivity extends AppCompatActivity {
     protected TextView titlebar_left;
     protected TextView titlebar_right;
     protected TextView titlebar_name;
     protected ImageView iv_en;
     protected LinearLayout ll_en;
-    protected ImageView titlebar_back,titlebar_search,titlebar_kf,titlebar_news;
+    protected ImageView titlebar_back, titlebar_search, titlebar_kf, titlebar_news;
     protected TextView titlebar_searchcancel;
     protected EditText titlebar_et_keywords;
     private ImageLoader imageLoader;
@@ -124,15 +125,15 @@ public class BaseActivity extends AppCompatActivity
 
     public static final String KEY_IMAGE_LIST = "imageList";
     public static final String KEY_CURRENT_INDEX = "currentIndex";
+
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
         AppManager.getAppManager().addActivity(this);
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);//键盘默认不弹出
-        // 屏蔽横屏
-        //setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-        setStatusBarTrans();
+//        setStatusBarTrans();
 
         moocStyleRefreshViewHolder = new BGAMoocStyleRefreshViewHolder(this, true);
         moocStyleRefreshViewHolder.setOriginalImage(R.mipmap.custom_mooc_icon);
@@ -143,10 +144,10 @@ public class BaseActivity extends AppCompatActivity
     public void onWindowFocusChanged(boolean hasFocus) {
         super.onWindowFocusChanged(hasFocus);
         if (hasFocus) {
-            if (!(this instanceof StartActivity)){
-                if ( BaseConstant.isCopy){
-                    BaseConstant.isCopy=false;
-                }else{
+            if (!(this instanceof StartActivity)) {
+                if (BaseConstant.isCopy) {
+                    BaseConstant.isCopy = false;
+                } else {
                     ClipboardManager cm = (ClipboardManager) getSystemService(CLIPBOARD_SERVICE);
                     if (cm != null) {
                         try {
@@ -154,11 +155,11 @@ public class BaseActivity extends AppCompatActivity
                             if (data != null && data.getItemCount() > 0) {
                                 ClipData.Item item = data.getItemAt(0);
                                 String content = item.getText().toString();
-                                String id="";
-                                if (!StringUtils.isEmpty(content)){
+                                String id = "";
+                                if (!StringUtils.isEmpty(content)) {
                                     List<String> list = Arrays.asList(content.split("￥"));
-                                    if (list.size()>2){
-                                        id=list.get(1);
+                                    if (list.size() > 2) {
+                                        id = list.get(1);
                                     }
                                 }
                                 getShareInfo(id);
@@ -187,71 +188,60 @@ public class BaseActivity extends AppCompatActivity
         return (VT) findViewById(id);
     }
 
-    public ImageLoader getImageLoader()
-    {
-        if (imageLoader == null)
-        {
+    public ImageLoader getImageLoader() {
+        if (imageLoader == null) {
             imageLoader = ImageLoader.getInstance();
         }
 
         return imageLoader;
     }
 
-    public DisplayImageOptions getImageLoaderOptions()
-    {
-        if(options == null)
-        {
+    public DisplayImageOptions getImageLoaderOptions() {
+        if (options == null) {
             options = new DisplayImageOptions.Builder().showStubImage(R.drawable.sy_bj).showImageForEmptyUri(R.drawable.sy_bj).
                     cacheInMemory(true).cacheOnDisk(true).bitmapConfig(Bitmap.Config.RGB_565).build();
         }
         return options;
     }
 
-    public DisplayImageOptions getImageLoaderHeadOptions()
-    {
-        if(optionsHead == null)
-        {
+    public DisplayImageOptions getImageLoaderHeadOptions() {
+        if (optionsHead == null) {
             optionsHead = new DisplayImageOptions.Builder().showStubImage(R.drawable.tx).showImageForEmptyUri(R.drawable.tx).
                     cacheInMemory(true).cacheOnDisk(true).bitmapConfig(Bitmap.Config.RGB_565).build();
         }
         return optionsHead;
     }
 
-    public void showVolleyError(VolleyError error)
-    {
+    public void showVolleyError(VolleyError error) {
         CustomToast.show(getString(R.string.msg_error));
 
-        if (error != null)
-        {
+        if (error != null) {
             String msg = error.getMessage();
 
-            if (msg != null)
-            {
+            if (msg != null) {
                 Log.e("VolleyError", msg);
             }
         }
     }
 
     @Override
-    protected void onDestroy()
-    {
+    protected void onDestroy() {
         super.onDestroy();
         AppManager.getAppManager().finishActivity(this);
         //Activity销毁时，取消网络请求
         OkGo.getInstance().cancelTag(this);
     }
 
-    public void gotokf(Context context)
-    {
+    public void gotokf(Context context) {
         Information info = new Information();
         info.setAppkey("e9cc7fa955a94500b364641e84adcc35");
         //用户资料
-        if(BaseConstant.isLogin()){
+        if (BaseConstant.isLogin()) {
             info.setUid(LocalData.getInstance().getUserInfo().getId());
             info.setUname(LocalData.getInstance().getUserInfo().getId());
             info.setTel(LocalData.getInstance().getUserInfo().getAccount());
-            info.setFace(BaseConstant.Image_URL+LocalData.getInstance().getUserInfo().getHeadImg());
-        }else{
+            info.setFace(BaseConstant.Image_URL + LocalData.getInstance().getUserInfo().getHeadImg());
+        } else {
             info.setUid(CommonUtils.getDeviceId(this));
             info.setUname("游客");
         }
@@ -260,22 +250,21 @@ public class BaseActivity extends AppCompatActivity
         info.setInitModeType(4);
 
         //设置聊天界面标题显示模式
-        SobotApi.setChatTitleDisplayMode(context, SobotChatTitleDisplayMode.Default,"");
+        SobotApi.setChatTitleDisplayMode(context, SobotChatTitleDisplayMode.Default, "");
 
         SobotApi.startSobotChat(context, info);
     }
 
-    public void gotokf_Z(Context context)
-    {
+    public void gotokf_Z(Context context) {
         Information info = new Information();
         info.setAppkey("e9cc7fa955a94500b364641e84adcc35");
         //用户资料
-        if(BaseConstant.isLogin()){
+        if (BaseConstant.isLogin()) {
             info.setUid(LocalData.getInstance().getUserInfo().getId());
             info.setUname(LocalData.getInstance().getUserInfo().getId());
             info.setTel(LocalData.getInstance().getUserInfo().getAccount());
-            info.setFace(BaseConstant.Image_URL+LocalData.getInstance().getUserInfo().getHeadImg());
-        }else{
+            info.setFace(BaseConstant.Image_URL + LocalData.getInstance().getUserInfo().getHeadImg());
+        } else {
             info.setUid(CommonUtils.getDeviceId(this));
             info.setUname("游客");
         }
@@ -288,118 +277,120 @@ public class BaseActivity extends AppCompatActivity
         //指定客服id
         info.setReceptionistId("b125bade408341d4b1c825ee56a1dbb8");
         //设置聊天界面标题显示模式
-        SobotApi.setChatTitleDisplayMode(context, SobotChatTitleDisplayMode.Default,"");
-        SobotApi.setNotificationFlag(context,true,R.mipmap.ic_launcher,R.mipmap.ic_launcher);
+        SobotApi.setChatTitleDisplayMode(context, SobotChatTitleDisplayMode.Default, "");
+        SobotApi.setNotificationFlag(context, true, R.mipmap.ic_launcher, R.mipmap.ic_launcher);
 
         SobotApi.startSobotChat(context, info);
     }
 
-    public void setTitleName(String title)
-    {
+    public void setTitleName(String title) {
         if (titlebar_name == null)
             titlebar_name = (TextView) findViewById(R.id.titlebar_name);
         titlebar_name.setVisibility(View.VISIBLE);
         titlebar_name.setText(title);
     }
 
-    public void setTitleNameEn(int resId)
-    {
+    public void setTitleNameEn(int resId) {
         if (iv_en == null)
             iv_en = (ImageView) findViewById(R.id.iv_en);
         if (ll_en == null)
             ll_en = (LinearLayout) findViewById(R.id.ll_en);
         iv_en.setVisibility(View.VISIBLE);
-        ll_en.setVisibility(View.VISIBLE);
+//        ll_en.setVisibility(View.VISIBLE);
         iv_en.setImageResource(resId);
     }
 
-    public void setTitle_right(String title,OnClickListener listener){
-        if(titlebar_right==null){
-            titlebar_right= (TextView) findViewById(R.id.titlebar_right);
+    public void setTitle_right(String title, OnClickListener listener) {
+        if (titlebar_right == null) {
+            titlebar_right = (TextView) findViewById(R.id.titlebar_right);
         }
         titlebar_right.setVisibility(View.VISIBLE);
         titlebar_right.setText(title);
-        if(listener==null){
+        if (listener == null) {
             titlebar_right.setOnClickListener(null);
-        }else{
+        } else {
             titlebar_right.setOnClickListener(listener);
         }
 
     }
+    public void setTitle_titlebar_kf( OnClickListener listener) {
+        if (titlebar_kf == null) {
+            titlebar_kf = (ImageView) findViewById(R.id.titlebar_kf);
+        }
+        titlebar_right.setVisibility(View.VISIBLE);
+        if (listener == null) {
+            titlebar_kf.setOnClickListener(null);
+        } else {
+            titlebar_kf.setOnClickListener(listener);
+        }
 
-    public void setTitle_News(OnClickListener listener){
-        if(titlebar_news==null){
-            titlebar_news= (ImageView) findViewById(R.id.titlebar_news);
+    }
+
+    public void setTitle_News(OnClickListener listener) {
+        if (titlebar_news == null) {
+            titlebar_news = (ImageView) findViewById(R.id.titlebar_news);
         }
         titlebar_news.setVisibility(View.VISIBLE);
-        if(listener==null){
+        if (listener == null) {
             titlebar_news.setOnClickListener(null);
-        }else{
+        } else {
             titlebar_news.setOnClickListener(listener);
         }
 
     }
 
-    public void settitle_Searchcancel(OnClickListener listener)
-    {
+    public void settitle_Searchcancel(OnClickListener listener) {
         if (titlebar_searchcancel == null)
             titlebar_searchcancel = (TextView) findViewById(R.id.titlebar_cancel);
         titlebar_searchcancel.setVisibility(View.VISIBLE);
-        if(listener==null){
+        if (listener == null) {
             titlebar_searchcancel.setOnClickListener(null);
-        }else{
+        } else {
             titlebar_searchcancel.setOnClickListener(listener);
         }
     }
 
-    public EditText gettitle_Searchet()
-    {
+    public EditText gettitle_Searchet() {
         if (titlebar_et_keywords == null)
             titlebar_et_keywords = (EditText) findViewById(R.id.titlebar_et_keywords);
         return titlebar_et_keywords;
     }
 
-    public void setTitleBack()
-    {
+    public void setTitleBack() {
         if (titlebar_back == null)
             titlebar_back = (ImageView) findViewById(R.id.titlebar_back);
         titlebar_back.setVisibility(View.VISIBLE);
-        titlebar_back.setOnClickListener(new OnClickListener()
-        {
-            public void onClick(View v)
-            {
+        titlebar_back.setOnClickListener(new OnClickListener() {
+            public void onClick(View v) {
                 finish();
             }
         });
     }
-    public void setTitleBack(OnClickListener listener)
-    {
+
+    public void setTitleBack(OnClickListener listener) {
         if (titlebar_back == null)
             titlebar_back = (ImageView) findViewById(R.id.titlebar_back);
-        if(listener!=null){
+        if (listener != null) {
             titlebar_back.setOnClickListener(listener);
             titlebar_back.setVisibility(View.VISIBLE);
         }
     }
-    public void setTitleseach(OnClickListener listener)
-    {
+
+    public void setTitleseach(OnClickListener listener) {
         if (titlebar_search == null)
             titlebar_search = (ImageView) findViewById(R.id.titlebar_search);
-        if(listener!=null){
+        if (listener != null) {
             titlebar_search.setOnClickListener(listener);
             titlebar_search.setVisibility(View.VISIBLE);
         }
     }
 
-    public void setTitleVisible(boolean isShow)
-    {
+    public void setTitleVisible(boolean isShow) {
         findViewById(R.id.titlebar_ll_main).setVisibility(isShow ? View.VISIBLE : View.GONE);
     }
 
-    public LoadingDialog getlDialog()
-    {
-        if (lDialog == null)
-        {
+    public LoadingDialog getlDialog() {
+        if (lDialog == null) {
             lDialog = new LoadingDialog(this);
         }
 
@@ -413,35 +404,31 @@ public class BaseActivity extends AppCompatActivity
         return dDialog;
     }
 
-    public String setLastUpdateTime()
-    {
+    public String setLastUpdateTime() {
         String text = mDateFormat.format(new Date(System.currentTimeMillis()));
         return "最后更新时间 :" + text;
     }
 
     // 设置透明度
-    public void setAlpha(Float f)
-    {
+    public void setAlpha(Float f) {
         WindowManager.LayoutParams params = getWindow().getAttributes();
         params.alpha = f;
         getWindow().setAttributes(params);
 
     }
 
-    public void hideSoftInput()
-    {
+    public void hideSoftInput() {
         InputMethodManager im = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
         im.hideSoftInputFromWindow(getWindow().getDecorView().getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
     }
 
     // 调接口时，帐号被挤掉
-    public void toLogin()
-    {
-        PreferencesUtils.setStringPreferences(BaseConstant.AccountManager_NAME, BaseConstant.SharedPreferences_LastLogin,null);
+    public void toLogin() {
+        PreferencesUtils.setStringPreferences(BaseConstant.AccountManager_NAME, BaseConstant.SharedPreferences_LastLogin, null);
         CustomToast.show("登录信息失效，请重新登录");
-        Intent intent=new Intent();
-        intent.setClass(this,MainActivity.class);
-        intent.putExtra("type","Crowding");
+        Intent intent = new Intent();
+        intent.setClass(this, MainActivity.class);
+        intent.putExtra("type", "Crowding");
         startActivity(intent);
     }
 
@@ -458,20 +445,21 @@ public class BaseActivity extends AppCompatActivity
             win.setAttributes(winParams);
         }
 
-        if (!(this instanceof StartActivity)&&!(this instanceof PersonalActivity) &&!(this instanceof GuideActivity)
-                &&!(this instanceof LoginActivity)&&!(this instanceof RegisterActivity)&&!(this instanceof MailAppraisalActivity)
-                &&!(this instanceof ImagePageActivity)&&!(this instanceof OtherActivity)&&!(this instanceof VideoListActivity)
-                &&!(this instanceof SingleVideoActivity)&&!(this instanceof MonitorDetailActivity)
-                &&!(this instanceof EmeraldActivity)&&!(this instanceof JewelleryActivity)
-                &&!(this instanceof WatchActivity)&&!(this instanceof ImageActivity)&&!(this instanceof CashItemsActivity)
-                &&!(this instanceof SendCallGoodDetailActivity) &&!(this instanceof GoodsDetailActivity)
-                &&!(this instanceof AddSendCallActivity)){
+        if (!(this instanceof StartActivity) && !(this instanceof PersonalActivity) && !(this instanceof GuideActivity)
+                && !(this instanceof LoginActivity) && !(this instanceof RegisterActivity) && !(this instanceof MailAppraisalActivity)
+                && !(this instanceof ImagePageActivity) && !(this instanceof OtherActivity) && !(this instanceof VideoListActivity)
+                && !(this instanceof SingleVideoActivity) && !(this instanceof MonitorDetailActivity)
+                && !(this instanceof EmeraldActivity) && !(this instanceof JewelleryActivity)
+                && !(this instanceof WatchActivity) && !(this instanceof ImageActivity) && !(this instanceof CashItemsActivity)
+                && !(this instanceof SendCallGoodDetailActivity) && !(this instanceof GoodsDetailActivity)
+                && !(this instanceof AddSendCallActivity)) {
             tintManager = new SystemBarTintManager(this);
             // 激活状态栏设置
             tintManager.setStatusBarTintEnabled(true);
-            tintManager.setTintColor(getResources().getColor(R.color.bg_title));
+            tintManager.setTintColor(getResources().getColor(R.color.bg_default));
         }
     }
+
     //MD5加密
     public static String md5(String string) {
         if (TextUtils.isEmpty(string)) {
@@ -495,36 +483,35 @@ public class BaseActivity extends AppCompatActivity
         }
         return "";
     }
+
     // 登录记住密码
-    public static void setUserAndFile(UserInfo info)
-    {
+    public static void setUserAndFile(UserInfo info) {
         LocalData.getInstance().setUserInfo(info);
         PreferencesUtils.setStringPreferences(BaseConstant.AccountManager_NAME, BaseConstant.SharedPreferences_LastLogin, new Gson().toJson(info));
     }
 
     private PopupWindow popupWindo;
-    public PopupWindow getPopupWindow(){
-        if(popupWindo==null){
+
+    public PopupWindow getPopupWindow() {
+        if (popupWindo == null) {
             return null;
         }
         return popupWindo;
     }
-    public void showPopupWindow(Activity activity,String content, final OnClickListener makesureListener)
-    {
-        if (popupWindo!=null){
-            popupWindo=null;
+
+    public void showPopupWindow(Activity activity, String content, final OnClickListener makesureListener) {
+        if (popupWindo != null) {
+            popupWindo = null;
         }
         View view = LayoutInflater.from(activity).inflate(R.layout.pw_dialog1, null);
-        Button btn_cancel = (Button)view.findViewById(R.id.btn_cancel);
-        Button btn_ok = (Button)view.findViewById(R.id.btn_ok);
-        if(!content.equals("")){
-            ((TextView)view.findViewById(R.id.tv_content)).setText(content);
+        Button btn_cancel = (Button) view.findViewById(R.id.btn_cancel);
+        Button btn_ok = (Button) view.findViewById(R.id.btn_ok);
+        if (!content.equals("")) {
+            ((TextView) view.findViewById(R.id.tv_content)).setText(content);
         }
-        btn_cancel.setOnClickListener(new View.OnClickListener()
-        {
+        btn_cancel.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v)
-            {
+            public void onClick(View v) {
                 popupWindo.dismiss();
             }
         });
@@ -538,21 +525,18 @@ public class BaseActivity extends AppCompatActivity
         popupWindo.showAtLocation(view, Gravity.CENTER, 0, 0);
     }
 
-    public void showVideoPopupWindow(Activity activity,final OnClickListener Listener, final OnClickListener Listener1)
-    {
-        if (popupWindo!=null){
-            popupWindo=null;
+    public void showVideoPopupWindow(Activity activity, final OnClickListener Listener, final OnClickListener Listener1) {
+        if (popupWindo != null) {
+            popupWindo = null;
         }
         View view = LayoutInflater.from(activity).inflate(R.layout.pw_photo, null);
-        Button pw_btn_photograph = (Button)view.findViewById(R.id.pw_btn_photograph);
-        Button pw_btn_album = (Button)view.findViewById(R.id.pw_btn_album);
-        Button pw_btn_cancle = (Button)view.findViewById(R.id.pw_btn_cancle);
+        Button pw_btn_photograph = (Button) view.findViewById(R.id.pw_btn_photograph);
+        Button pw_btn_album = (Button) view.findViewById(R.id.pw_btn_album);
+        Button pw_btn_cancle = (Button) view.findViewById(R.id.pw_btn_cancle);
 
-        pw_btn_cancle.setOnClickListener(new View.OnClickListener()
-        {
+        pw_btn_cancle.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v)
-            {
+            public void onClick(View v) {
                 popupWindo.dismiss();
             }
         });
@@ -569,16 +553,13 @@ public class BaseActivity extends AppCompatActivity
 
     private PopupWindow popwindow;
 
-    public void showPopupWindow(Activity activity,final TextView tv, final ArrayList<String> list)
-    {
+    public void showPopupWindow(Activity activity, final TextView tv, final ArrayList<String> list) {
         View view = LayoutInflater.from(this).inflate(R.layout.pw_listview, null);
 
         ListView lv_district = ((ListView) view.findViewById(R.id.lv_content));
-        lv_district.setOnItemClickListener(new AdapterView.OnItemClickListener()
-        {
+        lv_district.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id)
-            {
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 popwindow.dismiss();
                 tv.setText(list.get(position));
             }
@@ -599,11 +580,11 @@ public class BaseActivity extends AppCompatActivity
         int aHeight = tv.getHeight() + location[1];
         int tHeight = getWindowManager().getDefaultDisplay().getHeight() - aHeight;
         int aWidth = tv.getWidth();
-        popwindow = new PopupWindow(view, aWidth - ScreenUtils.dp2px(this,0), tHeight, true);
+        popwindow = new PopupWindow(view, aWidth - ScreenUtils.dp2px(this, 0), tHeight, true);
         popwindow.setOutsideTouchable(true);
         fitPopupWindowOverStatusBar(popwindow);
         popwindow.setBackgroundDrawable(new ColorDrawable());
-        popwindow.showAtLocation(view, Gravity.NO_GRAVITY, location[0]+ScreenUtils.dp2px(this, 0), aHeight);
+        popwindow.showAtLocation(view, Gravity.NO_GRAVITY, location[0] + ScreenUtils.dp2px(this, 0), aHeight);
     }
 
     public void fitPopupWindowOverStatusBar(PopupWindow popwindow) {
@@ -641,7 +622,7 @@ public class BaseActivity extends AppCompatActivity
                 .showImageOnFail(image)//加载失败显示的图片
                 .cacheInMemory()//内存缓存
                 .cacheOnDisc()//磁盘缓存
-                .displayer(new FlexibleRoundedBitmapDisplayer(cornerRadius,corners)) // 自定义增强型BitmapDisplayer
+                .displayer(new FlexibleRoundedBitmapDisplayer(cornerRadius, corners)) // 自定义增强型BitmapDisplayer
                 .build();
         imageLoader.displayImage(url, imageView, options);
 
@@ -747,8 +728,8 @@ public class BaseActivity extends AppCompatActivity
      * 获取分享详情
      */
     private void getShareInfo(String id) {
-        String url=BaseConstant.getApiPostUrl("userGoods/getShareInfo");
-        HttpParams param=new HttpParams();
+        String url = BaseConstant.getApiPostUrl("userGoods/getShareInfo");
+        HttpParams param = new HttpParams();
         param.put("id", id);
 
         OkGo.<DataResult<StoreGoodsInfo>>post(url)
@@ -757,12 +738,13 @@ public class BaseActivity extends AppCompatActivity
                     @Override
                     public void onSuccess(com.lzy.okgo.model.Response<DataResult<StoreGoodsInfo>> response) {
 
-                        if(response.body().getErrorCode()== DataResult.RESULT_OK_ZERO){
-                            if (response.body().getData()!=null){
+                        if (response.body().getErrorCode() == DataResult.RESULT_OK_ZERO) {
+                            if (response.body().getData() != null) {
                                 showSharePopupWindow(response.body().getData());
                             }
                         }
                     }
+
                     @Override
                     public void onError(com.lzy.okgo.model.Response<DataResult<StoreGoodsInfo>> response) {
 
@@ -770,10 +752,9 @@ public class BaseActivity extends AppCompatActivity
                 });
     }
 
-    public void showSharePopupWindow(final StoreGoodsInfo info)
-    {
-        if (popupWindo!=null){
-            popupWindo=null;
+    public void showSharePopupWindow(final StoreGoodsInfo info) {
+        if (popupWindo != null) {
+            popupWindo = null;
         }
         View view = LayoutInflater.from(this).inflate(R.layout.pw_shareinfo, null);
         ImageView iv_goodimage = view.findViewById(R.id.iv_good_image);
@@ -782,12 +763,11 @@ public class BaseActivity extends AppCompatActivity
         ImageView iv_close = view.findViewById(R.id.iv_close);
 
         ImageLoader.getInstance().displayImage(BaseConstant.Image_URL
-                        + info.getImg(), iv_goodimage,getImageLoaderOptions());
+                + info.getImg(), iv_goodimage, getImageLoaderOptions());
 
         tv_goodname.setText(info.getName());
 
-        iv_close.setOnClickListener(new View.OnClickListener()
-        {
+        iv_close.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 popupWindo.dismiss();
@@ -806,7 +786,7 @@ public class BaseActivity extends AppCompatActivity
 //                intent.putExtra("id",info.getId());
 //                startActivity(intent);
 
-                F.INSTANCE.go2GoodeDetail(BaseActivity.this,    info.getId(),info.getType().equals("1")?"rz":"jd");
+                F.INSTANCE.go2GoodeDetail(BaseActivity.this, info.getId(), info.getType().equals("1") ? "rz" : "jd");
             }
         });
         Display display = getWindowManager().getDefaultDisplay();

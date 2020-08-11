@@ -1,14 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent" android:background="@color/bg_title" android:fitsSystemWindows="true">
-     <include layout="@layout/titlebar" android:id="@+id/titlebar_refresh" />
-     <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent" android:background="@color/bg_default">
-          <cn.bingoogolapple.refreshlayout.BGARefreshLayout android:id="@+id/rl_listview_refresh" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1">
-               <ListView android:id="@+id/lv_listview" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:divider="@null" android:listSelector="@android:color/transparent" />
-          </cn.bingoogolapple.refreshlayout.BGARefreshLayout>
-          <TextView android:id="@+id/tv_beizhu" android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="@dimen/j10dp" android:text="注：绝当商城物品付款后，该订单可在我的订单中查看" android:textColor="@color/red_k" android:textSize="12sp" android:visibility="gone" />
-          <LinearLayout android:id="@+id/ll_nodata" android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center" android:orientation="vertical" android:visibility="gone">
-               <TextView android:id="@+id/tv_nodata" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j10dp" android:gravity="center" android:text="暂无业务信息，快去别的地方逛逛哦~" android:textColor="@color/bg_title" android:textSize="13sp" />
-          </LinearLayout>
-     </LinearLayout>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/titlebar_refresh"
+        layout="@layout/titlebar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <cn.bingoogolapple.refreshlayout.BGARefreshLayout
+            android:id="@+id/rl_listview_refresh"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <ListView
+                android:id="@+id/lv_listview"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+
+                android:divider="@null"
+                android:listSelector="@android:color/transparent" />
+        </cn.bingoogolapple.refreshlayout.BGARefreshLayout>
+
+        <TextView
+            android:id="@+id/tv_beizhu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/j10dp"
+            android:text="注：绝当商城物品付款后，该订单可在我的订单中查看"
+            android:textColor="@color/red_k"
+            android:textSize="12sp"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:id="@+id/ll_nodata"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/tv_nodata"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/j10dp"
+                android:gravity="center"
+                android:text="暂无业务信息，快去别的地方逛逛哦~"
+                android:textColor="@color/bg_title"
+                android:textSize="13sp" />
+        </LinearLayout>
+    </LinearLayout>
 </LinearLayout>
 

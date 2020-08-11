@@ -41,8 +41,8 @@ public abstract class JCVideoPlayer extends FrameLayout implements View.OnClickL
 
     public static final String TAG = "JieCaoVideoPlayer";
 
-    public static boolean ACTION_BAR_EXIST = true;
-    public static boolean TOOL_BAR_EXIST = true;
+    public static boolean ACTION_BAR_EXIST = false;
+    public static boolean TOOL_BAR_EXIST = false;
     public static int FULLSCREEN_ORIENTATION = ActivityInfo.SCREEN_ORIENTATION_SENSOR;
     public static int NORMAL_ORIENTATION = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT;
     public static boolean SAVE_PROGRESS = true;
@@ -597,7 +597,7 @@ public abstract class JCVideoPlayer extends FrameLayout implements View.OnClickL
     }
 
     public void clearFloatScreen() {
-        JCUtils.getAppCompActivity(getContext()).setRequestedOrientation(NORMAL_ORIENTATION);
+//        JCUtils.getAppCompActivity(getContext()).setRequestedOrientation(NORMAL_ORIENTATION);
         showSupportActionBar(getContext(),0);
         JCVideoPlayer currJcvd = JCVideoPlayerManager.getCurrentJcvd();
         currJcvd.textureViewContainer.removeView(JCMediaManager.textureView);
@@ -805,7 +805,7 @@ public abstract class JCVideoPlayer extends FrameLayout implements View.OnClickL
 
     public static void startFullscreen(Context context, Class _class, String url, Object... objects) {
         hideSupportActionBar(context);
-        JCUtils.getAppCompActivity(context).setRequestedOrientation(FULLSCREEN_ORIENTATION);
+//        JCUtils.getAppCompActivity(context).setRequestedOrientation(FULLSCREEN_ORIENTATION);
         ViewGroup vp = (ViewGroup) (JCUtils.scanForActivity(context))//.getWindow().getDecorView();
                 .findViewById(Window.ID_ANDROID_CONTENT);
         View old = vp.findViewById(JCVideoPlayer.FULLSCREEN_ID);

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F0F0F0"
+    android:background="@color/bg_default"
     android:gravity="center_horizontal"
     android:orientation="vertical"
     android:padding="@dimen/j14dp">
@@ -236,17 +236,17 @@
                 android:layout_marginTop="@dimen/j20dp"
                 android:gravity="center_horizontal"
                 android:orientation="horizontal"
-                android:visibility="gone">
+                android:visibility="gone"  >
 
                 <Button
                     android:id="@+id/mButton_ty"
                     style="@style/text_style_15_white"
                     android:layout_width="@dimen/j130dp"
                     android:layout_height="@dimen/j40dp"
-                    android:background="#0A9A9E"
+                    android:background="@drawable/shape_login"
                     android:gravity="center"
                     android:text="同意"
-                    android:visibility="gone" />
+                 android:visibility="gone" />
 
                 <Button
                     android:id="@+id/mButton_bh"
@@ -254,17 +254,18 @@
                     android:layout_width="@dimen/j130dp"
                     android:layout_height="@dimen/j40dp"
                     android:layout_marginLeft="@dimen/j22dp"
-                    android:background="#B42929"
+                    android:background="@drawable/shape_bh"
                     android:gravity="center"
                     android:text="驳回"
-                    android:visibility="gone" />
+                    android:visibility="gone"   />
 
-                <ImageButton
+                <Button   style="@style/text_style_15_white"
                     android:id="@+id/mImageButton_sub"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="#00000000"
-                    android:src="@drawable/sub" />
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/j40dp"
+                    android:background="@drawable/shape_login"
+                    android:gravity="center"
+                    android:text="提交" />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

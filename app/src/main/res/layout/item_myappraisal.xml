@@ -1,37 +1,178 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@color/white">
-     <ImageView android:id="@+id/iv_pic_jb" android:layout_width="@dimen/j110dp" android:layout_height="@dimen/j110dp" android:layout_marginBottom="@dimen/j2dp" android:scaleType="centerCrop" android:src="@drawable/bg_livecountdown" />
-     <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent">
-          <View style="@style/line" />
-          <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent">
-               <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:paddingLeft="@dimen/j8dp" android:paddingRight="@dimen/j8dp" android:paddingBottom="@dimen/j8dp" android:paddingTop="@dimen/j3dp">
-                    <TextView android:id="@+id/tv_name_jb" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1" android:text="翡翠手镯" android:textSize="16sp" android:textColor="@color/black" />
-                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j5dp" android:gravity="center_vertical">
-                         <TextView android:id="@+id/tv_result_jb" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="鉴定结果：真品" android:textSize="14sp" android:textColor="@color/black" />
-                    </LinearLayout>
-                    <TextView android:id="@+id/tv_jdprice_jb" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/j5dp" android:text="鉴定价：￥5万" android:textSize="14sp" android:textColor="@color/black" />
-                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:layout_marginTop="@dimen/j5dp">
-                         <TextView android:id="@+id/tv_isyj_jb" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="已邮寄" android:textSize="14sp" android:textColor="@color/black" />
-                         <!--<ImageView-->
-                         <!--android:id="@+id/iv_result_sm"-->
-                         <!--android:layout_width="wrap_content"-->
-                         <!--android:layout_height="wrap_content"-->
-                         <!--android:padding="5dp"-->
-                         <!--android:src="@mipmap/jdsm"-->
-                         <!--/>-->
-                         <TextView android:id="@+id/tv_result_sm" android:layout_width="@dimen/j60dp" android:layout_height="@dimen/j16dp" android:layout_marginLeft="@dimen/j10dp" android:gravity="center" android:text="鉴定说明" android:textColor="@color/white" android:background="@drawable/shape_green" android:textSize="10sp" />
-                    </LinearLayout>
-               </LinearLayout>
-               <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="match_parent" android:gravity="bottom" android:paddingBottom="@dimen/j5dp">
-                    <TextView android:id="@+id/tv_qdd_jb" style="@style/myappraisal" android:text="去典当" android:background="@drawable/shape_red2" />
-                    <TextView android:id="@+id/tv_bblzs_jb" style="@style/myappraisal" android:text="办理证书" android:background="@drawable/shape_red2" />
-                    <TextView android:id="@+id/tv_mgpt_jb" style="@style/myappraisal" android:text="卖给平台" android:background="@drawable/shape_red2" />
-                    <TextView android:id="@+id/tv_jm_jb" style="@style/myappraisal" android:text="寄卖" android:background="@drawable/shape_red2" />
-                    <TextView android:id="@+id/tv_qh_jb" style="@style/myappraisal" android:text="取回" android:background="@drawable/shape_red2" />
-                    <TextView android:id="@+id/tv_yjjd_jb" style="@style/myappraisal" android:text="邮寄鉴定" android:visibility="gone" android:background="@drawable/shape_red2" />
-                    <TextView android:id="@+id/tv_ckpz_jb" style="@style/myappraisal" android:text="查看凭证" android:visibility="gone" android:background="@drawable/shape_red2" />
-               </LinearLayout>
-          </LinearLayout>
-     </LinearLayout>
-</LinearLayout>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/j17dp"
+   >
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="@dimen/j3dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/iv_pic_jb"
+                android:layout_width="@dimen/j90dp"
+                android:layout_height="@dimen/j90dp"
+                android:layout_marginBottom="@dimen/j2dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/bg_livecountdown" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <View style="@style/line" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:paddingLeft="@dimen/j8dp"
+                        android:paddingTop="@dimen/j3dp"
+                        android:paddingRight="@dimen/j8dp"
+                        android:paddingBottom="@dimen/j8dp">
+
+                        <TextView
+                            android:id="@+id/tv_name_jb"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="翡翠手镯"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/j5dp"
+                            android:gravity="center_vertical">
+
+                            <TextView
+                                android:id="@+id/tv_result_jb"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="鉴定结果：真品"
+                                android:textColor="@color/black"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/tv_jdprice_jb"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/j5dp"
+                            android:text="鉴定价：￥5万"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/j5dp"
+                            android:gravity="center_vertical">
+
+                            <TextView
+                                android:id="@+id/tv_isyj_jb"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="已邮寄"
+                                android:textColor="@color/black"
+                                android:textSize="14sp" />
+                            <!--<ImageView-->
+                            <!--android:id="@+id/iv_result_sm"-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:padding="5dp"-->
+                            <!--android:src="@mipmap/jdsm"-->
+                            <!--/>-->
+                            <TextView
+                                android:id="@+id/tv_result_sm"
+                                android:layout_width="@dimen/j60dp"
+                                android:layout_height="@dimen/j16dp"
+                                android:layout_marginLeft="@dimen/j10dp"
+                                android:background="@drawable/shape_green"
+                                android:gravity="center"
+                                android:text="鉴定说明"
+                                android:textColor="@color/white"
+                                android:textSize="10sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="bottom"
+                        android:orientation="vertical"
+                        android:paddingBottom="@dimen/j5dp">
+
+                        <TextView
+                            android:id="@+id/tv_qdd_jb"
+                            style="@style/myappraisal"
+                            android:background="@drawable/shape_red2"
+                            android:text="去典当" />
+
+                        <TextView
+                            android:id="@+id/tv_bblzs_jb"
+                            style="@style/myappraisal"
+                            android:background="@drawable/shape_red2"
+                            android:text="办理证书" />
+
+                        <TextView
+                            android:id="@+id/tv_mgpt_jb"
+                            style="@style/myappraisal"
+                            android:background="@drawable/shape_red2"
+                            android:text="卖给平台" />
+
+                        <TextView
+                            android:id="@+id/tv_jm_jb"
+                            style="@style/myappraisal"
+                            android:background="@drawable/shape_red2"
+                            android:text="寄卖" />
+
+                        <TextView
+                            android:id="@+id/tv_qh_jb"
+                            style="@style/myappraisal"
+                            android:background="@drawable/shape_red2"
+                            android:text="取回" />
+
+                        <TextView
+                            android:id="@+id/tv_yjjd_jb"
+                            style="@style/myappraisal"
+                            android:background="@drawable/shape_red2"
+                            android:text="邮寄鉴定"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:id="@+id/tv_ckpz_jb"
+                            style="@style/myappraisal"
+                            android:background="@drawable/shape_red2"
+                            android:text="查看凭证"
+                            android:visibility="gone" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+
+        android:layout_marginTop="@dimen/j10dp"
+        android:layout_height="1px"
+        android:background="@color/gray" />
+</LinearLayout>

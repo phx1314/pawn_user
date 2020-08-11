@@ -26,6 +26,7 @@ import com.glavesoft.pawnuser.constant.BaseConstant;
 import com.glavesoft.pawnuser.mod.DataResult;
 import com.glavesoft.pawnuser.mod.LocalData;
 import com.glavesoft.pawnuser.mod.SendCallCollectionInfo;
+import com.glavesoft.util.GlideLoader;
 import com.glavesoft.view.CustomToast;
 import com.glavesoft.volley.net.ResponseListener;
 import com.glavesoft.volley.net.VolleyUtil;
@@ -51,6 +52,7 @@ public class SendCallCollectionActivity extends BaseActivity {
 
     private LinearLayout ll_nodata;
     private TextView tv_nodata;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -65,9 +67,10 @@ public class SendCallCollectionActivity extends BaseActivity {
         setTitleName("我的收藏");
         setTitleNameEn(R.mipmap.my_collection);
 
-        ll_nodata=(LinearLayout) findViewById(R.id.ll_nodata);
-        tv_nodata=(TextView) findViewById(R.id.tv_nodata);
+        ll_nodata = (LinearLayout) findViewById(R.id.ll_nodata);
+        tv_nodata = (TextView) findViewById(R.id.tv_nodata);
     }
+
     private void showList() {
 
         if (commAdapter == null) {
@@ -75,39 +78,38 @@ public class SendCallCollectionActivity extends BaseActivity {
                     R.layout.item_sendcall_collection) {
                 @Override
                 public void convert(final ViewHolder helper, final SendCallCollectionInfo item) {
-                    helper.setText(R.id.tv_user_name,item.getNickName());
-                    helper.setText(R.id.tv_goodsname,item.getName());
-                    helper.setText(R.id.tv_type,"分类："+item.getSellPawnCodeInfo());
-                    helper.setText(R.id.tv_price,"￥"+item.getSellPrice());
-                    if(!item.getHeadImg().equals("")){
+                    helper.setText(R.id.tv_user_name, item.getNickName());
+                    helper.setText(R.id.tv_goodsname, item.getName());
+                    helper.setText(R.id.tv_type, "分类：" + item.getSellPawnCodeInfo());
+                    helper.setText(R.id.tv_price, "￥" + item.getSellPrice());
+                    if (!item.getHeadImg().equals("")) {
                         getImageLoader().displayImage(BaseConstant.Image_URL + item.getHeadImg(),
-                                (ImageView) helper.getView(R.id.iv_head),getImageLoaderOptions());
-                    }else{
-                        getImageLoader().displayImage("", (ImageView) helper.getView(R.id.iv_head),getImageLoaderOptions());
+                                (ImageView) helper.getView(R.id.iv_head), getImageLoaderOptions());
+                    } else {
+                        getImageLoader().displayImage("", (ImageView) helper.getView(R.id.iv_head), getImageLoaderOptions());
                     }
-                    if(!item.getSellImgs().equals("")){
-                        getImageLoader().displayImage(BaseConstant.Image_URL + item.getSellImgs().split(",")[0],
-                                (ImageView) helper.getView(R.id.ivGoods),getImageLoaderOptions());
-                    }else{
-                        getImageLoader().displayImage("", (ImageView) helper.getView(R.id.ivGoods),getImageLoaderOptions());
+                    if (!item.getSellImgs().equals("")) {
+                        GlideLoader.loadRoundImage(BaseConstant.Image_URL + item.getSellImgs().split(",")[0], (ImageView) helper.getView(R.id.ivGoods), R.drawable.sy_bj);
+                    } else {
+                        getImageLoader().displayImage("", (ImageView) helper.getView(R.id.ivGoods), getImageLoaderOptions());
                     }
-                    if (item.getSellStatus()==0){
+                    if (item.getSellStatus() == 0) {
                         helper.getView(R.id.rl_item_shopcar).setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View view) {
                                 CustomToast.show("未上架");
                             }
                         });
-                    }else if(item.getSellStatus()==1) {
+                    } else if (item.getSellStatus() == 1) {
                         helper.getView(R.id.rl_item_shopcar).setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View view) {
-                                Intent intent=new Intent(SendCallCollectionActivity.this, SendCallGoodDetailActivity.class);
-                                intent.putExtra("id",item.getId());
+                                Intent intent = new Intent(SendCallCollectionActivity.this, SendCallGoodDetailActivity.class);
+                                intent.putExtra("id", item.getId());
                                 startActivity(intent);
                             }
                         });
-                    }else if (item.getSellStatus()==2){
+                    } else if (item.getSellStatus() == 2) {
                         helper.getView(R.id.tv_issell).setVisibility(View.VISIBLE);
                     }
 
@@ -123,39 +125,39 @@ public class SendCallCollectionActivity extends BaseActivity {
             lvListview.setAdapter(commAdapter);
         }
     }
+
     private void collectSellUserGoods() {
         getlDialog().show();
-        String token= LocalData.getInstance().getUserInfo().getToken();
-        String url=BaseConstant.getApiPostUrl("userGoods/collectSellUserGoods/list");
-        HttpParams param=new HttpParams();
-        param.put("token",token);
+        String token = LocalData.getInstance().getUserInfo().getToken();
+        String url = BaseConstant.getApiPostUrl("userGoods/collectSellUserGoods/list");
+        HttpParams param = new HttpParams();
+        param.put("token", token);
         OkGo.<DataResult<ArrayList<SendCallCollectionInfo>>>post(url)
                 .params(param)
                 .execute(new JsonCallback<DataResult<ArrayList<SendCallCollectionInfo>>>() {
                     @Override
                     public void onSuccess(Response<DataResult<ArrayList<SendCallCollectionInfo>>> response) {
                         getlDialog().dismiss();
-                        if (response==null){
+                        if (response == null) {
                             CustomToast.show(getString(R.string.http_request_fail));
                             return;
                         }
 
-                        if(response.body().getErrorCode()== DataResult.RESULT_OK_ZERO){
+                        if (response.body().getErrorCode() == DataResult.RESULT_OK_ZERO) {
                             if (response.body().getData() != null && response.body().getData().size() > 0) {
                                 ll_nodata.setVisibility(View.GONE);
                                 lvListview.setVisibility(View.VISIBLE);
-                                sendCallCollectionInfos=response.body().getData();
+                                sendCallCollectionInfos = response.body().getData();
                                 showList();
                             } else {
-                                if (sendCallCollectionInfos==null||sendCallCollectionInfos.size()==0){
+                                if (sendCallCollectionInfos == null || sendCallCollectionInfos.size() == 0) {
                                     ll_nodata.setVisibility(View.VISIBLE);
                                     lvListview.setVisibility(View.GONE);
                                 }
                             }
-                        }else if (response.body().getErrorCode()==DataResult.RESULT_102 )
-                        {
+                        } else if (response.body().getErrorCode() == DataResult.RESULT_102) {
                             toLogin();
-                        }else {
+                        } else {
                             CustomToast.show(response.body().getErrorMsg());
                         }
                     }
@@ -169,20 +171,18 @@ public class SendCallCollectionActivity extends BaseActivity {
     }
 
     private PopupWindow popupWindo;
-    public void showPopupWindow(String id)
-    {
-        if (popupWindo!=null){
-            popupWindo=null;
+
+    public void showPopupWindow(String id) {
+        if (popupWindo != null) {
+            popupWindo = null;
         }
         View view = LayoutInflater.from(this).inflate(R.layout.pw_dialog3, null);
-        Button btn_cancel = (Button)view.findViewById(R.id.btn_cancel);
-        Button btn_ok = (Button)view.findViewById(R.id.btn_ok);
+        Button btn_cancel = (Button) view.findViewById(R.id.btn_cancel);
+        Button btn_ok = (Button) view.findViewById(R.id.btn_ok);
 
-        btn_cancel.setOnClickListener(new View.OnClickListener()
-        {
+        btn_cancel.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v)
-            {
+            public void onClick(View v) {
                 popupWindo.dismiss();
             }
         });

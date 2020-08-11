@@ -21,8 +21,8 @@ android {
         applicationId "com.glavesoft.pawnuser"
         minSdkVersion 21
         targetSdkVersion 29
-        versionCode 28
-        versionName "2.8"
+        versionCode 29
+        versionName "2.9"
         multiDexEnabled true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         signingConfig signingConfigs.config
@@ -146,6 +146,7 @@ dependencies {
         exclude group: 'com.google.zxing'
     }
     implementation 'com.tencent.bugly:crashreport:3.1.0'
+    implementation 'com.github.mcxtzhang:SwipeDelMenuLayout:V1.3.0'
 }
 
 configurations.all {

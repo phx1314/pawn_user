@@ -31,7 +31,7 @@ public class SearchCertificateActivity extends BaseActivity implements View.OnCl
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_searchcertificate);
+        setContentView(R.layout.activity_searchcertificate_n);
         type=getIntent().getStringExtra("type");
         initView();
     }

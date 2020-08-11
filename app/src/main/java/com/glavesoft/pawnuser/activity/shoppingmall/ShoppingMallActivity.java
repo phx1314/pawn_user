@@ -1,8 +1,14 @@
 package com.glavesoft.pawnuser.activity.shoppingmall;
 
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+
+import androidx.core.content.ContextCompat;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
+
 import android.view.LayoutInflater;
 import android.view.View;
 
@@ -30,22 +36,22 @@ import cn.bingoogolapple.refreshlayout.BGARefreshLayout;
  * @date: 2017/10/23
  * @company:常州宝丰
  */
-public class ShoppingMallActivity extends BaseActivity implements BGARefreshLayout.BGARefreshLayoutDelegate{
+public class ShoppingMallActivity extends BaseActivity implements BGARefreshLayout.BGARefreshLayoutDelegate {
 
     private BGARefreshLayout mRefreshLayout;
     private RecyclerView mDataRv;
-    private ArrayList<StoreGoodsInfo> list=new ArrayList<>();
+    private ArrayList<StoreGoodsInfo> list = new ArrayList<>();
     //private View headerview;
     //private SlideShowView ssv_header_shoppingmall_pic;
     private StaggeredGridAdapter mStaggeredGridAdapter;
-    private List<String> adlist=new ArrayList<>();
+    private List<String> adlist = new ArrayList<>();
 
-    private ArrayList<StoreBannerInfo> StoreBannerList=new ArrayList<>();
-    private int page=1;
-    private int listsize=0;
+    private ArrayList<StoreBannerInfo> StoreBannerList = new ArrayList<>();
+    private int page = 1;
+    private int listsize = 0;
+
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shoppingmall);
 
@@ -57,7 +63,7 @@ public class ShoppingMallActivity extends BaseActivity implements BGARefreshLayo
         setTitleName("新品推荐");
         setTitleNameEn(R.mipmap.new_arrivals);
 
-        mRefreshLayout=(BGARefreshLayout) findViewById(R.id.rl_recyclerview_refresh);
+        mRefreshLayout = (BGARefreshLayout) findViewById(R.id.rl_recyclerview_refresh);
         mRefreshLayout.setDelegate(this);
 
 //        mRefreshLayout.setCustomHeaderView(headerview, true);
@@ -76,7 +82,12 @@ public class ShoppingMallActivity extends BaseActivity implements BGARefreshLayo
         //mDataRv.setAdapter(mAdapter);
         mStaggeredGridAdapter = new StaggeredGridAdapter(ShoppingMallActivity.this, list);
         mDataRv.setAdapter(mStaggeredGridAdapter);
-
+//        DividerItemDecoration mDividerItemDecoration = new DividerItemDecoration(ShoppingMallActivity.this, RecyclerView.VERTICAL);
+//        mDividerItemDecoration.setDrawable(new ColorDrawable(Color.parseColor("#ECECEC")));
+//        DividerItemDecoration mDividerItemDecoration2 = new DividerItemDecoration(ShoppingMallActivity.this, RecyclerView.HORIZONTAL);
+//        mDividerItemDecoration2.setDrawable(new ColorDrawable(Color.parseColor("#ECECEC")));
+//        mDataRv.addItemDecoration(mDividerItemDecoration);
+//        mDataRv.addItemDecoration(mDividerItemDecoration2);
         storeBanner();
     }
 
@@ -88,10 +99,10 @@ public class ShoppingMallActivity extends BaseActivity implements BGARefreshLayo
 
     @Override
     public boolean onBGARefreshLayoutBeginLoadingMore(BGARefreshLayout refreshLayout) {
-        if(listsize==10){
+        if (listsize == 10) {
             page++;
             storeHotGoodsList();
-        }else{
+        } else {
             CustomToast.show("无更多数据");
             mRefreshLayout.endLoadingMore();
             return false;
@@ -99,8 +110,7 @@ public class ShoppingMallActivity extends BaseActivity implements BGARefreshLayo
         return true;
     }
 
-    private void resetPageData()
-    {
+    private void resetPageData() {
         page = 1;
         list.clear();
 //        mStaggeredGridAdapter = null;
@@ -108,10 +118,9 @@ public class ShoppingMallActivity extends BaseActivity implements BGARefreshLayo
         storeHotGoodsList();
     }
 
-    private void storeBanner()
-    {
-        String token= LocalData.getInstance().getUserInfo().getToken();
-        String url=BaseConstant.getApiPostUrl("storeGoods/storeBanner");
+    private void storeBanner() {
+        String token = LocalData.getInstance().getUserInfo().getToken();
+        String url = BaseConstant.getApiPostUrl("storeGoods/storeBanner");
         getlDialog().show();
         OkGo.<DataResult<ArrayList<StoreBannerInfo>>>post(url)
                 .params("token", "")
@@ -119,28 +128,27 @@ public class ShoppingMallActivity extends BaseActivity implements BGARefreshLayo
                     @Override
                     public void onSuccess(Response<DataResult<ArrayList<StoreBannerInfo>>> response) {
                         getlDialog().dismiss();
-                        if (response==null){
+                        if (response == null) {
                             CustomToast.show(getString(R.string.http_request_fail));
                             return;
                         }
 
-                        if(response.body().getErrorCode()== DataResult.RESULT_OK_ZERO){
+                        if (response.body().getErrorCode() == DataResult.RESULT_OK_ZERO) {
 
-                            if(response.body().getData()!=null&&response.body().getData().size()>0){
-                                StoreBannerList=response.body().getData();
+                            if (response.body().getData() != null && response.body().getData().size() > 0) {
+                                StoreBannerList = response.body().getData();
                                 //ssv_header_shoppingmall_pic.setVisibility(View.VISIBLE);
-                            }else{
+                            } else {
                                 //ssv_header_shoppingmall_pic.setVisibility(View.GONE);
                             }
 
                             View header = LayoutInflater.from(ShoppingMallActivity.this).inflate(R.layout.header_shoppingmall, mDataRv, false);
-                            mStaggeredGridAdapter.setHeaderView(header,StoreBannerList);
+                            mStaggeredGridAdapter.setHeaderView(header, StoreBannerList);
                             storeHotGoodsList();
 
-                        }else if (DataResult.RESULT_102 == response.body().getErrorCode())
-                        {
+                        } else if (DataResult.RESULT_102 == response.body().getErrorCode()) {
                             toLogin();
-                        }else {
+                        } else {
                             CustomToast.show(response.body().getErrorMsg());
                         }
                     }
@@ -154,15 +162,14 @@ public class ShoppingMallActivity extends BaseActivity implements BGARefreshLayo
     }
 
 
-    private void storeHotGoodsList()
-    {
+    private void storeHotGoodsList() {
         getlDialog().show();
-        String token= LocalData.getInstance().getUserInfo().getToken();
-        String url=BaseConstant.getApiPostUrl("storeGoods/storeHotGoodsList");
-        HttpParams param=new HttpParams();
-        param.put("token",token);
-        param.put("page",page+"");
-        param.put("limit","10");
+        String token = LocalData.getInstance().getUserInfo().getToken();
+        String url = BaseConstant.getApiPostUrl("storeGoods/storeHotGoodsList");
+        HttpParams param = new HttpParams();
+        param.put("token", token);
+        param.put("page", page + "");
+        param.put("limit", "10");
         OkGo.<DataResult<ArrayList<StoreGoodsInfo>>>post(url)
                 .params(param)
                 .execute(new JsonCallback<DataResult<ArrayList<StoreGoodsInfo>>>() {
@@ -171,37 +178,36 @@ public class ShoppingMallActivity extends BaseActivity implements BGARefreshLayo
                         getlDialog().dismiss();
                         mRefreshLayout.endRefreshing();
                         mRefreshLayout.endLoadingMore();
-                        if (response==null){
+                        if (response == null) {
                             CustomToast.show(getString(R.string.http_request_fail));
                             return;
                         }
 
-                        if(response.body().getErrorCode()== DataResult.RESULT_OK_ZERO){
+                        if (response.body().getErrorCode() == DataResult.RESULT_OK_ZERO) {
 
-                            if(response.body().getData()!=null&&response.body().getData().size()>0){
-                                listsize=response.body().getData().size();
-                                if(list.size()==0){
-                                    list= response.body().getData();
-                                }else {
+                            if (response.body().getData() != null && response.body().getData().size() > 0) {
+                                listsize = response.body().getData().size();
+                                if (list.size() == 0) {
+                                    list = response.body().getData();
+                                } else {
                                     for (int i = 0; i < response.body().getData().size(); i++) {
                                         list.add(response.body().getData().get(i));
                                     }
                                 }
                                 mStaggeredGridAdapter.refreshDatas(list);
 
-                            }else{
-                                if(list.size()>0){
+                            } else {
+                                if (list.size() > 0) {
                                     CustomToast.show("无更多数据");
-                                }else{
+                                } else {
                                     mStaggeredGridAdapter.refreshDatas(list);
                                 }
                             }
 
 
-                        }else if (response.body().getErrorCode()==DataResult.RESULT_102 )
-                        {
+                        } else if (response.body().getErrorCode() == DataResult.RESULT_102) {
                             toLogin();
-                        }else {
+                        } else {
                             CustomToast.show(response.body().getErrorMsg());
                         }
                     }

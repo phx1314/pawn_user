@@ -24,9 +24,19 @@
     <style name="ThemeHorizontalSlide" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:windowAnimationStyle">@style/AnimFade</item>
         <item name="windowNoTitle">true</item>
+        <item name="android:statusBarColor">@color/bg_title</item>
+        <item name="android:colorPrimaryDark">@color/bg_title</item>
         <!-- <item name="android:windowTranslucentStatus">true</item>
       <item name="android:fitsSystemWindows">false</item>
        -->
+    </style>
+
+    <style name="actNNS" parent="ThemeHorizontalSlide">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowFullscreen">true</item>
+        <!--        <item name="android:windowDrawsSystemBarBackgrounds">true</item>-->
+        <item name="android:windowTranslucentNavigation">true</item>
     </style>
 
     <style name="AnimFade" parent="@android:style/Animation.Activity">
